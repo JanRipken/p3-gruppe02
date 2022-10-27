@@ -4,6 +4,8 @@
  */
 package p3.gruppe02;
 
+import p3.gruppe02.ui.BuchAppLayout;
+
 /**
  *
  * @author janri
@@ -14,7 +16,7 @@ public class P3Gruppe02 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        new BuchAppLayout();
     }
     
 }
