@@ -5,7 +5,7 @@
 package p3.gruppe02;
 
 import p3.gruppe02.ui.BuchAppLayout;
-
+import p3.gruppe02.model.BuchObject;
 /**
  *
  * @author janri
@@ -17,6 +17,9 @@ public class P3Gruppe02 {
      */
     public static void main(String[] args) {
         new BuchAppLayout();
+        
+        BuchObject buch = new BuchObject("Buch 1");
+        
     }
     
 }
