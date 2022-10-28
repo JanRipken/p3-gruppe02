@@ -19,7 +19,6 @@ public class P3Gruppe02 {
         new BuchAppLayout();
         
         BuchObject buch = new BuchObject("Buch 1");
-        
     }
     
 }
