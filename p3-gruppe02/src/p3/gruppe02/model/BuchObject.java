@@ -14,7 +14,7 @@ public class BuchObject {
     private double Bewertung;
     private int Erscheinungsjahr;
 
-    private BuchObject(String titel) {
+    public BuchObject(String titel) {  //testweise auf public, soll private werden
         this.Titel = titel;
     }
 
@@ -47,5 +47,26 @@ public class BuchObject {
     }
     private int getErscheinungsjahr(){
         return this.Erscheinungsjahr;        
+    }
+    private void setTitel(String titel){
+        this.Titel = titel;
+    }
+    private void setAutorName(String autorname){
+        this.AutorName = autorname;
+    }
+    private void setAutorVorname(String autorvorname){
+        this.AutorVorname = autorvorname;
+    }
+    private void setSeitenanzahl(int seitenanzahl){
+        this.Seitenanzahl = seitenanzahl;
+    }
+    private void setGelesen(boolean gelesen){
+        this.Gelesen = gelesen;
+    }
+    private void setBewerung(double bewertung){
+        this.Bewertung = bewertung;
+    }
+    private void setErscheinungsjahr(int erscheinungsjahr){
+        this.Erscheinungsjahr = erscheinungsjahr;
     }
 }
