@@ -89,7 +89,7 @@ public class BuchAppLayout extends JFrame {
         this.add(new SouthPanel(), BorderLayout.CENTER);
 
         this.setTitle("p3-gruppe02");
-        this.setSize(400, 300);
+        this.setSize(900, 600);
         
         this.setResizable(true);
         this.setVisible(true);

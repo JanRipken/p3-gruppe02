@@ -18,6 +18,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AddNewBook extends JFrame {
+    // Final damit die variable nur einmal genutzt werden kann
     private final String FrageBuchName = "Geben sie hier bitte den Namen ihres Buches ein";
     private final String FrageBuchAutor = "Geben sie hier bitte den Autor ihres Buches ein";
     private final String FrageBuchAutorVorname = "Geben sie hier bitte den Vornamen des Autors ihres Buches ein";
