@@ -8,11 +8,14 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
+import javax.swing.JDialog;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 
@@ -22,13 +25,30 @@ import javax.swing.JScrollPane;
  */
 public class BuchAppLayout extends JFrame {
 
-    private class NorthPanel extends JPanel {
+    private class NorthPanel extends JPanel implements ActionListener {
 
+            JButton newBookButton = new JButton("Neu");
+            JButton imageBookButton = new JButton("Bild");
+        
         public NorthPanel() {
+
             
+            newBookButton.addActionListener(this);
+            
+            
+            this.add(newBookButton);
+            this.add(imageBookButton);
             this.setLayout(new GridLayout());
-            this.add(new JButton("Neu"));
-            this.add(new JButton("ich werde ein bild"));
+            
+            
+
+        }
+
+        @Override
+        public void actionPerformed(ActionEvent e) { 
+            if(e.getSource()==newBookButton){
+                AddNewBook newBook = new AddNewBook();
+            }
         }
 
     }
@@ -59,5 +79,7 @@ public class BuchAppLayout extends JFrame {
         this.setResizable(true);
         this.setVisible(true);
     }
+    
+    
 
 }
