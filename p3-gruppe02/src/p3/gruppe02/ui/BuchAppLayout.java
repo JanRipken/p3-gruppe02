@@ -18,6 +18,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JDialog;
+import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.JScrollPane;
 
@@ -26,11 +27,13 @@ import javax.swing.JScrollPane;
  * @author matthiaskoziol
  */
 public class BuchAppLayout extends JFrame {
+    
+    
 
     private class NorthPanel extends JPanel implements ActionListener {
 
             JButton newBookButton = new JButton("Neu");
-            JButton imageBookButton = new JButton("Bild");
+            JLabel imageBookButton = new JLabel("Bild");
         
         public NorthPanel() {
 
