@@ -75,7 +75,7 @@ public class BuchAppLayout extends JFrame {
 
         this.setTitle("p3-gruppe02");
         this.setSize(400, 300);
-
+        
         this.setResizable(true);
         this.setVisible(true);
         
