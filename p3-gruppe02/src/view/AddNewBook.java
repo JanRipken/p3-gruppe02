@@ -35,30 +35,19 @@ public class AddNewBook extends JFrame {
         JLabel label = new JLabel();
         JTextField textfield = new JTextField();
         
+        
         public LayoutAddBook(String myLabel){
             this.setLayout(new GridLayout(0,1));
               label.setText(myLabel);
               
                this.add(label);
                this.add(textfield);
+                
                
-               switch(myLabel){
-                   case FrageBuchName:
-                       break;
-                    case FrageBuchAutor:
-                       break;
-                    case FrageBuchAutorVorname:
-                       break;
-                    case FrageBuchErscheinungsjahr:
-                       break;
-                    case FrageBuchSeitenanzahl:
-                       break;
-                    case FrageBuchBewertung:
-                       break;
-                    case FrageBuchNochmalLesen:
-                       break;   
-               }
+               
         }
+
+       
     }
     
     // Methode zum erstellen der Blöcke von Label und Checkbox
@@ -68,12 +57,13 @@ public class AddNewBook extends JFrame {
         JLabel label = new JLabel();
         JCheckBox CB = new JCheckBox();
         
-        public LayoutAddBookCheckbox(String myLabel){
+        public  LayoutAddBookCheckbox(String myLabel){
             this.setLayout(new GridLayout(0,1));
               label.setText(myLabel);
               
                this.add(label);
-               this.add(CB);
+               this.add(CB);     
+               
         }
     }
     

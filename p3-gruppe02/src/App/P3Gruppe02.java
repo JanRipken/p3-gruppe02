@@ -5,7 +5,7 @@
 package App;
 
 import view.MainFrame;
-import model.BuchObject;
+import model.BookModel;
 /**
  *
  * @author janri
@@ -18,7 +18,7 @@ public class P3Gruppe02 {
     public static void main(String[] args) {
         new MainFrame();
         
-        BuchObject buch = new BuchObject("Buch 1");
+        
     }
     
 }

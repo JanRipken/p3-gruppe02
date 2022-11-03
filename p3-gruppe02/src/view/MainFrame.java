@@ -33,7 +33,7 @@ public class MainFrame extends JFrame {
     
  
 
-    private class NorthPanel extends JPanel implements ActionListener {
+    public class NorthPanel extends JPanel implements ActionListener {
 
             JButton newBookButton = new JButton("Neu");
             JLabel label = new JLabel();

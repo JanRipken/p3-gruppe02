@@ -4,7 +4,7 @@ package model;
  *
  * @author matthiaskoziol
  */
-public class BuchObject {
+public class BookModel {
 
     private String Titel;
     private String AutorName;
@@ -14,11 +14,11 @@ public class BuchObject {
     private double Bewertung;
     private int Erscheinungsjahr;
 
-    public BuchObject(String titel) {  //testweise auf public, soll private werden
+    public BookModel(String titel) {  //testweise auf public, soll private werden
         this.Titel = titel;
     }
 
-    private BuchObject(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen, double bewertung, int erscheinungsjahr) {
+    private BookModel(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen, double bewertung, int erscheinungsjahr) {
         this.Titel = titel;
         this.AutorName = autorname;
         this.AutorVorname = autorvorname;
@@ -27,46 +27,46 @@ public class BuchObject {
         this.Bewertung = bewertung;
         this.Erscheinungsjahr = erscheinungsjahr;
     }
-    private String getTitel(){
+    public String getTitel(){
         return this.Titel;        
     }
-    private String getAutorName(){
+    public String getAutorName(){
         return this.AutorName;        
     }
-    private String getAutorVorname(){
+    public String getAutorVorname(){
         return this.AutorVorname;        
     }
-    private int getSeitenanzahl(){
+    public int getSeitenanzahl(){
         return this.Seitenanzahl;        
     }
-    private boolean getGelesen(){
+    public boolean getGelesen(){
         return this.Gelesen;        
     }
-    private double getBewertung(){
+    public double getBewertung(){
         return this.Bewertung;        
     }
-    private int getErscheinungsjahr(){
+    public int getErscheinungsjahr(){
         return this.Erscheinungsjahr;        
     }
-    private void setTitel(String titel){
+    public void setTitel(String titel){
         this.Titel = titel;
     }
-    private void setAutorName(String autorname){
+    public void setAutorName(String autorname){
         this.AutorName = autorname;
     }
-    private void setAutorVorname(String autorvorname){
+    public void setAutorVorname(String autorvorname){
         this.AutorVorname = autorvorname;
     }
-    private void setSeitenanzahl(int seitenanzahl){
+    public void setSeitenanzahl(int seitenanzahl){
         this.Seitenanzahl = seitenanzahl;
     }
-    private void setGelesen(boolean gelesen){
+    public void setGelesen(boolean gelesen){
         this.Gelesen = gelesen;
     }
-    private void setBewerung(double bewertung){
+    public void setBewerung(double bewertung){
         this.Bewertung = bewertung;
     }
-    private void setErscheinungsjahr(int erscheinungsjahr){
+    public void setErscheinungsjahr(int erscheinungsjahr){
         this.Erscheinungsjahr = erscheinungsjahr;
     }
 }
