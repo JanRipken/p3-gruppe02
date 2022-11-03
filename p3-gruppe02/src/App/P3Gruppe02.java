@@ -4,7 +4,7 @@
  */
 package App;
 
-import view.BuchAppLayout;
+import view.MainFrame;
 import model.BuchObject;
 /**
  *
@@ -16,7 +16,7 @@ public class P3Gruppe02 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        new BuchAppLayout();
+        new MainFrame();
         
         BuchObject buch = new BuchObject("Buch 1");
     }

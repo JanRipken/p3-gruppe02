@@ -29,7 +29,7 @@ import javax.swing.SwingConstants;
  *
  * @author matthiaskoziol
  */
-public class BuchAppLayout extends JFrame {
+public class MainFrame extends JFrame {
     
  
 
@@ -79,7 +79,7 @@ public class BuchAppLayout extends JFrame {
         }
 
     }    
-    public BuchAppLayout(){
+    public MainFrame(){
         
         addWindowListener(new WindowEventHandler());
         LayoutManager lm = new BorderLayout();
