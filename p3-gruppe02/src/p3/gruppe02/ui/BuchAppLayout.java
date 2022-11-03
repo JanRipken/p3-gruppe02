@@ -31,7 +31,7 @@ import javax.swing.SwingConstants;
  */
 public class BuchAppLayout extends JFrame {
     
-   
+ 
 
     private class NorthPanel extends JPanel implements ActionListener {
 

@@ -19,6 +19,7 @@ import javax.swing.JTextField;
 
 public class AddNewBook extends JFrame {
     // Final damit die variable nur einmal genutzt werden kann
+    // Eventulle überarbeiten bei erstellung der Änderungsseite
     private final String FrageBuchName = "Geben sie hier bitte den Namen ihres Buches ein";
     private final String FrageBuchAutor = "Geben sie hier bitte den Autor ihres Buches ein";
     private final String FrageBuchAutorVorname = "Geben sie hier bitte den Vornamen des Autors ihres Buches ein";
@@ -27,7 +28,8 @@ public class AddNewBook extends JFrame {
     private final String FrageBuchBewertung = "Wie bewerten sie dieses Buch ?";
     private final String FrageBuchNochmalLesen = "Wollen sie dieses Buch ein Zweites mal Lesen";
        
-    // Mehtode zum erstellen der Blöcke von Label und Textfeld
+    // Methode zum erstellen der Blöcke von Label und Textfeld
+    // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
     protected class LayoutAddBook extends JPanel{
     
         JLabel label = new JLabel();
@@ -42,7 +44,8 @@ public class AddNewBook extends JFrame {
         }
     }
     
-     // Mehtode zum erstellen der Blöcke von Label und Checkbox
+    // Methode zum erstellen der Blöcke von Label und Checkbox
+    // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
     protected class LayoutAddBookCheckbox extends JPanel{
     
         JLabel label = new JLabel();
@@ -58,7 +61,8 @@ public class AddNewBook extends JFrame {
     }
     
     
-    //methode zum erstellen des Pannels fpr Abbrechen und Bestätigen Buttons
+    //Methode zum erstellen des Pannels fpr Abbrechen und Bestätigen Buttons
+    // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
     protected class BestätigenOderAbbrechenPanel extends JPanel implements ActionListener {
     
         JButton ButtonBestätigen = new JButton("Bestätigen");
