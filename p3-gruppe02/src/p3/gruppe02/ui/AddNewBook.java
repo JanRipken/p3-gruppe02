@@ -13,24 +13,31 @@ import javax.swing.JPanel;
 
 public class AddNewBook extends JFrame {
        
-    JFrame addNewBookFrame = new JFrame();
-    JPanel addNewBookPanel = new JPanel();
     
-        
+
+    
+     private class addNewBookPanel extends JPanel {
+
+        public addNewBookPanel() {
+
+            this.setLayout(new GridLayout(8,0));
+            
+            
+            
+        }
+
+    } 
+     
+     
     AddNewBook(){
-
-
+  
+        this.add(new addNewBookPanel());
         
-        
-        addNewBookFrame.setSize(600, 900);
-        addNewBookFrame.setVisible(true);
-          
-        addNewBookPanel.setLayout(new GridLayout(8,0));
-      
-        addNewBookFrame.add(addNewBookPanel);
-
-        
-        // Wieso startet das fenster nicht in der Mitte ?
+        this.setSize(600, 900);
+        this.setResizable(true);
+        this.setVisible(true);
+              
+        // // Startup des Fensters in der Mitte des Desktops
         Toolkit toolKit = getToolkit();
         Dimension size = toolKit.getScreenSize();
         setLocation(size.width/2 - getWidth()/2,size.height/2 - getHeight()/2);

@@ -36,14 +36,11 @@ public class BuchAppLayout extends JFrame {
 
             
             newBookButton.addActionListener(this);
-            
-            
+                       
             this.add(newBookButton);
             this.add(imageBookButton);
             this.setLayout(new GridLayout());
-            
-            
-
+     
         }
 
         @Override
