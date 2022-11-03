@@ -42,13 +42,10 @@ public class AddNewBook extends JFrame {
             this.add(ButtonAbrechen);
         }
     }
-
-    
+ 
      private class addNewBookPanel extends JPanel {
 
- 
-        
-        
+     
         public addNewBookPanel() {
 
             this.add(new LayoutAddBook("Geben sie hier bitte den Namen ihres Buches ein"));
@@ -58,9 +55,8 @@ public class AddNewBook extends JFrame {
             this.add(new LayoutAddBook("geben sie hier die Seitenanzahl Ihres Buches an"));
             this.add(new LayoutAddBook("Wie bewerten sie dieses Buch ?"));
             this.add(new LayoutAddBook("Wollen sie dieses Buch ein Zweites mal Lesen"));
-            this.setLayout(new GridLayout(15,0));
-            
-       
+            this.setLayout(new GridLayout(8,0));
+
             
             this.setBackground(Color.decode("#432517"));
             this.setForeground(Color.BLACK);
@@ -73,19 +69,15 @@ public class AddNewBook extends JFrame {
   
         this.add(new addNewBookPanel());
         
-        this.setSize(600, 900);
+        this.pack();
         this.setResizable(true);
-        
-     
+  
         this.setVisible(true);
               
         // // Startup des Fensters in der Mitte des Desktops
         Toolkit toolKit = getToolkit();
         Dimension size = toolKit.getScreenSize();
         setLocation(size.width/2 - getWidth()/2,size.height/2 - getHeight()/2);
-
-       
-    }
-    
-    
+      
+    }    
 }
