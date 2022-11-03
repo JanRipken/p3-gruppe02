@@ -5,9 +5,11 @@
 package p3.gruppe02.ui;
 
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.LayoutManager;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
@@ -48,6 +50,7 @@ public class BuchAppLayout extends JFrame {
         public void actionPerformed(ActionEvent e) { 
             if(e.getSource()==newBookButton){
                 AddNewBook newBook = new AddNewBook();
+                
             }
         }
 
@@ -78,6 +81,12 @@ public class BuchAppLayout extends JFrame {
 
         this.setResizable(true);
         this.setVisible(true);
+        
+        
+        // Startup des Fensters in der Mitte des Desktops
+        Toolkit toolKit = getToolkit();
+        Dimension size = toolKit.getScreenSize();
+        setLocation(size.width/2 - getWidth()/2,size.height/2 - getHeight()/2);
     }
     
     
