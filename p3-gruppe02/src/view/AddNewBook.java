@@ -1,5 +1,5 @@
 
-package p3.gruppe02.ui;
+package view;
 
 import java.awt.Color;
 import java.awt.ComponentOrientation;

@@ -1,4 +1,4 @@
-package p3.gruppe02.model;
+package model;
 
 /**
  *

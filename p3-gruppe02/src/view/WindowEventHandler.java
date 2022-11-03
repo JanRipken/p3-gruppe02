@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package p3.gruppe02.ui;
+package view;
 
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
