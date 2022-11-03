@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 
 public class AddNewBook extends JFrame {
        
+    // Mehtode zum erstellen der Blöcke von Label und Textfeld
     protected class LayoutAddBook extends JPanel{
     
         JLabel label = new JLabel();
@@ -26,11 +27,14 @@ public class AddNewBook extends JFrame {
         public LayoutAddBook(String myLabel){
             this.setLayout(new GridLayout(0,1));
               label.setText(myLabel);
+              
                this.add(label);
                this.add(textfield);
         }
     }
     
+    
+    //methode zum erstellen des Pannels fpr Abbrechen und Bestätigen Buttons
     protected class BestätigenOderAbbrechenPanel extends JPanel{
     
         JButton ButtonBestätigen = new JButton("Bestätigen");
@@ -44,10 +48,11 @@ public class AddNewBook extends JFrame {
     }
  
      private class addNewBookPanel extends JPanel {
-
-     
+   
         public addNewBookPanel() {
 
+            this.setLayout(new GridLayout(8,0));
+            
             this.add(new LayoutAddBook("Geben sie hier bitte den Namen ihres Buches ein"));
             this.add(new LayoutAddBook("Geben sie hier bitte den Autor ihres Buches ein"));
             this.add(new LayoutAddBook("Geben sie hier bitte den Vornamen des Autors ihres Buches ein"));
@@ -55,16 +60,11 @@ public class AddNewBook extends JFrame {
             this.add(new LayoutAddBook("geben sie hier die Seitenanzahl Ihres Buches an"));
             this.add(new LayoutAddBook("Wie bewerten sie dieses Buch ?"));
             this.add(new LayoutAddBook("Wollen sie dieses Buch ein Zweites mal Lesen"));
-            this.setLayout(new GridLayout(8,0));
-
-            
-            this.setBackground(Color.decode("#432517"));
-            this.setForeground(Color.BLACK);
+                   
             this.add(new BestätigenOderAbbrechenPanel());
         }
     } 
-     
-     
+    
     AddNewBook(){
   
         this.add(new addNewBookPanel());
