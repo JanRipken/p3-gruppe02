@@ -9,6 +9,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,7 +17,17 @@ import javax.swing.JTextField;
 
 public class AddNewBook extends JFrame {
        
+    protected class BestätigenOderAbbrechenPanel extends JPanel{
     
+        JButton ButtonBestätigen = new JButton("Bestätigen");
+        JButton ButtonAbrechen = new JButton("Abrechen");
+        
+        public BestätigenOderAbbrechenPanel(){
+            this.setLayout(new GridLayout(1,0));
+            this.add(ButtonBestätigen);
+            this.add(ButtonAbrechen);
+        }
+    }
 
     
      private class addNewBookPanel extends JPanel {
@@ -35,11 +46,12 @@ public class AddNewBook extends JFrame {
         JTextField JTFErscheinungsjahrDesBuches = new JTextField();
         JTextField JTFSeitenanzahlDesBuches = new JTextField();
         JTextField JTFWertungDesBuches = new JTextField();
-        JTextField JTFZweitesMalLesen = new JTextField();
+        JCheckBox JTFZweitesMalLesen = new JCheckBox();
+        
         
         public addNewBookPanel() {
 
-            this.setLayout(new GridLayout(16,0));
+            this.setLayout(new GridLayout(15,0));
             this.add(labelTitelDesBuches);
             this.add(JTFTitelDesBuches);
             
@@ -61,6 +73,7 @@ public class AddNewBook extends JFrame {
             this.add(labelZweitesMalLesen);
             this.add(JTFZweitesMalLesen);
             
+            this.add(new BestätigenOderAbbrechenPanel());
         }
     } 
      
