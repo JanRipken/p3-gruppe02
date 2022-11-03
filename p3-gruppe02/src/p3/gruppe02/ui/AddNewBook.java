@@ -34,6 +34,21 @@ public class AddNewBook extends JFrame {
         }
     }
     
+     // Mehtode zum erstellen der Blöcke von Label und Textfeld
+    protected class LayoutAddBookCheckbox extends JPanel{
+    
+        JLabel label = new JLabel();
+        JCheckBox CB = new JCheckBox();
+        
+        public LayoutAddBookCheckbox(String myLabel){
+            this.setLayout(new GridLayout(0,1));
+              label.setText(myLabel);
+              
+               this.add(label);
+               this.add(CB);
+        }
+    }
+    
     
     //methode zum erstellen des Pannels fpr Abbrechen und Bestätigen Buttons
     protected class BestätigenOderAbbrechenPanel extends JPanel implements ActionListener {
@@ -79,7 +94,7 @@ public class AddNewBook extends JFrame {
             this.add(new LayoutAddBook("Geben sie hier bitte das Erscheinungsjahr ihres Buches ein"));
             this.add(new LayoutAddBook("geben sie hier die Seitenanzahl Ihres Buches an"));
             this.add(new LayoutAddBook("Wie bewerten sie dieses Buch ?"));
-            this.add(new LayoutAddBook("Wollen sie dieses Buch ein Zweites mal Lesen"));
+            this.add(new LayoutAddBookCheckbox("Wollen sie dieses Buch ein Zweites mal Lesen"));
                    
             this.add(new BestätigenOderAbbrechenPanel());
             
