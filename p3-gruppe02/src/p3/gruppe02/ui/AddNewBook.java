@@ -41,6 +41,23 @@ public class AddNewBook extends JFrame {
               
                this.add(label);
                this.add(textfield);
+               
+               switch(myLabel){
+                   case FrageBuchName:
+                       break;
+                    case FrageBuchAutor:
+                       break;
+                    case FrageBuchAutorVorname:
+                       break;
+                    case FrageBuchErscheinungsjahr:
+                       break;
+                    case FrageBuchSeitenanzahl:
+                       break;
+                    case FrageBuchBewertung:
+                       break;
+                    case FrageBuchNochmalLesen:
+                       break;   
+               }
         }
     }
     
