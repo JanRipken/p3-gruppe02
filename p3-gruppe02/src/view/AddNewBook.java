@@ -1,15 +1,9 @@
 
 package view;
 
-import java.awt.Color;
-import java.awt.ComponentOrientation;
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.WindowEvent;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
@@ -30,19 +24,19 @@ public class AddNewBook extends JFrame {
        
     // Methode zum erstellen der Blöcke von Label und Textfeld
     // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
-    protected class LayoutAddBook extends JPanel{
+    public class LayoutAddBook extends JPanel{
     
         JLabel label = new JLabel();
         JTextField textfield = new JTextField();
         
         
-        public LayoutAddBook(String myLabel){
+        private LayoutAddBook(String myLabel){
             this.setLayout(new GridLayout(0,1));
               label.setText(myLabel);
               
                this.add(label);
                this.add(textfield);
-                
+               String text = textfield.getText();
                
                
         }
@@ -122,5 +116,6 @@ public class AddNewBook extends JFrame {
       
     }
     
+  
     
 }

@@ -1,18 +1,25 @@
 
 package controller;
 
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import model.BookModel;
 import view.AddNewBook;
 
 
-public class AddNewBookController {
+public class AddNewBookController  {
     private AddNewBook view;
     private BookModel model;
+    
+    
+   
     
     public AddNewBookController(AddNewBook view,BookModel model){
         this.model = model;
         this.view = view;
     }
+    
+    
     
     public String getTitel(){
         return model.getTitel();
@@ -65,6 +72,8 @@ public class AddNewBookController {
     public void setErscheinungsjahr(int erscheinungsjahr){
         model.setErscheinungsjahr(erscheinungsjahr);
     }
+
+   
     
     
 }
