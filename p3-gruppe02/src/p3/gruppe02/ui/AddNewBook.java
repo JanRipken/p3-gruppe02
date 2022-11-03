@@ -61,11 +61,7 @@ public class AddNewBook extends JFrame {
             this.add(labelZweitesMalLesen);
             this.add(JTFZweitesMalLesen);
             
-            
         }
-
-      
-
     } 
      
      
