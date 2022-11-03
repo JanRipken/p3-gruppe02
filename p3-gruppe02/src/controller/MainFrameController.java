@@ -13,6 +13,8 @@ public class MainFrameController implements ActionListener {
     
     public MainFrameController(MainFrame.NorthPanel viewMain){
         this.viewMain = viewMain;
+        
+        
     }
 
     @Override

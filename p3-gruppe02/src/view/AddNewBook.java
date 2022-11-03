@@ -70,7 +70,7 @@ public class AddNewBook extends JFrame {
     
     //Methode zum erstellen des Pannels fpr Abbrechen und Bestätigen Buttons
     // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
-    protected class BestätigenOderAbbrechenPanel extends JPanel implements ActionListener {
+    protected class BestätigenOderAbbrechenPanel extends JPanel  {
     
         JButton ButtonBestätigen = new JButton("Bestätigen");
         JButton ButtonAbrechen = new JButton("Abrechen");
@@ -79,25 +79,11 @@ public class AddNewBook extends JFrame {
             this.setLayout(new GridLayout(1,0));
             this.add(ButtonBestätigen);
             this.add(ButtonAbrechen);
-            
-            ButtonBestätigen.addActionListener(this);
-            ButtonAbrechen.addActionListener(this);
-         
+           
         }    
 
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            if(e.getSource()==ButtonBestätigen){
-                // Einschreiben des Buches in die Db
-                
-                
-                dispose();          
-            }
-            
-            if(e.getSource()==ButtonAbrechen){
-                dispose();              
-            }
-        }
+       
+        
         
     }
  
