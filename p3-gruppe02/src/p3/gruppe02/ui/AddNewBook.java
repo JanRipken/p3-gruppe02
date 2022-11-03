@@ -12,6 +12,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextField;
 
 public class AddNewBook extends JFrame {
        
@@ -28,16 +29,38 @@ public class AddNewBook extends JFrame {
         JLabel labelWertungDesBuches = new JLabel("Wie bewerten sie dieses Buch ?");
         JLabel labelZweitesMalLesen = new JLabel("Wollen sie dieses Buch ein Zweites mal Lesen");
         
+        JTextField JTFTitelDesBuches = new JTextField();
+        JTextField JTFAutorDesBuches = new JTextField();
+        JTextField JTFAutorVornameDesBuches = new JTextField();
+        JTextField JTFErscheinungsjahrDesBuches = new JTextField();
+        JTextField JTFSeitenanzahlDesBuches = new JTextField();
+        JTextField JTFWertungDesBuches = new JTextField();
+        JTextField JTFZweitesMalLesen = new JTextField();
+        
         public addNewBookPanel() {
 
-            this.setLayout(new GridLayout(8,0));
+            this.setLayout(new GridLayout(16,0));
             this.add(labelTitelDesBuches);
+            this.add(JTFTitelDesBuches);
+            
             this.add(labelAutorDesBuches);
+            this.add(JTFAutorDesBuches);
+            
             this.add(labelAutorVornameDesBuches);
+            this.add(JTFAutorVornameDesBuches);
+            
             this.add(labelErscheinungsjahrDesBuches);
+            this.add(JTFErscheinungsjahrDesBuches);
+            
             this.add(labelSeitenanzahlDesBuches);
+            this.add(JTFSeitenanzahlDesBuches);
+            
             this.add(labelWertungDesBuches);
+            this.add(JTFWertungDesBuches);
+            
             this.add(labelZweitesMalLesen);
+            this.add(JTFZweitesMalLesen);
+            
             
         }
 
