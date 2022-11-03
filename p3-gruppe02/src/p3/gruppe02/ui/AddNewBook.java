@@ -18,6 +18,13 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 public class AddNewBook extends JFrame {
+    private final String FrageBuchName = "Geben sie hier bitte den Namen ihres Buches ein";
+    private final String FrageBuchAutor = "Geben sie hier bitte den Autor ihres Buches ein";
+    private final String FrageBuchAutorVorname = "Geben sie hier bitte den Vornamen des Autors ihres Buches ein";
+    private final String FrageBuchErscheinungsjahr = "Geben sie hier bitte das Erscheinungsjahr ihres Buches ein";
+    private final String FrageBuchSeitenanzahl = "geben sie hier die Seitenanzahl Ihres Buches an";
+    private final String FrageBuchBewertung = "Wie bewerten sie dieses Buch ?";
+    private final String FrageBuchNochmalLesen = "Wollen sie dieses Buch ein Zweites mal Lesen";
        
     // Mehtode zum erstellen der Blöcke von Label und Textfeld
     protected class LayoutAddBook extends JPanel{
@@ -34,7 +41,7 @@ public class AddNewBook extends JFrame {
         }
     }
     
-     // Mehtode zum erstellen der Blöcke von Label und Textfeld
+     // Mehtode zum erstellen der Blöcke von Label und Checkbox
     protected class LayoutAddBookCheckbox extends JPanel{
     
         JLabel label = new JLabel();
@@ -88,13 +95,13 @@ public class AddNewBook extends JFrame {
 
             this.setLayout(new GridLayout(8,0));
             
-            this.add(new LayoutAddBook("Geben sie hier bitte den Namen ihres Buches ein"));
-            this.add(new LayoutAddBook("Geben sie hier bitte den Autor ihres Buches ein"));
-            this.add(new LayoutAddBook("Geben sie hier bitte den Vornamen des Autors ihres Buches ein"));
-            this.add(new LayoutAddBook("Geben sie hier bitte das Erscheinungsjahr ihres Buches ein"));
-            this.add(new LayoutAddBook("geben sie hier die Seitenanzahl Ihres Buches an"));
-            this.add(new LayoutAddBook("Wie bewerten sie dieses Buch ?"));
-            this.add(new LayoutAddBookCheckbox("Wollen sie dieses Buch ein Zweites mal Lesen"));
+            this.add(new LayoutAddBook(FrageBuchName));
+            this.add(new LayoutAddBook(FrageBuchAutor));
+            this.add(new LayoutAddBook(FrageBuchAutorVorname));
+            this.add(new LayoutAddBook(FrageBuchErscheinungsjahr));
+            this.add(new LayoutAddBook(FrageBuchSeitenanzahl));
+            this.add(new LayoutAddBook(FrageBuchBewertung));
+            this.add(new LayoutAddBookCheckbox(FrageBuchNochmalLesen));
                    
             this.add(new BestätigenOderAbbrechenPanel());
             
@@ -115,5 +122,7 @@ public class AddNewBook extends JFrame {
         Dimension size = toolKit.getScreenSize();
         setLocation(size.width/2 - getWidth()/2,size.height/2 - getHeight()/2);
       
-    }    
+    }
+    
+    
 }
