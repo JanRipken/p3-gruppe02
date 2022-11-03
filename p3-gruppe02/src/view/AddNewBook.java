@@ -120,7 +120,7 @@ public class AddNewBook extends JFrame {
         }
     } 
     
-    AddNewBook(){
+    public AddNewBook(){
         
         this.add(new addNewBookPanel());
         

@@ -4,6 +4,7 @@
  */
 package view;
 
+import controller.MainFrameController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -31,10 +32,9 @@ import javax.swing.SwingConstants;
  */
 public class MainFrame extends JFrame {
     
- 
+    
 
-    public class NorthPanel extends JPanel implements ActionListener {
-
+    public class NorthPanel extends JPanel  {
             JButton newBookButton = new JButton("Neu");
             JLabel label = new JLabel();
 
@@ -42,10 +42,12 @@ public class MainFrame extends JFrame {
             Image BookImage = IconBook.getImage();
             Image modifiedBookImage = BookImage.getScaledInstance(100, 60, Image.SCALE_SMOOTH);     
             ImageIcon newBookIcon = new ImageIcon(modifiedBookImage);
+            
+            
         
-        public NorthPanel() {
-      
-            newBookButton.addActionListener(this);
+        private NorthPanel() {
+            
+            newBookButton.addActionListener(new MainFrameController(this));
             
             label.setIcon(newBookIcon);
             label.setHorizontalAlignment(SwingConstants.CENTER);
@@ -57,15 +59,6 @@ public class MainFrame extends JFrame {
             this.setLayout(new GridLayout());
      
         }
-
-        @Override
-        public void actionPerformed(ActionEvent e) { 
-            if(e.getSource()==newBookButton){
-                AddNewBook newBook = new AddNewBook();
-                
-            }
-        }
-
     }
     
     private class SouthPanel extends JPanel {
