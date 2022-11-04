@@ -8,11 +8,11 @@ import view.MainFrame;
 
 
 public class MainFrameController implements ActionListener {
-    private MainFrame.NorthPanel viewMain;
+    private MainFrame.NorthPanel viewMainFrameNorth;
     
     
-    public MainFrameController(MainFrame.NorthPanel viewMain){
-        this.viewMain = viewMain;
+    public MainFrameController(MainFrame.NorthPanel viewMainFrameNorth){
+        this.viewMainFrameNorth = viewMainFrameNorth;
         
         
     }
