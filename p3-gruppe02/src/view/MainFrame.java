@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.MainFrameController;
+import controller.MainFrameNorthController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -40,7 +40,7 @@ public class MainFrame extends JFrame {
         
         private NorthPanel() {
             
-            newBookButton.addActionListener(new MainFrameController(this));
+            newBookButton.addActionListener(new MainFrameNorthController(this));
             
             label.setIcon(newBookIcon);
             label.setHorizontalAlignment(SwingConstants.CENTER);

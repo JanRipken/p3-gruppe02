@@ -7,11 +7,11 @@ import view.AddNewBook;
 import view.MainFrame;
 
 
-public class MainFrameController implements ActionListener {
+public class MainFrameNorthController implements ActionListener {
     private MainFrame.NorthPanel viewMainFrameNorth;
     
     
-    public MainFrameController(MainFrame.NorthPanel viewMainFrameNorth){
+    public MainFrameNorthController(MainFrame.NorthPanel viewMainFrameNorth){
         this.viewMainFrameNorth = viewMainFrameNorth;
         
         
