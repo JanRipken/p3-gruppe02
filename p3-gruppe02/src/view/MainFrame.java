@@ -30,15 +30,13 @@ public class MainFrame extends JFrame {
     public class NorthPanel extends JPanel  {
             JButton newBookButton = new JButton("Neu");
             JLabel label = new JLabel();
-
+     
+        private NorthPanel() {
+            
             ImageIcon IconBook = new ImageIcon("buch.jpg");         
             Image BookImage = IconBook.getImage();
             Image modifiedBookImage = BookImage.getScaledInstance(100, 60, Image.SCALE_SMOOTH);     
             ImageIcon newBookIcon = new ImageIcon(modifiedBookImage);
-            
-            
-        
-        private NorthPanel() {
             
             newBookButton.addActionListener(new MainFrameNorthController(this));
             
