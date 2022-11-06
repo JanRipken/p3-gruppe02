@@ -14,6 +14,9 @@ public class BookModel {
     private double Bewertung;
     private int Erscheinungsjahr;
 
+    public BookModel(){
+    }
+    
     public BookModel(String titel) {  //testweise auf public, soll private werden
         this.Titel = titel;
     }
