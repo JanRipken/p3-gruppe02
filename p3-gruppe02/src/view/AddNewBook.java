@@ -1,6 +1,7 @@
 
 package view;
 
+import controller.AddNewBookButtonController;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -64,16 +65,18 @@ public class AddNewBook extends JFrame {
     
     //Methode zum erstellen des Pannels fpr Abbrechen und Bestätigen Buttons
     // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
-    protected class BestätigenOderAbbrechenPanel extends JPanel  {
+    public class BestätigenOderAbbrechenPanel extends JPanel  {
     
         JButton ButtonBestätigen = new JButton("Bestätigen");
         JButton ButtonAbrechen = new JButton("Abrechen");
         
-        public BestätigenOderAbbrechenPanel(){
+        private BestätigenOderAbbrechenPanel(){
             this.setLayout(new GridLayout(1,0));
             this.add(ButtonBestätigen);
             this.add(ButtonAbrechen);
-           
+            
+            ButtonAbrechen.addActionListener(new AddNewBookButtonController(this));
+            
         }    
 
        
@@ -108,6 +111,7 @@ public class AddNewBook extends JFrame {
         this.setResizable(true);
   
         this.setVisible(true);
+        
               
         // // Startup des Fensters in der Mitte des Desktops
         Toolkit toolKit = getToolkit();

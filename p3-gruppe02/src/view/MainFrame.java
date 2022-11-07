@@ -28,7 +28,7 @@ public class MainFrame extends JFrame {
 
     public class NorthPanel extends JPanel {
 
-        JButton newBookButton = new JButton("Neu");
+        public JButton newBookButton = new JButton("Neu");
         JLabel label = new JLabel();
 
         private NorthPanel() {
@@ -38,6 +38,7 @@ public class MainFrame extends JFrame {
             Image modifiedBookImage = BookImage.getScaledInstance(100, 60, Image.SCALE_SMOOTH);
             ImageIcon newBookIcon = new ImageIcon(modifiedBookImage);
 
+           
             newBookButton.addActionListener(new AddNewBookButtonController(this));
 
             label.setIcon(newBookIcon);
@@ -95,5 +96,7 @@ public class MainFrame extends JFrame {
         Dimension size = toolKit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
     }
+    
+    
 
 }
