@@ -4,7 +4,7 @@
  */
 package view;
 
-import controller.MainFrameNorthController;
+import controller.AddNewBookButtonController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -38,7 +38,7 @@ public class MainFrame extends JFrame {
             Image modifiedBookImage = BookImage.getScaledInstance(100, 60, Image.SCALE_SMOOTH);
             ImageIcon newBookIcon = new ImageIcon(modifiedBookImage);
 
-            newBookButton.addActionListener(new MainFrameNorthController(this));
+            newBookButton.addActionListener(new AddNewBookButtonController(this));
 
             label.setIcon(newBookIcon);
             label.setHorizontalAlignment(SwingConstants.CENTER);
