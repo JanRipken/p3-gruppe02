@@ -11,11 +11,16 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
@@ -25,7 +30,59 @@ import javax.swing.SwingConstants;
  *
  * @author matthiaskoziol
  */
+
 public class MainFrame extends JFrame {
+
+    public class FileMenuBar extends JMenuBar {
+
+    public FileMenuBar() {
+        super();
+        this.add(new FileMenu());
+    }
+}
+    public class FileMenu extends JMenu{
+
+    FileMenu() {
+        super("File");
+        this.add(new FileOpenItem());
+        this.add(new ExportCSV());
+    }
+}
+    public class FileOpenItem extends JMenuItem {
+
+    FileOpenItem() {
+        super("Import as CSV File");
+        this.addActionListener(new ImportCSVListener());
+    }
+}
+    
+    public class ExportCSV extends JMenuItem {
+
+    ExportCSV() {
+        super("Export as CSV File");
+        this.addActionListener(new ExportCSVListener());
+    }
+}
+  
+public class ImportCSVListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        System.out.println("Die CSV File wurde importiert");
+        System.out.println(e.getActionCommand());
+    }
+}
+
+public class ExportCSVListener implements ActionListener {
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        System.out.println("Die CSV File wurde exportiert");
+        System.out.println(e.getActionCommand());
+    }
+}
 
     public class NorthPanel extends JPanel {
 
@@ -82,6 +139,8 @@ public class MainFrame extends JFrame {
         addWindowListener(new WindowEventHandler());
         LayoutManager lm = new BorderLayout();
         this.setLayout(lm);
+        
+        setJMenuBar(new FileMenuBar());
 
         this.add(new NorthPanel(), BorderLayout.NORTH);
         this.add(new SouthPanel(), BorderLayout.CENTER);
