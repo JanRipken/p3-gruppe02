@@ -4,6 +4,7 @@
  */
 package view;
 
+import model.BookModel;
 import controller.AddNewBookButtonController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -25,64 +26,64 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
 
-
 /**
  *
  * @author matthiaskoziol
  */
-
 public class MainFrame extends JFrame {
 
     public class FileMenuBar extends JMenuBar {
 
-    public FileMenuBar() {
-        super();
-        this.add(new FileMenu());
+        public FileMenuBar() {
+            super();
+            this.add(new FileMenu());
+        }
     }
-}
-    public class FileMenu extends JMenu{
 
-    FileMenu() {
-        super("File");
-        this.add(new FileOpenItem());
-        this.add(new ExportCSV());
+    public class FileMenu extends JMenu {
+
+        FileMenu() {
+            super("File");
+            this.add(new FileOpenItem());
+            this.add(new ExportCSV());
+        }
     }
-}
+
     public class FileOpenItem extends JMenuItem {
 
-    FileOpenItem() {
-        super("Import as CSV File");
-        this.addActionListener(new ImportCSVListener());
+        FileOpenItem() {
+            super("Import as CSV File");
+            this.addActionListener(new ImportCSVListener());
+        }
     }
-}
-    
+
     public class ExportCSV extends JMenuItem {
 
-    ExportCSV() {
-        super("Export as CSV File");
-        this.addActionListener(new ExportCSVListener());
+        ExportCSV() {
+            super("Export as CSV File");
+            this.addActionListener(new ExportCSVListener());
+        }
     }
-}
-  
-public class ImportCSVListener implements ActionListener {
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        System.out.println("Die CSV File wurde importiert");
-        System.out.println(e.getActionCommand());
+    public class ImportCSVListener implements ActionListener {
+
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO Auto-generated method stub
+            System.out.println("Die CSV File wurde importiert");
+            System.out.println(e.getActionCommand());
+        }
     }
-}
 
-public class ExportCSVListener implements ActionListener {
+    public class ExportCSVListener implements ActionListener {
 
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-        System.out.println("Die CSV File wurde exportiert");
-        System.out.println(e.getActionCommand());
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            // TODO Auto-generated method stub
+            System.out.println("Die CSV File wurde exportiert");
+            System.out.println(e.getActionCommand());
+        }
     }
-}
 
     public class NorthPanel extends JPanel {
 
@@ -96,7 +97,6 @@ public class ExportCSVListener implements ActionListener {
             Image modifiedBookImage = BookImage.getScaledInstance(100, 60, Image.SCALE_SMOOTH);
             ImageIcon newBookIcon = new ImageIcon(modifiedBookImage);
 
-           
             newBookButton.addActionListener(new AddNewBookButtonController(this));
 
             label.setIcon(newBookIcon);
@@ -116,19 +116,24 @@ public class ExportCSVListener implements ActionListener {
         public SouthPanel() {
 
             this.setLayout(new GridLayout());
-            
+
+            //test - 2 bücher erstellt um diese auslesen zu lassen
+            BookModel buch1 = new BookModel("BuchEins");
+            BookModel buch2 = new BookModel("BuchDos");
+
             //Erstellen der Tabelle
-            //Spalteninhalt, statisch
+            //Spalteninhalt
+            //test - Titel werden ausgelesen
             String[][] data = {
-                {"Buch1", "Mustermann", "Max", "123", "true", "1.2", "1990"},
-                {"Buch2", "Musterfrau", "Maxine", "456", "false", "6.7", "2021"}
+                {buch1.getTitel(),"Mustermann", "Max", "123", "true", "1.2", "1990"},
+                {buch2.getTitel(), "Musterfrau", "Maxine", "456", "false", "6.7", "2021"}
             };
             // Spaltennamen
             String[] columnNames = {"Titel", "AutorName", "AutorVorname", "Seitenanzahl", "Gelesen", "Bewertung", "Erscheinungsjahr"};
             // Initiallisierung
-            JTable tabelle = new JTable(data, columnNames);          
+            JTable tabelle = new JTable(data, columnNames);
             // in eine ScrollPane einsetzen, macht die tabelle scrollbar
-            JScrollPane sp = new JScrollPane(tabelle);          
+            JScrollPane sp = new JScrollPane(tabelle);
             this.add(sp);
         }
 
@@ -139,7 +144,7 @@ public class ExportCSVListener implements ActionListener {
         addWindowListener(new WindowEventHandler());
         LayoutManager lm = new BorderLayout();
         this.setLayout(lm);
-        
+
         setJMenuBar(new FileMenuBar());
 
         this.add(new NorthPanel(), BorderLayout.NORTH);
@@ -156,7 +161,5 @@ public class ExportCSVListener implements ActionListener {
         Dimension size = toolKit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
     }
-    
-    
 
 }
