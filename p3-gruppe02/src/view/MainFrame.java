@@ -25,6 +25,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 /**
  *
@@ -154,8 +155,12 @@ public class MainFrame extends JFrame {
         this.setLayout(lm);
 
         setJMenuBar(new FileMenuBar());
-
+     
+        
+        
         this.add(new NorthPanel(), BorderLayout.NORTH);
+        
+        
         this.add(new SouthPanel(), BorderLayout.CENTER);
 
         this.setTitle("p3-gruppe02");

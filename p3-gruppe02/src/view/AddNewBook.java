@@ -2,6 +2,7 @@
 package view;
 
 import controller.AddNewBookButtonController;
+import controller.TextfieldInputController;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -22,7 +23,17 @@ public class AddNewBook extends JFrame {
     private final String FrageBuchSeitenanzahl = "geben sie hier die Seitenanzahl Ihres Buches an";
     private final String FrageBuchBewertung = "Wie bewerten sie dieses Buch ?";
     private final String FrageBuchNochmalLesen = "Wollen sie dieses Buch ein Zweites mal Lesen";
-       
+    
+   private String TextfieldBuchName = "BookName"; 
+   private String TextfieldAutorName = "AutorName"; 
+   private String TextfieldAutorVorname = "AutorVorname"; 
+   private String TextfieldErscheiunfsjahr = "Erscheinungsjahr"; 
+   private String TextfieldSeitenanzahl = "Seitenanzahl"; 
+   private String TextfieldBuchBewertung = "Bewertung"; 
+
+    
+    
+   
     // Methode zum erstellen der Blöcke von Label und Textfeld
     // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
     public class LayoutAddBook extends JPanel{
@@ -30,18 +41,21 @@ public class AddNewBook extends JFrame {
         JLabel label = new JLabel();
         JTextField textfield = new JTextField();
         
-        private LayoutAddBook(String myLabel){
+        private LayoutAddBook(String myLabel,String myTextField){
             this.setLayout(new GridLayout(0,1));
+            
               label.setText(myLabel);
+              textfield.setName(myTextField);
               
                this.add(label);
                this.add(textfield);
-               String text = textfield.getText();
                
+               String textfieldName = textfield.getName();
                
-        }
-
-      
+                TextfieldInputController text = new TextfieldInputController(this,textfield);
+                textfield.addActionListener(text);
+               
+        } 
     }
     
     // Methode zum erstellen der Blöcke von Label und Checkbox
@@ -56,7 +70,7 @@ public class AddNewBook extends JFrame {
               label.setText(myLabel);
               
                this.add(label);
-               this.add(CB);     
+               this.add(CB);
                
         }
     }
@@ -95,15 +109,16 @@ public class AddNewBook extends JFrame {
 
             this.setLayout(new GridLayout(8,0));
             
-            this.add(new LayoutAddBook(FrageBuchName));
-            this.add(new LayoutAddBook(FrageBuchAutor));
-            this.add(new LayoutAddBook(FrageBuchAutorVorname));
-            this.add(new LayoutAddBook(FrageBuchErscheinungsjahr));
-            this.add(new LayoutAddBook(FrageBuchSeitenanzahl));
-            this.add(new LayoutAddBook(FrageBuchBewertung));
+            this.add(new LayoutAddBook(FrageBuchName,TextfieldBuchName));
+            this.add(new LayoutAddBook(FrageBuchAutor,TextfieldAutorName));
+            this.add(new LayoutAddBook(FrageBuchAutorVorname,TextfieldAutorVorname));
+            this.add(new LayoutAddBook(FrageBuchErscheinungsjahr,TextfieldErscheiunfsjahr));
+            this.add(new LayoutAddBook(FrageBuchSeitenanzahl,TextfieldSeitenanzahl));
+            this.add(new LayoutAddBook(FrageBuchBewertung,TextfieldBuchBewertung));
             this.add(new LayoutAddBookCheckbox(FrageBuchNochmalLesen));
                    
             this.add(new BestätigenOderAbbrechenPanel());
+               
             
         }
     } 
