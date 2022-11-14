@@ -122,6 +122,10 @@ public class AddNewBook extends JFrame {
         return Integer.parseInt(Seitenanzahl.textfield.getText());
     }
     
+    public double getbewertung(){
+        return Double.parseDouble(bewertung.textfield.getText());
+    }
+    
     public Boolean getNochmallesen(){         
         if(nochmallesen.CB.isSelected()){
             return true;

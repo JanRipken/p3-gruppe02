@@ -22,12 +22,21 @@ public class AddNewBookController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         try{
-            //model.setTitel(view.getTitel());
+            model.setTitel(view.getTitel());
+            model.setAutorName(view.getAutorName());
+            model.setAutorVorname(view.getAutorVorname());
+            model.setErscheinungsjahr(view.getErscheinungsjahr());
+            model.setSeitenanzahl(view.getSeitenzahl());
+            model.setBewerung(view.getbewertung());
+            model.setGelesen(view.getNochmallesen());
+            
+            // In konsole schreiben
             System.out.println(view.getTitel());
             System.out.println(view.getAutorName());
             System.out.println(view.getAutorVorname());
             System.out.println(view.getErscheinungsjahr());
             System.out.println(view.getSeitenzahl());
+            System.out.println(view.getbewertung());
             System.out.println(view.getNochmallesen());
         }
         catch (Exception ex){
