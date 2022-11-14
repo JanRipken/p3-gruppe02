@@ -21,9 +21,18 @@ public class AddNewBookController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
-        
-        this.model.setAutorName("Hallo");
+        try{
+            //model.setTitel(view.getTitel());
+            System.out.println(view.getTitel());
+            System.out.println(view.getAutorName());
+            System.out.println(view.getAutorVorname());
+            System.out.println(view.getErscheinungsjahr());
+            System.out.println(view.getSeitenzahl());
+            System.out.println(view.getNochmallesen());
+        }
+        catch (Exception ex){
+         System.out.println("Fehler:"+ ex);
+        }
         
        
     }

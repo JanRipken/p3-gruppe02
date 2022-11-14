@@ -25,10 +25,7 @@ public class AddNewBookButtonController implements ActionListener {
        
     }
     
-     public AddNewBookButtonController(AddNewBook controllerAbbrechen, String namendesButtons){
-        this.controllerAbbrechen = controllerAbbrechen;
-        this.ButtonName = namendesButtons;
-    }
+ 
 
 
 
@@ -51,14 +48,6 @@ public class AddNewBookButtonController implements ActionListener {
                 });
                 
             }
-            
-            if(ButtonName == "ButtonAbrechenAbbrechen"){
-               
-            }
-            
-                
-             
-    }
-    
-    
+                    
+    }    
 }

@@ -16,7 +16,7 @@ import javax.swing.JPanel;
 public class LayoutAddBookCheckbox extends JPanel{
     
      JLabel label = new JLabel();
-        JCheckBox CB = new JCheckBox();
+     JCheckBox CB = new JCheckBox();
         
         public  LayoutAddBookCheckbox(String myLabel){
             this.setLayout(new GridLayout(0,1));
