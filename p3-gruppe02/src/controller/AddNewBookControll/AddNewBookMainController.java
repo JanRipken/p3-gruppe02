@@ -1,5 +1,5 @@
 
-package controller;
+package controller.AddNewBookControll;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +10,7 @@ import view.AddNewBookFrames.AddNewBook;
 import view.MainFrame;
 
 
-public class AddNewBookButtonController implements ActionListener {
+public class AddNewBookMainController implements ActionListener {
    
 
     private MainFrame.NorthPanel viewMainFrameAddNewButtonController;
@@ -19,18 +19,12 @@ public class AddNewBookButtonController implements ActionListener {
 
     
     
-    public AddNewBookButtonController(MainFrame.NorthPanel viewMainFrameAddNewButtonController, String namendesButtons){
+    public AddNewBookMainController(MainFrame.NorthPanel viewMainFrameAddNewButtonController, String namendesButtons){
         this.viewMainFrameAddNewButtonController = viewMainFrameAddNewButtonController;
         this.ButtonName = namendesButtons;
        
     }
     
- 
-
-
-
-   
-
     @Override
     public void actionPerformed(ActionEvent e) {
             

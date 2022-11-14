@@ -5,7 +5,7 @@
 package view;
 
 import model.BookModel;
-import controller.AddNewBookButtonController;
+import controller.AddNewBookControll.AddNewBookMainController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.GridLayout;
@@ -103,7 +103,7 @@ public class MainFrame extends JFrame {
             
             String newBookButtonbuttonName = newBookButton.getName();
             //Create Controller
-            AddNewBookButtonController startNewWindow = new AddNewBookButtonController(this,newBookButtonbuttonName);
+            AddNewBookMainController startNewWindow = new AddNewBookMainController(this,newBookButtonbuttonName);
             newBookButton.addActionListener(startNewWindow);
 
             // label

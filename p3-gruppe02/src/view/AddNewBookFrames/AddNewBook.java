@@ -2,8 +2,9 @@
 package view.AddNewBookFrames;
 
 
-import controller.AddNewBookButtonController;
-import controller.AddNewBookController;
+import controller.AddNewBookControll.AddNewBookAbbrechenController;
+import controller.AddNewBookControll.AddNewBookMainController;
+import controller.AddNewBookControll.AddNewBookSpeichernController;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -61,8 +62,12 @@ public class AddNewBook extends JFrame {
         
                 
         //Controller
-        AddNewBookController modelBook = new AddNewBookController(this);
+        AddNewBookSpeichernController modelBook = new AddNewBookSpeichernController(this);
         AbbbbruchOderSpeichern.ButtonBestätigen.addActionListener(modelBook);
+        
+        AddNewBookAbbrechenController abbrechen = new AddNewBookAbbrechenController(this);
+        AbbbbruchOderSpeichern.ButtonAbrechen.addActionListener(abbrechen);
+        
         
         //Testweise bereits namen setzen
         titel.textfield.setText("Java weil es so schoen ist");

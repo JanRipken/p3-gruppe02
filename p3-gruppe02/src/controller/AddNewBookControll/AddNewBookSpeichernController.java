@@ -1,5 +1,5 @@
 
-package controller;
+package controller.AddNewBookControll;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,14 +7,14 @@ import model.BookModel;
 import view.AddNewBookFrames.AddNewBook;
 
 
-public class AddNewBookController implements ActionListener {
+public class AddNewBookSpeichernController implements ActionListener {
     private AddNewBook view;
     private BookModel model;
    
     
    
     
-    public AddNewBookController(AddNewBook view){
+    public AddNewBookSpeichernController(AddNewBook view){
         this.model = new BookModel();
         this.view = view;
     }
@@ -39,6 +39,8 @@ public class AddNewBookController implements ActionListener {
             System.out.println(view.getSeitenzahl());
             System.out.println(view.getbewertung());
             System.out.println(view.getNochmallesen());
+            
+            view.dispose();
         }
         catch (Exception ex){
          System.out.println("Fehler:"+ ex);

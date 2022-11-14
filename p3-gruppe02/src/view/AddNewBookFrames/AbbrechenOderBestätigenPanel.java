@@ -4,7 +4,7 @@
  */
 package view.AddNewBookFrames;
 
-import controller.AddNewBookButtonController;
+import controller.AddNewBookControll.AddNewBookMainController;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
