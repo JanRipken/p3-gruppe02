@@ -92,17 +92,22 @@ public class MainFrame extends JFrame {
 
         private NorthPanel() {
 
+            // Create Image Icon
             ImageIcon IconBook = new ImageIcon("buch.jpg");
             Image BookImage = IconBook.getImage();
             Image modifiedBookImage = BookImage.getScaledInstance(100, 60, Image.SCALE_SMOOTH);
             ImageIcon newBookIcon = new ImageIcon(modifiedBookImage);
 
-            newBookButton.addActionListener(new AddNewBookButtonController(this));
+            //Create Controller
+            AddNewBookButtonController startNewWindow = new AddNewBookButtonController(this);
+            newBookButton.addActionListener(startNewWindow);
 
+            // label
             label.setIcon(newBookIcon);
             label.setHorizontalAlignment(SwingConstants.CENTER);
             label.setVerticalAlignment(SwingConstants.CENTER);
 
+            // Zum frame hinzufügen
             this.add(newBookButton);
             this.add(label);
 
