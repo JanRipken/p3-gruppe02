@@ -35,10 +35,12 @@ public class AddNewBook extends JFrame {
     
      
     public AddNewBook(){
-           
-        AddNewBookPanel panel = new AddNewBookPanel();
-        AbbrechenOderBestätigenPanel Abbbbruuuch = new AbbrechenOderBestätigenPanel();
         
+        // Hauptpanel erstellen
+        AddNewBookPanel panel = new AddNewBookPanel();
+       
+        
+        // erstellen der einzlenen layouts für das Panel
         LayoutAddBook titel = new LayoutAddBook(FrageBuchName,TextfieldBuchName);
         LayoutAddBook AutorName = new LayoutAddBook(FrageBuchAutor,TextfieldAutorName);
         LayoutAddBook AutorVorName = new LayoutAddBook(FrageBuchAutorVorname,TextfieldAutorVorname);
@@ -46,7 +48,10 @@ public class AddNewBook extends JFrame {
         LayoutAddBook Seitenanzahl = new LayoutAddBook(FrageBuchSeitenanzahl,TextfieldSeitenanzahl);
         LayoutAddBook bewertung = new LayoutAddBook(FrageBuchBewertung,TextfieldBuchBewertung);
         LayoutAddBookCheckbox nochmallesen = new LayoutAddBookCheckbox(FrageBuchNochmalLesen);
+         AbbrechenOderBestätigenPanel AbbbbruchOderSpeichern = new AbbrechenOderBestätigenPanel();
         
+        
+        // Zum Hauptpanel inzufügen
         panel.add(titel);
         panel.add(AutorName);
         panel.add(AutorVorName);
@@ -54,10 +59,13 @@ public class AddNewBook extends JFrame {
         panel.add(Seitenanzahl);
         panel.add(bewertung);
         panel.add(nochmallesen);
-        panel.add(Abbbbruuuch);
+        panel.add(AbbbbruchOderSpeichern);
  
+        // Panel zum hauptframe hinzufügen
         this.add(panel);
         
+        
+        // anderes
         this.pack();
         this.setResizable(true);
   
