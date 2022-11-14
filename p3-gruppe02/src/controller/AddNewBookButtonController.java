@@ -14,7 +14,8 @@ public class AddNewBookButtonController implements ActionListener {
 
     private MainFrame.NorthPanel viewMainFrameAddNewButtonController;
     private AddNewBook.BestätigenOderAbbrechenPanel controllerAbbrechen;
-   private String ButtonName;
+    private String ButtonName;
+
     
     
     public AddNewBookButtonController(MainFrame.NorthPanel viewMainFrameAddNewButtonController, String namendesButtons){
@@ -34,11 +35,13 @@ public class AddNewBookButtonController implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-            if(ButtonName == "ButtonAbrechenAbbrechen"){
-                
-            }
+            
             if(ButtonName == "AddNewBook"){
              AddNewBook newBook = new AddNewBook();
+            }
+            
+            if(ButtonName == "ButtonAbrechenAbbrechen"){
+               
             }
             
                 

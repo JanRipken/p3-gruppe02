@@ -41,7 +41,7 @@ public class AddNewBook extends JFrame {
                
         }
 
-       
+      
     }
     
     // Methode zum erstellen der Blöcke von Label und Checkbox
