@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.SwingUtilities;
+import model.BookModel;
 import view.AddNewBook;
 import view.MainFrame;
 
@@ -16,6 +17,8 @@ public class AddNewBookButtonController implements ActionListener {
     private MainFrame.NorthPanel viewMainFrameAddNewButtonController;
     private AddNewBook.BestätigenOderAbbrechenPanel controllerAbbrechen;
     private String ButtonName;
+    private BookModel model;
+    
 
     
     

@@ -49,8 +49,8 @@ public class AddNewBook extends JFrame {
               
                this.add(label);
                this.add(textfield);
-               
-               String textfieldName = textfield.getName();
+               String textFieldText = textfield.getText();
+             
                
                 TextfieldInputController text = new TextfieldInputController(this,textfield);
                 textfield.addActionListener(text);
@@ -68,7 +68,7 @@ public class AddNewBook extends JFrame {
         public  LayoutAddBookCheckbox(String myLabel){
             this.setLayout(new GridLayout(0,1));
               label.setText(myLabel);
-              
+               
                this.add(label);
                this.add(CB);
                
@@ -140,6 +140,6 @@ public class AddNewBook extends JFrame {
       
     }
     
-  
+   
     
 }
