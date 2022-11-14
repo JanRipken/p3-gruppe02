@@ -4,7 +4,6 @@
  */
 package model;
 
-import controller.DAO;
 import java.io.IOException;
 
 /**
