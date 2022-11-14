@@ -32,13 +32,13 @@ public class AddNewBookSpeichernController implements ActionListener {
             
             // Nur testweise
             // In konsole schreiben
-            System.out.println(view.getTitel());
-            System.out.println(view.getAutorName());
-            System.out.println(view.getAutorVorname());
-            System.out.println(view.getErscheinungsjahr());
-            System.out.println(view.getSeitenzahl());
-            System.out.println(view.getbewertung());
-            System.out.println(view.getNochmallesen());
+            System.out.println(model.getTitel());
+            System.out.println(model.getAutorName());
+            System.out.println(model.getAutorVorname());
+            System.out.println(model.getErscheinungsjahr());
+            System.out.println(model.getSeitenanzahl());
+            System.out.println(model.getBewertung());
+            System.out.println(model.getGelesen());
             
             view.dispose();
         }
