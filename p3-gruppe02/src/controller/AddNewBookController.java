@@ -4,7 +4,7 @@ package controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import model.BookModel;
-import view.AddNewBook;
+import view.AddNewBookFrames.AddNewBook;
 
 
 public class AddNewBookController implements ActionListener {

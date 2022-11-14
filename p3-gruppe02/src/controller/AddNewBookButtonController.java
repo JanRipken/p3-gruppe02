@@ -6,7 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.SwingUtilities;
-import view.AddNewBook;
+import view.AddNewBookFrames.AddNewBook;
 import view.MainFrame;
 
 

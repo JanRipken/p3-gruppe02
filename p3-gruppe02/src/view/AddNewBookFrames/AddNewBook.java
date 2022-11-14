@@ -1,5 +1,6 @@
 
-package view;
+package view.AddNewBookFrames;
+
 
 import controller.AddNewBookButtonController;
 import controller.AddNewBookController;

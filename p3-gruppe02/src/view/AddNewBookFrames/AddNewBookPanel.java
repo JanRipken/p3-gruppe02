@@ -1,5 +1,5 @@
 
-package view;
+package view.AddNewBookFrames;
 
 import java.awt.GridLayout;
 import javax.swing.JPanel;
