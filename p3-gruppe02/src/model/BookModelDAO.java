@@ -41,16 +41,20 @@ public class BookModelDAO extends DAO {
      * Daten des übergebenen Student-Objekts schreiben. Das Data Access Object
      * muss dazu zum Schreiben bereit sein.
      *
-     * @param s Referenz auf Student-Objekt
+     * @param b Referenz auf BookModel-Objekt
      * @throws IOException
      */
+    @Override
     public void write(Object obj) throws IOException {
         if (out != null) {
             BookModel b = (BookModel) obj;
-            out.writeUTF(b.getName());
-            out.writeInt(b.getMatnr());
-            out.writeBoolean(b.getBestanden());
-            out.writeDouble(b.getNote());
+            out.writeUTF(b.getTitel());
+            out.writeUTF(b.getAutorName());
+            out.writeUTF(b.getAutorVorname());
+            out.writeInt(b.getSeitenanzahl());
+            out.writeBoolean(b.getGelesen());
+            out.writeDouble(b.getBewertung());
+            out.writeInt(b.getErscheinungsjahr());
         }
     }
 
@@ -58,17 +62,20 @@ public class BookModelDAO extends DAO {
      * Daten des übergebenen Student-Objekts lesen. Das Data Access Objekt muss
      * dazu zum Lesen bereit sein.
      *
-     * @param s Referenz auf Student-Objekt
+     * @param b Referenz auf BookModel-Objekt
      * @throws IOException
      */
+    @Override
     public void read(Object obj) throws IOException {
         if (in != null) {
-            Student s = (Student) obj;
-            s.setName(in.readUTF());
-            s.setMatnr(in.readInt());
-            s.setBestanden(in.readBoolean());
-            s.setNote(in.readDouble());
+            BookModel b = (BookModel) obj;
+            b.setTitel(in.readUTF());
+            b.setAutorName(in.readUTF());
+            b.setAutorVorname(in.readUTF());
+            b.setSeitenanzahl(in.readInt());
+            b.setGelesen(in.readBoolean());
+            b.setBewerung(in.readDouble());
+            b.setErscheinungsjahr(in.readInt());
         }
     }
-
-
+}
