@@ -2,7 +2,7 @@
 package view;
 
 import controller.AddNewBookButtonController;
-import controller.TextfieldInputController;
+import controller.AddNewBookController;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.Toolkit;
@@ -32,107 +32,36 @@ public class AddNewBook extends JFrame {
    private String TextfieldBuchBewertung = "Bewertung"; 
 
     
-    
-   
-    // Methode zum erstellen der Blöcke von Label und Textfeld
-    // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
-    public class LayoutAddBook extends JPanel{
-    
-        JLabel label = new JLabel();
-        JTextField textfield = new JTextField();
-        
-        private LayoutAddBook(String myLabel,String myTextField){
-            this.setLayout(new GridLayout(0,1));
-            
-              label.setText(myLabel);
-              textfield.setName(myTextField);
-              
-               this.add(label);
-               this.add(textfield);
-               String textFieldText = textfield.getText();
-             
-               
-                TextfieldInputController text = new TextfieldInputController(this,textfield);
-                textfield.addActionListener(text);
-               
-        } 
-    }
-    
-    // Methode zum erstellen der Blöcke von Label und Checkbox
-    // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
-    protected class LayoutAddBookCheckbox extends JPanel{
-    
-        JLabel label = new JLabel();
-        JCheckBox CB = new JCheckBox();
-        
-        public  LayoutAddBookCheckbox(String myLabel){
-            this.setLayout(new GridLayout(0,1));
-              label.setText(myLabel);
-               
-               this.add(label);
-               this.add(CB);
-               
-        }
-    }
-    
-    
-    //Methode zum erstellen des Pannels fpr Abbrechen und Bestätigen Buttons
-    // Protected damit nur die Klassen in diesem Paket darauf zugreifen können
-    public class BestätigenOderAbbrechenPanel extends JPanel  {
-    
-        JButton ButtonBestätigen = new JButton("Bestätigen");
-        JButton ButtonAbrechen = new JButton("Abrechen");
-        
-        private BestätigenOderAbbrechenPanel(){
-            
-            ButtonAbrechen.setName("ButtonAbrechenAbbrechen");
-            this.setLayout(new GridLayout(1,0));
-            this.add(ButtonBestätigen);
-            this.add(ButtonAbrechen);
-            
-            
-            String ButtonAbrechenAbbrechen = ButtonAbrechen.getName();
-            
-            AddNewBookButtonController close = new AddNewBookButtonController(this,ButtonAbrechenAbbrechen );
-            ButtonAbrechen.addActionListener(close);
-            
-        }    
-
-       
-        
-        
-    }
- 
-     private class addNewBookPanel extends JPanel {
-   
-        public addNewBookPanel() {
-
-            this.setLayout(new GridLayout(8,0));
-            
-            this.add(new LayoutAddBook(FrageBuchName,TextfieldBuchName));
-            this.add(new LayoutAddBook(FrageBuchAutor,TextfieldAutorName));
-            this.add(new LayoutAddBook(FrageBuchAutorVorname,TextfieldAutorVorname));
-            this.add(new LayoutAddBook(FrageBuchErscheinungsjahr,TextfieldErscheiunfsjahr));
-            this.add(new LayoutAddBook(FrageBuchSeitenanzahl,TextfieldSeitenanzahl));
-            this.add(new LayoutAddBook(FrageBuchBewertung,TextfieldBuchBewertung));
-            this.add(new LayoutAddBookCheckbox(FrageBuchNochmalLesen));
-                   
-            this.add(new BestätigenOderAbbrechenPanel());
-               
-            
-        }
-    } 
-    
+     
     public AddNewBook(){
+           
+        AddNewBookPanel panel = new AddNewBookPanel();
+        AbbrechenOderBestätigenPanel Abbbbruuuch = new AbbrechenOderBestätigenPanel();
         
-        this.add(new addNewBookPanel());
+        LayoutAddBook titel = new LayoutAddBook(FrageBuchName,TextfieldBuchName);
+        LayoutAddBook AutorName = new LayoutAddBook(FrageBuchAutor,TextfieldAutorName);
+        LayoutAddBook AutorVorName = new LayoutAddBook(FrageBuchAutorVorname,TextfieldAutorVorname);
+        LayoutAddBook Erscheinungsjahr = new LayoutAddBook(FrageBuchErscheinungsjahr,TextfieldErscheiunfsjahr);
+        LayoutAddBook Seitenanzahl = new LayoutAddBook(FrageBuchSeitenanzahl,TextfieldSeitenanzahl);
+        LayoutAddBook bewertung = new LayoutAddBook(FrageBuchBewertung,TextfieldBuchBewertung);
+        LayoutAddBookCheckbox nochmallesen = new LayoutAddBookCheckbox(FrageBuchNochmalLesen);
+        
+        panel.add(titel);
+        panel.add(AutorName);
+        panel.add(AutorVorName);
+        panel.add(Erscheinungsjahr);
+        panel.add(Seitenanzahl);
+        panel.add(bewertung);
+        panel.add(nochmallesen);
+        panel.add(Abbbbruuuch);
+ 
+        this.add(panel);
         
         this.pack();
         this.setResizable(true);
   
         this.setVisible(true);
-        
-              
+          
         // // Startup des Fensters in der Mitte des Desktops
         Toolkit toolKit = getToolkit();
         Dimension size = toolKit.getScreenSize();
@@ -140,6 +69,6 @@ public class AddNewBook extends JFrame {
       
     }
     
-   
+  
     
 }
