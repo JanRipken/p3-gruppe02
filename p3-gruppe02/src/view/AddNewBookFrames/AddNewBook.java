@@ -1,19 +1,11 @@
 
 package view.AddNewBookFrames;
 
-
 import controller.AddNewBookControll.AddNewBookAbbrechenController;
-import controller.AddNewBookControll.AddNewBookMainController;
 import controller.AddNewBookControll.AddNewBookSpeichernController;
 import java.awt.Dimension;
-import java.awt.GridLayout;
 import java.awt.Toolkit;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 public class AddNewBook extends JFrame {
     
@@ -106,6 +98,7 @@ public class AddNewBook extends JFrame {
     }
     
     
+    
     public String getTitel(){         
         return titel.textfield.getText();
     }
@@ -136,10 +129,6 @@ public class AddNewBook extends JFrame {
             return true;
         }
         return false;
-    }
-    
-    
-    
-  
+    } 
     
 }
