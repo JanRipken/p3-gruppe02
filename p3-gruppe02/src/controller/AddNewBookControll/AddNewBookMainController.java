@@ -13,22 +13,21 @@ import view.MainFrame;
 public class AddNewBookMainController implements ActionListener {
    
 
-    private MainFrame.NorthPanel viewMainFrameAddNewButtonController;
+    private MainFrame.NorthPanel view;
     private AddNewBook controllerAbbrechen;
-    private String ButtonName;
 
     
     
-    public AddNewBookMainController(MainFrame.NorthPanel viewMainFrameAddNewButtonController, String namendesButtons){
-        this.viewMainFrameAddNewButtonController = viewMainFrameAddNewButtonController;
-        this.ButtonName = namendesButtons;
+    public AddNewBookMainController(MainFrame.NorthPanel view){
+        this.view = view;
+        
        
     }
     
     @Override
     public void actionPerformed(ActionEvent e) {
             
-            if(ButtonName == "AddNewBook"){
+            
              
                 SwingUtilities.invokeLater(new Runnable() {
                     public void run(){
@@ -41,7 +40,7 @@ public class AddNewBookMainController implements ActionListener {
                     }
                 });
                 
-            }
+            
                     
     }    
 }

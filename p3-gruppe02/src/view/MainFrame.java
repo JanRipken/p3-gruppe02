@@ -92,22 +92,13 @@ public class MainFrame extends JFrame {
         JLabel label = new JLabel();
 
         private NorthPanel() {
+     
 
-            newBookButton.setName("AddNewBook");
-            // Create Image Icon
-            ImageIcon IconBook = new ImageIcon("buch.jpg");
-            Image BookImage = IconBook.getImage();
-            Image modifiedBookImage = BookImage.getScaledInstance(100, 60, Image.SCALE_SMOOTH);
-            ImageIcon newBookIcon = new ImageIcon(modifiedBookImage);
-
-            
-            String newBookButtonbuttonName = newBookButton.getName();
             //Create Controller
-            AddNewBookMainController startNewWindow = new AddNewBookMainController(this,newBookButtonbuttonName);
+            AddNewBookMainController startNewWindow = new AddNewBookMainController(this);
             newBookButton.addActionListener(startNewWindow);
 
             // label
-            label.setIcon(newBookIcon);
             label.setHorizontalAlignment(SwingConstants.CENTER);
             label.setVerticalAlignment(SwingConstants.CENTER);
 
