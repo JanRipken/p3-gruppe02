@@ -40,15 +40,15 @@ public class AddNewBookButtonController implements ActionListener {
             if(ButtonName == "AddNewBook"){
              
                 SwingUtilities.invokeLater(new Runnable() {
-            public void run(){
-                try{
-                    AddNewBook newBook = new AddNewBook();
-                }
-                catch(Exception e){
-                    e.printStackTrace();
-                }
-            }
-        });
+                    public void run(){
+                        try{
+                             AddNewBook newBook = new AddNewBook();
+                        }
+                        catch(Exception e){
+                             e.printStackTrace();
+                         }
+                    }
+                });
                 
             }
             
