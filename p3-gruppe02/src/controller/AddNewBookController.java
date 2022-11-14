@@ -30,6 +30,7 @@ public class AddNewBookController implements ActionListener {
             model.setBewerung(view.getbewertung());
             model.setGelesen(view.getNochmallesen());
             
+            // Nur testweise
             // In konsole schreiben
             System.out.println(view.getTitel());
             System.out.println(view.getAutorName());
