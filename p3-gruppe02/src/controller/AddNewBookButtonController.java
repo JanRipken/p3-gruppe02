@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
+import javax.swing.SwingUtilities;
 import view.AddNewBook;
 import view.MainFrame;
 
@@ -37,7 +38,18 @@ public class AddNewBookButtonController implements ActionListener {
     public void actionPerformed(ActionEvent e) {
             
             if(ButtonName == "AddNewBook"){
-             AddNewBook newBook = new AddNewBook();
+             
+                SwingUtilities.invokeLater(new Runnable() {
+                    public void run(){
+                        try{
+                             AddNewBook newBook = new AddNewBook();
+                        }
+                        catch(Exception e){
+                             e.printStackTrace();
+                         }
+                    }
+                });
+                
             }
             
             if(ButtonName == "ButtonAbrechenAbbrechen"){
