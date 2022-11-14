@@ -30,7 +30,6 @@ public class AddNewBook extends JFrame {
         JLabel label = new JLabel();
         JTextField textfield = new JTextField();
         
-        
         private LayoutAddBook(String myLabel){
             this.setLayout(new GridLayout(0,1));
               label.setText(myLabel);
@@ -71,11 +70,17 @@ public class AddNewBook extends JFrame {
         JButton ButtonAbrechen = new JButton("Abrechen");
         
         private BestätigenOderAbbrechenPanel(){
+            
+            ButtonAbrechen.setName("ButtonAbrechenAbbrechen");
             this.setLayout(new GridLayout(1,0));
             this.add(ButtonBestätigen);
             this.add(ButtonAbrechen);
             
-            ButtonAbrechen.addActionListener(new AddNewBookButtonController(this));
+            
+            String ButtonAbrechenAbbrechen = ButtonAbrechen.getName();
+            
+            AddNewBookButtonController close = new AddNewBookButtonController(this,ButtonAbrechenAbbrechen );
+            ButtonAbrechen.addActionListener(close);
             
         }    
 
