@@ -9,9 +9,7 @@ public class AddNewBookPanel extends JPanel {
     
      public AddNewBookPanel() {
 
-            this.setLayout(new GridLayout(8,0));
-                            
-            
+            this.setLayout(new GridLayout(9,0));      
         }
     
     

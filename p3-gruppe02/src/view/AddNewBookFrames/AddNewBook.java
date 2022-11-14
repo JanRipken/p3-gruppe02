@@ -1,6 +1,7 @@
 
 package view.AddNewBookFrames;
 
+
 import controller.AddNewBookControll.AddNewBookAbbrechenController;
 import controller.AddNewBookControll.AddNewBookSpeichernController;
 import java.awt.Dimension;
@@ -51,7 +52,7 @@ public class AddNewBook extends JFrame {
         bewertung = new LayoutAddBook(FrageBuchBewertung,TextfieldBuchBewertung);
         nochmallesen = new LayoutAddBookCheckbox(FrageBuchNochmalLesen);
         AbbrechenOderBestätigenPanel AbbbbruchOderSpeichern = new AbbrechenOderBestätigenPanel();
-        
+
                 
         //Controller
         AddNewBookSpeichernController modelBook = new AddNewBookSpeichernController(this);
@@ -59,6 +60,8 @@ public class AddNewBook extends JFrame {
         
         AddNewBookAbbrechenController abbrechen = new AddNewBookAbbrechenController(this);
         AbbbbruchOderSpeichern.ButtonAbrechen.addActionListener(abbrechen);
+        
+        
         
         
         //Testweise bereits namen setzen
@@ -78,6 +81,8 @@ public class AddNewBook extends JFrame {
         panel.add(bewertung);
         panel.add(nochmallesen);
         panel.add(AbbbbruchOderSpeichern);
+        
+
  
         // Panel zum hauptframe hinzufügen
         this.add(panel);

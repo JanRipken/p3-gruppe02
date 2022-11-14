@@ -92,7 +92,6 @@ public class MainFrame extends JFrame {
         JLabel label = new JLabel();
 
         private NorthPanel() {
-     
 
             //Create Controller
             AddNewBookMainController startNewWindow = new AddNewBookMainController(this);
