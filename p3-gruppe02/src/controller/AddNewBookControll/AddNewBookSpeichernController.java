@@ -25,7 +25,7 @@ public class AddNewBookSpeichernController implements ActionListener {
             model.setTitel(view.getTitel());
             model.setAutorName(view.getAutorName());
             model.setAutorVorname(view.getAutorVorname());
-            model.setErscheinungsjahr(view.getErscheinungsjahr());
+            model.setErscheinungsjahr(view.getErscheinungsjahr());         
             model.setSeitenanzahl(view.getSeitenzahl());
             model.setBewerung(view.getbewertung());
             model.setGelesen(view.getNochmallesen());

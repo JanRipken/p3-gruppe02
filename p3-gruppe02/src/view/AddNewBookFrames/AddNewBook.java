@@ -104,8 +104,8 @@ public class AddNewBook extends JFrame {
     
     
     
-    public String getTitel(){         
-        return titel.textfield.getText();
+    public String getTitel(){      
+            return titel.textfield.getText();      
     }
     
     public String getAutorName(){         
@@ -121,8 +121,8 @@ public class AddNewBook extends JFrame {
         
     }
     
-    public int getSeitenzahl(){         
-        return Integer.parseInt(Seitenanzahl.textfield.getText());
+    public int getSeitenzahl(){    
+        return Integer.parseInt(Seitenanzahl.textfield.getText());   
     }
     
     public double getbewertung(){

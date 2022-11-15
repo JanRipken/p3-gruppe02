@@ -119,7 +119,7 @@ public class MainFrame extends JFrame {
             //test - 2 bücher erstellt um diese auslesen zu lassen
             BookModel buch1 = new BookModel("BuchEins");
             BookModel buch2 = new BookModel("BuchDos");
-
+            
             //Erstellen der Tabelle
             //Spalteninhalt
             //test - Titel werden ausgelesen
