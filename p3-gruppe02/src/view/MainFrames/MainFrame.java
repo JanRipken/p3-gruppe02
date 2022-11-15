@@ -80,7 +80,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
 
-        // TODO: überarbeiten 
+        
         addWindowListener(new WindowEventHandler());
   
         //setJMenuBar(new FileMenuBar());
