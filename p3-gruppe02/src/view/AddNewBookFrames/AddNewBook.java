@@ -19,13 +19,8 @@ public class AddNewBook extends JFrame {
     private final String FrageBuchSeitenanzahl = "geben sie hier die Seitenanzahl Ihres Buches an";
     private final String FrageBuchBewertung = "Wie bewerten sie dieses Buch ?";
     private final String FrageBuchNochmalLesen = "Wollen sie dieses Buch ein Zweites mal Lesen";
+
     
-   private String TextfieldBuchName = "BookName"; 
-   private String TextfieldAutorName = "AutorName"; 
-   private String TextfieldAutorVorname = "AutorVorname"; 
-   private String TextfieldErscheiunfsjahr = "Erscheinungsjahr"; 
-   private String TextfieldSeitenanzahl = "Seitenanzahl"; 
-   private String TextfieldBuchBewertung = "Bewertung"; 
 
     //Initialisierung der Layouts
      LayoutAddBook titel;
@@ -44,15 +39,19 @@ public class AddNewBook extends JFrame {
        
         
         // erstellen der einzlenen layouts für das Panel
-        titel = new LayoutAddBook(FrageBuchName,TextfieldBuchName);
-        AutorName = new LayoutAddBook(FrageBuchAutor,TextfieldAutorName);
-        AutorVorName = new LayoutAddBook(FrageBuchAutorVorname,TextfieldAutorVorname);
-        Erscheinungsjahr = new LayoutAddBook(FrageBuchErscheinungsjahr,TextfieldErscheiunfsjahr);
-        Seitenanzahl = new LayoutAddBook(FrageBuchSeitenanzahl,TextfieldSeitenanzahl);
-        bewertung = new LayoutAddBook(FrageBuchBewertung,TextfieldBuchBewertung);
+        titel = new LayoutAddBook(FrageBuchName);
+        AutorName = new LayoutAddBook(FrageBuchAutor);
+        AutorVorName = new LayoutAddBook(FrageBuchAutorVorname);
+        Erscheinungsjahr = new LayoutAddBook(FrageBuchErscheinungsjahr);
+        Seitenanzahl = new LayoutAddBook(FrageBuchSeitenanzahl);
+        bewertung = new LayoutAddBook(FrageBuchBewertung);
         nochmallesen = new LayoutAddBookCheckbox(FrageBuchNochmalLesen);
         AbbrechenOderBestätigenPanel AbbbbruchOderSpeichern = new AbbrechenOderBestätigenPanel();
 
+        
+        //Tooltips
+        titel.textfield.setToolTipText(FrageBuchName);
+        
                 
         //Controller
         AddNewBookSpeichernController modelBook = new AddNewBookSpeichernController(this);

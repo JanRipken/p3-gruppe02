@@ -9,17 +9,15 @@ import javax.swing.JTextField;
 
 public class LayoutAddBook extends JPanel {
     JLabel label = new JLabel();
-        JTextField textfield = new JTextField();
+    JTextField textfield = new JTextField();
         
-        public LayoutAddBook(String myLabel,String myTextField){
-            this.setLayout(new GridLayout(0,1));
+        public LayoutAddBook(String myLabel){
+                this.setLayout(new GridLayout(0,1));
             
-              label.setText(myLabel);
-              textfield.setName(myTextField);
+                label.setText(myLabel);
               
-               this.add(label);
-               this.add(textfield);
-     
+                this.add(label);
+                this.add(textfield);
 
         }    
 }
