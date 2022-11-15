@@ -109,7 +109,7 @@ public class AddNewBook extends JFrame {
     
     
     
-    public String getTitel(){      
+    public String getTitel(){
             return titel.textfield.getText();      
     }
     
