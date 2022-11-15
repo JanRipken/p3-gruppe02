@@ -11,9 +11,9 @@ import javax.swing.JMenuBar;
  *
  * @author janri
  */
-public class FileMenuBar extends JMenuBar {
+public class MainFrameFileMenuBar extends JMenuBar {
 
-    public FileMenuBar() {
+    public MainFrameFileMenuBar() {
         
         makeMenuBar();
     }
@@ -24,12 +24,12 @@ public class FileMenuBar extends JMenuBar {
         JMenuBar bar = new JMenuBar();
         
         //Menu
-        MainFrameMenuBar mainMenu = new MainFrameMenuBar();
+        FileMenuBarMenu mainMenu = new FileMenuBarMenu();
         JMenu menuMain = mainMenu.makeJMenu();
         
         
         //settings
-        MainFrameSettingsBar set = new MainFrameSettingsBar();
+        FileMenuBarSettings set = new FileMenuBarSettings();
         JMenu settings = set.makeJSettings();
         
        

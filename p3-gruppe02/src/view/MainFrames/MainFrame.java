@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import view.MainFrames.JMenu.FileMenuBar;
+import view.MainFrames.JMenu.MainFrameFileMenuBar;
 import view.WindowEventHandler;
 
 /**
@@ -79,20 +79,19 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
 
+        // TODO: überarbeiten 
         addWindowListener(new WindowEventHandler());
         LayoutManager lm = new BorderLayout();
         this.setLayout(lm);
-
+        
         //setJMenuBar(new FileMenuBar());
         
-        
-        FileMenuBar menu2 = new FileMenuBar();
-        this.setJMenuBar(menu2.makeMenuBar());
+        // erstellen der Klasse FileMenuBar und aufrufen der Methode zum einfügen der Menu bar
+        MainFrameFileMenuBar menuBar = new MainFrameFileMenuBar();
+        this.setJMenuBar(menuBar.makeMenuBar());
         
         
         this.add(new NorthPanel(), BorderLayout.NORTH);
-        
-        
         this.add(new SouthPanel(), BorderLayout.CENTER);
 
         this.setTitle("p3-gruppe02");

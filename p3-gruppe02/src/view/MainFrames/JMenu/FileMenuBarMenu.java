@@ -11,23 +11,22 @@ import javax.swing.JMenuItem;
  *
  * @author janri
  */
-public class MainFrameSettingsBar extends JMenu {
+public class FileMenuBarMenu extends JMenu {
     
-    
-    JMenu settings;
-    protected MainFrameSettingsBar(){
+    JMenu menu;
+    protected FileMenuBarMenu(){
         //menu erstellen
-        settings = new JMenu("Settings");
+        menu = new JMenu("Main Menu");
         
         //MenuItem
-        JMenuItem menuItem = new JMenuItem("other text");
+        JMenuItem menuItem = new JMenuItem("someText");
         
         //menu add
-        settings.add(menuItem);
+        menu.add(menuItem);
     }
     
-    public JMenu makeJSettings(){
+    public JMenu makeJMenu(){
     
-        return settings;
+        return menu;
     }
 }
