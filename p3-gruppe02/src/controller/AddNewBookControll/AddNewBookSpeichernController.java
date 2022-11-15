@@ -3,8 +3,11 @@ package controller.AddNewBookControll;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import model.BookModel;
 import view.AddNewBookFrames.AddNewBook;
+import view.AddNewBookFrames.AddNewBookPopUpView;
 
 
 public class AddNewBookSpeichernController implements ActionListener {
@@ -43,7 +46,10 @@ public class AddNewBookSpeichernController implements ActionListener {
             view.dispose();
         }
         catch (Exception ex){
-         System.out.println("Fehler:"+ ex);
+         //System.out.println("Fehler:"+ ex);
+         
+         AddNewBookPopUpView pop = new AddNewBookPopUpView();
+       
         }
         
        
