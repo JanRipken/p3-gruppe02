@@ -20,7 +20,12 @@ public class AddNewBook extends JFrame {
     private final String FrageBuchBewertung = "Wie bewerten sie dieses Buch ?";
     private final String FrageBuchNochmalLesen = "Wollen sie dieses Buch ein Zweites mal Lesen";
 
-    
+    // Tooltips
+    // TODO: überarbeiten
+    private final String TooltipErscheinungsjahr = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
+    private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
+    private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal in DOUBLE an";
+
 
     //Initialisierung der Layouts
      LayoutAddBook titel;
@@ -50,8 +55,9 @@ public class AddNewBook extends JFrame {
 
         
         //Tooltips
-        titel.textfield.setToolTipText(FrageBuchName);
-        
+        Erscheinungsjahr.textfield.setToolTipText(TooltipErscheinungsjahr);
+        Seitenanzahl.textfield.setToolTipText(TooltipSeitenanzahl);
+        bewertung.textfield.setToolTipText(TooltipBewertung);
                 
         //Controller
         AddNewBookSpeichernController modelBook = new AddNewBookSpeichernController(this);
