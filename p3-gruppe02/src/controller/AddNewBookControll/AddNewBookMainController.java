@@ -7,18 +7,18 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.SwingUtilities;
 import view.AddNewBookFrames.AddNewBook;
-import view.MainFrame;
+import view.MainFrames.MainFrame;
 
 
 public class AddNewBookMainController implements ActionListener {
    
-
-    private MainFrame.NorthPanel view;
+    private view.MainFrames.NorthPanel view;
+    //private MainFrame.NorthPanel view;
     private AddNewBook controllerAbbrechen;
 
     
     
-    public AddNewBookMainController(MainFrame.NorthPanel view){
+    public AddNewBookMainController(view.MainFrames.NorthPanel view){
         this.view = view;
         
        

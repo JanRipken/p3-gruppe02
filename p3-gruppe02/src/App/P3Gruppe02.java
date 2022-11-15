@@ -5,7 +5,7 @@
 package App;
 
 import javax.swing.SwingUtilities;
-import view.MainFrame;
+import view.MainFrames.MainFrame;
 
 /**
  *
