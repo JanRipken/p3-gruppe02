@@ -5,6 +5,7 @@
 package view.MainFrames;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.GridLayout;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
@@ -81,9 +82,7 @@ public class MainFrame extends JFrame {
 
         // TODO: überarbeiten 
         addWindowListener(new WindowEventHandler());
-        LayoutManager lm = new BorderLayout();
-        this.setLayout(lm);
-        
+  
         //setJMenuBar(new FileMenuBar());
         
         // erstellen der Klasse FileMenuBar und aufrufen der Methode zum einfügen der Menu bar
@@ -92,7 +91,7 @@ public class MainFrame extends JFrame {
         
         
         this.add(new NorthPanel(), BorderLayout.NORTH);
-        this.add(new SouthPanel(), BorderLayout.CENTER);
+        this.add(new SouthPanel(),BorderLayout.CENTER);
 
         this.setTitle("p3-gruppe02");
         this.setSize(900, 600);

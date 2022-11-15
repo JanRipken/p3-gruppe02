@@ -26,8 +26,8 @@ public class NorthPanel extends JPanel{
             
             newBookButton = new JButton();
             label = new JLabel();
-            
-
+            this.setSize(WIDTH, 10);
+          
             // Button icon
             icon = new ImageIcon(this.getClass().getResource("/assets/icons/new.gif"));
             newBookButton.setIcon(icon);
