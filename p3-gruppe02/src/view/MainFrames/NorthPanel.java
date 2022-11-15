@@ -6,6 +6,7 @@ package view.MainFrames;
 
 import controller.AddNewBookControll.AddNewBookMainController;
 import java.awt.GridLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -16,11 +17,20 @@ import javax.swing.SwingConstants;
  * @author janri
  */
 public class NorthPanel extends JPanel{
-    public JButton newBookButton = new JButton("Neu");
-        JLabel label = new JLabel();
-
+    
+    private JButton newBookButton;
+    private JLabel label;
+    private ImageIcon icon ;
+            
         public NorthPanel() {
-
+            
+            newBookButton = new JButton();
+            label = new JLabel();
+            
+            // Button icon
+            icon = new ImageIcon("/assets/icons/33.gif");
+            newBookButton.setIcon(icon);
+            
             //Create Controller
             AddNewBookMainController startNewWindow = new AddNewBookMainController(this);
             newBookButton.addActionListener(startNewWindow);
