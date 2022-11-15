@@ -5,6 +5,7 @@
 package App;
 
 import javax.swing.SwingUtilities;
+import model.BookModelList;
 import view.MainFrames.MainFrame;
 
 /**
@@ -18,23 +19,19 @@ public class P3Gruppe02 {
      */
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
-            public void run(){
-                try{
+            public void run() {
+                try {
                     showMainFrame();
-                }
-                catch(Exception e){
-                    e.printStackTrace(); 
+                } catch (Exception e) {
+                    e.printStackTrace();
                 }
             }
-        });             
+        });
     }
+
     public static void showMainFrame() {
+        BookModelList bookModelList = new BookModelList();
         new MainFrame();
     }
-        
-        
-        
-        
- }
-    
 
+}
