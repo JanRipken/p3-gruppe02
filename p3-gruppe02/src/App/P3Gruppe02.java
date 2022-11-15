@@ -23,7 +23,7 @@ public class P3Gruppe02 {
                     showMainFrame();
                 }
                 catch(Exception e){
-                    e.printStackTrace();
+                    e.printStackTrace(); 
                 }
             }
         });             
