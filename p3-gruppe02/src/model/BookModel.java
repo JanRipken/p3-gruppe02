@@ -21,7 +21,7 @@ public class BookModel {
         this.Titel = titel;
     }
 
-    private BookModel(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen, double bewertung, int erscheinungsjahr) {
+    public BookModel(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen, double bewertung, int erscheinungsjahr) {
         this.Titel = titel;
         this.AutorName = autorname;
         this.AutorVorname = autorvorname;
