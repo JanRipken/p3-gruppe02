@@ -4,7 +4,10 @@
  */
 package view.AddNewBookFrames;
 
+import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.GridLayout;
+import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -13,17 +16,22 @@ import javax.swing.JPanel;
  *
  * @author janri
  */
-public class LayoutAddBookCheckbox extends JPanel{
-    
-     JLabel label = new JLabel();
-     JCheckBox CB = new JCheckBox();
-        
-        public  LayoutAddBookCheckbox(String myLabel){
-            this.setLayout(new GridLayout(0,1));
-              label.setText(myLabel);
-               
-               this.add(label);
-               this.add(CB);
-               
-        }
+public class LayoutAddBookCheckbox extends JPanel {
+
+    String beschreibung = new String();
+    JCheckBox CB = new JCheckBox();
+
+
+    public LayoutAddBookCheckbox(String myLabel) {
+ 
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        beschreibung = myLabel;
+        JPanel borderPanel = new JPanel(new BorderLayout());
+        borderPanel.add(CB);
+        borderPanel.setBorder(new javax.swing.border.TitledBorder(beschreibung));
+
+
+        this.add(borderPanel);
+
+    }
 }

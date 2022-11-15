@@ -4,21 +4,23 @@ package view.AddNewBookFrames;
 
 import controller.AddNewBookControll.AddNewBookAbbrechenController;
 import controller.AddNewBookControll.AddNewBookSpeichernController;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.util.Set;
 import javax.swing.JFrame;
 
 public class AddNewBook extends JFrame {
     
     // Final damit die variable nur einmal genutzt werden kann
     // Eventulle überarbeiten bei erstellung der Änderungsseite
-    private final String FrageBuchName = "Geben sie hier bitte den Namen ihres Buches ein";
-    private final String FrageBuchAutor = "Geben sie hier bitte den Autor ihres Buches ein";
-    private final String FrageBuchAutorVorname = "Geben sie hier bitte den Vornamen des Autors ihres Buches ein";
-    private final String FrageBuchErscheinungsjahr = "Geben sie hier bitte das Erscheinungsjahr ihres Buches ein";
-    private final String FrageBuchSeitenanzahl = "geben sie hier die Seitenanzahl Ihres Buches an";
-    private final String FrageBuchBewertung = "Wie bewerten sie dieses Buch ?";
-    private final String FrageBuchNochmalLesen = "Wollen sie dieses Buch ein Zweites mal Lesen";
+    private final String FrageBuchName = "Buchtitel";
+    private final String FrageBuchAutor = "Name des Autors";
+    private final String FrageBuchAutorVorname = "Vorname des Autors";
+    private final String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
+    private final String FrageBuchSeitenanzahl = "Seitenanzahl";
+    private final String FrageBuchBewertung = "Bewertung";
+    private final String FrageBuchNochmalLesen = "Erneut Lesen ?";
 
     // Tooltips
     // TODO: überarbeiten
@@ -90,14 +92,17 @@ public class AddNewBook extends JFrame {
 
  
         // Panel zum hauptframe hinzufügen
-        this.add(panel);
+        this.setContentPane(panel);
+      
         
 
         
         // anderes
+        this.setPreferredSize(new Dimension(350,400));
         this.pack();
         this.setResizable(true);
-  
+        
+        
         this.setVisible(true);
           
         // // Startup des Fensters in der Mitte des Desktops
