@@ -3,29 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package view.MainFrames;
-
-import model.BookModel;
-import controller.AddNewBookControll.AddNewBookMainController;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.LayoutManager;
 import java.awt.Toolkit;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
+import view.MainFrames.JMenu.FileMenuBar;
 import view.WindowEventHandler;
 
 /**
@@ -33,7 +19,7 @@ import view.WindowEventHandler;
  * @author matthiaskoziol
  */
 public class MainFrame extends JFrame {
-
+/*
     public class FileMenuBar extends JMenuBar {
 
         public FileMenuBar() {
@@ -88,7 +74,7 @@ public class MainFrame extends JFrame {
     }
 
     
-
+*/
     
 
     public MainFrame() {
@@ -97,8 +83,11 @@ public class MainFrame extends JFrame {
         LayoutManager lm = new BorderLayout();
         this.setLayout(lm);
 
-        setJMenuBar(new FileMenuBar());
-     
+        //setJMenuBar(new FileMenuBar());
+        
+        
+        FileMenuBar menu2 = new FileMenuBar();
+        this.setJMenuBar(menu2.makeMenuBar());
         
         
         this.add(new NorthPanel(), BorderLayout.NORTH);
