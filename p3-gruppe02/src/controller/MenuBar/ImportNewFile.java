@@ -19,22 +19,26 @@ import view.MainFrames.SouthPanelJList;
  * @author alex-
  */
 public class ImportNewFile extends SouthPanelJList implements ActionListener {
-
+    
     public ImportNewFile(FileMenuBarMenu aThis) {
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        JFileChooser chooser = new JFileChooser("./data");
-        int returnVal = chooser.showOpenDialog(null);
-
+        
+        //Import Dialog
+        JFileChooser fileChooser = new JFileChooser("./data");
+        fileChooser.setDialogTitle("Wählen sie die zu importierende Datei");
+        int returnVal = fileChooser.showOpenDialog(null);
+        
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             System.out.println("Sie haben folgende Datei ausgewählt: "
-                    + chooser.getSelectedFile().getName());
-
+                    + fileChooser.getSelectedFile().getName());
+            
         }
-
-        String dateiName = chooser.getSelectedFile().getAbsolutePath();
+        
+        //Datei lesen
+        String dateiName = fileChooser.getSelectedFile().getAbsolutePath();
         BookModelList list = new BookModelList();
         BookModelListDAO dao2 = new BookModelListDAO(dateiName, false); // Lesen
         try {
@@ -43,9 +47,10 @@ public class ImportNewFile extends SouthPanelJList implements ActionListener {
             System.out.println(v.getMessage());
         }
         dao2.close();
-
+        
+        //bestehende list mit gelesener list überschreiben und darstellen
         SouthPanelJList.list = list;
         SouthPanel.JlistTabelle.displayList();
-
+        
     }
 }

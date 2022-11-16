@@ -23,19 +23,20 @@ public class ExportNewFile implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
+        
+        //export dialog
+        JFileChooser fileExporter = new JFileChooser("./data");
+        fileExporter.setDialogTitle("Speichern unter");
 
-        JFileChooser fileChooser = new JFileChooser("./data");
-        fileChooser.setDialogTitle("Specify a file to save");
-
-        int userSelection = fileChooser.showSaveDialog(null);
+        int userSelection = fileExporter.showSaveDialog(null);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToSave = fileChooser.getSelectedFile();
+            File fileToSave = fileExporter.getSelectedFile();
             System.out.println("Save as file: " + fileToSave.getAbsolutePath());
         }
 
-        String dateiName = fileChooser.getSelectedFile().getAbsolutePath() + ".txt";
+        //datei als txt unter gewähltem pfad schreiben
+        String dateiName = fileExporter.getSelectedFile().getAbsolutePath() + ".txt";
         BookModelListDAO dao = new BookModelListDAO(dateiName, true); // Schreiben
         try {
             dao.write(list);
