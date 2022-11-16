@@ -17,40 +17,37 @@ import model.BookModelList;
  *
  * @author janri
  */
-public class SouthPanelJList extends JList<String>  {
+public class SouthPanelJList extends JList{
 
-    private BookModelList list;
+    //erstellen der einzelnen listen
+    private BookModelList list; 
+    private DefaultListModel listModel;
     
     
-    private DefaultListModel<String> listModel;
-    
-
     public SouthPanelJList() {
-        listModel = new DefaultListModel<String>();
-        
+        listModel = new DefaultListModel();   
         list = new BookModelList();
-        
-        
-
     }
 
+    // Das neu erstellte buch zur BookModelList hinzufügen
     public void addToList(BookModel book) {
-        list.addBook(book);
-        
-       displayList();
+        list.addBook(book);    
+        displayList();
     }
     
+    //liste mit allen elementen innerhalb der BookModelList anzeigen
     public void displayList(){
         setModel(listModel);
         listModel.removeAllElements();
         for(BookModel b : list.bookModelList){
-            
-            b.getAutorName();
-            
+                 
             listModel.addElement(b.getTitel());
             listModel.addElement(b.getAutorName());
             listModel.addElement(b.getAutorVorname());
-            
+            listModel.addElement(b.getErscheinungsjahr());
+            listModel.addElement(b.getSeitenanzahl()); 
+            listModel.addElement(b.getBewertung());
+            listModel.addElement(b.getGelesen()); 
         }
     }
 

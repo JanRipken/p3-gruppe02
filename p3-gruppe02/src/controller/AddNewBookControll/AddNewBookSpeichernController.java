@@ -18,30 +18,29 @@ public class AddNewBookSpeichernController implements ActionListener {
 
     }
 
-    public void showInTable() {
-
+    public void setModel() {
+        model.setTitel(view.getTitel());
+        model.setAutorName(view.getAutorName());
+        model.setAutorVorname(view.getAutorVorname());
+        model.setErscheinungsjahr(view.getErscheinungsjahr());
+        model.setSeitenanzahl(view.getSeitenzahl());
+        model.setBewerung(view.getbewertung());
+        model.setGelesen(view.getNochmallesen());
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
-            model.setTitel(view.getTitel());
-            model.setAutorName(view.getAutorName());
-            model.setAutorVorname(view.getAutorVorname());
-            model.setErscheinungsjahr(view.getErscheinungsjahr());
-            model.setSeitenanzahl(view.getSeitenzahl());
-            model.setBewerung(view.getbewertung());
-            model.setGelesen(view.getNochmallesen());
+
+            setModel();
 
             SouthPanel.JlistTabelle.addToList(model);
 
             view.dispose();
 
         } catch (Exception ex) {
-            //System.out.println("Fehler:"+ ex);
-
+            
             AddNewBookPopUpView pop = new AddNewBookPopUpView();
-
         }
 
     }
