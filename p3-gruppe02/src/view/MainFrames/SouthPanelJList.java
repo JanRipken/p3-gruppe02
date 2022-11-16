@@ -37,7 +37,7 @@ public class SouthPanelJList extends JList<String>  {
     public void addToList(BookModel book) {
         list.addBook(book);
         
-       //displayList();
+       displayList();
     }
     
     public void displayList(){
