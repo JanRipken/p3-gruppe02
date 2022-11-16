@@ -17,12 +17,12 @@ import model.BookModelList;
  *
  * @author janri
  */
-public class SouthPanelJList extends JList {
+public class SouthPanelJList extends JList<String>  {
 
-    public BookModelList list;
+    private BookModelList list;
     
     
-    DefaultListModel<String> listModel;
+    private DefaultListModel<String> listModel;
     
 
     public SouthPanelJList() {
@@ -37,7 +37,7 @@ public class SouthPanelJList extends JList {
     public void addToList(BookModel book) {
         list.addBook(book);
         
-       displayList();
+       //displayList();
     }
     
     public void displayList(){
