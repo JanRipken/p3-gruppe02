@@ -6,19 +6,24 @@ package view.MainFrames;
 
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import model.BookModel;
 
 /**
  *
  * @author janri
  */
-public class SouthPanel extends JPanel{
+public class SouthPanel extends JPanel {
+
+    public static SouthPanelJList JlistTabelle;
+
     public SouthPanel() {
 
-            this.setLayout(new GridLayout());
+        JlistTabelle = new SouthPanelJList();
+        this.add(JlistTabelle);
+        
+        
+        //this.setLayout(new GridLayout());
 
+        /*
             //test - 2 bücher erstellt um diese auslesen zu lassen
             BookModel buch1 = new BookModel("BuchEins");
             BookModel buch2 = new BookModel("BuchDos");
@@ -37,6 +42,8 @@ public class SouthPanel extends JPanel{
             // in eine ScrollPane einsetzen, macht die tabelle scrollbar
             JScrollPane sp = new JScrollPane(tabelle);
             this.add(sp);
-        }
-    
+
+         */
+    }
+
 }

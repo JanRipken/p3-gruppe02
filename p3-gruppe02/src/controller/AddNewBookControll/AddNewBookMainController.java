@@ -6,6 +6,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 import javax.swing.SwingUtilities;
+import model.BookModelList;
 import view.AddNewBookFrames.AddNewBook;
 import view.MainFrames.MainFrame;
 
@@ -16,11 +17,11 @@ public class AddNewBookMainController implements ActionListener {
     //private MainFrame.NorthPanel view;
     private AddNewBook controllerAbbrechen;
 
-    
+    BookModelList modelBook;
     
     public AddNewBookMainController(view.MainFrames.NorthPanel view){
         this.view = view;
-        
+        modelBook = new BookModelList();
        
     }
     
@@ -39,7 +40,6 @@ public class AddNewBookMainController implements ActionListener {
                          }
                     }
                 });
-                
             
                     
     }    
