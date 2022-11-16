@@ -17,7 +17,7 @@ import view.MainFrames.JMenu.FileMenuBarMenu;
         @Override
         public void actionPerformed(ActionEvent e) {
             // TODO Auto-generated method stub
-            System.out.println("Die CSV File wurde importiert");
+            System.out.println("Die CSV File wurde exportiert");
             System.out.println(e.getActionCommand());
         }
     }
