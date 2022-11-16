@@ -6,7 +6,7 @@ package view.MainFrames;
 
 import java.awt.GridLayout;
 import javax.swing.JPanel;
-
+import javax.swing.JScrollPane;
 /**
  *
  * @author janri
@@ -16,9 +16,11 @@ public class SouthPanel extends JPanel {
     public static SouthPanelJList JlistTabelle;
 
     public SouthPanel() {
-
+        
+        this.setLayout(new GridLayout());
         JlistTabelle = new SouthPanelJList();
-        this.add(JlistTabelle);
+        JScrollPane sp = new JScrollPane(this.add(JlistTabelle));
+        this.add(sp);
         
     }
 
