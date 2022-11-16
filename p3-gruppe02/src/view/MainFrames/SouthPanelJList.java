@@ -24,21 +24,16 @@ public class SouthPanelJList extends JList {
     //erstellen der einzelnen listen
     public static BookModelList list;
     private DefaultListModel listModel;
-
+  
     public SouthPanelJList() {
         listModel = new DefaultListModel();
-        list = new BookModelList();
+        list = new BookModelList();      
     }
 
     // Das neu erstellte buch zur BookModelList hinzufügen
     public void addToList(BookModel book) {
         list.addBook(book);
         displayList();
-    }
-
-    public void exportList() {
-
-        
     }
 
     //liste mit allen elementen innerhalb der BookModelList anzeigen
