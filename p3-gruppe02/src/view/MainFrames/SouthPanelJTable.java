@@ -6,10 +6,8 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
-import javax.swing.table.TableRowSorter;
 import model.BookModel;
 import model.BookModelList;
 
@@ -49,10 +47,8 @@ public class SouthPanelJTable {
         table = new JTable(model) {
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
                 Component comp = super.prepareRenderer(renderer, row, column);
-                Color gray =Color.LIGHT_GRAY;
-                Color whiteColor = Color.WHITE;
                 if (!comp.getBackground().equals(getSelectionBackground())) {
-                    Color c = (row % 2 == 0 ? gray : whiteColor);
+                    Color c = (row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
                     comp.setBackground(c);
                     c = null;
                 }
