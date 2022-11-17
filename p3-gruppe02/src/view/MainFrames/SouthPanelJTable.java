@@ -1,10 +1,15 @@
 package view.MainFrames;
 
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableRowSorter;
 import model.BookModel;
 import model.BookModelList;
 
@@ -34,31 +39,46 @@ public class SouthPanelJTable {
                 //all cells false
                 return false;
             }
+
         };
 
         model.setColumnIdentifiers(tableHeader);
 
         // init des JTables
-        table = new JTable();
-        table.setModel(model);
-
+        // setzen jeder zweiten row auf hell Gray
+        table = new JTable(model) {
+            public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
+                Component comp = super.prepareRenderer(renderer, row, column);
+                Color gray =Color.LIGHT_GRAY;
+                Color whiteColor = Color.WHITE;
+                if (!comp.getBackground().equals(getSelectionBackground())) {
+                    Color c = (row % 2 == 0 ? gray : whiteColor);
+                    comp.setBackground(c);
+                    c = null;
+                }
+                return comp;
+            }
+        };
+        
+        table.setSelectionBackground(Color.GRAY);
+        
         // verhindern das man die zellen verschieben kann
         table.getTableHeader().setReorderingAllowed(false);
-        
         table.setFocusable(false);
+
+        
         
         // testweise double click events
         table.addMouseListener(new MouseAdapter() {
-         public void mouseClicked(MouseEvent me) {
-            if (me.getClickCount() == 2) {     // to detect doble click events
-               JTable target = (JTable)me.getSource();
-               int row = target.getSelectedRow(); // select a row
-               int column = target.getSelectedColumn(); // select a column
-              JOptionPane.showMessageDialog(null, table.getValueAt(row, column)); // get the value of a row and column.
+            public void mouseClicked(MouseEvent me) {
+                if (me.getClickCount() == 2) {     // to detect doble click events
+                    JTable target = (JTable) me.getSource();
+                    int row = target.getSelectedRow(); // select a row
+                    int column = target.getSelectedColumn(); // select a column
+                    JOptionPane.showMessageDialog(null, table.getValueAt(row, column)); // get the value of a row and column.
+                }
             }
-         }
-      });
-        
+        });
 
     }
 
