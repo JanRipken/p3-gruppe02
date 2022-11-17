@@ -45,6 +45,7 @@ public class SouthPanelJTable {
         // init des JTables
         // setzen jeder zweiten row auf hell Gray
         table = new JTable(model) {
+            @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
                 Component comp = super.prepareRenderer(renderer, row, column);
                 if (!comp.getBackground().equals(getSelectionBackground())) {
