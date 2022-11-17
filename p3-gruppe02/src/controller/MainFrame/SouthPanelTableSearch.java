@@ -18,6 +18,8 @@ public class SouthPanelTableSearch implements ActionListener {
     public JTable table;
     public DefaultTableModel model;
 
+    // list statt table durchsuchen
+    
     public SouthPanelTableSearch() {
 
     }
@@ -60,6 +62,6 @@ public class SouthPanelTableSearch implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         //createRowSorter(model);
-        //search();
+        search();
     }
 }

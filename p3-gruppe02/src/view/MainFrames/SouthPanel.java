@@ -18,6 +18,7 @@ public class SouthPanel extends JPanel {
 
         JlistTabelle = new SouthPanelJTable();
         
+        // zugriff vom controller
         this.setLayout(new BorderLayout());
         JScrollPane sp = new JScrollPane(JlistTabelle.table);
         this.add(sp);
