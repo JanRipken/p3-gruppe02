@@ -5,12 +5,12 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
 import java.io.IOException;
-import javax.swing.JFileChooser;
-import model.BookModelList;
 import model.BookModelListDAO;
 import view.MainFrames.SouthPanel;
 import view.MainFrames.SouthPanelJTable;
 import static view.MainFrames.SouthPanelJTable.list;
+import view.closeWindow.WindowClosingSaveQuestionOptionPane;
+
 
 public class WindowEventHandler extends WindowAdapter {
 
@@ -18,18 +18,10 @@ public class WindowEventHandler extends WindowAdapter {
     private String filePath = "./data/main.txt";
 
     public void windowClosing(WindowEvent e) {
-  
-        // Speichern in DOA on Close
-        BookModelListDAO daoWrite = new BookModelListDAO(filePath, true); // Schreiben
-        try {
-            daoWrite.write(list);
-        } catch (IOException v) {
-            System.out.println(v.getMessage());
-        }
-        daoWrite.close();
-        
+
+        WindowClosingSaveQuestionOptionPane quest = new WindowClosingSaveQuestionOptionPane();
+
         //Beenden
-        
         System.out.println("exit");
         System.exit(0);
     }
@@ -49,4 +41,5 @@ public class WindowEventHandler extends WindowAdapter {
         SouthPanelJTable.list = list;
         SouthPanel.JlistTabelle.addRowtoTable();
     }
+
 }
