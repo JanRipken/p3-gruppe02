@@ -29,6 +29,7 @@ public class WindowEventHandler extends WindowAdapter {
         daoWrite.close();
         
         //Beenden
+        
         System.out.println("exit");
         System.exit(0);
     }
