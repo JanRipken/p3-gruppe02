@@ -50,7 +50,7 @@ public class ImportNewFile extends SouthPanelJTable implements ActionListener {
         
         //bestehende list mit gelesener list überschreiben und darstellen
         SouthPanelJTable.list = list;
-        SouthPanel.JlistTabelle.displayList();
+        SouthPanel.JlistTabelle.addRowtoTable();
         
     }
 }

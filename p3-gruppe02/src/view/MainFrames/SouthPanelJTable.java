@@ -60,23 +60,7 @@ public class SouthPanelJTable{
         addRowtoTable();
     }
 
-    //liste mit allen elementen innerhalb der BookModelList anzeigen
-    public void displayList() {
-        /*
-    }
-     setModel(listModel);
-        listModel.removeAllElements();
-        for (BookModel b : list.bookModelList) {
-
-            listModel.addElement(b.getTitel() + ", "
-                    + b.getAutorName() + ", "
-                    + b.getAutorVorname() + ", "
-                    + b.getErscheinungsjahr() + ", "
-                    + b.getSeitenanzahl() + ", "
-                    + b.getBewertung() + ", "
-
-         */
-    }
+  
 
     public void addRowtoTable() {
         model.setRowCount(0);
