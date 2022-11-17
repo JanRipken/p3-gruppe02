@@ -7,6 +7,8 @@ import view.AddNewBookFrames.AddNewBook;
 import view.AddNewBookFrames.AddNewBookPopUpView;
 import view.MainFrames.SouthPanel;
 
+
+
 public class AddNewBookSpeichernController implements ActionListener {
 
     private AddNewBook view;

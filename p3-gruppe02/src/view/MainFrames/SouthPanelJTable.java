@@ -1,20 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package view.MainFrames;
 
-import javax.swing.DefaultListModel;
-import javax.swing.JList;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.BookModel;
 import model.BookModelList;
 
-/**
- *
- * @author janri
- */
 public class SouthPanelJTable{
 
     //erstellen der einzelnen listen
@@ -60,7 +51,7 @@ public class SouthPanelJTable{
         addRowtoTable();
     }
 
-  
+    
 
     public void addRowtoTable() {
         model.setRowCount(0);
