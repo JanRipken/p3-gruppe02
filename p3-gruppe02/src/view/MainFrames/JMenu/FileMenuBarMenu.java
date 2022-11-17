@@ -6,6 +6,7 @@ package view.MainFrames.JMenu;
 
 import controller.MenuBar.ExportNewFile;
 import controller.MenuBar.ImportNewFile;
+import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 
@@ -15,8 +16,8 @@ import javax.swing.JMenuItem;
  */
 public class FileMenuBarMenu extends JMenu {
     
-    JMenuItem ImportFile;
-    JMenuItem ExportFile;
+	ImageIcon importIcon;
+	ImageIcon exportIcon;
     
     JMenu menu;
     protected FileMenuBarMenu(){
@@ -24,14 +25,21 @@ public class FileMenuBarMenu extends JMenu {
         //menu erstellen
         menu = new JMenu("Main Menu");
                  
-        //MenuItem
-        ImportFile = new JMenuItem("Import");
-        ExportFile = new JMenuItem("Export");
+        importIcon = new ImageIcon(this.getClass().getResource("/assets/icons/import.png"));
+	exportIcon = new ImageIcon(this.getClass().getResource("/assets/icons/export.png"));
         
+        
+        //MenuItem
+       JMenuItem ImportFile = new JMenuItem("Import");
+       JMenuItem ExportFile = new JMenuItem("Export");
+           
           
         //menu add
         menu.add(ImportFile);
         menu.add(ExportFile); 
+        
+        ImportFile.setIcon(importIcon);
+	ExportFile.setIcon(exportIcon);
 
         //controller hinzufügen für ImportFile
         ImportNewFile startimport = new ImportNewFile(this);
