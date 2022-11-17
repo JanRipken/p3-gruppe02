@@ -9,9 +9,8 @@ import controller.MenuBar.AutorOnOff;
 import controller.MenuBar.ErscheinungsjahrOnOff;
 import controller.MenuBar.BewertungOnOff;
 import controller.MenuBar.NochmallesenOnOff;
+import javax.swing.JCheckBox;
 import javax.swing.JMenu;
-import javax.swing.JMenuItem;
-import javax.swing.JCheckBoxMenuItem;
 
 /**
  *
@@ -26,11 +25,11 @@ public class FileMenuBarSettings extends JMenu {
         settings = new JMenu("Settings");
         
         //MenuItem
-        JCheckBoxMenuItem BuchTitel = new JCheckBoxMenuItem("Buch Titel");
-        JCheckBoxMenuItem Autor = new JCheckBoxMenuItem("Autor");
-        JCheckBoxMenuItem Erscheinungsjahr = new JCheckBoxMenuItem("Erscheinungsjahr");
-        JCheckBoxMenuItem Bewertung = new JCheckBoxMenuItem("Bewertung");
-        JCheckBoxMenuItem NochmalLesen = new JCheckBoxMenuItem("Nochmal lesen");
+        JCheckBox BuchTitel = new JCheckBox("Buch Titel");
+        JCheckBox Autor = new JCheckBox("Autor");
+        JCheckBox Erscheinungsjahr = new JCheckBox("Erscheinungsjahr");
+        JCheckBox Bewertung = new JCheckBox("Bewertung");
+        JCheckBox NochmalLesen = new JCheckBox("Nochmal lesen");
         
         //menu add
         settings.add(BuchTitel);
