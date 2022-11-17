@@ -15,8 +15,8 @@ public class SouthPanelJTable {
 
     //erstellen der einzelnen listen
     public static BookModelList list;
-    JTable table;
-    DefaultTableModel model;
+    public JTable table;
+    public DefaultTableModel model;
 
     // setzen der überschriften für den jTable
     private static final String[] tableHeader = new String[]{

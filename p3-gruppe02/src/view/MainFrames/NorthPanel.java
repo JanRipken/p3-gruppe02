@@ -5,12 +5,13 @@
 package view.MainFrames;
 
 import controller.AddNewBookControll.AddNewBookMainController;
+import controller.MainFrame.SouthPanelTableSearch;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.SwingConstants;
+
 
 /**
  *
@@ -46,10 +47,16 @@ public class NorthPanel extends JPanel{
             searchBookButton.setIcon(iconSuchen);
             
             
-            //Create Controller
+            //Create Controller Buch erstellen
             AddNewBookMainController startNewWindow = new AddNewBookMainController(this);
             newBookButton.addActionListener(startNewWindow);
 
+            
+            
+            //Create Controller Buch erstellen
+            SouthPanelTableSearch DurchsucheListe = new SouthPanelTableSearch();
+            searchBookButton.addActionListener(DurchsucheListe);
+            
 
             // Zum frame hinzufügen
             this.add(newBookButton);
