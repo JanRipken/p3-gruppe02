@@ -19,33 +19,43 @@ import javax.swing.SwingConstants;
 public class NorthPanel extends JPanel{
     
     private JButton newBookButton;
-    private JLabel label;
-    private ImageIcon icon ;
+    private JButton searchBookButton;
+   
+    private ImageIcon iconNeu;
+    private ImageIcon iconSuchen ;
             
         public NorthPanel() {
             
-            newBookButton = new JButton();
-            label = new JLabel();
-            this.setSize(WIDTH, 10);
+            this.setLayout(new GridLayout());
+             this.setSize(WIDTH, 10);
+            
+           
+         
+            
+            
+           
           
-            // Button icon
-            icon = new ImageIcon(this.getClass().getResource("/assets/icons/new.gif"));
-            newBookButton.setIcon(icon);
+            // Neues Buch 
+            newBookButton = new JButton(); 
+            iconNeu = new ImageIcon(this.getClass().getResource("/assets/icons/new.gif"));
+            newBookButton.setIcon(iconNeu);
+            
+            //Buch suchen
+            searchBookButton=new JButton();
+            iconSuchen = new ImageIcon(this.getClass().getResource("/assets/icons/suchen.gif"));
+            searchBookButton.setIcon(iconSuchen);
             
             
             //Create Controller
             AddNewBookMainController startNewWindow = new AddNewBookMainController(this);
             newBookButton.addActionListener(startNewWindow);
 
-            // label
-            label.setHorizontalAlignment(SwingConstants.CENTER);
-            label.setVerticalAlignment(SwingConstants.CENTER);
 
             // Zum frame hinzufügen
             this.add(newBookButton);
-            this.add(label);
+            this.add(searchBookButton);
 
-            this.setLayout(new GridLayout());
+            
 
         }   
 }
