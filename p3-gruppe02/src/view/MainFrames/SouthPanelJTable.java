@@ -17,6 +17,7 @@ public class SouthPanelJTable {
     public static BookModelList list;
     public JTable table;
     public DefaultTableModel model;
+   
 
     // setzen der überschriften für den jTable
     private static final String[] tableHeader = new String[]{
@@ -56,15 +57,13 @@ public class SouthPanelJTable {
                 return comp;
             }
         };
-        
+
         table.setSelectionBackground(Color.GRAY);
-        
+
         // verhindern das man die zellen verschieben kann
         table.getTableHeader().setReorderingAllowed(false);
         table.setFocusable(false);
 
-        
-        
         // testweise double click events
         table.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent me) {
@@ -103,5 +102,7 @@ public class SouthPanelJTable {
 
         }
     }
+
+    
 
 }

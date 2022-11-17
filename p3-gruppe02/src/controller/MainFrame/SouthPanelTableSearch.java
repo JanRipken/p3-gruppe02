@@ -1,6 +1,5 @@
 package controller.MainFrame;
 
-
 import java.awt.FlowLayout;
 import java.awt.Rectangle;
 import java.awt.event.ActionEvent;
@@ -12,23 +11,15 @@ import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import view.MainFrames.SouthPanelJTable;
 
 public class SouthPanelTableSearch implements ActionListener {
 
     TableRowSorter<DefaultTableModel> sorter;
-    DefaultTableModel model;
-    JTable table;
-    
+    public JTable table;
+    public DefaultTableModel model;
 
     public SouthPanelTableSearch() {
-  
-        
-    }
 
-    private void createRowSorter(DefaultTableModel model) {
-        sorter = new TableRowSorter<DefaultTableModel>(model);
-        table.setRowSorter(sorter);
     }
 
     public void search() {
@@ -59,6 +50,11 @@ public class SouthPanelTableSearch implements ActionListener {
                 }
             }
         }
+    }
+
+    private void createRowSorter(DefaultTableModel model) {
+        sorter = new TableRowSorter<DefaultTableModel>(model);
+        table.setRowSorter(sorter);
     }
 
     @Override
