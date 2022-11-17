@@ -12,13 +12,13 @@ import model.BookModelList;
 import model.BookModelListDAO;
 import view.MainFrames.JMenu.FileMenuBarMenu;
 import view.MainFrames.SouthPanel;
-import view.MainFrames.SouthPanelJList;
+import view.MainFrames.SouthPanelJTable;
 
 /**
  *
  * @author alex-
  */
-public class ImportNewFile extends SouthPanelJList implements ActionListener {
+public class ImportNewFile extends SouthPanelJTable implements ActionListener {
     
     public ImportNewFile(FileMenuBarMenu aThis) {
     }
@@ -49,7 +49,7 @@ public class ImportNewFile extends SouthPanelJList implements ActionListener {
         dao2.close();
         
         //bestehende list mit gelesener list überschreiben und darstellen
-        SouthPanelJList.list = list;
+        SouthPanelJTable.list = list;
         SouthPanel.JlistTabelle.displayList();
         
     }

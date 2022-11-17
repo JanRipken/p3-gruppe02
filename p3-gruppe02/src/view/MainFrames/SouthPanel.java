@@ -4,24 +4,30 @@
  */
 package view.MainFrames;
 
+import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+
 /**
  *
  * @author janri
  */
 public class SouthPanel extends JPanel {
 
-    public static SouthPanelJList JlistTabelle;
+    public static SouthPanelJTable JlistTabelle;
 
     public SouthPanel() {
+
+        JlistTabelle = new SouthPanelJTable();
         
-        this.setLayout(new GridLayout());
-        JlistTabelle = new SouthPanelJList();
-        JScrollPane sp = new JScrollPane(this.add(JlistTabelle));
+        this.setLayout(new BorderLayout());
+        JScrollPane sp = new JScrollPane(JlistTabelle.table);
         this.add(sp);
         
+        
+        
+
     }
 
 }

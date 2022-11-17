@@ -6,12 +6,9 @@ import java.io.File;
 import java.io.IOException;
 import model.BookModelListDAO;
 import view.MainFrames.JMenu.FileMenuBarMenu;
-import view.MainFrames.SouthPanelJList;
-import static view.MainFrames.SouthPanelJList.list;
-/**
- *
- * @author alex-
- */
+import view.MainFrames.SouthPanelJTable;
+import static view.MainFrames.SouthPanelJTable.list;
+
 
 import javax.swing.JFileChooser;
 

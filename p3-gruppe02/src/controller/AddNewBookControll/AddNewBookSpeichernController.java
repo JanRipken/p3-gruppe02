@@ -34,7 +34,7 @@ public class AddNewBookSpeichernController implements ActionListener {
 
             setModel();
 
-            SouthPanel.JlistTabelle.addToList(model);
+            SouthPanel.JlistTabelle.addToTable(model);
 
             view.dispose();
 

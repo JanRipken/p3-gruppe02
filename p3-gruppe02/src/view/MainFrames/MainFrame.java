@@ -20,62 +20,7 @@ import controller.WindowController.WindowEventHandler;
  * @author matthiaskoziol
  */
 public class MainFrame extends JFrame {
-/*
-    public class FileMenuBar extends JMenuBar {
 
-        public FileMenuBar() {
-            super();
-            this.add(new FileMenu());
-        }
-    }
-
-    public class FileMenu extends JMenu {
-
-        FileMenu() {
-            super("File");
-            this.add(new FileOpenItem());
-            this.add(new ExportCSV());
-        }
-    }
-
-    public class FileOpenItem extends JMenuItem {
-
-        FileOpenItem() {
-            super("Import as CSV File");
-            this.addActionListener(new ImportCSVListener());
-        }
-    }
-
-    public class ExportCSV extends JMenuItem {
-
-        ExportCSV() {
-            super("Export as CSV File");
-            this.addActionListener(new ExportCSVListener());
-        }
-    }
-
-    public class ImportCSVListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // TODO Auto-generated method stub
-            System.out.println("Die CSV File wurde importiert");
-            System.out.println(e.getActionCommand());
-        }
-    }
-
-    public class ExportCSVListener implements ActionListener {
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-            // TODO Auto-generated method stub
-            System.out.println("Die CSV File wurde exportiert");
-            System.out.println(e.getActionCommand());
-        }
-    }
-
-    
-*/
     
 
     public MainFrame() {
