@@ -24,7 +24,7 @@ public class WindowClosingSaveQuestionOptionPane extends JFrame {
 
     public WindowClosingSaveQuestionOptionPane() {
         int selected = pane.showConfirmDialog(null,
-                "Möchten sie ihr Liste als Hauptliste Speichern ?",
+                "Möchten sie ihr Liste Speichern ?",
                 "Speichern",
                 pane.YES_NO_OPTION);
 
