@@ -42,12 +42,12 @@ public class SouthPanelJList extends JList {
         listModel.removeAllElements();
         for (BookModel b : list.bookModelList) {
 
-            listModel.addElement(b.getTitel() + " "
-                    + b.getAutorName() + " "
-                    + b.getAutorVorname() + " "
-                    + b.getErscheinungsjahr() + " "
-                    + b.getSeitenanzahl() + " "
-                    + b.getBewertung() + " "
+            listModel.addElement(b.getTitel() + ", "
+                    + b.getAutorName() + ", "
+                    + b.getAutorVorname() + ", "
+                    + b.getErscheinungsjahr() + ", "
+                    + b.getSeitenanzahl() + ", "
+                    + b.getBewertung() + ", "
                     + b.getGelesen());
 
         }
