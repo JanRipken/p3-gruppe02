@@ -18,30 +18,31 @@ public class WindowEventHandler extends WindowAdapter {
     private String filePath = "./data/main.txt";
 
     public void windowClosing(WindowEvent e) {
-        System.out.println("exit");
-
+  
         // Speichern in DOA on Close
-        BookModelListDAO dao = new BookModelListDAO(filePath, true); // Schreiben
+        BookModelListDAO daoWrite = new BookModelListDAO(filePath, true); // Schreiben
         try {
-            dao.write(list);
+            daoWrite.write(list);
         } catch (IOException v) {
             System.out.println(v.getMessage());
         }
-        dao.close();
-
+        daoWrite.close();
+        
+        //Beenden
+        System.out.println("exit");
         System.exit(0);
     }
 
     // bei window start datei einlesen
     public void windowOpened(WindowEvent we) {
 
-        BookModelListDAO dao2 = new BookModelListDAO(filePath, false); // Lesen
+        BookModelListDAO daoRead = new BookModelListDAO(filePath, false); // Lesen
         try {
-            dao2.read(list);
+            daoRead.read(list);
         } catch (IOException v) {
             System.out.println(v.getMessage());
         }
-        dao2.close();
+        daoRead.close();
 
         //bestehende list mit gelesener list überschreiben und darstellen
         SouthPanelJTable.list = list;

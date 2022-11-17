@@ -1,12 +1,14 @@
-
 package view.MainFrames;
 
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import model.BookModel;
 import model.BookModelList;
 
-public class SouthPanelJTable{
+public class SouthPanelJTable {
 
     //erstellen der einzelnen listen
     public static BookModelList list;
@@ -42,6 +44,21 @@ public class SouthPanelJTable{
 
         // verhindern das man die zellen verschieben kann
         table.getTableHeader().setReorderingAllowed(false);
+        
+        table.setFocusable(false);
+        
+        // testweise double click events
+        table.addMouseListener(new MouseAdapter() {
+         public void mouseClicked(MouseEvent me) {
+            if (me.getClickCount() == 2) {     // to detect doble click events
+               JTable target = (JTable)me.getSource();
+               int row = target.getSelectedRow(); // select a row
+               int column = target.getSelectedColumn(); // select a column
+              JOptionPane.showMessageDialog(null, table.getValueAt(row, column)); // get the value of a row and column.
+            }
+         }
+      });
+        
 
     }
 
@@ -50,8 +67,6 @@ public class SouthPanelJTable{
         list.addBook(book);
         addRowtoTable();
     }
-
-    
 
     public void addRowtoTable() {
         model.setRowCount(0);
