@@ -94,6 +94,7 @@ public class SouthPanelJTable {
         table.setForeground(Color.BLACK);
         // verhindern das man die zellen verschieben kann
         table.getTableHeader().setReorderingAllowed(false);
+        table.getTableHeader().setForeground(Color.BLACK);
         table.setFocusable(false);
         table.setAutoCreateRowSorter(true);
 
