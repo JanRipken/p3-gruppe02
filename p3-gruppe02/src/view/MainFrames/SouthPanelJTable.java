@@ -97,6 +97,7 @@ public class SouthPanelJTable {
         table.setAutoCreateRowSorter(true);
 
         // testweise double click events
+        // TODO: Löschen
         table.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent me) {
                 if (me.getClickCount() == 2) {     // to detect doble click events
@@ -111,6 +112,7 @@ public class SouthPanelJTable {
     }
 
     // Das neu erstellte buch zur BookModelList hinzufügen
+    // TODO: dürfen die Methoden in der View sein ?
     public void addToTable(BookModel book) {
         list.addBook(book);
         addRowtoTable();

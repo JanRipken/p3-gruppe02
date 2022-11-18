@@ -120,7 +120,7 @@ public class AddNewBook extends JFrame {
     }
     
     
-    
+    // TODO: Überarbeiten / Checken
     public String getTitel(){
             return titel.textfield.getText();      
     }
