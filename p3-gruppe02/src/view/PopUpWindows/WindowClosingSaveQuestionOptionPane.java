@@ -1,16 +1,12 @@
-package view.closeWindow;
+package view.PopUpWindows;
 
-import java.awt.List;
+
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Map;
-import java.util.Objects;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
-import model.BookModel;
 import model.BookModelListDAO;
 import static view.MainFrames.SouthPanelJTable.list;
-import view.MainFrames.SouthPanelJTable;
+
 
 /**
  *
@@ -38,6 +34,7 @@ public class WindowClosingSaveQuestionOptionPane extends JFrame {
             }
             daoWrite.close();
         }
+       
 
     }
   
