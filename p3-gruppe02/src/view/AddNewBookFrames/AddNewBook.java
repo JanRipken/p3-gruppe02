@@ -105,7 +105,7 @@ public class AddNewBook extends JFrame {
 
         
         // anderes
-        this.setPreferredSize(new Dimension(350,400));
+        this.setPreferredSize(new Dimension(350,600));
         this.pack();
         this.setResizable(true);
         

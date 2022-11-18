@@ -4,24 +4,34 @@
  */
 package view.MainFrames;
 
+import controller.MainFrame.MainFramDragListener;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import view.MainFrames.JMenu.MainFrameFileMenuBar;
 import controller.WindowController.WindowEventHandler;
+import java.awt.GridLayout;
 import java.awt.Image;
+import javax.swing.Box;
 import javax.swing.ImageIcon;
 
 public class MainFrame extends JFrame {
     
     public MainFrame() {
+        this.setUndecorated(true);
+ 
+        MainFramDragListener drag = new MainFramDragListener(this);
+        this.addMouseListener(drag);
+        this.addMouseMotionListener(drag);
+        
         
         addWindowListener(new WindowEventHandler());
 
         //setJMenuBar(new FileMenuBar());
         // erstellen der Klasse FileMenuBar und aufrufen der Methode zum einfügen der Menu bar
         MainFrameFileMenuBar menuBar = new MainFrameFileMenuBar();
+        
         this.setJMenuBar(menuBar.makeMenuBar());
         
         this.add(new NorthPanel(), BorderLayout.NORTH);
@@ -37,6 +47,8 @@ public class MainFrame extends JFrame {
         //https://www.flaticon.com/
         Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/assets/icons/bucher.png"));        
         this.setIconImage(icon);
+        
+        
         
         // Startup des Fensters in der Mitte des Desktops
         Toolkit toolKit = getToolkit();

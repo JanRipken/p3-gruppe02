@@ -4,6 +4,9 @@
  */
 package view.MainFrames.JMenu;
 
+import java.awt.Dimension;
+import javax.swing.Box;
+import javax.swing.JButton;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 
@@ -14,31 +17,41 @@ import javax.swing.JMenuBar;
 public class MainFrameFileMenuBar extends JMenuBar {
 
     public MainFrameFileMenuBar() {
-        
+
         makeMenuBar();
     }
 
     public JMenuBar makeMenuBar() {
-        
+
         //menu Bar
         JMenuBar bar = new JMenuBar();
-        
+
         //Menu
         FileMenuBarMenu mainMenu = new FileMenuBarMenu();
         JMenu menuMain = mainMenu.makeJMenu();
-        
-        
+
         //settings
         FileMenuBarSettings set = new FileMenuBarSettings();
         JMenu settings = set.makeJSettings();
+
+        // close 
+        MenuBarCloseMainFrame close = new MenuBarCloseMainFrame();
+        JButton close1 = close.makeClose();
+
+        // minimize
+        MenuBarMinimizeMainFrame mini = new MenuBarMinimizeMainFrame();
+        JButton minimize = mini.makeMinimize();
         
-       
-        
-        //hinzufügen bar
+
+        //Linke Seite
         bar.add(menuMain);
         bar.add(settings);
-        
-        
+
+        //Rechte Seite
+        bar.add(Box.createHorizontalGlue());
+        bar.add(minimize);
+        bar.add(close1);
+
         return bar;
     }
 

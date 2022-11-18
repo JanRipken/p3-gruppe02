@@ -18,7 +18,7 @@ public class JTableListener implements TableModelListener {
 
     @Override
     public void tableChanged(TableModelEvent e) {
-        WindowEventHandler.changedTable = true;
+        CloseMainFrame.changedTable = true;
     }
     
 }
