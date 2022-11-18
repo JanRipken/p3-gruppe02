@@ -14,7 +14,7 @@ import controller.MenuBar.ImportNewFile;
 public class WindowClosingSaveQuestionOptionPane extends JFrame {
 
     private String filePath = "./data/main.txt";
-
+    
     JOptionPane pane;
     String updatedPath = ImportNewFile.updatedpath;
 
@@ -26,7 +26,7 @@ public class WindowClosingSaveQuestionOptionPane extends JFrame {
                 pane.YES_NO_OPTION);
 
  
-        if (selected == 0) {
+        if (selected == 0 ) {
             if (updatedPath != null) {
                 // Speichern in DOA on Close
                 BookModelListDAO daoWrite = new BookModelListDAO(updatedPath, true); // Schreiben

@@ -1,5 +1,6 @@
 package view.MainFrames;
 
+import controller.MainFrame.JTableListener;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
@@ -33,7 +34,7 @@ public class SouthPanelJTable {
 
     public SouthPanelJTable() {
         list = new BookModelList();
-        
+
         //TODO: Eigene klasse hierfür Schreiben
         model = new DefaultTableModel(0, tableHeader.length) {
             @Override
@@ -120,6 +121,7 @@ public class SouthPanelJTable {
 
     public void addRowtoTable() {
         model.setRowCount(0);
+
         for (int i = 0; i < list.bookModelList.size(); i++) {
 
             Object[] data = {list.bookModelList.get(i).getTitel(),
