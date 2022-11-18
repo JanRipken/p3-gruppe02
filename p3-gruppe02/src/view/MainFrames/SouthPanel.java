@@ -23,6 +23,7 @@ public class SouthPanel extends JPanel {
         // zugriff vom controller
         this.setLayout(new BorderLayout());
         JScrollPane sp = new JScrollPane(JlistTabelle.table);
+        sp.setBorder(null);
         this.add(sp);
 
     }

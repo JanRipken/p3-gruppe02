@@ -11,15 +11,17 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import view.MainFrames.JMenu.MainFrameFileMenuBar;
 import controller.WindowController.WindowEventHandler;
-import java.awt.GridLayout;
+
 import java.awt.Image;
-import javax.swing.Box;
-import javax.swing.ImageIcon;
+import java.awt.geom.RoundRectangle2D;
+
 
 public class MainFrame extends JFrame {
     
     public MainFrame() {
         this.setUndecorated(true);
+        
+        
  
         MainFramDragListener drag = new MainFramDragListener(this);
         this.addMouseListener(drag);
@@ -49,11 +51,10 @@ public class MainFrame extends JFrame {
         this.setIconImage(icon);
         
         
+        this.setShape(new RoundRectangle2D.Double(0,0,getWidth(),getHeight(),15,15));
         
         // Startup des Fensters in der Mitte des Desktops
-        Toolkit toolKit = getToolkit();
-        Dimension size = toolKit.getScreenSize();
-        setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
+        this.setLocationRelativeTo(null);
     }
     
 }
