@@ -1,11 +1,14 @@
 package view.MainFrames;
 
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.event.TableModelEvent;
+import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import model.BookModel;
@@ -64,7 +67,7 @@ public class SouthPanelJTable {
         table.getTableHeader().setReorderingAllowed(false);
         table.setFocusable(false);
         table.setAutoCreateRowSorter(true);
-        
+      
 
         // testweise double click events
         table.addMouseListener(new MouseAdapter() {
