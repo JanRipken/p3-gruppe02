@@ -1,6 +1,8 @@
 package main.tomedb.java.designtemplate;
 
 import java.awt.Color;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -11,7 +13,7 @@ public class TomeDBDesignTemplate {
      * 
      * 
      */
-    public TomeDBDesignTemplate() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException  {
+    public TomeDBDesignTemplate()   {
         
         try{
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
@@ -31,7 +33,17 @@ public class TomeDBDesignTemplate {
         UIManager.put("text", Color.BLACK);
         }
         catch(Exception e){
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            try {
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 }
