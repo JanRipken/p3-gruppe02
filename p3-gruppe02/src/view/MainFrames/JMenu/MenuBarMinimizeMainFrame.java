@@ -17,9 +17,9 @@ public class MenuBarMinimizeMainFrame {
     ImageIcon minimizeIcon;
     JButton minimizeButton;
     public MenuBarMinimizeMainFrame(){
-    minimizeIcon = new ImageIcon(this.getClass().getResource("/assets/icons/minimize-sign.png"));
+        minimizeIcon = new ImageIcon(this.getClass().getResource("/assets/icons/minimize-sign.png"));
         Image image = minimizeIcon.getImage(); // transform it 
-        Image newimg = image.getScaledInstance(10, 10,  java.awt.Image.SCALE_SMOOTH);
+        Image newimg = image.getScaledInstance(10, 10, java.awt.Image.SCALE_SMOOTH);
         minimizeIcon = new ImageIcon(newimg);
         minimizeIcon.getImage();
 

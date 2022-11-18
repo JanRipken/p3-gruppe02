@@ -6,6 +6,7 @@ package view.MainFrames.JMenu;
 
 import controller.MenuBar.ExportNewFile;
 import controller.MenuBar.ImportNewFile;
+import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
@@ -26,7 +27,17 @@ public class FileMenuBarMenu extends JMenu {
         menu = new JMenu("Main Menu");
                  
         importIcon = new ImageIcon(this.getClass().getResource("/assets/icons/import.png"));
+        Image image = importIcon.getImage(); // transform it 
+        Image newimg = image.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
+        importIcon = new ImageIcon(newimg);
+        importIcon.getImage();
+        
+        
 	exportIcon = new ImageIcon(this.getClass().getResource("/assets/icons/export.png"));
+        Image image2 = exportIcon.getImage(); // transform it 
+        Image newimg2 = image2.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
+        exportIcon = new ImageIcon(newimg2);
+        exportIcon.getImage();
         
         
         //MenuItem
