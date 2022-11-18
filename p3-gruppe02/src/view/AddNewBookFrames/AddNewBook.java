@@ -79,12 +79,12 @@ public class AddNewBook extends JFrame {
         
         
         //Testweise bereits namen setzen
-        titel.textfield.setText("Java weil es so schoen ist");
+        titel.textfield.setText("Java 2019");
         AutorName.textfield.setText("Musterman");
         AutorVorName.textfield.setText("Max");
         Erscheinungsjahr.textfield.setText("2021");
-        Seitenanzahl.textfield.setText("356");
-        bewertung.textfield.setText("5.6");
+        Seitenanzahl.textfield.setText("3019");
+        bewertung.textfield.setText("7.2");
         
         // Zum Hauptpanel hinzufügen
         panel.add(titel);

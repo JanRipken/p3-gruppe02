@@ -1,6 +1,5 @@
 package view.MainFrames;
 
-
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
@@ -20,7 +19,6 @@ public class SouthPanelJTable {
     public static BookModelList list;
     public JTable table;
     public DefaultTableModel model;
-   
 
     // setzen der überschriften für den jTable
     private static final String[] tableHeader = new String[]{
@@ -35,11 +33,41 @@ public class SouthPanelJTable {
 
     public SouthPanelJTable() {
         list = new BookModelList();
+        
+        //TODO: Eigene klasse hierfür Schreiben
         model = new DefaultTableModel(0, tableHeader.length) {
             @Override
             public boolean isCellEditable(int row, int column) {
-                //all cells false
                 return false;
+            }
+
+            @Override
+            public Class<?> getColumnClass(int columnIndex) {
+                Class clazz = String.class;
+                switch (columnIndex) {
+                    case 0:
+                        clazz = String.class;
+                        break;
+                    case 1:
+                        clazz = String.class;
+                        break;
+                    case 2:
+                        clazz = String.class;
+                        break;
+                    case 3:
+                        clazz = Integer.class;
+                        break;
+                    case 4:
+                        clazz = Integer.class;
+                        break;
+                    case 5:
+                        clazz = Double.class;
+                        break;
+                    case 6:
+                        clazz = Boolean.class;
+                        break;
+                }
+                return clazz;
             }
 
         };
@@ -67,7 +95,6 @@ public class SouthPanelJTable {
         table.getTableHeader().setReorderingAllowed(false);
         table.setFocusable(false);
         table.setAutoCreateRowSorter(true);
-      
 
         // testweise double click events
         table.addMouseListener(new MouseAdapter() {
@@ -93,21 +120,16 @@ public class SouthPanelJTable {
         model.setRowCount(0);
         for (int i = 0; i < list.bookModelList.size(); i++) {
 
-            String bookTitel = list.bookModelList.get(i).getTitel();
-            String bookAutorName = list.bookModelList.get(i).getAutorName();
-            String bookAutorVorname = list.bookModelList.get(i).getAutorVorname();
-            Integer bookErscheinungsjahr = list.bookModelList.get(i).getErscheinungsjahr();
-            Integer bookSeitenanzahl = list.bookModelList.get(i).getSeitenanzahl();
-            Double bookBewertung = list.bookModelList.get(i).getBewertung();
-            Boolean bookGelesen = list.bookModelList.get(i).getGelesen();
-
-            Object[] data = {bookTitel, bookAutorName, bookAutorVorname, bookErscheinungsjahr, bookSeitenanzahl, bookBewertung, bookGelesen};
-
+            Object[] data = {list.bookModelList.get(i).getTitel(),
+                list.bookModelList.get(i).getAutorName(),
+                list.bookModelList.get(i).getAutorVorname(),
+                list.bookModelList.get(i).getErscheinungsjahr(),
+                list.bookModelList.get(i).getSeitenanzahl(),
+                list.bookModelList.get(i).getBewertung(),
+                list.bookModelList.get(i).getGelesen()};
             model.addRow(data);
 
         }
     }
-
-    
 
 }

@@ -2,6 +2,7 @@
 package App;
 
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
 import model.BookModelList;
 import view.MainFrames.MainFrame;
 
@@ -18,6 +19,7 @@ public class P3Gruppe02 {
             @Override
             public void run() {
                 try {
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                     showMainFrame();
                 } catch (Exception e) {
                     e.printStackTrace();
