@@ -28,7 +28,7 @@ public class appDesign {
         UIManager.put("nimbusRed", new Color(169, 46, 34));
         UIManager.put("nimbusSelectedText", new Color(255, 255, 255));
         UIManager.put("nimbusSelectionBackground", new Color(104, 93, 156));
-        UIManager.put("text", new Color(230, 230, 230));
+        UIManager.put("text", Color.BLACK);
         }
         catch(Exception e){
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
