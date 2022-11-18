@@ -63,6 +63,8 @@ public class SouthPanelJTable {
         // verhindern das man die zellen verschieben kann
         table.getTableHeader().setReorderingAllowed(false);
         table.setFocusable(false);
+        table.setAutoCreateRowSorter(true);
+        
 
         // testweise double click events
         table.addMouseListener(new MouseAdapter() {

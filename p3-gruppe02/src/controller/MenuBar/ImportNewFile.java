@@ -17,7 +17,7 @@ import view.MainFrames.SouthPanelJTable;
  * @author alex-
  */
 public class ImportNewFile extends SouthPanelJTable implements ActionListener {
-    public static String RelativePath;
+    public static String updatedpath;
     public ImportNewFile(FileMenuBarMenu aThis) {
     }
     
@@ -35,7 +35,8 @@ public class ImportNewFile extends SouthPanelJTable implements ActionListener {
          
             
         }
-        
+        // pfad des importierten files um es später dort wieder abzuspeichern
+        updatedpath = "./data/"+fileChooser.getSelectedFile().getName();
         //Datei lesen
 
         String dateiName = fileChooser.getSelectedFile().getAbsolutePath();
