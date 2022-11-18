@@ -10,31 +10,38 @@ import java.awt.Toolkit;
 import javax.swing.JFrame;
 import view.MainFrames.JMenu.MainFrameFileMenuBar;
 import controller.WindowController.WindowEventHandler;
+import java.awt.Image;
+import javax.swing.ImageIcon;
 
 public class MainFrame extends JFrame {
-
+    
     public MainFrame() {
-
+        
         addWindowListener(new WindowEventHandler());
 
         //setJMenuBar(new FileMenuBar());
         // erstellen der Klasse FileMenuBar und aufrufen der Methode zum einfügen der Menu bar
         MainFrameFileMenuBar menuBar = new MainFrameFileMenuBar();
         this.setJMenuBar(menuBar.makeMenuBar());
-
+        
         this.add(new NorthPanel(), BorderLayout.NORTH);
         this.add(new SouthPanel(), BorderLayout.CENTER);
-
+        
         this.setTitle("p3-gruppe02");
         this.setSize(900, 600);
-
+        
         this.setResizable(true);
         this.setVisible(true);
-
+        
+        // hinzufügen eines icons zur main app
+        //https://www.flaticon.com/
+        Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/assets/icons/bucher.png"));        
+        this.setIconImage(icon);
+        
         // Startup des Fensters in der Mitte des Desktops
         Toolkit toolKit = getToolkit();
         Dimension size = toolKit.getScreenSize();
         setLocation(size.width / 2 - getWidth() / 2, size.height / 2 - getHeight() / 2);
     }
-
+    
 }

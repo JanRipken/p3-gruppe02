@@ -6,6 +6,7 @@ import controller.AddNewBookControll.AddNewBookAbbrechenController;
 import controller.AddNewBookControll.AddNewBookSpeichernController;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.Set;
 import javax.swing.JFrame;
@@ -40,6 +41,12 @@ public class AddNewBook extends JFrame {
     
      
     public AddNewBook(){
+        
+        // hinzufügen eines icons zur addBook app
+        //https://www.flaticon.com/
+        Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/assets/icons/bookAdd.png"));        
+        this.setIconImage(icon);
+        
         
         // Hauptpanel erstellen
         AddNewBookPanel panel = new AddNewBookPanel();
