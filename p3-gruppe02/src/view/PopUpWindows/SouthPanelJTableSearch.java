@@ -15,14 +15,17 @@ import javax.swing.JPanel;
  * @author janri
  */
 public class SouthPanelJTableSearch {
+
     public String text;
-public JLabel label;
-    public SouthPanelJTableSearch(){
+    public JLabel label;
+
+    public SouthPanelJTableSearch() {
+        
         JPanel panel = new JPanel(new GridLayout());
         
-         label = new JLabel("Selektive Suche");
-        panel.add(label);
-        text = JOptionPane.showInputDialog(panel);
-        
+        text = JOptionPane.showInputDialog(panel,
+                "Selektive Suche","Eingabe",
+                JOptionPane.PLAIN_MESSAGE);
+
     }
 }

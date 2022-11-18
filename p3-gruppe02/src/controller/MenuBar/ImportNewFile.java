@@ -4,6 +4,7 @@ package controller.MenuBar;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
+import java.nio.file.Path;
 import javax.swing.JFileChooser;
 import model.BookModelList;
 import model.BookModelListDAO;
@@ -16,7 +17,7 @@ import view.MainFrames.SouthPanelJTable;
  * @author alex-
  */
 public class ImportNewFile extends SouthPanelJTable implements ActionListener {
-    
+    public static String RelativePath;
     public ImportNewFile(FileMenuBarMenu aThis) {
     }
     
@@ -31,11 +32,14 @@ public class ImportNewFile extends SouthPanelJTable implements ActionListener {
         if (returnVal == JFileChooser.APPROVE_OPTION) {
             System.out.println("Sie haben folgende Datei ausgewählt: "
                     + fileChooser.getSelectedFile().getName());
+         
             
         }
         
         //Datei lesen
+
         String dateiName = fileChooser.getSelectedFile().getAbsolutePath();
+        
         BookModelList list = new BookModelList();
         BookModelListDAO dao2 = new BookModelListDAO(dateiName, false); // Lesen
         try {
