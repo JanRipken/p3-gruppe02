@@ -16,13 +16,13 @@ import javax.swing.JPanel;
  *
  * @author janri
  */
-public class LayoutAddBookCheckbox extends JPanel {
+public class LayoutCheckBox extends JPanel {
 
     String beschreibung = new String();
     JCheckBox CB = new JCheckBox();
 
 
-    public LayoutAddBookCheckbox(String myLabel) {
+    public LayoutCheckBox(String myLabel) {
  
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         beschreibung = myLabel;

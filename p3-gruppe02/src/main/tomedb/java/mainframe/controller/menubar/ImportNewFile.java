@@ -6,19 +6,19 @@ import java.io.IOException;
 import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
-import main.tomedb.java.mainframe.view.menubar.FileMenuBarMenu;
+import main.tomedb.java.mainframe.view.menubar.Menu;
 import main.tomedb.java.mainframe.view.SouthPanel;
-import main.tomedb.java.mainframe.view.SouthPanelJTable;
-import main.tomedb.java.mainframe.controller.JTableListener;
-import main.tomedb.java.mainframe.controller.JTableListener;
+import main.tomedb.java.mainframe.view.Table;
+import main.tomedb.java.mainframe.controller.JTableChanged;
+import main.tomedb.java.mainframe.controller.JTableChanged;
 
-public class ImportNewFile extends SouthPanelJTable implements ActionListener {
+public class ImportNewFile extends Table implements ActionListener {
 
     public static String updatedpath;
     String dateiName;
 
     //TODO: ??
-    public ImportNewFile(FileMenuBarMenu aThis) {
+    public ImportNewFile(Menu aThis) {
     }
 
     public ImportNewFile() {
@@ -48,7 +48,7 @@ public class ImportNewFile extends SouthPanelJTable implements ActionListener {
 
     public void importFile(String path) {
         //Datei lesen
-        JTableListener TableListener = SouthPanel.TableListener;
+        JTableChanged TableListener = SouthPanel.TableListener;
         SouthPanel.JlistTabelle.model.removeTableModelListener(TableListener);
 
         BookModelList list = new BookModelList();
@@ -61,7 +61,7 @@ public class ImportNewFile extends SouthPanelJTable implements ActionListener {
         dao2.close();
 
         //bestehende list mit gelesener list überschreiben und darstellen
-        SouthPanelJTable.list = list;
+        Table.list = list;
         SouthPanel.JlistTabelle.addRowtoTable();
 
         // Aktivieren des Table listeners beim importieren eines neuen files

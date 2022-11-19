@@ -15,25 +15,25 @@ import javax.swing.JMenuItem;
  *
  * @author janri
  */
-public class FileMenuBarMenu extends JMenu {
+public class Menu extends JMenu {
     
 	ImageIcon importIcon;
 	ImageIcon exportIcon;
     
     JMenu menu;
-    protected FileMenuBarMenu(){
+    protected Menu(){
                
         //menu erstellen
         menu = new JMenu("Main Menu");
                  
-        importIcon = new ImageIcon(this.getClass().getResource("/assets/icons/import.png"));
+        importIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/import.png"));
         Image image = importIcon.getImage(); // transform it 
         Image newimg = image.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
         importIcon = new ImageIcon(newimg);
         importIcon.getImage();
         
         
-	exportIcon = new ImageIcon(this.getClass().getResource("/assets/icons/export.png"));
+	exportIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/export.png"));
         Image image2 = exportIcon.getImage(); // transform it 
         Image newimg2 = image2.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
         exportIcon = new ImageIcon(newimg2);

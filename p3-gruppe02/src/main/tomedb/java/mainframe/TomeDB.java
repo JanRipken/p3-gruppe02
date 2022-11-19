@@ -4,7 +4,7 @@ import main.tomedb.java.designtemplate.TomeDBDesignTemplate;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.view.MainFrame;
 
-public class P3Gruppe02 {
+public class TomeDB {
 
     public static void main(String[] args) {
 

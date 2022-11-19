@@ -1,6 +1,6 @@
 package main.tomedb.java.mainframe.view;
 
-import main.tomedb.java.mainframe.controller.JTableListener;
+import main.tomedb.java.mainframe.controller.JTableChanged;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
@@ -14,7 +14,7 @@ import javax.swing.table.TableCellRenderer;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 
-public class SouthPanelJTable {
+public class Table {
 
     //erstellen der einzelnen listen
     public static BookModelList list;
@@ -32,7 +32,7 @@ public class SouthPanelJTable {
         "Gelesen"
     };
 
-    public SouthPanelJTable() {
+    public Table() {
         list = new BookModelList();
 
         //TODO: Eigene klasse hierfür Schreiben

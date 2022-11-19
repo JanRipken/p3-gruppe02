@@ -13,7 +13,7 @@ public class TomeDBDesignTemplate {
      * 
      * 
      */
-    public TomeDBDesignTemplate()   {
+    public TomeDBDesignTemplate() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException   {
         
         try{
         UIManager.setLookAndFeel(new NimbusLookAndFeel());
@@ -32,18 +32,8 @@ public class TomeDBDesignTemplate {
         UIManager.put("nimbusSelectionBackground", new Color(104, 93, 156));
         UIManager.put("text", Color.BLACK);
         }
-        catch(Exception e){
-            try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (UnsupportedLookAndFeelException ex) {
-                Logger.getLogger(TomeDBDesignTemplate.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        catch(Exception e){   
+                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());   
         }
     }
 }

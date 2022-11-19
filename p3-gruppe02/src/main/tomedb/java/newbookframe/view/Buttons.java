@@ -4,17 +4,17 @@
  */
 package main.tomedb.java.newbookframe.view;
 
-import main.tomedb.java.newbookframe.controller.AddNewBookMainController;
+import main.tomedb.java.newbookframe.controller.NewBook;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 
-public class AbbrechenOderBestätigenPanel extends JPanel{
+public class Buttons extends JPanel{
     JButton ButtonBestätigen = new JButton("Bestätigen");
         JButton ButtonAbrechen = new JButton("Abrechen");
         
-        public AbbrechenOderBestätigenPanel(){
+        public Buttons(){
             
             ButtonAbrechen.setName("ButtonAbrechenAbbrechen");
             this.setLayout(new GridLayout(1,0));

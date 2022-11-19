@@ -4,10 +4,9 @@
  */
 package main.tomedb.java.mainframe.view;
 
-import main.tomedb.java.mainframe.view.menubar.MainFrameFileMenuBar;
-import main.tomedb.java.mainframe.controller.MainFramDragListener;
+import main.tomedb.java.mainframe.view.menubar.MenuBar;
+import main.tomedb.java.mainframe.controller.MainFramDragMove;
 import java.awt.BorderLayout;
-import java.awt.Dimension;
 import java.awt.Toolkit;
 import javax.swing.JFrame;
 import main.tomedb.java.mainframe.controller.WindowEventHandler;
@@ -23,7 +22,7 @@ public class MainFrame extends JFrame {
         
         
  
-        MainFramDragListener drag = new MainFramDragListener(this);
+        MainFramDragMove drag = new MainFramDragMove(this);
         this.addMouseListener(drag);
         this.addMouseMotionListener(drag);
         
@@ -32,7 +31,7 @@ public class MainFrame extends JFrame {
 
         //setJMenuBar(new FileMenuBar());
         // erstellen der Klasse FileMenuBar und aufrufen der Methode zum einfügen der Menu bar
-        MainFrameFileMenuBar menuBar = new MainFrameFileMenuBar();
+        MenuBar menuBar = new MenuBar();
         
         this.setJMenuBar(menuBar.makeMenuBar());
         
@@ -47,7 +46,7 @@ public class MainFrame extends JFrame {
         
         // hinzufügen eines icons zur main app
         //https://www.flaticon.com/
-        Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/assets/icons/bucher.png"));        
+        Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/main/tomedb/ressources/icons/bucher.png"));        
         this.setIconImage(icon);
         
         

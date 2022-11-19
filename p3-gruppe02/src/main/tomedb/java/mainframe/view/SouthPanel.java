@@ -1,6 +1,6 @@
 package main.tomedb.java.mainframe.view;
 
-import main.tomedb.java.mainframe.controller.JTableListener;
+import main.tomedb.java.mainframe.controller.JTableChanged;
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
 import javax.swing.JPanel;
@@ -12,14 +12,14 @@ import javax.swing.JScrollPane;
  */
 public class SouthPanel extends JPanel {
 
-    public static SouthPanelJTable JlistTabelle;
-    public static JTableListener TableListener;
+    public static Table JlistTabelle;
+    public static JTableChanged TableListener;
 
     public SouthPanel() {
 
-        JlistTabelle = new SouthPanelJTable();
+        JlistTabelle = new Table();
         
-        TableListener = new JTableListener();
+        TableListener = new JTableChanged();
         // zugriff vom controller
         this.setLayout(new BorderLayout());
         JScrollPane sp = new JScrollPane(JlistTabelle.table);

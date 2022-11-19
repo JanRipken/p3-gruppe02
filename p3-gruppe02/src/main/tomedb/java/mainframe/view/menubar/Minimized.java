@@ -13,11 +13,11 @@ import javax.swing.JButton;
  *
  * @author janri
  */
-public class MenuBarMinimizeMainFrame {
+public class Minimized {
     ImageIcon minimizeIcon;
     JButton minimizeButton;
-    public MenuBarMinimizeMainFrame(){
-        minimizeIcon = new ImageIcon(this.getClass().getResource("/assets/icons/minimize-sign.png"));
+    public Minimized(){
+        minimizeIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/minimize-sign.png"));
         Image image = minimizeIcon.getImage(); // transform it 
         Image newimg = image.getScaledInstance(10, 10, java.awt.Image.SCALE_SMOOTH);
         minimizeIcon = new ImageIcon(newimg);

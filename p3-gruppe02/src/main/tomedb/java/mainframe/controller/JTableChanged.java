@@ -5,7 +5,7 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
 //Controller zum erkennen ob sich das JTable geändert hat
-public class JTableListener implements TableModelListener {
+public class JTableChanged implements TableModelListener {
 
     @Override
     public void tableChanged(TableModelEvent e) {

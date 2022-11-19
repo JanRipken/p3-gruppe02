@@ -6,12 +6,12 @@ import java.awt.event.MouseEvent;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 // Controller zum verschieben des MainFrames mit hilfe von Mouse Drag moves
-public class MainFramDragListener extends MouseAdapter {
+public class MainFramDragMove extends MouseAdapter {
 
     MainFrame view;
     private Point mouseDownCompCoords = null;
 
-    public MainFramDragListener(MainFrame view) {
+    public MainFramDragMove(MainFrame view) {
         this.view = view;
     }
 

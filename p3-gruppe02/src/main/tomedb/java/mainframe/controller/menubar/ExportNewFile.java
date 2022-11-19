@@ -6,8 +6,8 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
-import main.tomedb.java.mainframe.view.menubar.FileMenuBarMenu;
-import static main.tomedb.java.mainframe.view.SouthPanelJTable.list;
+import main.tomedb.java.mainframe.view.menubar.Menu;
+import static main.tomedb.java.mainframe.view.Table.list;
 
 import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.controller.WindowEventHandler;
@@ -15,7 +15,7 @@ import main.tomedb.java.mainframe.controller.WindowEventHandler;
 public class ExportNewFile implements ActionListener {
 
     // TODO: Was machen die Konstruktoren ?
-    public ExportNewFile(FileMenuBarMenu aThis) {
+    public ExportNewFile(Menu aThis) {
 
     }
 

@@ -1,18 +1,17 @@
 package main.tomedb.java.newbookframe.controller;
 
-import main.tomedb.java.newbookframe.view.AddNewBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.model.BookModelList;
 
 //Klasse zum starten der UI zum erstellen eines Neuen Buches
-public class AddNewBookMainController implements ActionListener {
+public class NewBook implements ActionListener {
 
     private main.tomedb.java.mainframe.view.NorthPanel view;
     BookModelList modelBook;
 
-    public AddNewBookMainController(main.tomedb.java.mainframe.view.NorthPanel view) {
+    public NewBook(main.tomedb.java.mainframe.view.NorthPanel view) {
         this.view = view;
         modelBook = new BookModelList();
 
@@ -24,7 +23,7 @@ public class AddNewBookMainController implements ActionListener {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    AddNewBook newBook = new AddNewBook();
+                    main.tomedb.java.newbookframe.view.NewBook newBook = new main.tomedb.java.newbookframe.view.NewBook();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

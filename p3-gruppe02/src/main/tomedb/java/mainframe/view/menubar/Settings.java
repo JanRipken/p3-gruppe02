@@ -4,11 +4,11 @@
  */
 package main.tomedb.java.mainframe.view.menubar;
 
-import main.tomedb.java.mainframe.controller.menubar.BuchTitelOnOff;
-import main.tomedb.java.mainframe.controller.menubar.AutorOnOff;
-import main.tomedb.java.mainframe.controller.menubar.ErscheinungsjahrOnOff;
-import main.tomedb.java.mainframe.controller.menubar.BewertungOnOff;
-import main.tomedb.java.mainframe.controller.menubar.NochmallesenOnOff;
+import main.tomedb.java.mainframe.controller.menubar.settings.BuchTitelOnOff;
+import main.tomedb.java.mainframe.controller.menubar.settings.AutorOnOff;
+import main.tomedb.java.mainframe.controller.menubar.settings.ErscheinungsjahrOnOff;
+import main.tomedb.java.mainframe.controller.menubar.settings.BewertungOnOff;
+import main.tomedb.java.mainframe.controller.menubar.settings.NochmallesenOnOff;
 import javax.swing.JCheckBox;
 import javax.swing.JMenu;
 
@@ -16,11 +16,11 @@ import javax.swing.JMenu;
  *
  * @author janri
  */
-public class FileMenuBarSettings extends JMenu {
+public class Settings extends JMenu {
     
     
     JMenu settings;
-    protected FileMenuBarSettings(){
+    protected Settings(){
         //menu erstellen
         settings = new JMenu("Settings");
         

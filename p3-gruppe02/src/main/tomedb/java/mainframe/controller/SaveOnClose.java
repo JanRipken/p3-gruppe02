@@ -4,21 +4,21 @@ import java.io.IOException;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
-import static main.tomedb.java.mainframe.view.SouthPanelJTable.list;
+import static main.tomedb.java.mainframe.view.Table.list;
 import main.tomedb.java.mainframe.controller.menubar.ImportNewFile;
 
 /**
  *
  * @author janri
  */
-public class WindowClosingSaveQuestionOptionPane extends JFrame {
+public class SaveOnClose extends JFrame {
 
     private String filePath = "./data/main.txt";
     
     JOptionPane pane;
     String updatedPath = ImportNewFile.updatedpath;
 
-    public WindowClosingSaveQuestionOptionPane() {
+    public SaveOnClose() {
 
         int selected = pane.showConfirmDialog(null,
                 "Möchten sie ihr Liste Speichern ?",

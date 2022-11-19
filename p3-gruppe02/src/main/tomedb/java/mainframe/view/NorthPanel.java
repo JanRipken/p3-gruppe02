@@ -4,8 +4,8 @@
  */
 package main.tomedb.java.mainframe.view;
 
-import main.tomedb.java.newbookframe.controller.AddNewBookMainController;
-import main.tomedb.java.mainframe.controller.SouthPanelTableSearch;
+import main.tomedb.java.newbookframe.controller.NewBook;
+import main.tomedb.java.mainframe.controller.JTableSearch;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -29,32 +29,27 @@ public class NorthPanel extends JPanel{
             
             this.setLayout(new GridLayout());
              this.setSize(WIDTH, 10);
-            
-           
-         
-            
-            
-           
+                 
           
             // Neues Buch 
             newBookButton = new JButton(); 
-            iconNeu = new ImageIcon(this.getClass().getResource("/assets/icons/new.gif"));
+            iconNeu = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/new.gif"));
             newBookButton.setIcon(iconNeu);
             
             //Buch suchen
             searchBookButton=new JButton();
-            iconSuchen = new ImageIcon(this.getClass().getResource("/assets/icons/suchen.gif"));
+            iconSuchen = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/suchen.gif"));
             searchBookButton.setIcon(iconSuchen);
-            
+         
             
             //Create Controller Buch erstellen
-            AddNewBookMainController startNewWindow = new AddNewBookMainController(this);
+            NewBook startNewWindow = new NewBook(this);
             newBookButton.addActionListener(startNewWindow);
 
             
             
             //Create Controller Buch erstellen
-            SouthPanelTableSearch DurchsucheListe = new SouthPanelTableSearch();
+            JTableSearch DurchsucheListe = new JTableSearch();
             searchBookButton.addActionListener(DurchsucheListe);
             
 

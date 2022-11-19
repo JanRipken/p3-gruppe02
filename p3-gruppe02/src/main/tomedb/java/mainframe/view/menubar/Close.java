@@ -15,14 +15,14 @@ import javax.swing.JMenu;
  *
  * @author janri
  */
-public class MenuBarCloseMainFrame extends JMenu {
+public class Close extends JMenu {
 
     ImageIcon CloseIcon;
     JButton closeButton;
 
-    public MenuBarCloseMainFrame() {
+    public Close() {
         
-        CloseIcon = new ImageIcon(this.getClass().getResource("/assets/icons/close.png"));
+        CloseIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/close.png"));
         Image image = CloseIcon.getImage(); // transform it 
         Image newimg = image.getScaledInstance(10, 10,  java.awt.Image.SCALE_SMOOTH);
         CloseIcon = new ImageIcon(newimg);

@@ -1,13 +1,13 @@
-package main.tomedb.java.mainframe.controller.menubar;
+package main.tomedb.java.mainframe.controller.menubar.settings;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import main.tomedb.java.mainframe.view.menubar.FileMenuBarSettings;
+import main.tomedb.java.mainframe.view.menubar.Settings;
 
 public class BewertungOnOff implements ActionListener {
 
     // TODO: ??
-    public BewertungOnOff(FileMenuBarSettings aThis) {
+    public BewertungOnOff(Settings aThis) {
     }
 
     @Override

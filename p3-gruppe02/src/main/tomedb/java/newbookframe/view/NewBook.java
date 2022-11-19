@@ -2,22 +2,22 @@
 package main.tomedb.java.newbookframe.view;
 
 
-import main.tomedb.java.newbookframe.view.AbbrechenOderBestätigenPanel;
-import main.tomedb.java.newbookframe.controller.AddNewBookAbbrechenController;
-import main.tomedb.java.newbookframe.controller.AddNewBookSpeichernController;
+import main.tomedb.java.newbookframe.view.Buttons;
+import main.tomedb.java.newbookframe.controller.Abort;
+import main.tomedb.java.newbookframe.controller.Save;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.Set;
 import javax.swing.JFrame;
-import main.tomedb.java.newbookframe.controller.AddNewBookAbbrechenController;
-import main.tomedb.java.newbookframe.controller.AddNewBookSpeichernController;
-import main.tomedb.java.newbookframe.view.AddNewBookPanel;
-import main.tomedb.java.newbookframe.view.LayoutAddBook;
-import main.tomedb.java.newbookframe.view.LayoutAddBookCheckbox;
+import main.tomedb.java.newbookframe.controller.Abort;
+import main.tomedb.java.newbookframe.controller.Save;
+import main.tomedb.java.newbookframe.view.MainPanel;
+import main.tomedb.java.newbookframe.view.LayoutTextfield;
+import main.tomedb.java.newbookframe.view.LayoutCheckBox;
 
-public class AddNewBook extends JFrame {
+public class NewBook extends JFrame {
     
     // Final damit die variable nur einmal genutzt werden kann
     // Eventulle überarbeiten bei erstellung der Änderungsseite
@@ -37,36 +37,35 @@ public class AddNewBook extends JFrame {
 
 
     //Initialisierung der Layouts
-     LayoutAddBook titel;
-     LayoutAddBook AutorName;
-     LayoutAddBook AutorVorName;
-     LayoutAddBook Erscheinungsjahr;
-     LayoutAddBook Seitenanzahl;
-     LayoutAddBook bewertung;
-     LayoutAddBookCheckbox nochmallesen;
+     LayoutTextfield titel;
+     LayoutTextfield AutorName;
+     LayoutTextfield AutorVorName;
+     LayoutTextfield Erscheinungsjahr;
+     LayoutTextfield Seitenanzahl;
+     LayoutTextfield bewertung;
+     LayoutCheckBox nochmallesen;
     
      
-    public AddNewBook(){
+    public NewBook(){
         
         // hinzufügen eines icons zur addBook app
         //https://www.flaticon.com/
-        Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/assets/icons/bookAdd.png"));        
+        Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/main/tomedb/ressources/icons/bookAdd.png"));        
         this.setIconImage(icon);
         
         
         // Hauptpanel erstellen
-        AddNewBookPanel panel = new AddNewBookPanel();
+        MainPanel mainPanel = new MainPanel();
        
-        
         // erstellen der einzlenen layouts für das Panel
-        titel = new LayoutAddBook(FrageBuchName);
-        AutorName = new LayoutAddBook(FrageBuchAutor);
-        AutorVorName = new LayoutAddBook(FrageBuchAutorVorname);
-        Erscheinungsjahr = new LayoutAddBook(FrageBuchErscheinungsjahr);
-        Seitenanzahl = new LayoutAddBook(FrageBuchSeitenanzahl);
-        bewertung = new LayoutAddBook(FrageBuchBewertung);
-        nochmallesen = new LayoutAddBookCheckbox(FrageBuchNochmalLesen);
-        AbbrechenOderBestätigenPanel AbbbbruchOderSpeichern = new AbbrechenOderBestätigenPanel();
+        titel = new LayoutTextfield(FrageBuchName);
+        AutorName = new LayoutTextfield(FrageBuchAutor);
+        AutorVorName = new LayoutTextfield(FrageBuchAutorVorname);
+        Erscheinungsjahr = new LayoutTextfield(FrageBuchErscheinungsjahr);
+        Seitenanzahl = new LayoutTextfield(FrageBuchSeitenanzahl);
+        bewertung = new LayoutTextfield(FrageBuchBewertung);
+        nochmallesen = new LayoutCheckBox(FrageBuchNochmalLesen);
+        Buttons AbbbbruchOderSpeichern = new Buttons();
 
         
         //Tooltips
@@ -75,10 +74,10 @@ public class AddNewBook extends JFrame {
         bewertung.textfield.setToolTipText(TooltipBewertung);
                 
         //Controller
-        AddNewBookSpeichernController modelBook = new AddNewBookSpeichernController(this);
+        Save modelBook = new Save(this);
         AbbbbruchOderSpeichern.ButtonBestätigen.addActionListener(modelBook);
         
-        AddNewBookAbbrechenController abbrechen = new AddNewBookAbbrechenController(this);
+        Abort abbrechen = new Abort(this);
         AbbbbruchOderSpeichern.ButtonAbrechen.addActionListener(abbrechen);
         
         
@@ -93,19 +92,19 @@ public class AddNewBook extends JFrame {
         bewertung.textfield.setText("7.2");
         
         // Zum Hauptpanel hinzufügen
-        panel.add(titel);
-        panel.add(AutorName);
-        panel.add(AutorVorName);
-        panel.add(Erscheinungsjahr);
-        panel.add(Seitenanzahl);
-        panel.add(bewertung);
-        panel.add(nochmallesen);
-        panel.add(AbbbbruchOderSpeichern);
+        mainPanel.add(titel);
+        mainPanel.add(AutorName);
+        mainPanel.add(AutorVorName);
+        mainPanel.add(Erscheinungsjahr);
+        mainPanel.add(Seitenanzahl);
+        mainPanel.add(bewertung);
+        mainPanel.add(nochmallesen);
+        mainPanel.add(AbbbbruchOderSpeichern);
         
 
  
         // Panel zum hauptframe hinzufügen
-        this.setContentPane(panel);
+        this.setContentPane(mainPanel);
       
         
 

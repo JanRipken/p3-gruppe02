@@ -8,7 +8,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import main.tomedb.java.mainframe.view.SouthPanel;
 
-public class SouthPanelTableSearch implements ActionListener {
+public class JTableSearch implements ActionListener {
 
     TableRowSorter<DefaultTableModel> sorter;
     public JTable table;
@@ -30,7 +30,7 @@ public class SouthPanelTableSearch implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        SouthPanelJTableSearch searching = new SouthPanelJTableSearch();
+        main.tomedb.java.mainframe.view.TableSearch searching = new main.tomedb.java.mainframe.view.TableSearch();
         suchBegriff = searching.text;
 
         this.model = SouthPanel.JlistTabelle.model;

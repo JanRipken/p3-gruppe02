@@ -4,9 +4,6 @@
  */
 package main.tomedb.java.mainframe.view.menubar;
 
-import main.tomedb.java.mainframe.view.menubar.FileMenuBarSettings;
-import main.tomedb.java.mainframe.view.menubar.FileMenuBarMenu;
-import java.awt.Dimension;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JMenu;
@@ -16,9 +13,9 @@ import javax.swing.JMenuBar;
  *
  * @author janri
  */
-public class MainFrameFileMenuBar extends JMenuBar {
+public class MenuBar extends JMenuBar {
 
-    public MainFrameFileMenuBar() {
+    public MenuBar() {
 
         makeMenuBar();
     }
@@ -29,19 +26,19 @@ public class MainFrameFileMenuBar extends JMenuBar {
         JMenuBar bar = new JMenuBar();
 
         //Menu
-        FileMenuBarMenu mainMenu = new FileMenuBarMenu();
+        Menu mainMenu = new Menu();
         JMenu menuMain = mainMenu.makeJMenu();
 
         //settings
-        FileMenuBarSettings set = new FileMenuBarSettings();
+        Settings set = new Settings();
         JMenu settings = set.makeJSettings();
 
         // close 
-        MenuBarCloseMainFrame close = new MenuBarCloseMainFrame();
+        Close close = new Close();
         JButton close1 = close.makeClose();
 
         // minimize
-        MenuBarMinimizeMainFrame mini = new MenuBarMinimizeMainFrame();
+        Minimized mini = new Minimized();
         JButton minimize = mini.makeMinimize();
         
 

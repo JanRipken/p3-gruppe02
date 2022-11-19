@@ -1,19 +1,19 @@
 package main.tomedb.java.newbookframe.controller;
 
-import main.tomedb.java.newbookframe.view.AddNewBook;
+import main.tomedb.java.newbookframe.view.NewBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import main.tomedb.java.mainframe.model.BookModel;
-import main.tomedb.java.newbookframe.view.AddNewBookPopUpView;
+import main.tomedb.java.newbookframe.view.WrongEntry;
 import main.tomedb.java.mainframe.view.SouthPanel;
 
 // Klasse zum speichern eines neuen Buches
-public class AddNewBookSpeichernController implements ActionListener {
+public class Save implements ActionListener {
 
-    private AddNewBook view;
+    private NewBook view;
     private BookModel model;
 
-    public AddNewBookSpeichernController(AddNewBook view) {
+    public Save(NewBook view) {
         this.model = new BookModel();
         this.view = view;
 
@@ -37,7 +37,7 @@ public class AddNewBookSpeichernController implements ActionListener {
             view.dispose();
 
         } catch (Exception ex) {
-            AddNewBookPopUpView pop = new AddNewBookPopUpView();
+            WrongEntry pop = new WrongEntry();
         }
 
     }

@@ -1,18 +1,17 @@
 package main.tomedb.java.newbookframe.view;
 
 import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.GridLayout;
+
 import javax.swing.BoxLayout;
-import javax.swing.JLabel;
+
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-public class LayoutAddBook extends JPanel {
+public class LayoutTextfield extends JPanel {
 
     JTextField textfield = new JTextField();
     String beschreibung = new String();
-    public LayoutAddBook(String myLabel) {
+    public LayoutTextfield(String myLabel) {
 
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         beschreibung = myLabel;
