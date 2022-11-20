@@ -4,7 +4,6 @@
  */
 package main.tomedb.java.newbookframe.view;
 
-import main.tomedb.java.newbookframe.controller.NewBook;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JPanel;

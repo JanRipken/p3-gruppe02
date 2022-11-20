@@ -4,7 +4,7 @@ import main.tomedb.java.newbookframe.view.NewBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import main.tomedb.java.mainframe.model.BookModel;
-import main.tomedb.java.newbookframe.view.WrongEntry;
+import main.tomedb.java.newbookframe.view.WrongEntryOptionPane;
 import main.tomedb.java.mainframe.view.SouthPanel;
 
 // Klasse zum speichern eines neuen Buches
@@ -37,7 +37,7 @@ public class Save implements ActionListener {
             view.dispose();
 
         } catch (Exception ex) {
-            WrongEntry pop = new WrongEntry();
+            WrongEntryOptionPane pop = new WrongEntryOptionPane();
         }
 
     }
