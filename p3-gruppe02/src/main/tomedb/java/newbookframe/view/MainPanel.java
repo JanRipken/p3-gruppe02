@@ -9,6 +9,7 @@ public class MainPanel extends JPanel {
     public MainPanel() {
 
         this.setLayout(new GridLayout(8, 0));
+
     }
 
 }

@@ -15,7 +15,6 @@ import main.tomedb.java.newbookframe.controller.Abort;
 import main.tomedb.java.newbookframe.controller.DragMove;
 import main.tomedb.java.newbookframe.controller.Save;
 
-
 public class NewBook extends JFrame {
 
     // Final damit die variable nur einmal genutzt werden kann
@@ -46,8 +45,7 @@ public class NewBook extends JFrame {
     public NewBook() {
 
         this.setUndecorated(true);
-        
-        
+
         DragMove drag = new DragMove(this);
         this.addMouseListener(drag);
         this.addMouseMotionListener(drag);

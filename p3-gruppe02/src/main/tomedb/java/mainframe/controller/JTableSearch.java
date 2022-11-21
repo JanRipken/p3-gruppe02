@@ -7,22 +7,25 @@ import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.TableSearch;
 
 public class JTableSearch implements ActionListener {
 
-    TableRowSorter<DefaultTableModel> sorter;
-    public JTable table;
-    public DefaultTableModel model;
-    String suchBegriff;
+    private TableRowSorter<DefaultTableModel> sorter;
+    private JTable table;
+    private DefaultTableModel model;
+    private String suchBegriff;
 
-    // Anwenden des such Filters 
+    /**
+     * Anwenden des Regex filters um den Table besser nach Schlüsselbegriffen
+     * durchsuchen zu können
+     */
     public void search() {
         if (suchBegriff != null) {
             sorter.setRowFilter(RowFilter.regexFilter(suchBegriff));
         }
     }
 
-    // erstellen der Internen JTable methode Sorter
     private void createRowSorter(DefaultTableModel model) {
         sorter = new TableRowSorter<DefaultTableModel>(model);
         table.setRowSorter(sorter);
@@ -30,7 +33,7 @@ public class JTableSearch implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        main.tomedb.java.mainframe.view.TableSearch searching = new main.tomedb.java.mainframe.view.TableSearch();
+        TableSearch searching = new TableSearch();
         suchBegriff = searching.text;
 
         this.model = SouthPanel.JlistTabelle.model;
