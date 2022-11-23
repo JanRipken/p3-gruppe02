@@ -39,7 +39,7 @@ public class NorthPanel extends JPanel {
         searchBookButton.setIcon(iconSuchen);
 
         // Create Controller Buch erstellen
-        NewBook startNewWindow = new NewBook(this);
+        NewBook startNewWindow = new NewBook();
         newBookButton.addActionListener(startNewWindow);
 
         // Create Controller Buch erstellen

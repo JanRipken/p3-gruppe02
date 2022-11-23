@@ -8,11 +8,10 @@ import main.tomedb.java.mainframe.model.BookModelList;
 //Klasse zum starten der UI zum erstellen eines Neuen Buches
 public class NewBook implements ActionListener {
 
-    private main.tomedb.java.mainframe.view.NorthPanel view;
     BookModelList modelBook;
 
-    public NewBook(main.tomedb.java.mainframe.view.NorthPanel view) {
-        this.view = view;
+    public NewBook() {
+
         modelBook = new BookModelList();
 
     }
