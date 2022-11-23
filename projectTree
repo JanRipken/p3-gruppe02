@@ -1,0 +1,86 @@
+p3-gruppe02
+├── build.xml
+├── data
+│   ├── main.txt
+│   └── main_test.txt
+├── manifest.mf
+├── nbproject
+│   ├── build-impl.xml
+│   ├── genfiles.properties
+│   ├── project.properties
+│   └── project.xml
+└── src
+    └── main
+        └── tomedb
+            ├── java
+            │   ├── designtemplate
+            │   │   └── TomeDBDesignTemplate.java
+            │   ├── mainframe
+            │   │   ├── TomeDB.java
+            │   │   ├── controller
+            │   │   │   ├── JTableChanged.java
+            │   │   │   ├── JTableSearch.java
+            │   │   │   ├── MainFramDragMove.java
+            │   │   │   ├── SaveOnClose.java
+            │   │   │   ├── WindowEventHandler.java
+            │   │   │   └── menubar
+            │   │   │       ├── CloseMainFrame.java
+            │   │   │       ├── ExportNewFile.java
+            │   │   │       ├── ImportNewFile.java
+            │   │   │       └── settings
+            │   │   │           ├── AutorOnOff.java
+            │   │   │           ├── BewertungOnOff.java
+            │   │   │           ├── BuchTitelOnOff.java
+            │   │   │           ├── ErscheinungsjahrOnOff.java
+            │   │   │           └── NochmallesenOnOff.java
+            │   │   ├── dao
+            │   │   │   ├── BookModelDAO.java
+            │   │   │   ├── BookModelListDAO.java
+            │   │   │   └── DAO.java
+            │   │   ├── model
+            │   │   │   ├── BookModel.java
+            │   │   │   └── BookModelList.java
+            │   │   └── view
+            │   │       ├── MainFrame.java
+            │   │       ├── NorthPanel.java
+            │   │       ├── SouthPanel.java
+            │   │       ├── Table.java
+            │   │       ├── TableSearch.java
+            │   │       └── menubar
+            │   │           ├── Close.java
+            │   │           ├── Menu.java
+            │   │           ├── MenuBar.java
+            │   │           ├── Minimized.java
+            │   │           └── Settings.java
+            │   └── newbookframe
+            │       ├── controller
+            │       │   ├── Abort.java
+            │       │   ├── DragMove.java
+            │       │   ├── NewBook.java
+            │       │   └── Save.java
+            │       └── view
+            │           ├── Buttons.java
+            │           ├── LayoutCheckBox.java
+            │           ├── LayoutTextfield.java
+            │           ├── MainPanel.java
+            │           ├── NewBook.java
+            │           └── WrongEntryOptionPane.java
+            └── ressources
+                └── icons
+                    ├── 33.gif
+                    ├── 42a.gif
+                    ├── 52.gif
+                    ├── 53.gif
+                    ├── 61.gif
+                    ├── 90.gif
+                    ├── 93.gif
+                    ├── bookAdd.png
+                    ├── bucher.png
+                    ├── close.png
+                    ├── export.png
+                    ├── import.png
+                    ├── minimize-sign.png
+                    ├── new.gif
+                    └── suchen.gif
+
+20 directories, 63 files
