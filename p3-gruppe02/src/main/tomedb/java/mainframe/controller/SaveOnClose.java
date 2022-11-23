@@ -14,19 +14,17 @@ import main.tomedb.java.mainframe.controller.menubar.ImportNewFile;
 public class SaveOnClose extends JFrame {
 
     private String filePath = "./data/main.txt";
-    
-    JOptionPane pane;
+
     String updatedPath = ImportNewFile.updatedpath;
 
     public SaveOnClose() {
 
-        int selected = pane.showConfirmDialog(null,
+        int selected = JOptionPane.showConfirmDialog(null,
                 "Möchten sie ihr Liste Speichern ?",
                 "Speichern",
-                pane.YES_NO_OPTION);
+                JOptionPane.YES_NO_OPTION);
 
- 
-        if (selected == 0 ) {
+        if (selected == 0) {
             if (updatedPath != null) {
                 // Speichern in DOA on Close
                 BookModelListDAO daoWrite = new BookModelListDAO(updatedPath, true); // Schreiben

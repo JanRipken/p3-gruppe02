@@ -4,22 +4,17 @@
  */
 package main.tomedb.java.mainframe.dao;
 
-import main.tomedb.java.mainframe.dao.BookModelDAO;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.model.BookModel;
 import java.io.IOException;
 
-/**
- *
- * @author matthiaskoziol
- */
 public class BookModelListDAO extends DAO {
 
     /**
      * Konstruktor um das Data Access Object mit einem Dateinamen zu
      * initialisieren.
      *
-     * @param dateiName Dateiname
+     * @param dateiName    Dateiname
      * @param openForWrite true wenn geschrieben werden soll
      */
     public BookModelListDAO(String dateiName, boolean openForWrite) {
@@ -29,7 +24,7 @@ public class BookModelListDAO extends DAO {
     public void write(Object obj) throws IOException {
         if (out != null) {
             BookModelList bookList = (BookModelList) obj;
-            
+
             // Anzahl BookModel speichern:
             out.writeInt(bookList.bookModelList.size());
 

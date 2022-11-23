@@ -2,7 +2,6 @@ package main.tomedb.java.mainframe.view;
 
 import main.tomedb.java.mainframe.controller.JTableChanged;
 import java.awt.BorderLayout;
-import java.awt.GridLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
@@ -18,7 +17,7 @@ public class SouthPanel extends JPanel {
     public SouthPanel() {
 
         JlistTabelle = new Table();
-        
+
         TableListener = new JTableChanged();
         // zugriff vom controller
         this.setLayout(new BorderLayout());

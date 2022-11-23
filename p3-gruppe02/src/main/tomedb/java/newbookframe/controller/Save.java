@@ -37,7 +37,7 @@ public class Save implements ActionListener {
             view.dispose();
 
         } catch (Exception ex) {
-            WrongEntryOptionPane pop = new WrongEntryOptionPane();
+            new WrongEntryOptionPane();
         }
 
     }

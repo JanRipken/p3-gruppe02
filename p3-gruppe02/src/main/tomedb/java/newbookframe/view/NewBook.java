@@ -1,19 +1,13 @@
 package main.tomedb.java.newbookframe.view;
 
-import main.tomedb.java.newbookframe.view.Buttons;
 import main.tomedb.java.newbookframe.controller.Abort;
 import main.tomedb.java.newbookframe.controller.Save;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
-
 import javax.swing.JFrame;
-import main.tomedb.java.mainframe.controller.MainFramDragMove;
-import main.tomedb.java.newbookframe.controller.Abort;
 import main.tomedb.java.newbookframe.controller.DragMove;
-import main.tomedb.java.newbookframe.controller.Save;
 
 public class NewBook extends JFrame {
 
@@ -33,7 +27,7 @@ public class NewBook extends JFrame {
     private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
     private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal in DOUBLE an";
 
-    //Initialisierung der Layouts
+    // Initialisierung der Layouts
     LayoutTextfield titel;
     LayoutTextfield AutorName;
     LayoutTextfield AutorVorName;
@@ -51,8 +45,9 @@ public class NewBook extends JFrame {
         this.addMouseMotionListener(drag);
 
         // hinzufügen eines icons zur addBook app
-        //https://www.flaticon.com/
-        Image icon = Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/main/tomedb/ressources/icons/bookAdd.png"));
+        // https://www.flaticon.com/
+        Image icon = Toolkit.getDefaultToolkit()
+                .getImage(this.getClass().getResource("/main/tomedb/ressources/icons/bookAdd.png"));
         this.setIconImage(icon);
 
         // Hauptpanel erstellen
@@ -69,19 +64,19 @@ public class NewBook extends JFrame {
 
         Buttons AbbbbruchOderSpeichern = new Buttons();
 
-        //Tooltips
+        // Tooltips
         Erscheinungsjahr.textfield.setToolTipText(TooltipErscheinungsjahr);
         Seitenanzahl.textfield.setToolTipText(TooltipSeitenanzahl);
         bewertung.textfield.setToolTipText(TooltipBewertung);
 
-        //Controller
+        // Controller
         Save modelBook = new Save(this);
         AbbbbruchOderSpeichern.ButtonBestätigen.addActionListener(modelBook);
 
         Abort abbrechen = new Abort(this);
         AbbbbruchOderSpeichern.ButtonAbrechen.addActionListener(abbrechen);
 
-        //Testweise bereits namen setzen
+        // Testweise bereits namen setzen
         titel.textfield.setText("Java 2019");
         AutorName.textfield.setText("Musterman");
         AutorVorName.textfield.setText("Max");

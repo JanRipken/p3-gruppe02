@@ -10,14 +10,13 @@ import main.tomedb.java.mainframe.view.menubar.Menu;
 import main.tomedb.java.mainframe.view.SouthPanel;
 import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.mainframe.controller.JTableChanged;
-import main.tomedb.java.mainframe.controller.JTableChanged;
 
 public class ImportNewFile extends Table implements ActionListener {
 
     public static String updatedpath;
     String dateiName;
 
-    //TODO: ??
+    // TODO: ??
     public ImportNewFile(Menu aThis) {
     }
 
@@ -27,7 +26,7 @@ public class ImportNewFile extends Table implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        //Import Dialog
+        // Import Dialog
         JFileChooser fileChooser = new JFileChooser("./data");
         fileChooser.setDialogTitle("Wählen sie die zu importierende Datei");
         int returnVal = fileChooser.showOpenDialog(null);
@@ -40,14 +39,14 @@ public class ImportNewFile extends Table implements ActionListener {
         // pfad des importierten files um es später dort wieder abzuspeichern
         updatedpath = "./data/" + fileChooser.getSelectedFile().getName();
 
-        //Datei lesen
+        // Datei lesen
         dateiName = fileChooser.getSelectedFile().getAbsolutePath();
 
         importFile(dateiName);
     }
 
     public void importFile(String path) {
-        //Datei lesen
+        // Datei lesen
         JTableChanged TableListener = SouthPanel.TableListener;
         SouthPanel.JlistTabelle.model.removeTableModelListener(TableListener);
 
@@ -60,7 +59,7 @@ public class ImportNewFile extends Table implements ActionListener {
         }
         dao2.close();
 
-        //bestehende list mit gelesener list überschreiben und darstellen
+        // bestehende list mit gelesener list überschreiben und darstellen
         Table.list = list;
         SouthPanel.JlistTabelle.addRowtoTable();
 

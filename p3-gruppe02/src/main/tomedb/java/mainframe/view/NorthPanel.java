@@ -9,55 +9,46 @@ import main.tomedb.java.mainframe.controller.JTableSearch;
 import java.awt.GridLayout;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 
 /**
  *
  * @author janri
  */
-public class NorthPanel extends JPanel{
-    
+public class NorthPanel extends JPanel {
+
     private JButton newBookButton;
     private JButton searchBookButton;
-   
+
     private ImageIcon iconNeu;
-    private ImageIcon iconSuchen ;
-            
-        public NorthPanel() {
-            
-            this.setLayout(new GridLayout());
-             this.setSize(WIDTH, 10);
-                 
-          
-            // Neues Buch 
-            newBookButton = new JButton(); 
-            iconNeu = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/new.gif"));
-            newBookButton.setIcon(iconNeu);
-            
-            //Buch suchen
-            searchBookButton=new JButton();
-            iconSuchen = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/suchen.gif"));
-            searchBookButton.setIcon(iconSuchen);
-         
-            
-            //Create Controller Buch erstellen
-            NewBook startNewWindow = new NewBook(this);
-            newBookButton.addActionListener(startNewWindow);
+    private ImageIcon iconSuchen;
 
-            
-            
-            //Create Controller Buch erstellen
-            JTableSearch DurchsucheListe = new JTableSearch();
-            searchBookButton.addActionListener(DurchsucheListe);
-            
+    public NorthPanel() {
 
-            // Zum frame hinzufügen
-            this.add(newBookButton);
-            this.add(searchBookButton);
+        this.setLayout(new GridLayout());
+        this.setSize(WIDTH, 10);
 
-            
+        // Neues Buch
+        newBookButton = new JButton();
+        iconNeu = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/new.gif"));
+        newBookButton.setIcon(iconNeu);
 
-        }   
+        // Buch suchen
+        searchBookButton = new JButton();
+        iconSuchen = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/suchen.gif"));
+        searchBookButton.setIcon(iconSuchen);
+
+        // Create Controller Buch erstellen
+        NewBook startNewWindow = new NewBook(this);
+        newBookButton.addActionListener(startNewWindow);
+
+        // Create Controller Buch erstellen
+        JTableSearch DurchsucheListe = new JTableSearch();
+        searchBookButton.addActionListener(DurchsucheListe);
+
+        // Zum frame hinzufügen
+        this.add(newBookButton);
+        this.add(searchBookButton);
+
+    }
 }

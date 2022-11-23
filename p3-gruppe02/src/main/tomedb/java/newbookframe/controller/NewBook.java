@@ -23,7 +23,7 @@ public class NewBook implements ActionListener {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    main.tomedb.java.newbookframe.view.NewBook newBook = new main.tomedb.java.newbookframe.view.NewBook();
+                    new main.tomedb.java.newbookframe.view.NewBook();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

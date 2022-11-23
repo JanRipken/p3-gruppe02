@@ -1,14 +1,11 @@
 package main.tomedb.java.mainframe.view;
 
-import main.tomedb.java.mainframe.controller.JTableChanged;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
-import javax.swing.event.TableModelEvent;
-import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import main.tomedb.java.mainframe.model.BookModel;
@@ -16,27 +13,28 @@ import main.tomedb.java.mainframe.model.BookModelList;
 
 public class Table {
 
-    //erstellen der einzelnen listen
+    // erstellen der einzelnen listen
     public static BookModelList list;
     public JTable table;
     public DefaultTableModel model;
 
     // setzen der überschriften für den jTable
-    private static final String[] tableHeader = new String[]{
-        "Titel",
-        "Name",
-        "Vorname",
-        "Erscheinungsjahr",
-        "Seitenanzahl",
-        "Bewertung",
-        "Gelesen"
+    private static final String[] tableHeader = new String[] {
+            "Titel",
+            "Name",
+            "Vorname",
+            "Erscheinungsjahr",
+            "Seitenanzahl",
+            "Bewertung",
+            "Gelesen"
     };
 
     public Table() {
         list = new BookModelList();
 
-        //TODO: Eigene klasse hierfür Schreiben
+        // TODO: Eigene klasse hierfür Schreiben
         model = new DefaultTableModel(0, tableHeader.length) {
+
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
@@ -102,11 +100,12 @@ public class Table {
         // TODO: Löschen
         table.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent me) {
-                if (me.getClickCount() == 2) {     // to detect doble click events
+                if (me.getClickCount() == 2) { // to detect doble click events
                     JTable target = (JTable) me.getSource();
                     int row = target.getSelectedRow(); // select a row
                     int column = target.getSelectedColumn(); // select a column
-                    JOptionPane.showMessageDialog(null, table.getValueAt(row, column)); // get the value of a row and column.
+                    JOptionPane.showMessageDialog(null, table.getValueAt(row, column)); // get the value of a row and
+                                                                                        // column.
                 }
             }
         });
@@ -125,13 +124,13 @@ public class Table {
 
         for (int i = 0; i < list.bookModelList.size(); i++) {
 
-            Object[] data = {list.bookModelList.get(i).getTitel(),
-                list.bookModelList.get(i).getAutorName(),
-                list.bookModelList.get(i).getAutorVorname(),
-                list.bookModelList.get(i).getErscheinungsjahr(),
-                list.bookModelList.get(i).getSeitenanzahl(),
-                list.bookModelList.get(i).getBewertung(),
-                list.bookModelList.get(i).getGelesen()};
+            Object[] data = { list.bookModelList.get(i).getTitel(),
+                    list.bookModelList.get(i).getAutorName(),
+                    list.bookModelList.get(i).getAutorVorname(),
+                    list.bookModelList.get(i).getErscheinungsjahr(),
+                    list.bookModelList.get(i).getSeitenanzahl(),
+                    list.bookModelList.get(i).getBewertung(),
+                    list.bookModelList.get(i).getGelesen() };
             model.addRow(data);
 
         }

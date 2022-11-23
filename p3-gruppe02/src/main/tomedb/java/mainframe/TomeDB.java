@@ -18,11 +18,12 @@ public class TomeDB {
          *
          */
         SwingUtilities.invokeLater(new Runnable() {
+
             @Override
             public void run() {
                 try {
 
-                    TomeDBDesignTemplate design = new TomeDBDesignTemplate();
+                    new TomeDBDesignTemplate();
                     showMainFrame();
 
                 } catch (Exception e) {

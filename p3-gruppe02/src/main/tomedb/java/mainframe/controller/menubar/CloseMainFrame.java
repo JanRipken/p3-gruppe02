@@ -12,10 +12,10 @@ public class CloseMainFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (changedTable == true) {
-            SaveOnClose quest = new SaveOnClose();
+            new SaveOnClose();
         }
 
-        //Beenden
+        // Beenden
         System.out.println("exit");
         System.exit(0);
     }
