@@ -6,10 +6,6 @@ import main.tomedb.java.mainframe.view.menubar.Settings;
 
 public class ErscheinungsjahrOnOff implements ActionListener {
 
-    // TODO: ???
-    public ErscheinungsjahrOnOff(Settings aThis) {
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");

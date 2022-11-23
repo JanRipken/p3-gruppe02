@@ -8,8 +8,8 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 public class TomeDBDesignTemplate {
 
     /**
-     * Setzt innerhlab des NimbusLookAndFell Design Templates nach verschiedenen
-     * Keys die jeweiligen farben sollte das nicht möglich sein nimmt das
+     * Setzt innerhalb des NimbusLookAndFell Design Templates, nach verschiedenen
+     * keys die jeweiligen Farben, sollte das nicht möglich sein nimmt das
      * programm einfach das jewilige OS Look and Feel
      *
      * @throws java.lang.ClassNotFoundException
@@ -17,7 +17,9 @@ public class TomeDBDesignTemplate {
      * @throws java.lang.IllegalAccessException
      * @throws javax.swing.UnsupportedLookAndFeelException
      */
-    public TomeDBDesignTemplate() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+
+    public TomeDBDesignTemplate() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
+            UnsupportedLookAndFeelException {
 
         try {
             UIManager.setLookAndFeel(new NimbusLookAndFeel());

@@ -13,13 +13,6 @@ import javax.swing.JFileChooser;
 public class ExportNewFile implements ActionListener {
 
     // TODO: Was machen die Konstruktoren ?
-    public ExportNewFile(Menu aThis) {
-
-    }
-
-    public ExportNewFile(WindowEventHandler aThis) {
-
-    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -36,6 +29,7 @@ public class ExportNewFile implements ActionListener {
         }
 
         // datei als txt unter gewähltem pfad schreiben
+        // TODO: er speichert test.txt als test.txt.txt ab einmal prüfen bitte
         String dateiName = fileExporter.getSelectedFile().getAbsolutePath() + ".txt";
         BookModelListDAO dao = new BookModelListDAO(dateiName, true); // Schreiben
         try {

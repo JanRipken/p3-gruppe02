@@ -6,10 +6,6 @@ import main.tomedb.java.mainframe.view.menubar.Settings;
 
 public class BuchTitelOnOff implements ActionListener {
 
-    //TODO: ???
-    public BuchTitelOnOff(Settings aThis) {
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");

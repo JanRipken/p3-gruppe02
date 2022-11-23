@@ -6,10 +6,6 @@ import main.tomedb.java.mainframe.view.menubar.Settings;
 
 public class BewertungOnOff implements ActionListener {
 
-    // TODO: ??
-    public BewertungOnOff(Settings aThis) {
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");

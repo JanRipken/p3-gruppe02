@@ -6,14 +6,9 @@ import main.tomedb.java.mainframe.view.menubar.Settings;
 
 public class AutorOnOff implements ActionListener {
 
-    // TODO: Was genau macht der Konstruktor ?
-    public AutorOnOff(Settings aThis) {
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-   
 }
