@@ -7,7 +7,7 @@ Ihre Bücher auf einen Blick
 
 
 ``` bash
-git clone https://github.com/JanRipken/p3-gruppe02.github
+git clone https://github.com/JanRipken/p3-gruppe02.git
 ```
 
 
