@@ -17,46 +17,43 @@ import javax.swing.JMenuItem;
  */
 public class Menu extends JMenu {
 
-    ImageIcon importIcon;
-    ImageIcon exportIcon;
+    private ImageIcon importIcon;
+    private ImageIcon exportIcon;
 
-    JMenu menu;
+    private JMenu menu;
 
     protected Menu() {
 
-        // menu erstellen
         menu = new JMenu("Main Menu");
 
+        // getting the Import icon
         importIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/import.png"));
         Image image = importIcon.getImage(); // transform it
         Image newimg = image.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
         importIcon = new ImageIcon(newimg);
         importIcon.getImage();
 
+        // getting the Export icon
         exportIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/export.png"));
         Image image2 = exportIcon.getImage(); // transform it
         Image newimg2 = image2.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
         exportIcon = new ImageIcon(newimg2);
         exportIcon.getImage();
 
-        // MenuItem
         JMenuItem ImportFile = new JMenuItem("Import");
         JMenuItem ExportFile = new JMenuItem("Export");
 
-        // menu add
         menu.add(ImportFile);
         menu.add(ExportFile);
 
         ImportFile.setIcon(importIcon);
         ExportFile.setIcon(exportIcon);
 
-        // controller hinzufügen für ImportFile
-        ImportNewFile startimport = new ImportNewFile();
-        ImportFile.addActionListener(startimport);
+        ImportNewFile startImport = new ImportNewFile();
+        ImportFile.addActionListener(startImport);
 
-        // controller hinzufügen für ImportFile
-        ExportNewFile startexport = new ExportNewFile();
-        ExportFile.addActionListener(startexport);
+        ExportNewFile startExport = new ExportNewFile();
+        ExportFile.addActionListener(startExport);
 
     }
 

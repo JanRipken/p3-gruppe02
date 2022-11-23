@@ -16,17 +16,11 @@ public class ImportNewFile extends Table implements ActionListener {
     public static String updatedpath;
     String dateiName;
 
-    // TODO: ??
-    public ImportNewFile(Menu aThis) {
-    }
-
-    public ImportNewFile() {
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
         // Import Dialog
+        // TODO JFile chooser ist eine view
         JFileChooser fileChooser = new JFileChooser("./data");
         fileChooser.setDialogTitle("Wählen sie die zu importierende Datei");
         int returnVal = fileChooser.showOpenDialog(null);
@@ -36,18 +30,20 @@ public class ImportNewFile extends Table implements ActionListener {
                     + fileChooser.getSelectedFile().getName());
         }
 
-        // pfad des importierten files um es später dort wieder abzuspeichern
+        // After importing use the Updated path
         updatedpath = "./data/" + fileChooser.getSelectedFile().getName();
 
-        // Datei lesen
+        // Read file
         dateiName = fileChooser.getSelectedFile().getAbsolutePath();
 
         importFile(dateiName);
     }
 
     public void importFile(String path) {
-        // Datei lesen
+        // Read file
         JTableChanged TableListener = SouthPanel.TableListener;
+
+        // discard old Table listener
         SouthPanel.JlistTabelle.model.removeTableModelListener(TableListener);
 
         BookModelList list = new BookModelList();
@@ -59,11 +55,11 @@ public class ImportNewFile extends Table implements ActionListener {
         }
         dao2.close();
 
-        // bestehende list mit gelesener list überschreiben und darstellen
+        // Write new lost over old List
         Table.list = list;
         SouthPanel.JlistTabelle.addRowtoTable();
 
-        // Aktivieren des Table listeners beim importieren eines neuen files
+        // Activate a new Table listener
         SouthPanel.JlistTabelle.model.addTableModelListener(TableListener);
 
     }

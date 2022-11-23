@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class BookModelList {
 
-    // erzeugen der ArrayListe
+    // start an ArrayList
     public ArrayList<BookModel> bookModelList;
 
     public BookModelList() {

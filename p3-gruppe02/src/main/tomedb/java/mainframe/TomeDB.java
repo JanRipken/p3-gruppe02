@@ -8,15 +8,6 @@ public class TomeDB {
 
     public static void main(String[] args) {
 
-        /**
-         * TODO: Reicht so ?
-         *
-         * Mit invoke later stellen wir sicher das das unser GUI Kommponenten
-         * aus jedem Thread heraus vernüftig starten und nicht nur aus dem
-         * Event-Dispatch-Thread damit stellen wir sicher, das unsere App immer
-         * sauber läuft und alles geupdated wird.
-         *
-         */
         SwingUtilities.invokeLater(new Runnable() {
 
             @Override

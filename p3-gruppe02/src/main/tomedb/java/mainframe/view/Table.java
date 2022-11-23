@@ -13,12 +13,11 @@ import main.tomedb.java.mainframe.model.BookModelList;
 
 public class Table {
 
-    // erstellen der einzelnen listen
     public static BookModelList list;
     public JTable table;
     public DefaultTableModel model;
 
-    // setzen der überschriften für den jTable
+    // Setting the Headers for our Table
     private static final String[] tableHeader = new String[] {
             "Titel",
             "Name",
@@ -73,8 +72,8 @@ public class Table {
 
         model.setColumnIdentifiers(tableHeader);
 
-        // init des JTables
-        // setzen jeder zweiten row auf hell Gray
+        // setting every 2nd row in oir table to another color
+        // TODO: eigene klasse ?
         table = new JTable(model) {
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
@@ -90,13 +89,12 @@ public class Table {
 
         table.setSelectionBackground(Color.GRAY);
         table.setForeground(Color.BLACK);
-        // verhindern das man die zellen verschieben kann
+
         table.getTableHeader().setReorderingAllowed(false);
         table.getTableHeader().setForeground(Color.BLACK);
         table.setFocusable(false);
         table.setAutoCreateRowSorter(true);
 
-        // testweise double click events
         // TODO: Löschen
         table.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent me) {
@@ -112,8 +110,7 @@ public class Table {
 
     }
 
-    // Das neu erstellte buch zur BookModelList hinzufügen
-    // TODO: dürfen die Methoden in der View sein ?
+    // TODO: in den Controller packen
     public void addToTable(BookModel book) {
         list.addBook(book);
         addRowtoTable();

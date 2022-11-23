@@ -1,23 +1,20 @@
 package main.tomedb.java.mainframe.controller.menubar;
 
-import main.tomedb.java.mainframe.controller.WindowEventHandler;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
-import main.tomedb.java.mainframe.view.menubar.Menu;
 import static main.tomedb.java.mainframe.view.Table.list;
 import javax.swing.JFileChooser;
 
 public class ExportNewFile implements ActionListener {
 
-    // TODO: Was machen die Konstruktoren ?
-
     @Override
     public void actionPerformed(ActionEvent e) {
 
         // export dialog
+        // TODO JFileChooser ist eine View
         JFileChooser fileExporter = new JFileChooser("./data");
         fileExporter.setDialogTitle("Speichern unter");
 
@@ -28,7 +25,7 @@ public class ExportNewFile implements ActionListener {
             System.out.println("Save as file: " + fileToSave.getAbsolutePath());
         }
 
-        // datei als txt unter gewähltem pfad schreiben
+        // Write our file to the destined Path
         // TODO: er speichert test.txt als test.txt.txt ab einmal prüfen bitte
         String dateiName = fileExporter.getSelectedFile().getAbsolutePath() + ".txt";
         BookModelListDAO dao = new BookModelListDAO(dateiName, true); // Schreiben

@@ -5,7 +5,6 @@ import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.model.BookModelList;
 
-//Klasse zum starten der UI zum erstellen eines Neuen Buches
 public class NewBook implements ActionListener {
 
     BookModelList modelBook;

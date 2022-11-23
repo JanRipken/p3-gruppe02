@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package main.tomedb.java.mainframe.view.menubar;
 
 import main.tomedb.java.mainframe.controller.menubar.settings.BuchTitelOnOff;
@@ -12,51 +9,45 @@ import main.tomedb.java.mainframe.controller.menubar.settings.NochmallesenOnOff;
 import javax.swing.JCheckBox;
 import javax.swing.JMenu;
 
-/**
- *
- * @author janri
- */
 public class Settings extends JMenu {
 
-    JMenu settings;
+    private JMenu settings;
+    private JCheckBox BuchTitel;
+    private JCheckBox Autor;
+    private JCheckBox Erscheinungsjahr;
+    private JCheckBox Bewertung;
+    private JCheckBox NochmalLesen;
 
-    protected Settings() {
-        // menu erstellen
+    public Settings() {
+
         settings = new JMenu("Settings");
 
-        // MenuItem
-        JCheckBox BuchTitel = new JCheckBox("Buch Titel");
-        JCheckBox Autor = new JCheckBox("Autor");
-        JCheckBox Erscheinungsjahr = new JCheckBox("Erscheinungsjahr");
-        JCheckBox Bewertung = new JCheckBox("Bewertung");
-        JCheckBox NochmalLesen = new JCheckBox("Nochmal lesen");
+        BuchTitel = new JCheckBox("Buch Titel");
+        Autor = new JCheckBox("Autor");
+        Erscheinungsjahr = new JCheckBox("Erscheinungsjahr");
+        Bewertung = new JCheckBox("Bewertung");
+        NochmalLesen = new JCheckBox("Nochmal lesen");
 
-        // menu add
         settings.add(BuchTitel);
         settings.add(Autor);
         settings.add(Erscheinungsjahr);
         settings.add(Bewertung);
         settings.add(NochmalLesen);
 
-        // controller hinzufügen für BuchTitel
-        BuchTitelOnOff togglebuchtitel = new BuchTitelOnOff();
-        BuchTitel.addActionListener(togglebuchtitel);
+        BuchTitelOnOff toggleBuchTitel = new BuchTitelOnOff();
+        BuchTitel.addActionListener(toggleBuchTitel);
 
-        // controller hinzufügen für Autor
-        AutorOnOff toggleautor = new AutorOnOff();
-        Autor.addActionListener(toggleautor);
+        AutorOnOff toggleAutor = new AutorOnOff();
+        Autor.addActionListener(toggleAutor);
 
-        // controller hinzufügen für Erscheinungsjahr
-        ErscheinungsjahrOnOff toggleerscheinungsjahr = new ErscheinungsjahrOnOff();
-        Erscheinungsjahr.addActionListener(toggleerscheinungsjahr);
+        ErscheinungsjahrOnOff toggleErscheinungsjahr = new ErscheinungsjahrOnOff();
+        Erscheinungsjahr.addActionListener(toggleErscheinungsjahr);
 
-        // controller hinzufügen für Bewertung
-        BewertungOnOff togglebewertung = new BewertungOnOff();
-        Bewertung.addActionListener(togglebewertung);
+        BewertungOnOff toggleBewertung = new BewertungOnOff();
+        Bewertung.addActionListener(toggleBewertung);
 
-        // controller hinzufügen für Nochmal lesen
-        NochmallesenOnOff togglenochmallesen = new NochmallesenOnOff();
-        NochmalLesen.addActionListener(togglenochmallesen);
+        NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff();
+        NochmalLesen.addActionListener(toggleNochmalLesen);
     }
 
     public JMenu makeJSettings() {

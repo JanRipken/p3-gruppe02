@@ -10,14 +10,31 @@ public class BookModel {
     private double Bewertung;
     private int Erscheinungsjahr;
 
-    public BookModel(){
+    public BookModel() {
     }
-    // TODO: testweise auf public, soll private werden ??? sicher ??
-    public BookModel(String titel) {  
+
+    /**
+     * Constructor for only having a titel
+     * 
+     * @param titel
+     */
+    public BookModel(String titel) {
         this.Titel = titel;
     }
 
-    public BookModel(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen, double bewertung, int erscheinungsjahr) {
+    /**
+     * Constructor for having all parameters
+     * 
+     * @param titel
+     * @param autorname
+     * @param autorvorname
+     * @param seitenanzahl
+     * @param gelesen
+     * @param bewertung
+     * @param erscheinungsjahr
+     */
+    public BookModel(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen,
+            double bewertung, int erscheinungsjahr) {
         this.Titel = titel;
         this.AutorName = autorname;
         this.AutorVorname = autorvorname;
@@ -26,46 +43,60 @@ public class BookModel {
         this.Bewertung = bewertung;
         this.Erscheinungsjahr = erscheinungsjahr;
     }
-    public String getTitel(){
-        return this.Titel;        
+
+    public String getTitel() {
+        return this.Titel;
     }
-    public String getAutorName(){
-        return this.AutorName;        
+
+    public String getAutorName() {
+        return this.AutorName;
     }
-    public String getAutorVorname(){
-        return this.AutorVorname;        
+
+    public String getAutorVorname() {
+        return this.AutorVorname;
     }
-    public int getSeitenanzahl(){
-        return this.Seitenanzahl;        
+
+    public int getSeitenanzahl() {
+        return this.Seitenanzahl;
     }
-    public boolean getGelesen(){
-        return this.Gelesen;        
+
+    public boolean getGelesen() {
+        return this.Gelesen;
     }
-    public double getBewertung(){
-        return this.Bewertung;        
+
+    public double getBewertung() {
+        return this.Bewertung;
     }
-    public int getErscheinungsjahr(){
-        return this.Erscheinungsjahr;        
+
+    public int getErscheinungsjahr() {
+        return this.Erscheinungsjahr;
     }
-    public void setTitel(String titel){
+
+    public void setTitel(String titel) {
         this.Titel = titel;
     }
-    public void setAutorName(String autorname){
+
+    public void setAutorName(String autorname) {
         this.AutorName = autorname;
     }
-    public void setAutorVorname(String autorvorname){
+
+    public void setAutorVorname(String autorvorname) {
         this.AutorVorname = autorvorname;
     }
-    public void setSeitenanzahl(int seitenanzahl){
+
+    public void setSeitenanzahl(int seitenanzahl) {
         this.Seitenanzahl = seitenanzahl;
     }
-    public void setGelesen(boolean gelesen){
+
+    public void setGelesen(boolean gelesen) {
         this.Gelesen = gelesen;
     }
-    public void setBewerung(double bewertung){
+
+    public void setBewerung(double bewertung) {
         this.Bewertung = bewertung;
     }
-    public void setErscheinungsjahr(int erscheinungsjahr){
+
+    public void setErscheinungsjahr(int erscheinungsjahr) {
         this.Erscheinungsjahr = erscheinungsjahr;
     }
 }

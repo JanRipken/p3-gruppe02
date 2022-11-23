@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.newbookframe.view;
 
 import java.awt.BorderLayout;
@@ -9,10 +5,7 @@ import javax.swing.BoxLayout;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 
-/**
- *
- * @author janri
- */
+//TODO in die main panel klasse packen 
 public class LayoutCheckBox extends JPanel {
 
     String beschreibung = new String();

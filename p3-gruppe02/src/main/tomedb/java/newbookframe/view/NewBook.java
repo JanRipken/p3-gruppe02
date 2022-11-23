@@ -36,6 +36,7 @@ public class NewBook extends JFrame {
     LayoutTextfield bewertung;
     LayoutCheckBox nochmallesen;
 
+    // TODO NewBook exends MainFrame ?
     public NewBook() {
 
         this.setUndecorated(true);
@@ -44,16 +45,12 @@ public class NewBook extends JFrame {
         this.addMouseListener(drag);
         this.addMouseMotionListener(drag);
 
-        // hinzufügen eines icons zur addBook app
-        // https://www.flaticon.com/
         Image icon = Toolkit.getDefaultToolkit()
                 .getImage(this.getClass().getResource("/main/tomedb/ressources/icons/bookAdd.png"));
         this.setIconImage(icon);
 
-        // Hauptpanel erstellen
         MainPanel mainPanel = new MainPanel();
 
-        // erstellen der einzlenen layouts für das Panel
         titel = new LayoutTextfield(FrageBuchName);
         AutorName = new LayoutTextfield(FrageBuchAutor);
         AutorVorName = new LayoutTextfield(FrageBuchAutorVorname);
@@ -69,13 +66,13 @@ public class NewBook extends JFrame {
         Seitenanzahl.textfield.setToolTipText(TooltipSeitenanzahl);
         bewertung.textfield.setToolTipText(TooltipBewertung);
 
-        // Controller
         Save modelBook = new Save(this);
         AbbbbruchOderSpeichern.ButtonBestätigen.addActionListener(modelBook);
 
         Abort abbrechen = new Abort(this);
         AbbbbruchOderSpeichern.ButtonAbrechen.addActionListener(abbrechen);
 
+        // TODO Löschen
         // Testweise bereits namen setzen
         titel.textfield.setText("Java 2019");
         AutorName.textfield.setText("Musterman");
@@ -84,7 +81,6 @@ public class NewBook extends JFrame {
         Seitenanzahl.textfield.setText("3019");
         bewertung.textfield.setText("7.2");
 
-        // Zum Hauptpanel hinzufügen
         mainPanel.add(titel);
         mainPanel.add(AutorName);
         mainPanel.add(AutorVorName);
@@ -94,19 +90,16 @@ public class NewBook extends JFrame {
         mainPanel.add(nochmallesen);
         mainPanel.add(AbbbbruchOderSpeichern);
 
-        // Panel zum hauptframe hinzufügen
         this.setContentPane(mainPanel);
 
-        // anderes
         this.setPreferredSize(new Dimension(350, 600));
         this.pack();
-        this.setResizable(true);
+        this.setResizable(false);
 
         this.setVisible(true);
 
         this.setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 15, 15));
 
-        // Startup des Fensters in der Mitte des Desktops
         this.setLocationRelativeTo(null);
 
     }

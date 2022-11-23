@@ -14,15 +14,15 @@ public class JTableSearch implements ActionListener {
     private TableRowSorter<DefaultTableModel> sorter;
     private JTable table;
     private DefaultTableModel model;
-    private String suchBegriff;
+    private String searchTerm;
 
     /**
-     * Anwenden des Regex filters um den Table besser nach Schlüsselbegriffen
-     * durchsuchen zu können
+     * Using the Regex filter to search for Regular expressions in our JTable with
+     * whatever search the user Wants
      */
     public void search() {
-        if (suchBegriff != null) {
-            sorter.setRowFilter(RowFilter.regexFilter(suchBegriff));
+        if (searchTerm != null) {
+            sorter.setRowFilter(RowFilter.regexFilter(searchTerm));
         }
     }
 
@@ -34,14 +34,13 @@ public class JTableSearch implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         TableSearch searching = new TableSearch();
-        suchBegriff = searching.text;
+        searchTerm = searching.text;
 
         this.model = SouthPanel.JlistTabelle.model;
         this.table = SouthPanel.JlistTabelle.table;
 
         createRowSorter(model);
 
-        // Aufrufen der such Methode
         search();
     }
 }

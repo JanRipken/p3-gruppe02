@@ -5,10 +5,8 @@ import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
 /**
- *
- * Mit der JTableChanged Klasse wollen wir gucken ob sich unser JTable zur
- * laufzeit geändert hat um so später nur abzufragen ob man speichern möchte
- * wenn auch wirklich etwas geändert wurde
+ * JTableChanged listens to our JTable and if the table changes sets our
+ * variable to true
  *
  */
 public class JTableChanged implements TableModelListener {

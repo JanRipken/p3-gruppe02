@@ -8,16 +8,13 @@ import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 public class TomeDBDesignTemplate {
 
     /**
-     * Setzt innerhalb des NimbusLookAndFell Design Templates, nach verschiedenen
-     * keys die jeweiligen Farben, sollte das nicht möglich sein nimmt das
-     * programm einfach das jewilige OS Look and Feel
-     *
-     * @throws java.lang.ClassNotFoundException
-     * @throws java.lang.InstantiationException
-     * @throws java.lang.IllegalAccessException
-     * @throws javax.swing.UnsupportedLookAndFeelException
+     * Designing the TomeDB App by using the NimbusLookAndFeel
+     * 
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws UnsupportedLookAndFeelException
      */
-
     public TomeDBDesignTemplate() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
             UnsupportedLookAndFeelException {
 
