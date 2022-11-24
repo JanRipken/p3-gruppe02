@@ -14,7 +14,6 @@ public class ExportNewFile implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         // export dialog
-        // TODO JFileChooser ist eine View
         JFileChooser fileExporter = new JFileChooser("./data");
         fileExporter.setDialogTitle("Speichern unter");
 

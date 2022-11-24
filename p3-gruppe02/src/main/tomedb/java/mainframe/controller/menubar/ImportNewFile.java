@@ -20,7 +20,7 @@ public class ImportNewFile extends Table implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         // Import Dialog
-        // TODO JFile chooser ist eine view
+
         JFileChooser fileChooser = new JFileChooser("./data");
         fileChooser.setDialogTitle("Wählen sie die zu importierende Datei");
         int returnVal = fileChooser.showOpenDialog(null);

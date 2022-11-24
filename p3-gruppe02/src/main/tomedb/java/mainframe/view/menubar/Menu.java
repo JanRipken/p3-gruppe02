@@ -27,6 +27,7 @@ public class Menu extends JMenu {
         menu = new JMenu("Main Menu");
 
         // getting the Import icon
+        // TODO: eigene Methode 
         importIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/import.png"));
         Image image = importIcon.getImage(); // transform it
         Image newimg = image.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);

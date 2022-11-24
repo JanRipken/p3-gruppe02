@@ -36,7 +36,7 @@ public class NewBook extends JFrame {
     LayoutTextfield bewertung;
     LayoutCheckBox nochmallesen;
 
-    // TODO NewBook exends MainFrame ?
+
     public NewBook() {
 
         this.setUndecorated(true);
@@ -105,6 +105,7 @@ public class NewBook extends JFrame {
     }
 
     // TODO: Überarbeiten / Checken
+    // TODO: Textfield = Formatted textfield ?
     public String getTitel() {
         return titel.textfield.getText();
     }

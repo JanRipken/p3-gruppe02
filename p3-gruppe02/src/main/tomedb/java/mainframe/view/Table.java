@@ -31,7 +31,7 @@ public class Table {
     public Table() {
         list = new BookModelList();
 
-        // TODO: Eigene klasse hierfür Schreiben
+
         model = new DefaultTableModel(0, tableHeader.length) {
 
             @Override
@@ -73,7 +73,6 @@ public class Table {
         model.setColumnIdentifiers(tableHeader);
 
         // setting every 2nd row in oir table to another color
-        // TODO: eigene klasse ?
         table = new JTable(model) {
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
