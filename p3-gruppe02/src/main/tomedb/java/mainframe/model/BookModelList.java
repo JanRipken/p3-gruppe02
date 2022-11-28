@@ -15,8 +15,8 @@ public class BookModelList {
         bookModelList.add(book);
     }
 
-    public void deleteBook(Object index) {
-        bookModelList.remove(index);
+    public void deleteBook(BookModel book) {
+        bookModelList.remove(book);      
     }
 
     public void editBook(int index, BookModel book) {

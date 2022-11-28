@@ -129,7 +129,7 @@ public class Table {
         });
 
     }
-
+    
     // TODO: in den Controller packen
     public void addToTable(BookModel book) {
         list.addBook(book);
