@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class BookModelList {
 
     // start an ArrayList
-    public ArrayList<BookModel> bookModelList;
+    public static ArrayList<BookModel> bookModelList;
 
     public BookModelList() {
         bookModelList = new ArrayList<>();
@@ -14,4 +14,14 @@ public class BookModelList {
     public void addBook(BookModel book) {
         bookModelList.add(book);
     }
+
+    public void deleteBook(Object index) {
+        bookModelList.remove(index);
+    }
+
+    public void editBook(int index, BookModel book) {
+        bookModelList.set(index, book);
+
+    }
+
 }
