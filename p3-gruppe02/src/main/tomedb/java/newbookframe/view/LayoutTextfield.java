@@ -8,7 +8,7 @@ import javax.swing.JTextField;
 //TODO in die main panel klasse packen 
 public class LayoutTextfield extends JPanel {
 
-    JTextField textfield = new JTextField();
+    public JTextField textfield = new JTextField();
     String beschreibung = new String();
 
     public LayoutTextfield(String myLabel) {

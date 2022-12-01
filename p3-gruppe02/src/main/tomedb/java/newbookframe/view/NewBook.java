@@ -13,13 +13,13 @@ public class NewBook extends JFrame {
 
     // Final damit die variable nur einmal genutzt werden kann
     // Eventulle überarbeiten bei erstellung der Änderungsseite
-    private final String FrageBuchName = "Buchtitel";
-    private final String FrageBuchAutor = "Name des Autors";
-    private final String FrageBuchAutorVorname = "Vorname des Autors";
-    private final String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
-    private final String FrageBuchSeitenanzahl = "Seitenanzahl";
-    private final String FrageBuchBewertung = "Bewertung";
-    private final String FrageBuchNochmalLesen = "Erneut Lesen ?";
+    public  String FrageBuchName = "Buchtitel";
+    public  String FrageBuchAutor = "Name des Autors";
+    public  String FrageBuchAutorVorname = "Vorname des Autors";
+    public  String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
+    public  String FrageBuchSeitenanzahl = "Seitenanzahl";
+    public  String FrageBuchBewertung = "Bewertung";
+    public  String FrageBuchNochmalLesen = "Erneut Lesen ?";
 
     // Tooltips
     // TODO: überarbeiten
@@ -28,13 +28,13 @@ public class NewBook extends JFrame {
     private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal in DOUBLE an";
 
     // Initialisierung der Layouts
-    LayoutTextfield titel;
-    LayoutTextfield AutorName;
-    LayoutTextfield AutorVorName;
-    LayoutTextfield Erscheinungsjahr;
-    LayoutTextfield Seitenanzahl;
-    LayoutTextfield bewertung;
-    LayoutCheckBox nochmallesen;
+    public static LayoutTextfield titel;
+    public static LayoutTextfield AutorName;
+    public static LayoutTextfield AutorVorName;
+    public static LayoutTextfield Erscheinungsjahr;
+    public static LayoutTextfield Seitenanzahl;
+    public static LayoutTextfield bewertung;
+    public static LayoutCheckBox nochmallesen;
 
 
     public NewBook() {

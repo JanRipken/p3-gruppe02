@@ -14,7 +14,8 @@ import javax.swing.table.TableCellRenderer;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.controller.JTableMouseListener;
-import main.tomedb.java.mainframe.controller.JTableActionListener;
+import main.tomedb.java.mainframe.controller.JTableActionListenerDelete;
+import main.tomedb.java.mainframe.controller.JTableActionListenerEdit;
 
 public class Table {
 
@@ -24,6 +25,7 @@ public class Table {
     public JPopupMenu popupMenu;
     public static JMenuItem menuItemAdd;
     public static JMenuItem menuItemRemove;
+    public static JMenuItem menuItemEdit;
 
     // Setting the Headers for our Table
     private static final String[] tableHeader = new String[]{
@@ -105,16 +107,22 @@ public class Table {
         // creating popupMenu and adding to the table
         JPopupMenu popupMenu = new JPopupMenu();
 
-        JMenuItem menuItemRemove = new JMenuItem("Remove Current Row");
+        JMenuItem menuItemRemove = new JMenuItem("Remove Rows");
+        JMenuItem menuItemEdit = new JMenuItem("Edit Rows");
 
-        JTableActionListener tableListener = new JTableActionListener();
-        menuItemRemove.addActionListener(tableListener);
+        JTableActionListenerDelete tableListenerDelete = new JTableActionListenerDelete();
+        JTableActionListenerEdit tableListenerEdit = new JTableActionListenerEdit();
+        
+        menuItemRemove.addActionListener(tableListenerDelete);
+        menuItemEdit.addActionListener(tableListenerEdit);
 
         popupMenu.add(menuItemRemove);
+        popupMenu.add(menuItemEdit);
 
         table.setComponentPopupMenu(popupMenu);
 
         //table.addMouseListener(new JTableMouseListener(table));
+        
         // TODO: Löschen
         table.addMouseListener(new MouseAdapter() {
             public void mouseClicked(MouseEvent me) {

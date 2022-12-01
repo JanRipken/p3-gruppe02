@@ -2,26 +2,31 @@ package main.tomedb.java.mainframe.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JMenuItem;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.Table;
+import static main.tomedb.java.mainframe.view.Table.menuItemEdit;
+import static main.tomedb.java.mainframe.view.Table.menuItemRemove;
 
-public class JTableActionListener implements ActionListener {
+public class JTableActionListenerDelete implements ActionListener {
 
     public JTable table;
     public DefaultTableModel model;
     public BookModelList list;
+    public JMenuItem menuItemRemove;
+    public JMenuItem menuItemEdit;
 
-    //TODO work in progress
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        removeCurrentRow();
+        removeSelectedRows();
 
     }
 
-    private void removeCurrentRow() {
+    public void removeSelectedRows() {
 
         this.model = SouthPanel.JlistTabelle.model;
         this.table = SouthPanel.JlistTabelle.table;
@@ -34,8 +39,6 @@ public class JTableActionListener implements ActionListener {
             System.out.println(bookIndex[0]);
             list.deleteBook(bookIndex[0]);
             model.removeRow(bookIndex[0]);
-
         }
-
     }
 }

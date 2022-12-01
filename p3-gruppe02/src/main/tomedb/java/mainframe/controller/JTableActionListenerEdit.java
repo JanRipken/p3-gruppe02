@@ -1,0 +1,51 @@
+package main.tomedb.java.mainframe.controller;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JMenuItem;
+import javax.swing.JTable;
+import javax.swing.SwingUtilities;
+import javax.swing.table.DefaultTableModel;
+import main.tomedb.java.mainframe.model.BookModelList;
+import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.newbookframe.view.NewBook;
+
+public class JTableActionListenerEdit extends JTableActionListenerDelete implements ActionListener {
+
+    public JTable table;
+    public DefaultTableModel model;
+    public BookModelList list;
+    public JMenuItem menuItemRemove;
+    public JMenuItem menuItemEdit;
+    BookModelList modelBook;
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+         //editCurrentRows();
+         throw new UnsupportedOperationException("Not supported yet.");
+         
+    }
+    
+    // TODO: View.NewBook und dazugehörige clonen und auf EditBook anpassen
+    // methode so nicht verwenden
+    private void editCurrentRows()  {
+        this.model = SouthPanel.JlistTabelle.model;
+        this.table = SouthPanel.JlistTabelle.table;
+        this.list = SouthPanel.JlistTabelle.list;
+
+        // Indizes der Gewählten Zeilen werden in ein Array gelesen
+        int[] bookIndex = table.getSelectedRows();
+        new main.tomedb.java.newbookframe.view.NewBook();
+        
+        
+        NewBook.titel.textfield.setText("test");
+        NewBook.AutorName.textfield.setText("Musterman");
+        NewBook.AutorVorName.textfield.setText("Max");
+        NewBook.Erscheinungsjahr.textfield.setText("2021");
+        NewBook.Seitenanzahl.textfield.setText("3019");
+        NewBook.bewertung.textfield.setText("7.2");
+        
+        
+    }
+
+}
