@@ -26,7 +26,7 @@ public class ExportNewFile implements ActionListener {
 
         // Write our file to the destined Path
         // TODO: er speichert test.txt als test.txt.txt ab einmal prüfen bitte
-        String dateiName = fileExporter.getSelectedFile().getAbsolutePath() + ".txt";
+        String dateiName = fileExporter.getSelectedFile().getAbsolutePath();
         BookModelListDAO dao = new BookModelListDAO(dateiName, true); // Schreiben
         try {
             dao.write(list);
