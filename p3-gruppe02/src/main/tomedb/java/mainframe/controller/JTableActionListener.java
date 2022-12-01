@@ -4,16 +4,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.mainframe.view.SouthPanel;
-import static main.tomedb.java.mainframe.view.Table.list;
 
 public class JTableActionListener implements ActionListener {
 
     public JTable table;
     public DefaultTableModel model;
+    public BookModelList list;
 
     //TODO work in progress
     @Override
@@ -27,14 +25,17 @@ public class JTableActionListener implements ActionListener {
 
         this.model = SouthPanel.JlistTabelle.model;
         this.table = SouthPanel.JlistTabelle.table;
+        this.list = SouthPanel.JlistTabelle.list;
 
-        int selectedRow = table.getSelectedRow();
+        // Indizes der Gewählten Zeilen werden in ein Array gelesen und anschließend gelöscht
+        int[] bookIndex = table.getSelectedRows();
 
-        String col1 = (String) table.getValueAt(selectedRow, 0);
+        for (int i = 0; bookIndex.length - 1 >= i; i++) {
+            System.out.println(bookIndex[0]);
+            list.deleteBook(bookIndex[0]);
+            model.removeRow(bookIndex[0]);
 
-        System.out.println(col1);
-
-        model.removeRow(selectedRow);
+        }
 
     }
 }

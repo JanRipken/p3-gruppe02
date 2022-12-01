@@ -138,7 +138,7 @@ public class Table {
 
     public void addRowtoTable() {
         model.setRowCount(0);
-
+        
         for (int i = 0; i < list.bookModelList.size(); i++) {
 
             Object[] data = {list.bookModelList.get(i).getTitel(),
