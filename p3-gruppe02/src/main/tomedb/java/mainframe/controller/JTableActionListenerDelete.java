@@ -30,7 +30,7 @@ public class JTableActionListenerDelete implements ActionListener {
 
         this.model = SouthPanel.JlistTabelle.model;
         this.table = SouthPanel.JlistTabelle.table;
-        this.list = SouthPanel.JlistTabelle.list;
+        this.list = Table.list;
 
         // Indizes der Gewählten Zeilen werden in ein Array gelesen und anschließend gelöscht
         int[] bookIndex = table.getSelectedRows();
