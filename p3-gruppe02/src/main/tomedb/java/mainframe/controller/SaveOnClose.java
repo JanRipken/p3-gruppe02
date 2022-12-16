@@ -1,13 +1,12 @@
 package main.tomedb.java.mainframe.controller;
 
 import java.io.IOException;
-import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import static main.tomedb.java.mainframe.view.Table.list;
 import main.tomedb.java.mainframe.controller.menubar.ImportNewFile;
 
-public class SaveOnClose extends JFrame {
+public class SaveOnClose{
 
     /**
      * @param filePath variable for the path of our main File
