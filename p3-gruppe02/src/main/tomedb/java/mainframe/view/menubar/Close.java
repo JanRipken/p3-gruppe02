@@ -7,6 +7,8 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JMenu;
+import main.tomedb.java.ModifyIcons;
+import main.tomedb.java.mainframe.view.MainFrame;
 
 public class Close extends JMenu {
 
@@ -14,13 +16,9 @@ public class Close extends JMenu {
     private JButton closeButton;
 
     public Close() {
-        // getting the icon for our Button
-        CloseIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/close.png"));
-        Image image = CloseIcon.getImage(); // transform it
-        Image newimg = image.getScaledInstance(10, 10, java.awt.Image.SCALE_SMOOTH);
-        CloseIcon = new ImageIcon(newimg);
-        CloseIcon.getImage();
-
+      
+        CloseIcon= MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/close.png",10,10);
+        
         closeButton = new JButton();
 
         closeButton.setIcon(CloseIcon);

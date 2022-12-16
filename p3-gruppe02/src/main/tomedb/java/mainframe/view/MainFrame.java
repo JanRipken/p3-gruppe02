@@ -1,4 +1,3 @@
-
 package main.tomedb.java.mainframe.view;
 
 import main.tomedb.java.mainframe.view.menubar.MenuBar;
@@ -10,9 +9,12 @@ import main.tomedb.java.mainframe.controller.WindowEventHandler;
 
 import java.awt.Image;
 import java.awt.geom.RoundRectangle2D;
+import javax.swing.ImageIcon;
+import main.tomedb.java.ModifyIcons;
 
 public class MainFrame extends JFrame {
 
+    public static ModifyIcons modIcons;
     private String title = "p3-gruppe02";
 
     public MainFrame() {
@@ -25,7 +27,7 @@ public class MainFrame extends JFrame {
         this.addMouseMotionListener(drag);
 
         addWindowListener(new WindowEventHandler());
-
+        modIcons = new ModifyIcons();
         MenuBar menuBar = new MenuBar();
 
         this.setJMenuBar(menuBar.makeMenuBar());
@@ -39,9 +41,9 @@ public class MainFrame extends JFrame {
         this.setResizable(false);
         this.setVisible(true);
 
-        Image icon = Toolkit.getDefaultToolkit()
-                .getImage(this.getClass().getResource("/main/tomedb/ressources/icons/bucher.png"));
-        this.setIconImage(icon);
+ 
+        ImageIcon icon = modIcons.scaling("/main/tomedb/ressources/icons/bucher.png", 30, 30);
+        this.setIconImage(icon.getImage());
 
         // setting a border Radius
         this.setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 15, 15));

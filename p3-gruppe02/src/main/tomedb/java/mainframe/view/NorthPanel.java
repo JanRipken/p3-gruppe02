@@ -21,11 +21,11 @@ public class NorthPanel extends JPanel {
         this.setSize(WIDTH, 10);
 
         newBookButton = new JButton();
-        iconNeu = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/new.gif"));
+        iconNeu = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/new.gif", 25, 25);
         newBookButton.setIcon(iconNeu);
 
         searchBookButton = new JButton();
-        iconSuchen = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/suchen.gif"));
+        iconSuchen = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/suchen.gif", 25, 25);
         searchBookButton.setIcon(iconSuchen);
 
         NewBook startNewWindow = new NewBook();
