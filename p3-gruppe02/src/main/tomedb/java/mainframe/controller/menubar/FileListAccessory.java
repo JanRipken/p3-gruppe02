@@ -22,9 +22,9 @@ import javax.swing.border.EmptyBorder;
 public class FileListAccessory extends JComponent implements PropertyChangeListener {
 
     private File file = null;
-    private DefaultListModel model;
-    private JList list;
-    private JButton removeItem;
+    private final DefaultListModel model;
+    private final JList list;
+    private final JButton removeItem;
 
     
     // TODO: Gudenkauf fragen
