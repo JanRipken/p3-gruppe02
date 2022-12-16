@@ -6,10 +6,12 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
+import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.newbookframe.controller.DragMove;
 
 public class NewBook extends JFrame {
@@ -46,9 +48,9 @@ public class NewBook extends JFrame {
         this.addMouseListener(drag);
         this.addMouseMotionListener(drag);
 
-        Image icon = Toolkit.getDefaultToolkit()
-                .getImage(this.getClass().getResource("/main/tomedb/ressources/icons/bookAdd.png"));
-        this.setIconImage(icon);
+        
+        ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png",30,30);
+        this.setIconImage(icon.getImage());
 
         MainPanel mainPanel = new MainPanel();
 

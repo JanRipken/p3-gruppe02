@@ -5,6 +5,8 @@ import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
+import main.tomedb.java.ModifyIcons;
+import main.tomedb.java.mainframe.view.MainFrame;
 
 public class Minimized {
     private ImageIcon minimizeIcon;
@@ -12,12 +14,8 @@ public class Minimized {
 
     public Minimized() {
         // get icon
-        minimizeIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/minimize-sign.png"));
-        Image image = minimizeIcon.getImage(); // transform it
-        Image newimg = image.getScaledInstance(10, 10, java.awt.Image.SCALE_SMOOTH);
-        minimizeIcon = new ImageIcon(newimg);
-        minimizeIcon.getImage();
-
+        minimizeIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/minimize-sign.png", 10, 10);
+ 
         minimizeButton = new JButton();
 
         minimizeButton.setIcon(minimizeIcon);

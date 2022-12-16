@@ -10,6 +10,8 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import main.tomedb.java.ModifyIcons;
+import main.tomedb.java.mainframe.view.MainFrame;
 
 /**
  *
@@ -26,20 +28,13 @@ public class Menu extends JMenu {
 
         menu = new JMenu("Main Menu");
 
+        importIcon=MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/import.png",15,15);
         // getting the Import icon
-        // TODO: eigene Methode 
-        importIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/import.png"));
-        Image image = importIcon.getImage(); // transform it
-        Image newimg = image.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
-        importIcon = new ImageIcon(newimg);
-        importIcon.getImage();
+ 
 
         // getting the Export icon
-        exportIcon = new ImageIcon(this.getClass().getResource("/main/tomedb/ressources/icons/export.png"));
-        Image image2 = exportIcon.getImage(); // transform it
-        Image newimg2 = image2.getScaledInstance(15, 15, java.awt.Image.SCALE_SMOOTH);
-        exportIcon = new ImageIcon(newimg2);
-        exportIcon.getImage();
+        exportIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/export.png",15,15);
+ 
 
         JMenuItem ImportFile = new JMenuItem("Import");
         JMenuItem ExportFile = new JMenuItem("Export");
