@@ -38,12 +38,12 @@ public class JTableActionListenerEdit extends JTableActionListenerDelete impleme
         new main.tomedb.java.newbookframe.view.NewBook();
         
         
-        NewBook.titel.textfield.setText("test");
-        NewBook.AutorName.textfield.setText("Musterman");
-        NewBook.AutorVorName.textfield.setText("Max");
-        NewBook.Erscheinungsjahr.textfield.setText("2021");
-        NewBook.Seitenanzahl.textfield.setText("3019");
-        NewBook.bewertung.textfield.setText("7.2");
+        NewBook.titel.setText("test");
+        NewBook.AutorName.setText("Musterman");
+        NewBook.AutorVorName.setText("Max");
+        NewBook.Erscheinungsjahr.setText("2021");
+        NewBook.Seitenanzahl.setText("3019");
+        NewBook.bewertung.setText("7.2");
         
         
     }

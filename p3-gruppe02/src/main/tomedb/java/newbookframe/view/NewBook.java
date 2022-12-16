@@ -6,7 +6,10 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
+import javax.swing.JCheckBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 import main.tomedb.java.newbookframe.controller.DragMove;
 
 public class NewBook extends JFrame {
@@ -27,15 +30,16 @@ public class NewBook extends JFrame {
     private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
     private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal in DOUBLE an";
 
-    // Initialisierung der Layouts
-    public static LayoutTextfield titel;
-    public static LayoutTextfield AutorName;
-    public static LayoutTextfield AutorVorName;
-    public static LayoutTextfield Erscheinungsjahr;
-    public static LayoutTextfield Seitenanzahl;
-    public static LayoutTextfield bewertung;
-    public static LayoutCheckBox nochmallesen;
-
+    
+    public static JTextField titel;
+    public static JTextField AutorName;
+    public static JTextField AutorVorName;
+    public static JTextField Erscheinungsjahr;
+    public static JTextField Seitenanzahl;
+    public static JTextField bewertung;
+    public static JCheckBox nochmallesen;
+    
+    
 
     public NewBook() {
 
@@ -50,45 +54,43 @@ public class NewBook extends JFrame {
         this.setIconImage(icon);
 
         MainPanel mainPanel = new MainPanel();
+        
+        
+        
+        
+        
+        titel = mainPanel.LayoutTextfield(FrageBuchName);
+        
+        AutorName=mainPanel.LayoutTextfield(FrageBuchAutor);
+        AutorVorName=mainPanel.LayoutTextfield(FrageBuchAutorVorname);
+        Erscheinungsjahr=mainPanel.LayoutTextfield(FrageBuchErscheinungsjahr);
+        Seitenanzahl=mainPanel.LayoutTextfield(FrageBuchSeitenanzahl);
+        bewertung=mainPanel.LayoutTextfield(FrageBuchBewertung);
+        nochmallesen=mainPanel.LayoutCheckBox(FrageBuchNochmalLesen);
+        
 
-        titel = new LayoutTextfield(FrageBuchName);
-        AutorName = new LayoutTextfield(FrageBuchAutor);
-        AutorVorName = new LayoutTextfield(FrageBuchAutorVorname);
-        Erscheinungsjahr = new LayoutTextfield(FrageBuchErscheinungsjahr);
-        Seitenanzahl = new LayoutTextfield(FrageBuchSeitenanzahl);
-        bewertung = new LayoutTextfield(FrageBuchBewertung);
-        nochmallesen = new LayoutCheckBox(FrageBuchNochmalLesen);
-
-        Buttons AbbbbruchOderSpeichern = new Buttons();
-
-        // Tooltips
-        Erscheinungsjahr.textfield.setToolTipText(TooltipErscheinungsjahr);
-        Seitenanzahl.textfield.setToolTipText(TooltipSeitenanzahl);
-        bewertung.textfield.setToolTipText(TooltipBewertung);
+        mainPanel.Buttons();
 
         Save modelBook = new Save(this);
-        AbbbbruchOderSpeichern.ButtonBestätigen.addActionListener(modelBook);
+        mainPanel.ButtonBestätigen.addActionListener(modelBook);
 
         Abort abbrechen = new Abort(this);
-        AbbbbruchOderSpeichern.ButtonAbrechen.addActionListener(abbrechen);
+        mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
+        
+        
+        
+        
         // TODO Löschen
         // Testweise bereits namen setzen
-        titel.textfield.setText("Java 2019");
-        AutorName.textfield.setText("Musterman");
-        AutorVorName.textfield.setText("Max");
-        Erscheinungsjahr.textfield.setText("2021");
-        Seitenanzahl.textfield.setText("3019");
-        bewertung.textfield.setText("7.2");
+        titel.setText("Java 2019");
+        AutorName.setText("Musterman");
+        AutorVorName.setText("Max");
+        Erscheinungsjahr.setText("2021");
+        Seitenanzahl.setText("3019");
+        bewertung.setText("7.2");
 
-        mainPanel.add(titel);
-        mainPanel.add(AutorName);
-        mainPanel.add(AutorVorName);
-        mainPanel.add(Erscheinungsjahr);
-        mainPanel.add(Seitenanzahl);
-        mainPanel.add(bewertung);
-        mainPanel.add(nochmallesen);
-        mainPanel.add(AbbbbruchOderSpeichern);
+        
 
         this.setContentPane(mainPanel);
 
@@ -107,35 +109,36 @@ public class NewBook extends JFrame {
     // TODO: Überarbeiten / Checken
     // TODO: Textfield = Formatted textfield ?
     public String getTitel() {
-        return titel.textfield.getText();
+        
+        return titel.getText();
+        
     }
 
     public String getAutorName() {
-        return AutorName.textfield.getText();
+        return AutorName.getText();
     }
 
     public String getAutorVorname() {
-        return AutorVorName.textfield.getText();
+        return AutorVorName.getText();
     }
 
     public int getErscheinungsjahr() {
-        return Integer.parseInt(Erscheinungsjahr.textfield.getText());
+        return Integer.parseInt(Erscheinungsjahr.getText());
 
     }
 
     public int getSeitenzahl() {
-        return Integer.parseInt(Seitenanzahl.textfield.getText());
+       
+        return Integer.parseInt(Seitenanzahl.getText());
     }
 
     public double getbewertung() {
-        return Double.parseDouble(bewertung.textfield.getText());
+        return Double.parseDouble(bewertung.getText());
     }
 
     public Boolean getNochmallesen() {
-        if (nochmallesen.CB.isSelected()) {
-            return true;
-        }
-        return false;
+ 
+        return nochmallesen.isSelected();
     }
 
 }
