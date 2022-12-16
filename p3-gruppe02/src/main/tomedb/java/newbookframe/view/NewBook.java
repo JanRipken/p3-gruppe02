@@ -53,18 +53,17 @@ public class NewBook extends JFrame {
         MainPanel mainPanel = new MainPanel();
 
         titel = mainPanel.LayoutTextfield(FrageBuchName);
-
         AutorName = mainPanel.LayoutTextfield(FrageBuchAutor);
         AutorVorName = mainPanel.LayoutTextfield(FrageBuchAutorVorname);
-        Erscheinungsjahr = mainPanel.LayoutTextfield(FrageBuchErscheinungsjahr);
-        Seitenanzahl = mainPanel.LayoutTextfield(FrageBuchSeitenanzahl);
-        bewertung = mainPanel.LayoutTextfield(FrageBuchBewertung);
+        Erscheinungsjahr = mainPanel.LayoutTextfieldInt(FrageBuchErscheinungsjahr);
+        Seitenanzahl = mainPanel.LayoutTextfieldInt(FrageBuchSeitenanzahl);
+        bewertung = mainPanel.LayoutTextfieldDouble(FrageBuchBewertung);
         nochmallesen = mainPanel.LayoutCheckBox(FrageBuchNochmalLesen);
 
         Erscheinungsjahr.setToolTipText(TooltipErscheinungsjahr);
         Seitenanzahl.setToolTipText(TooltipSeitenanzahl);
         bewertung.setToolTipText(TooltipBewertung);
-        
+
         mainPanel.Buttons();
 
         Save modelBook = new Save(this);
@@ -113,17 +112,31 @@ public class NewBook extends JFrame {
     }
 
     public int getErscheinungsjahr() {
-        return Integer.parseInt(Erscheinungsjahr.getText());
+        if (Erscheinungsjahr.getText().equals("")) {
+            return 0;
+           
+        } else {
+             return Integer.parseInt(Erscheinungsjahr.getText());
+        }
 
     }
 
     public int getSeitenzahl() {
-
-        return Integer.parseInt(Seitenanzahl.getText());
+        if ( Seitenanzahl.getText().equals("")) {
+            return 0;
+            
+        } else {
+            return Integer.parseInt(Seitenanzahl.getText());
+        }
     }
 
     public double getbewertung() {
-        return Double.parseDouble(bewertung.getText());
+        if (bewertung.getText().equals("")) {
+            return 0;
+        } else {
+            return Double.parseDouble(bewertung.getText());
+        }
+
     }
 
     public Boolean getNochmallesen() {

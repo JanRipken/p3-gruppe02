@@ -9,6 +9,9 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import java.lang.Double;
+import javax.swing.text.PlainDocument;
+import main.tomedb.java.newbookframe.controller.DoubleFilter;
+import main.tomedb.java.newbookframe.controller.IntFilter;
 
 public class MainPanel extends JPanel {
 
@@ -25,7 +28,7 @@ public class MainPanel extends JPanel {
     public JTextField LayoutTextfield(String myLabel) {
         JTextField textfield = new JTextField();
         JPanel jpanelTexfield = new JPanel();
-        
+
         jpanelTexfield.setLayout(new BoxLayout(jpanelTexfield, BoxLayout.Y_AXIS));
         JPanel borderPanel = new JPanel(new BorderLayout());
         borderPanel.add(textfield);
@@ -35,12 +38,47 @@ public class MainPanel extends JPanel {
         return textfield;
 
     }
-    
-  
+
+    public JTextField LayoutTextfieldInt(String myLabel) {
+        JTextField textfield = new JTextField();
+        JPanel jpanelTexfield = new JPanel();
+
+        jpanelTexfield.setLayout(new BoxLayout(jpanelTexfield, BoxLayout.Y_AXIS));
+        JPanel borderPanel = new JPanel(new BorderLayout());
+        borderPanel.add(textfield);
+        borderPanel.setBorder(new javax.swing.border.TitledBorder(myLabel));
+
+        this.add(borderPanel);
+
+        PlainDocument doc = (PlainDocument) textfield.getDocument();
+
+        doc.setDocumentFilter(new IntFilter());
+        return textfield;
+
+    }
+
+    public JTextField LayoutTextfieldDouble(String myLabel) {
+        JTextField textfield = new JTextField();
+        JPanel jpanelTexfield = new JPanel();
+
+        jpanelTexfield.setLayout(new BoxLayout(jpanelTexfield, BoxLayout.Y_AXIS));
+        JPanel borderPanel = new JPanel(new BorderLayout());
+        borderPanel.add(textfield);
+        borderPanel.setBorder(new javax.swing.border.TitledBorder(myLabel));
+
+        this.add(borderPanel);
+
+        PlainDocument doc = (PlainDocument) textfield.getDocument();
+
+        doc.setDocumentFilter(new DoubleFilter());
+        return textfield;
+
+    }
+
     public JCheckBox LayoutCheckBox(String myLabel) {
         JPanel jpanelCheckBox = new JPanel();
         JCheckBox CB = new JCheckBox();
-        
+
         jpanelCheckBox.setLayout(new BoxLayout(jpanelCheckBox, BoxLayout.Y_AXIS));
         JPanel borderPanel = new JPanel(new BorderLayout());
         borderPanel.add(CB);
@@ -49,7 +87,7 @@ public class MainPanel extends JPanel {
         jpanelCheckBox.add(borderPanel);
         this.add(jpanelCheckBox);
         return CB;
- 
+
     }
 
     public void Buttons() {

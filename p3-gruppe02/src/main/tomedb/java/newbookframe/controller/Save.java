@@ -25,7 +25,7 @@ public class Save implements ActionListener {
         model.setAutorVorname(view.getAutorVorname());
         model.setErscheinungsjahr(view.getErscheinungsjahr());
         model.setSeitenanzahl(view.getSeitenzahl());
-        model.setBewerung(view.getbewertung());
+        model.setBewerung(view.getbewertung());     
         model.setGelesen(view.getNochmallesen());
     }
 
@@ -37,6 +37,7 @@ public class Save implements ActionListener {
             view.dispose();
 
         } catch (Exception ex) {
+
             new WrongEntryOptionPane();
         }
 
