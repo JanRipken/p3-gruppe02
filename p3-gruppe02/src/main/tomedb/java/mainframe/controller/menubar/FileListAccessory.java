@@ -26,11 +26,15 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
     private JList list;
     private JButton removeItem;
 
+    @SuppressWarnings("unchecked")
     public FileListAccessory(JFileChooser chooser) {
         chooser.addPropertyChangeListener(this);
 
         model = new DefaultListModel();
+        
+       
         list = new JList(model);
+        
         JScrollPane pane = new JScrollPane(list);
         pane.setPreferredSize(new Dimension(200, 250));
 
@@ -47,6 +51,7 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
         return model;
     }
 
+    @SuppressWarnings("unchecked")
     private void addFileToList() {
         model.addElement(file);
     }
