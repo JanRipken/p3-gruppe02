@@ -16,13 +16,13 @@ public class NewBook extends JFrame {
 
     // Final damit die variable nur einmal genutzt werden kann
     // Eventulle überarbeiten bei erstellung der Änderungsseite
-    public  String FrageBuchName = "Buchtitel";
-    public  String FrageBuchAutor = "Name des Autors";
-    public  String FrageBuchAutorVorname = "Vorname des Autors";
-    public  String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
-    public  String FrageBuchSeitenanzahl = "Seitenanzahl";
-    public  String FrageBuchBewertung = "Bewertung";
-    public  String FrageBuchNochmalLesen = "Erneut Lesen ?";
+    public String FrageBuchName = "Buchtitel";
+    public String FrageBuchAutor = "Name des Autors";
+    public String FrageBuchAutorVorname = "Vorname des Autors";
+    public String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
+    public String FrageBuchSeitenanzahl = "Seitenanzahl";
+    public String FrageBuchBewertung = "Bewertung";
+    public String FrageBuchNochmalLesen = "Erneut Lesen ?";
 
     // Tooltips
     // TODO: überarbeiten
@@ -30,7 +30,6 @@ public class NewBook extends JFrame {
     private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
     private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal in DOUBLE an";
 
-    
     public static JTextField titel;
     public static JTextField AutorName;
     public static JTextField AutorVorName;
@@ -38,8 +37,6 @@ public class NewBook extends JFrame {
     public static JTextField Seitenanzahl;
     public static JTextField bewertung;
     public static JCheckBox nochmallesen;
-    
-    
 
     public NewBook() {
 
@@ -54,21 +51,20 @@ public class NewBook extends JFrame {
         this.setIconImage(icon);
 
         MainPanel mainPanel = new MainPanel();
-        
-        
-        
-        
-        
-        titel = mainPanel.LayoutTextfield(FrageBuchName);
-        
-        AutorName=mainPanel.LayoutTextfield(FrageBuchAutor);
-        AutorVorName=mainPanel.LayoutTextfield(FrageBuchAutorVorname);
-        Erscheinungsjahr=mainPanel.LayoutTextfield(FrageBuchErscheinungsjahr);
-        Seitenanzahl=mainPanel.LayoutTextfield(FrageBuchSeitenanzahl);
-        bewertung=mainPanel.LayoutTextfield(FrageBuchBewertung);
-        nochmallesen=mainPanel.LayoutCheckBox(FrageBuchNochmalLesen);
-        
 
+        titel = mainPanel.LayoutTextfield(FrageBuchName);
+
+        AutorName = mainPanel.LayoutTextfield(FrageBuchAutor);
+        AutorVorName = mainPanel.LayoutTextfield(FrageBuchAutorVorname);
+        Erscheinungsjahr = mainPanel.LayoutTextfield(FrageBuchErscheinungsjahr);
+        Seitenanzahl = mainPanel.LayoutTextfield(FrageBuchSeitenanzahl);
+        bewertung = mainPanel.LayoutTextfield(FrageBuchBewertung);
+        nochmallesen = mainPanel.LayoutCheckBox(FrageBuchNochmalLesen);
+
+        Erscheinungsjahr.setToolTipText(TooltipErscheinungsjahr);
+        Seitenanzahl.setToolTipText(TooltipSeitenanzahl);
+        bewertung.setToolTipText(TooltipBewertung);
+        
         mainPanel.Buttons();
 
         Save modelBook = new Save(this);
@@ -77,10 +73,6 @@ public class NewBook extends JFrame {
         Abort abbrechen = new Abort(this);
         mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
-        
-        
-        
-        
         // TODO Löschen
         // Testweise bereits namen setzen
         titel.setText("Java 2019");
@@ -89,8 +81,6 @@ public class NewBook extends JFrame {
         Erscheinungsjahr.setText("2021");
         Seitenanzahl.setText("3019");
         bewertung.setText("7.2");
-
-        
 
         this.setContentPane(mainPanel);
 
@@ -109,9 +99,9 @@ public class NewBook extends JFrame {
     // TODO: Überarbeiten / Checken
     // TODO: Textfield = Formatted textfield ?
     public String getTitel() {
-        
+
         return titel.getText();
-        
+
     }
 
     public String getAutorName() {
@@ -128,7 +118,7 @@ public class NewBook extends JFrame {
     }
 
     public int getSeitenzahl() {
-       
+
         return Integer.parseInt(Seitenanzahl.getText());
     }
 
@@ -137,7 +127,7 @@ public class NewBook extends JFrame {
     }
 
     public Boolean getNochmallesen() {
- 
+
         return nochmallesen.isSelected();
     }
 
