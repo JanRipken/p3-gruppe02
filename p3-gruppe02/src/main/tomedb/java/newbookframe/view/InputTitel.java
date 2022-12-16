@@ -3,9 +3,9 @@ package main.tomedb.java.newbookframe.view;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-public class titelInfo extends JFrame {
+public class InputTitel extends JFrame {
 
-    public titelInfo() {
+    public InputTitel() {
         String info = " Bitte geben sie einen Titel an";
 
         JOptionPane.showMessageDialog(this, info);

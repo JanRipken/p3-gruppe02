@@ -4,7 +4,7 @@ import main.tomedb.java.newbookframe.view.NewBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import main.tomedb.java.mainframe.model.BookModel;
-import main.tomedb.java.newbookframe.view.titelInfo;
+import main.tomedb.java.newbookframe.view.InputTitel;
 import main.tomedb.java.mainframe.view.SouthPanel;
 
 // Klasse zum speichern eines neuen Buches
@@ -35,7 +35,7 @@ public class Save implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             if (view.getTitel().equals("")) {
-                new titelInfo();
+                new InputTitel();
 
             } else {
                 setModel();
