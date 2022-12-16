@@ -16,19 +16,19 @@ public class NewBook extends JFrame {
 
     // Final damit die variable nur einmal genutzt werden kann
     // Eventulle überarbeiten bei erstellung der Änderungsseite
-    public String FrageBuchName = "Buchtitel";
-    public String FrageBuchAutor = "Name des Autors";
-    public String FrageBuchAutorVorname = "Vorname des Autors";
-    public String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
-    public String FrageBuchSeitenanzahl = "Seitenanzahl";
-    public String FrageBuchBewertung = "Bewertung";
-    public String FrageBuchNochmalLesen = "Erneut Lesen ?";
+    private final String FrageBuchName = "Buchtitel";
+    private final String FrageBuchAutor = "Name des Autors";
+    private final String FrageBuchAutorVorname = "Vorname des Autors";
+    private final String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
+    private final String FrageBuchSeitenanzahl = "Seitenanzahl";
+    private final String FrageBuchBewertung = "Bewertung";
+    private final String FrageBuchNochmalLesen = "Erneut Lesen ?";
 
     // Tooltips
     // TODO: überarbeiten
-    private final String TooltipErscheinungsjahr = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
-    private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
-    private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal in DOUBLE an";
+    private final String TooltipErscheinungsjahr = "Geben sie das Erscheinungjahr bitte eimal mit einer Zahl an ";
+    private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahreimal mit einer Zahl an ";
+    private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal mit einer Zahl an";
 
     public static JTextField titel;
     public static JTextField AutorName;
