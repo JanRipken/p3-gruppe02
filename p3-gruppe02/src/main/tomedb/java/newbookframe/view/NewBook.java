@@ -6,36 +6,37 @@ import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
+import javax.swing.JCheckBox;
+import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
+import javax.swing.JTextField;
 import main.tomedb.java.newbookframe.controller.DragMove;
 
 public class NewBook extends JFrame {
 
     // Final damit die variable nur einmal genutzt werden kann
     // Eventulle überarbeiten bei erstellung der Änderungsseite
-    public  String FrageBuchName = "Buchtitel";
-    public  String FrageBuchAutor = "Name des Autors";
-    public  String FrageBuchAutorVorname = "Vorname des Autors";
-    public  String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
-    public  String FrageBuchSeitenanzahl = "Seitenanzahl";
-    public  String FrageBuchBewertung = "Bewertung";
-    public  String FrageBuchNochmalLesen = "Erneut Lesen ?";
+    private final String FrageBuchName = "Buchtitel";
+    private final String FrageBuchAutor = "Name des Autors";
+    private final String FrageBuchAutorVorname = "Vorname des Autors";
+    private final String FrageBuchErscheinungsjahr = "Erscheinungsjahr";
+    private final String FrageBuchSeitenanzahl = "Seitenanzahl";
+    private final String FrageBuchBewertung = "Bewertung";
+    private final String FrageBuchNochmalLesen = "Erneut Lesen ?";
 
     // Tooltips
     // TODO: überarbeiten
-    private final String TooltipErscheinungsjahr = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
-    private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahr bitte eimal in INT an ";
-    private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal in DOUBLE an";
+    private final String TooltipErscheinungsjahr = "Geben sie das Erscheinungjahr bitte eimal mit einer Zahl an ";
+    private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahreimal mit einer Zahl an ";
+    private final String TooltipBewertung = "Geben sie ihre Bewertung bitte eimal mit einer Zahl an";
 
-    // Initialisierung der Layouts
-    public static LayoutTextfield titel;
-    public static LayoutTextfield AutorName;
-    public static LayoutTextfield AutorVorName;
-    public static LayoutTextfield Erscheinungsjahr;
-    public static LayoutTextfield Seitenanzahl;
-    public static LayoutTextfield bewertung;
-    public static LayoutCheckBox nochmallesen;
-
+    public static JTextField titel;
+    public static JTextField AutorName;
+    public static JTextField AutorVorName;
+    public static JTextField Erscheinungsjahr;
+    public static JTextField Seitenanzahl;
+    public static JTextField bewertung;
+    public static JCheckBox nochmallesen;
 
     public NewBook() {
 
@@ -51,44 +52,34 @@ public class NewBook extends JFrame {
 
         MainPanel mainPanel = new MainPanel();
 
-        titel = new LayoutTextfield(FrageBuchName);
-        AutorName = new LayoutTextfield(FrageBuchAutor);
-        AutorVorName = new LayoutTextfield(FrageBuchAutorVorname);
-        Erscheinungsjahr = new LayoutTextfield(FrageBuchErscheinungsjahr);
-        Seitenanzahl = new LayoutTextfield(FrageBuchSeitenanzahl);
-        bewertung = new LayoutTextfield(FrageBuchBewertung);
-        nochmallesen = new LayoutCheckBox(FrageBuchNochmalLesen);
+        titel = mainPanel.LayoutTextfield(FrageBuchName);
+        AutorName = mainPanel.LayoutTextfield(FrageBuchAutor);
+        AutorVorName = mainPanel.LayoutTextfield(FrageBuchAutorVorname);
+        Erscheinungsjahr = mainPanel.LayoutTextfieldInt(FrageBuchErscheinungsjahr);
+        Seitenanzahl = mainPanel.LayoutTextfieldInt(FrageBuchSeitenanzahl);
+        bewertung = mainPanel.LayoutTextfieldDouble(FrageBuchBewertung);
+        nochmallesen = mainPanel.LayoutCheckBox(FrageBuchNochmalLesen);
 
-        Buttons AbbbbruchOderSpeichern = new Buttons();
+        Erscheinungsjahr.setToolTipText(TooltipErscheinungsjahr);
+        Seitenanzahl.setToolTipText(TooltipSeitenanzahl);
+        bewertung.setToolTipText(TooltipBewertung);
 
-        // Tooltips
-        Erscheinungsjahr.textfield.setToolTipText(TooltipErscheinungsjahr);
-        Seitenanzahl.textfield.setToolTipText(TooltipSeitenanzahl);
-        bewertung.textfield.setToolTipText(TooltipBewertung);
+        mainPanel.Buttons();
 
         Save modelBook = new Save(this);
-        AbbbbruchOderSpeichern.ButtonBestätigen.addActionListener(modelBook);
+        mainPanel.ButtonBestätigen.addActionListener(modelBook);
 
         Abort abbrechen = new Abort(this);
-        AbbbbruchOderSpeichern.ButtonAbrechen.addActionListener(abbrechen);
+        mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
         // TODO Löschen
         // Testweise bereits namen setzen
-        titel.textfield.setText("Java 2019");
-        AutorName.textfield.setText("Musterman");
-        AutorVorName.textfield.setText("Max");
-        Erscheinungsjahr.textfield.setText("2021");
-        Seitenanzahl.textfield.setText("3019");
-        bewertung.textfield.setText("7.2");
-
-        mainPanel.add(titel);
-        mainPanel.add(AutorName);
-        mainPanel.add(AutorVorName);
-        mainPanel.add(Erscheinungsjahr);
-        mainPanel.add(Seitenanzahl);
-        mainPanel.add(bewertung);
-        mainPanel.add(nochmallesen);
-        mainPanel.add(AbbbbruchOderSpeichern);
+        titel.setText("Java 2019");
+        AutorName.setText("Musterman");
+        AutorVorName.setText("Max");
+        Erscheinungsjahr.setText("2021");
+        Seitenanzahl.setText("3019");
+        bewertung.setText("7.2");
 
         this.setContentPane(mainPanel);
 
@@ -107,35 +98,50 @@ public class NewBook extends JFrame {
     // TODO: Überarbeiten / Checken
     // TODO: Textfield = Formatted textfield ?
     public String getTitel() {
-        return titel.textfield.getText();
+
+        return titel.getText();
+
     }
 
     public String getAutorName() {
-        return AutorName.textfield.getText();
+        return AutorName.getText();
     }
 
     public String getAutorVorname() {
-        return AutorVorName.textfield.getText();
+        return AutorVorName.getText();
     }
 
     public int getErscheinungsjahr() {
-        return Integer.parseInt(Erscheinungsjahr.textfield.getText());
+        if (Erscheinungsjahr.getText().equals("")) {
+            return 0;
+           
+        } else {
+             return Integer.parseInt(Erscheinungsjahr.getText());
+        }
 
     }
 
     public int getSeitenzahl() {
-        return Integer.parseInt(Seitenanzahl.textfield.getText());
+        if ( Seitenanzahl.getText().equals("")) {
+            return 0;
+            
+        } else {
+            return Integer.parseInt(Seitenanzahl.getText());
+        }
     }
 
     public double getbewertung() {
-        return Double.parseDouble(bewertung.textfield.getText());
+        if (bewertung.getText().equals("")) {
+            return 0;
+        } else {
+            return Double.parseDouble(bewertung.getText());
+        }
+
     }
 
     public Boolean getNochmallesen() {
-        if (nochmallesen.CB.isSelected()) {
-            return true;
-        }
-        return false;
+
+        return nochmallesen.isSelected();
     }
 
 }
