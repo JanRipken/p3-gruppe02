@@ -38,7 +38,7 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
         list = new JList(model);
         
         JScrollPane pane = new JScrollPane(list);
-        pane.setPreferredSize(new Dimension(200, 250));
+        pane.setPreferredSize(new Dimension(250, 250));
 
         removeItem = createRemoveItemButton();
 
