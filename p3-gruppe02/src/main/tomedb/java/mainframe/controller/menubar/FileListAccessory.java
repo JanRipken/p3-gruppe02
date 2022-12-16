@@ -26,6 +26,8 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
     private JList list;
     private JButton removeItem;
 
+    
+    // TODO: Gudenkauf fragen
     @SuppressWarnings("unchecked")
     public FileListAccessory(JFileChooser chooser) {
         chooser.addPropertyChangeListener(this);
