@@ -1,9 +1,16 @@
-# Programmieren 3 Projekt, Gruppe 2
+# TomeDB
+Dies ist ein Projekt welches innerhalb des Kurses Programmieren 3 innerhalb der Jade HS Entwickelt wurde
 
-## TomeDB
-Ihre Bücher auf einen Blick
+### Beschreibung
+Mithilfe dieser App ist es Möglich verschiedene Buch Objekte in einer 
+- technik
 
+### Features
+- was ist alles vorhanden
 ### Installation
+
+
+
 
 
 ``` bash
