@@ -10,7 +10,7 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import main.tomedb.java.ModifyIcons;
+import main.tomedb.java.mainframe.controller.icons.ModifyIcons;
 import main.tomedb.java.mainframe.controller.menubar.merge;
 import main.tomedb.java.mainframe.view.MainFrame;
 

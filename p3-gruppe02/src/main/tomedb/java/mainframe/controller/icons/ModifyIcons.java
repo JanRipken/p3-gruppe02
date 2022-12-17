@@ -1,5 +1,5 @@
 
-package main.tomedb.java;
+package main.tomedb.java.mainframe.controller.icons;
 
 import java.awt.Image;
 import javax.swing.ImageIcon;
