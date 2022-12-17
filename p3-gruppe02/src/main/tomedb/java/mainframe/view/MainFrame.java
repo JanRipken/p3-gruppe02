@@ -10,7 +10,7 @@ import main.tomedb.java.mainframe.controller.WindowEventHandler;
 import java.awt.Image;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
-import main.tomedb.java.ModifyIcons;
+import main.tomedb.java.mainframe.controller.icons.ModifyIcons;
 
 public class MainFrame extends JFrame {
 

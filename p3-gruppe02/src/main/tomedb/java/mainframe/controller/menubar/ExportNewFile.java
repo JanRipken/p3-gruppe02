@@ -20,18 +20,19 @@ public class ExportNewFile implements ActionListener {
         int userSelection = fileExporter.showSaveDialog(null);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File fileToSave = fileExporter.getSelectedFile();
-            System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+
+
+
+            // Write our file to the destined Path
+            String dateiName = fileExporter.getSelectedFile().getAbsolutePath();
+            BookModelListDAO dao = new BookModelListDAO(dateiName, true); // Schreiben
+            try {
+                dao.write(list);
+            } catch (IOException v) {
+                System.out.println(v.getMessage());
+            }
+            dao.close();
         }
 
-        // Write our file to the destined Path
-        String dateiName = fileExporter.getSelectedFile().getAbsolutePath();
-        BookModelListDAO dao = new BookModelListDAO(dateiName, true); // Schreiben
-        try {
-            dao.write(list);
-        } catch (IOException v) {
-            System.out.println(v.getMessage());
-        }
-        dao.close();
     }
 }

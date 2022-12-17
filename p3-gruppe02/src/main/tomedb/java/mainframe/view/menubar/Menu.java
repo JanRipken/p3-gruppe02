@@ -10,7 +10,8 @@ import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import main.tomedb.java.ModifyIcons;
+import main.tomedb.java.mainframe.controller.icons.ModifyIcons;
+import main.tomedb.java.mainframe.controller.menubar.merge;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 /**
@@ -21,6 +22,7 @@ public class Menu extends JMenu {
 
     private ImageIcon importIcon;
     private ImageIcon exportIcon;
+    private ImageIcon mergeIcon;
 
     private JMenu menu;
 
@@ -35,21 +37,30 @@ public class Menu extends JMenu {
         // getting the Export icon
         exportIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/export.png",15,15);
  
-
+        mergeIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/merge.png", 15, 15);
+        
         JMenuItem ImportFile = new JMenuItem("Import");
         JMenuItem ExportFile = new JMenuItem("Export");
+        JMenuItem MergeLists = new JMenuItem("Merge");
 
         menu.add(ImportFile);
         menu.add(ExportFile);
+        menu.add(MergeLists);
 
         ImportFile.setIcon(importIcon);
         ExportFile.setIcon(exportIcon);
+        MergeLists.setIcon(mergeIcon);
 
         ImportNewFile startImport = new ImportNewFile();
         ImportFile.addActionListener(startImport);
 
         ExportNewFile startExport = new ExportNewFile();
         ExportFile.addActionListener(startExport);
+        
+        merge merging = new merge();
+        MergeLists.addActionListener(merging);
+        
+        
 
     }
 

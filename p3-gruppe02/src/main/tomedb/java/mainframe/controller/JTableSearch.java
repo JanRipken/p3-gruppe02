@@ -17,12 +17,13 @@ public class JTableSearch implements ActionListener {
     private String searchTerm;
 
     /**
-     * Using the Regex filter to search for Regular expressions in our JTable with
-     * whatever search the user Wants
+     * Using the Regex filter to search for Regular expressions in our JTable
+     * with whatever search the user Wants
      */
     public void search() {
         if (searchTerm != null) {
-            sorter.setRowFilter(RowFilter.regexFilter(searchTerm));
+            RowFilter<DefaultTableModel, Object> rowFilter = RowFilter.regexFilter("(?i)" + searchTerm);
+            sorter.setRowFilter(rowFilter);
         }
     }
 

@@ -24,4 +24,14 @@ public class BookModelList {
 
     }
 
+    public int size() {
+        return bookModelList.size();
+    }
+
+    public BookModel get(int i) {
+       return bookModelList.get(i);
+    }
+    
+   
+
 }

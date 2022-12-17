@@ -26,17 +26,18 @@ public class ImportNewFile extends Table implements ActionListener {
         int returnVal = fileChooser.showOpenDialog(null);
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
-            System.out.println("Sie haben folgende Datei ausgewählt: "
-                    + fileChooser.getSelectedFile().getName());
-        }
 
-        // After importing use the Updated path
+             // After importing use the Updated path
         updatedpath = "./data/" + fileChooser.getSelectedFile().getName();
 
         // Read file
         dateiName = fileChooser.getSelectedFile().getAbsolutePath();
 
         importFile(dateiName);
+            
+        }
+
+       
     }
 
     public void importFile(String path) {

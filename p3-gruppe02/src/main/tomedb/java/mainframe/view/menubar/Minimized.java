@@ -5,7 +5,7 @@ import java.awt.Dimension;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import main.tomedb.java.ModifyIcons;
+import main.tomedb.java.mainframe.controller.icons.ModifyIcons;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 public class Minimized {
