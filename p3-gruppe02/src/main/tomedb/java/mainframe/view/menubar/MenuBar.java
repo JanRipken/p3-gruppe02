@@ -2,6 +2,8 @@ package main.tomedb.java.mainframe.view.menubar;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JMenu;
@@ -28,8 +30,11 @@ public class MenuBar extends JMenuBar {
 
         JMenu menuMain = mainMenu.makeJMenu();
 
-        // settings
-        set = new Settings();
+        try {
+            set = new Settings();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
+        }
         JMenu settings = set.makeJSettings();
 
         // close
