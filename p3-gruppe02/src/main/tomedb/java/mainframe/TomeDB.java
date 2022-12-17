@@ -1,11 +1,11 @@
 package main.tomedb.java.mainframe;
 
-import main.tomedb.java.designtemplate.TomeDBDesignTemplate;
+import main.tomedb.java.designtemplate.modes.DarkMode;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 public class TomeDB {
-
+    public static MainFrame main;
     public static void main(String[] args) throws ClassNotFoundException {
      
         SwingUtilities.invokeLater(new Runnable() {
@@ -14,7 +14,7 @@ public class TomeDB {
             public void run() {
                 try {
 
-                     new TomeDBDesignTemplate();
+                     new DarkMode();
                     showMainFrame();
 
                 } catch (Exception e) {
@@ -25,7 +25,7 @@ public class TomeDB {
     }
 
     private static void showMainFrame() {
-        new MainFrame();
+        main = new MainFrame();
     }
 
 }

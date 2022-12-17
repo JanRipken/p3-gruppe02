@@ -1,14 +1,16 @@
-package main.tomedb.java.designtemplate;
+package main.tomedb.java.designtemplate.modes;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.Painter;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import main.tomedb.java.mainframe.TomeDB;
 
-public class TomeDBDesignTemplate {
+public class DarkMode {
 
     /**
      * Designing the TomeDB App by using the NimbusLookAndFeel
@@ -18,7 +20,7 @@ public class TomeDBDesignTemplate {
      * @throws IllegalAccessException
      * @throws UnsupportedLookAndFeelException
      */
-    public TomeDBDesignTemplate() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
+    public DarkMode() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
             UnsupportedLookAndFeelException {
 
         try {
@@ -38,10 +40,8 @@ public class TomeDBDesignTemplate {
             UIManager.put("nimbusSelectedText", new Color(255, 255, 255));
             UIManager.put("nimbusSelectionBackground", new Color(104, 93, 156));
             UIManager.put("text", Color.BLACK);
-            
-            
-            
             UIManager.put("MenuItem[MouseOver].backgroundPainter", new FillPainter(Color.GRAY.darker()));
+            
   
 
         } catch (Exception e) {
