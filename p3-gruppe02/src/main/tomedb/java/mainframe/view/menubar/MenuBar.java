@@ -1,5 +1,7 @@
 package main.tomedb.java.mainframe.view.menubar;
 
+import java.awt.Color;
+import java.awt.Graphics;
 import javax.swing.Box;
 import javax.swing.JButton;
 import javax.swing.JMenu;
@@ -22,7 +24,8 @@ public class MenuBar extends JMenuBar {
         bar = new JMenuBar();
 
         // Menu
-        mainMenu = new Menu();
+        mainMenu = new Menu() ;
+
         JMenu menuMain = mainMenu.makeJMenu();
 
         // settings
@@ -43,7 +46,9 @@ public class MenuBar extends JMenuBar {
 
         // Right side
         bar.add(Box.createHorizontalGlue());
-        bar.add(minimize);
+
+        //TODO: Freischalten sobald funktion gegeben ist
+        //bar.add(minimize);
         bar.add(close1);
 
         return bar;

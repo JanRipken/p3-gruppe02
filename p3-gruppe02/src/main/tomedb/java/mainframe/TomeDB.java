@@ -6,15 +6,15 @@ import main.tomedb.java.mainframe.view.MainFrame;
 
 public class TomeDB {
 
-    public static void main(String[] args) {
-
+    public static void main(String[] args) throws ClassNotFoundException {
+     
         SwingUtilities.invokeLater(new Runnable() {
 
             @Override
             public void run() {
                 try {
 
-                    new TomeDBDesignTemplate();
+                     new TomeDBDesignTemplate();
                     showMainFrame();
 
                 } catch (Exception e) {

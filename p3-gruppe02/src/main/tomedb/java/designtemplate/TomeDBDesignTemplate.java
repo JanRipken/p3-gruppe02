@@ -1,6 +1,9 @@
 package main.tomedb.java.designtemplate;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
+import javax.swing.JComponent;
+import javax.swing.Painter;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
@@ -9,7 +12,7 @@ public class TomeDBDesignTemplate {
 
     /**
      * Designing the TomeDB App by using the NimbusLookAndFeel
-     * 
+     *
      * @throws ClassNotFoundException
      * @throws InstantiationException
      * @throws IllegalAccessException
@@ -19,6 +22,7 @@ public class TomeDBDesignTemplate {
             UnsupportedLookAndFeelException {
 
         try {
+            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
             UIManager.setLookAndFeel(new NimbusLookAndFeel());
             UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("info", new Color(128, 128, 128));
@@ -34,8 +38,30 @@ public class TomeDBDesignTemplate {
             UIManager.put("nimbusSelectedText", new Color(255, 255, 255));
             UIManager.put("nimbusSelectionBackground", new Color(104, 93, 156));
             UIManager.put("text", Color.BLACK);
+            
+            
+            
+            UIManager.put("MenuItem[MouseOver].backgroundPainter", new FillPainter(Color.GRAY.darker()));
+  
+
         } catch (Exception e) {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
+    }
+
+    class FillPainter implements Painter<JComponent> {
+
+        private final Color color;
+
+        FillPainter(Color c) {
+            color = c;
+        }
+
+        @Override
+        public void paint(Graphics2D g, JComponent object, int width, int height) {
+            g.setColor(color);
+            g.fillRect(0, 0, width - 1, height - 1);
+        }
+
     }
 }

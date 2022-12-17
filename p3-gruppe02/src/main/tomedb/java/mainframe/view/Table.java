@@ -5,6 +5,7 @@ import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JComponent;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
@@ -82,27 +83,18 @@ public class Table {
 
         model.setColumnIdentifiers(tableHeader);
 
-        // setting every 2nd row in oir table to another color
-        table = new JTable(model) {
-            @Override
-            public Component prepareRenderer(TableCellRenderer renderer, int row, int column) {
-                Component comp = super.prepareRenderer(renderer, row, column);
-                if (!comp.getBackground().equals(getSelectionBackground())) {
-                    Color c = (row % 2 == 0 ? Color.LIGHT_GRAY : Color.WHITE);
-                    comp.setBackground(c);
-                    c = null;
-                }
-                return comp;
-            }
-        };
+        table = new JTable(model);
 
-        table.setSelectionBackground(Color.GRAY);
-        table.setForeground(Color.BLACK);
+        table.setSelectionBackground(Color.GRAY.darker());
+
 
         table.getTableHeader().setReorderingAllowed(false);
-        table.getTableHeader().setForeground(Color.BLACK);
+
         table.setFocusable(false);
         table.setAutoCreateRowSorter(true);
+
+        // rendering der Boolean spalte ( geht nicht ohne da ein bug im java jdk)
+        ((JComponent) table.getDefaultRenderer(Boolean.class)).setOpaque(true);
 
         // creating popupMenu and adding to the table
         JPopupMenu popupMenu = new JPopupMenu();
@@ -112,7 +104,7 @@ public class Table {
 
         JTableActionListenerDelete tableListenerDelete = new JTableActionListenerDelete();
         JTableActionListenerEdit tableListenerEdit = new JTableActionListenerEdit();
-        
+
         menuItemRemove.addActionListener(tableListenerDelete);
         menuItemEdit.addActionListener(tableListenerEdit);
 
@@ -121,23 +113,10 @@ public class Table {
 
         table.setComponentPopupMenu(popupMenu);
 
-        //table.addMouseListener(new JTableMouseListener(table));
         
-        // TODO: Löschen
-        table.addMouseListener(new MouseAdapter() {
-            public void mouseClicked(MouseEvent me) {
-                if (me.getClickCount() == 2) { // to detect doble click events
-                    JTable target = (JTable) me.getSource();
-                    int row = target.getSelectedRow(); // select a row
-                    int column = target.getSelectedColumn(); // select a column
-                    JOptionPane.showMessageDialog(null, table.getValueAt(row, column)); // get the value of a row and
-                    // column.
-                }
-            }
-        });
 
     }
-    
+
     // TODO: in den Controller packen
     public void addToTable(BookModel book) {
         list.addBook(book);
@@ -146,7 +125,7 @@ public class Table {
 
     public void addRowtoTable() {
         model.setRowCount(0);
-        
+
         for (int i = 0; i < list.bookModelList.size(); i++) {
 
             Object[] data = {list.bookModelList.get(i).getTitel(),
