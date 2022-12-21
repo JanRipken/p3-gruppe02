@@ -3,13 +3,9 @@ package main.tomedb.java.mainframe.controller.menubar.settings;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
-import javax.swing.JScrollPane;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
-import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.SouthPanel;
-import main.tomedb.java.mainframe.view.Table;
 
 public class NochmallesenOnOff implements ActionListener {
 
@@ -26,28 +22,22 @@ public class NochmallesenOnOff implements ActionListener {
         hidenomalLesen();
     }
 
-    private void hidenomalLesen() {
-        this.table = SouthPanel.JlistTabelle.table;
+private void hidenomalLesen() {
+    this.table = SouthPanel.JlistTabelle.table;
 
-        TableColumn column = table.getColumnModel().getColumn(6);
-        System.out.println(checkBox.isSelected());
-        if (checkBox.isSelected()) {
-
-    column.setMinWidth(0);
-    column.setMaxWidth(0);
-    column.setPreferredWidth(0);
-            
-        }
-
-        if (checkBox.isSelected() == false) {
-            
-    column.setMinWidth(50);
-    column.setMaxWidth(100);
-    column.setPreferredWidth(200);
-    //        table.revalidate();
-    //        table.repaint();
-        }
-
+    TableColumn column = table.getColumnModel().getColumn(3);
+    if (checkBox.isSelected()) {
+        column.setMinWidth(0);
+        column.setMaxWidth(0);
+        column.setPreferredWidth(0);
+    } else {
+        column.setMinWidth(50);
+        column.setMaxWidth(125);
+        column.setPreferredWidth(125);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        table.revalidate();
+        table.repaint();
     }
+}
 
 }
