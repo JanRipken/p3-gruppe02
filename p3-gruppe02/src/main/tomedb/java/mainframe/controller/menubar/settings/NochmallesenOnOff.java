@@ -33,12 +33,19 @@ public class NochmallesenOnOff implements ActionListener {
         System.out.println(checkBox.isSelected());
         if (checkBox.isSelected()) {
 
-            table.getColumnModel().removeColumn(column);
+    column.setMinWidth(0);
+    column.setMaxWidth(0);
+    column.setPreferredWidth(0);
             
         }
 
         if (checkBox.isSelected() == false) {
-            table.getColumnModel().addColumn(column);
+            
+    column.setMinWidth(50);
+    column.setMaxWidth(100);
+    column.setPreferredWidth(200);
+    //        table.revalidate();
+    //        table.repaint();
         }
 
     }
