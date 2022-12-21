@@ -67,8 +67,9 @@ public class Settings extends JMenu {
         BewertungOnOff toggleBewertung = new BewertungOnOff();
         Bewertung.addActionListener(toggleBewertung);
 
-        NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff();
+        NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff(NochmalLesen);
         NochmalLesen.addActionListener(toggleNochmalLesen);
+        
         
         DarkMode dm = new DarkMode();
         Dark.addActionListener(dm);
