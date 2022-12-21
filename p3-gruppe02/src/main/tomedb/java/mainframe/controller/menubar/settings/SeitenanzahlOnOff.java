@@ -7,12 +7,12 @@ import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import main.tomedb.java.mainframe.view.SouthPanel;
 
-public class BewertungOnOff implements ActionListener {
+public class SeitenanzahlOnOff implements ActionListener {
 
     private JCheckBox checkBox;
     private JTable table;
 
-    public BewertungOnOff(JCheckBox checkBox) {
+    public SeitenanzahlOnOff(JCheckBox checkBox) {
         this.checkBox = checkBox;
 
     }
@@ -25,7 +25,7 @@ public class BewertungOnOff implements ActionListener {
 private void hidenomalLesen() {
     this.table = SouthPanel.JlistTabelle.table;
 
-    TableColumn column = table.getColumnModel().getColumn(5);
+    TableColumn column = table.getColumnModel().getColumn(4);
     if (checkBox.isSelected()) {
         column.setMinWidth(0);
         column.setMaxWidth(0);

@@ -25,15 +25,18 @@ public class NochmallesenOnOff implements ActionListener {
 private void hidenomalLesen() {
     this.table = SouthPanel.JlistTabelle.table;
 
-    TableColumn column = table.getColumnModel().getColumn(3);
+    TableColumn column = table.getColumnModel().getColumn(6);
     if (checkBox.isSelected()) {
         column.setMinWidth(0);
         column.setMaxWidth(0);
         column.setPreferredWidth(0);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        table.revalidate();
+        table.repaint();        
     } else {
         column.setMinWidth(50);
-        column.setMaxWidth(125);
-        column.setPreferredWidth(125);
+        column.setMaxWidth(150);
+        column.setPreferredWidth(150);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.revalidate();
         table.repaint();
