@@ -29,7 +29,7 @@ public class NochmallesenOnOff implements ActionListener {
     private void hidenomalLesen() {
         this.table = SouthPanel.JlistTabelle.table;
 
-        TableColumn column = table.getColumnModel().getColumn(0);
+        TableColumn column = table.getColumnModel().getColumn(6);
         System.out.println(checkBox.isSelected());
         if (checkBox.isSelected()) {
 
