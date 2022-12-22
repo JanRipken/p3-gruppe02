@@ -47,6 +47,7 @@ public class EditBook extends JFrame {
     public static JCheckBox nochmallesen;
 
     public EditBook() {
+        this.setUndecorated(true);
 
         this.list = Table.list;
         this.table = SouthPanel.JlistTabelle.table;
