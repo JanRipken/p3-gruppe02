@@ -123,6 +123,9 @@ public class Table {
         list.addBook(book);
         addRowtoTable();
     }
+    public void addEditToTable(BookModel book){
+        addRowtoTable();
+    }
 
     public void addRowtoTable() {
         model.setRowCount(0);

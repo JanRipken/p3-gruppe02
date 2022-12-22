@@ -1,6 +1,5 @@
 package main.tomedb.java.editbookframe.controller;
 
-import main.tomedb.java.editbookframe.controller.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;

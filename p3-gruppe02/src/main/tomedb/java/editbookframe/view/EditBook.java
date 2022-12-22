@@ -7,11 +7,20 @@ import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.editbookframe.controller.DragMove;
-
+import main.tomedb.java.mainframe.model.BookModel;
+import main.tomedb.java.mainframe.model.BookModelList;
+import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.Table;
 public class EditBook extends JFrame {
+
+    private EditBook view;
+    private BookModel model;
+    public BookModelList list;
+    public JTable table;
 
     // Final damit die variable nur einmal genutzt werden kann
     // Eventulle überarbeiten bei erstellung der Änderungsseite
@@ -39,14 +48,16 @@ public class EditBook extends JFrame {
 
     public EditBook() {
 
+        this.list = Table.list;
+        this.table = SouthPanel.JlistTabelle.table;
+        int[] bookIndex = table.getSelectedRows();
+        this.model = list.get(bookIndex[0]);
         //this.setUndecorated(true);
 
         //DragMove drag = new DragMove(this);
         //this.addMouseListener(drag);
         //this.addMouseMotionListener(drag);
-
-        
-        ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png",30,30);
+        ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
         this.setIconImage(icon.getImage());
 
         MainPanel mainPanel = new MainPanel();
@@ -71,14 +82,12 @@ public class EditBook extends JFrame {
         Abort abbrechen = new Abort(this);
         mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
-        // TODO Löschen
-        // Testweise bereits namen setzen
-        titel.setText("Java 2019");
-        AutorName.setText("Musterman");
-        AutorVorName.setText("Max");
-        Erscheinungsjahr.setText("2021");
-        Seitenanzahl.setText("3019");
-        bewertung.setText("7.2");
+        titel.setText(model.getTitel());
+        AutorName.setText(model.getAutorName());
+        AutorVorName.setText(model.getAutorVorname());
+        Erscheinungsjahr.setText(Integer.toString(model.getErscheinungsjahr()));
+        Seitenanzahl.setText(Integer.toString(model.getSeitenanzahl()));
+        bewertung.setText(Double.toString(model.getBewertung()));
 
         this.setContentPane(mainPanel);
 
@@ -113,17 +122,17 @@ public class EditBook extends JFrame {
     public int getErscheinungsjahr() {
         if (Erscheinungsjahr.getText().equals("")) {
             return 0;
-           
+
         } else {
-             return Integer.parseInt(Erscheinungsjahr.getText());
+            return Integer.parseInt(Erscheinungsjahr.getText());
         }
 
     }
 
     public int getSeitenzahl() {
-        if ( Seitenanzahl.getText().equals("")) {
+        if (Seitenanzahl.getText().equals("")) {
             return 0;
-            
+
         } else {
             return Integer.parseInt(Seitenanzahl.getText());
         }
