@@ -12,6 +12,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
+import main.tomedb.java.editbookframe.controller.EditBook;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.controller.JTableMouseListener;
@@ -103,7 +104,7 @@ public class Table {
         JMenuItem menuItemEdit = new JMenuItem("Edit Rows");
 
         JTableActionListenerDelete tableListenerDelete = new JTableActionListenerDelete();
-        JTableActionListenerEdit tableListenerEdit = new JTableActionListenerEdit();
+        EditBook tableListenerEdit = new EditBook();
 
         menuItemRemove.addActionListener(tableListenerDelete);
         menuItemEdit.addActionListener(tableListenerEdit);
