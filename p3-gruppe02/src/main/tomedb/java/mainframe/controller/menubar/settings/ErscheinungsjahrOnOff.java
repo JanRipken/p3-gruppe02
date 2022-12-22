@@ -29,17 +29,11 @@ private void hidenomalLesen() {
     if (checkBox.isSelected()) {
         column.setMinWidth(0);
         column.setMaxWidth(0);
-        column.setPreferredWidth(0);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        table.revalidate();
-        table.repaint();        
+        column.setPreferredWidth(0);       
     } else {
         column.setMinWidth(50);
         column.setMaxWidth(900);
         column.setPreferredWidth(150);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
-        table.revalidate();
-        table.repaint();
     }
 }
 
