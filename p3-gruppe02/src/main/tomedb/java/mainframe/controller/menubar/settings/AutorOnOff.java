@@ -35,8 +35,7 @@ private void hidenomalLesen() {
         table.repaint();        
     } else {
         column.setMinWidth(50);
-        column.setMaxWidth(150);
-        column.setPreferredWidth(150);
+        column.setMaxWidth(900);
         table.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         table.revalidate();
         table.repaint();
