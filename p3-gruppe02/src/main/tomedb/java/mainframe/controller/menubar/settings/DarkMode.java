@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -19,6 +20,9 @@ import main.tomedb.java.mainframe.TomeDB;
  * @author janri
  */
 public class DarkMode implements ActionListener  {
+   
+    
+   
 
     @Override
     public void actionPerformed(ActionEvent e) {

@@ -5,7 +5,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
-import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
+
 
 public class ErscheinungsjahrOnOff implements ActionListener {
 
@@ -23,7 +24,7 @@ public class ErscheinungsjahrOnOff implements ActionListener {
     }
 
 private void hidenomalLesen() {
-    this.table = SouthPanel.JlistTabelle.table;
+    this.table = MainPanel.JlistTabelle.table;
 
     TableColumn column = table.getColumnModel().getColumn(3);
     if (checkBox.isSelected()) {

@@ -7,9 +7,10 @@ import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.view.menubar.Menu;
-import main.tomedb.java.mainframe.view.SouthPanel;
+
 import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.mainframe.controller.JTableChanged;
+import main.tomedb.java.mainframe.view.MainPanel;
 
 public class ImportNewFile extends Table implements ActionListener {
 
@@ -42,10 +43,10 @@ public class ImportNewFile extends Table implements ActionListener {
 
     public void importFile(String path) {
         // Read file
-        JTableChanged TableListener = SouthPanel.TableListener;
+        JTableChanged TableListener = MainPanel.TableListener;
 
         // discard old Table listener
-        SouthPanel.JlistTabelle.model.removeTableModelListener(TableListener);
+        MainPanel.JlistTabelle.model.removeTableModelListener(TableListener);
 
         BookModelList list = new BookModelList();
         BookModelListDAO dao2 = new BookModelListDAO(path, false); // Lesen
@@ -58,10 +59,10 @@ public class ImportNewFile extends Table implements ActionListener {
 
         // Write new lost over old List
         Table.list = list;
-        SouthPanel.JlistTabelle.addRowtoTable();
+        MainPanel.JlistTabelle.addRowtoTable();
 
         // Activate a new Table listener
-        SouthPanel.JlistTabelle.model.addTableModelListener(TableListener);
+        MainPanel.JlistTabelle.model.addTableModelListener(TableListener);
 
     }
 }

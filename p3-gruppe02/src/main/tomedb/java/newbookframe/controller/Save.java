@@ -4,8 +4,9 @@ import main.tomedb.java.newbookframe.view.NewBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import main.tomedb.java.mainframe.model.BookModel;
+import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.newbookframe.view.InputTitel;
-import main.tomedb.java.mainframe.view.SouthPanel;
+
 
 // Klasse zum speichern eines neuen Buches
 public class Save implements ActionListener {
@@ -39,7 +40,7 @@ public class Save implements ActionListener {
 
             } else {
                 setModel();
-                SouthPanel.JlistTabelle.addToTable(model);
+                MainPanel.JlistTabelle.addToTable(model);
                 view.dispose();
             }
 

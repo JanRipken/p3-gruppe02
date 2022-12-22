@@ -16,11 +16,13 @@ public class MainFrame extends JFrame {
 
     public static ModifyIcons modIcons;
     private String title = "p3-gruppe02";
+  
+    public static MainPanel mainPanel;
 
     public MainFrame() {
         // removing the top bar
         this.setUndecorated(true);
-
+ 
         // implementing a Move / Drag handler
         MainFramDragMove drag = new MainFramDragMove(this);
         this.addMouseListener(drag);
@@ -31,9 +33,15 @@ public class MainFrame extends JFrame {
         MenuBar menuBar = new MenuBar();
 
         this.setJMenuBar(menuBar.makeMenuBar());
+ 
+        mainPanel = new MainPanel();
+        
 
-        this.add(new NorthPanel(), BorderLayout.NORTH);
-        this.add(new SouthPanel(), BorderLayout.CENTER);
+
+        this.setContentPane(mainPanel);
+        
+        
+        
 
         this.setTitle(title);
         this.setSize(900, 600);

@@ -13,7 +13,9 @@ public class MenuBar extends JMenuBar {
 
     private JMenuBar bar;
     private Menu mainMenu;
-    private Settings set;
+    private hideColumns hideCol;
+    private Settings settings;
+    
 
     public MenuBar() {
 
@@ -31,15 +33,19 @@ public class MenuBar extends JMenuBar {
         JMenu menuMain = mainMenu.makeJMenu();
 
         try {
-            set = new Settings();
+            hideCol = new hideColumns();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JMenu settings = set.makeJSettings();
+        JMenu hideColums = hideCol.makeJSettings();
 
         // close
         Close close = new Close();
         JButton close1 = close.makeClose();
+        
+        //settings
+        Settings set = new Settings();
+        JButton set1 = set.makeSettings();
 
         // minimize
         Minimized mini = new Minimized();
@@ -47,11 +53,12 @@ public class MenuBar extends JMenuBar {
 
         // Left side
         bar.add(menuMain);
-        bar.add(settings);
+        bar.add(hideColums);
 
         // Right side
         bar.add(Box.createHorizontalGlue());
 
+        bar.add(set1);
         //TODO: Freischalten sobald funktion gegeben ist
         //bar.add(minimize);
         bar.add(close1);
