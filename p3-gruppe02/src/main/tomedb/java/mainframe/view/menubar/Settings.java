@@ -11,7 +11,9 @@ import javax.swing.JCheckBox;
 import javax.swing.JMenu;
 import javax.swing.JRadioButton;
 import main.tomedb.java.mainframe.controller.menubar.settings.DarkMode;
+import main.tomedb.java.mainframe.controller.menubar.settings.SeitenanzahlOnOff;
 import main.tomedb.java.mainframe.controller.menubar.settings.SystemMode;
+import main.tomedb.java.mainframe.controller.menubar.settings.VornameOnOff;
 
 
 public class Settings extends JMenu {
@@ -19,9 +21,11 @@ public class Settings extends JMenu {
     private JMenu settings;
     private JCheckBox BuchTitel;
     private JCheckBox Autor;
+    private JCheckBox Vorname;
     private JCheckBox Erscheinungsjahr;
     private JCheckBox Bewertung;
     private JCheckBox NochmalLesen;
+    private JCheckBox Seitenanzahl;
     
     private JRadioButton Dark;
     private JRadioButton Light;
@@ -33,7 +37,9 @@ public class Settings extends JMenu {
 
         BuchTitel = new JCheckBox("Buch Titel");
         Autor = new JCheckBox("Autor");
+        Vorname = new JCheckBox("Vorname");
         Erscheinungsjahr = new JCheckBox("Erscheinungsjahr");
+        Seitenanzahl = new JCheckBox("Seitenanzahl");
         Bewertung = new JCheckBox("Bewertung");
         NochmalLesen = new JCheckBox("Nochmal lesen");
 
@@ -46,7 +52,9 @@ public class Settings extends JMenu {
         
         settings.add(BuchTitel);
         settings.add(Autor);
+        settings.add(Vorname);
         settings.add(Erscheinungsjahr);
+        settings.add(Seitenanzahl);
         settings.add(Bewertung);
         settings.add(NochmalLesen);
         settings.addSeparator();
@@ -55,20 +63,27 @@ public class Settings extends JMenu {
         settings.add(System);
         
 
-        BuchTitelOnOff toggleBuchTitel = new BuchTitelOnOff();
+        BuchTitelOnOff toggleBuchTitel = new BuchTitelOnOff(BuchTitel);
         BuchTitel.addActionListener(toggleBuchTitel);
 
-        AutorOnOff toggleAutor = new AutorOnOff();
+        AutorOnOff toggleAutor = new AutorOnOff(Autor);
         Autor.addActionListener(toggleAutor);
+        
+        VornameOnOff toggleVorname = new VornameOnOff(Vorname);
+        Vorname.addActionListener(toggleVorname);
 
-        ErscheinungsjahrOnOff toggleErscheinungsjahr = new ErscheinungsjahrOnOff();
+        ErscheinungsjahrOnOff toggleErscheinungsjahr = new ErscheinungsjahrOnOff(Erscheinungsjahr);
         Erscheinungsjahr.addActionListener(toggleErscheinungsjahr);
+        
+        SeitenanzahlOnOff toggleSeitenanzahl = new SeitenanzahlOnOff(Seitenanzahl);
+        Seitenanzahl.addActionListener(toggleSeitenanzahl);
 
-        BewertungOnOff toggleBewertung = new BewertungOnOff();
+        BewertungOnOff toggleBewertung = new BewertungOnOff(Bewertung);
         Bewertung.addActionListener(toggleBewertung);
 
-        NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff();
+        NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff(NochmalLesen);
         NochmalLesen.addActionListener(toggleNochmalLesen);
+        
         
         DarkMode dm = new DarkMode();
         Dark.addActionListener(dm);

@@ -13,6 +13,7 @@ public class SouthPanel extends JPanel {
 
     public static Table JlistTabelle;
     public static JTableChanged TableListener;
+    
 
     public SouthPanel() {
 
