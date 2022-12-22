@@ -14,7 +14,6 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.controller.JTableMouseListener;
 import main.tomedb.java.mainframe.controller.JTableActionListenerDelete;
 import main.tomedb.java.mainframe.controller.JTableActionListenerEdit;
 
