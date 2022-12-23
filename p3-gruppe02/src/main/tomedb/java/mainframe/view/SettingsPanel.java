@@ -14,19 +14,21 @@ import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.LookAndFeel;
+import javax.swing.UIManager;
 import main.tomedb.java.mainframe.TomeDB;
 import main.tomedb.java.mainframe.controller.SettingsAbort;
-import main.tomedb.java.mainframe.controller.menubar.settings.DarkMode;
-import main.tomedb.java.mainframe.controller.menubar.settings.SystemMode;
+import main.tomedb.java.mainframe.controller.SettingsSave;
+import main.tomedb.java.mainframe.controller.menubar.themeChange;
 
 public class SettingsPanel extends JPanel {
-
+    
     private JLabel themeLabel;
     private JComboBox<String> themeComboBox;
-
+    
     private JButton confirmButton;
     private JButton abortButton;
-
+    
     public SettingsPanel() {
 
         // Verwenden Sie GridBagLayout für das Layout
@@ -35,8 +37,9 @@ public class SettingsPanel extends JPanel {
 
         // Erstellen Sie die Steuerelemente
         themeLabel = new JLabel("Thema:");
-        themeComboBox = new JComboBox<>(new String[]{"Hell", "Dunkel"});
-
+        themeComboBox = new JComboBox<>();
+        themeComboBox.addItem("Dunkel");
+        themeComboBox.addItem("Hell");
         confirmButton = new JButton("Speichern");
         abortButton = new JButton("Abbrechen");
 
@@ -49,7 +52,7 @@ public class SettingsPanel extends JPanel {
         add(themeComboBox, constraints);
         constraints.gridx = 0;
         constraints.gridy = 1;
-
+        
         constraints.gridx = 0;
         constraints.gridy = GridBagConstraints.RELATIVE; // Nächste freie Zeile
         constraints.anchor = GridBagConstraints.LINE_END; // Linksbündig
@@ -57,19 +60,17 @@ public class SettingsPanel extends JPanel {
         constraints.gridx = 1;
         add(abortButton, constraints);
         
-        SettingsAbort abort = new SettingsAbort();
+        LookAndFeel LookAndFeel = UIManager.getLookAndFeel();
+        
+        SettingsAbort abort = new SettingsAbort(LookAndFeel);
         abortButton.addActionListener(abort);
         
-        String s =(String) themeComboBox.getSelectedItem();
-        switch(s){
-            case "Dunkel":
-                 DarkMode dm = new DarkMode();
-                themeComboBox.addActionListener(dm);
-            case "Hell":
-                SystemMode sysMode =  new SystemMode();
-                themeComboBox.addActionListener(sysMode);
-        }
-       
+        SettingsSave save = new SettingsSave();
+        confirmButton.addActionListener(save);
+        
+        themeChange themchange = new themeChange();
+        themeComboBox.addActionListener(themchange);
         
     }
+    
 }

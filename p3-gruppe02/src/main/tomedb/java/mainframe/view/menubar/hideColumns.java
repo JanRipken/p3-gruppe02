@@ -10,9 +10,9 @@ import main.tomedb.java.mainframe.controller.menubar.settings.NochmallesenOnOff;
 import javax.swing.JCheckBox;
 import javax.swing.JMenu;
 import javax.swing.JRadioButton;
-import main.tomedb.java.mainframe.controller.menubar.settings.DarkMode;
+
 import main.tomedb.java.mainframe.controller.menubar.settings.SeitenanzahlOnOff;
-import main.tomedb.java.mainframe.controller.menubar.settings.SystemMode;
+
 import main.tomedb.java.mainframe.controller.menubar.settings.VornameOnOff;
 
 
@@ -27,10 +27,6 @@ public class hideColumns extends JMenu {
     private JCheckBox NochmalLesen;
     private JCheckBox Seitenanzahl;
     
-    private JRadioButton Dark;
-    private JRadioButton Light;
-    private JRadioButton System;
-
     public hideColumns() throws ClassNotFoundException {
 
         settings = new JMenu("Ausblenden");
@@ -43,12 +39,8 @@ public class hideColumns extends JMenu {
         Bewertung = new JCheckBox("Bewertung");
         NochmalLesen = new JCheckBox("Nochmal lesen");
 
-        Dark = new JRadioButton("Dark Mode");
-        System = new JRadioButton("System Design");
         
-        ButtonGroup btngrp =  new ButtonGroup();
-        btngrp.add(Dark);
-        btngrp.add(System);
+
         
         settings.add(BuchTitel);
         settings.add(Autor);
@@ -57,10 +49,6 @@ public class hideColumns extends JMenu {
         settings.add(Seitenanzahl);
         settings.add(Bewertung);
         settings.add(NochmalLesen);
-        settings.addSeparator();
-        settings.add(Dark);
-
-        settings.add(System);
         
 
         BuchTitelOnOff toggleBuchTitel = new BuchTitelOnOff(BuchTitel);
@@ -84,13 +72,6 @@ public class hideColumns extends JMenu {
         NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff(NochmalLesen);
         NochmalLesen.addActionListener(toggleNochmalLesen);
         
-        
-        DarkMode dm = new DarkMode();
-        Dark.addActionListener(dm);
-        
-        
-        SystemMode sd = new SystemMode();
-        System.addActionListener(sd);
         
     }
 
