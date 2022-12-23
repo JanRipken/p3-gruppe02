@@ -19,9 +19,9 @@ public class TomeDB {
             public void run() {
                 try {
                     SettingsSave save = new SettingsSave();
-                    
+                    new DarkMode();
                     save.loadLookandfell();
-                        //new DarkMode();
+                    
                     
                     showMainFrame();
 
