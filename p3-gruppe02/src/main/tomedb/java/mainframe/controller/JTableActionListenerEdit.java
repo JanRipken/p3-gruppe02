@@ -6,11 +6,12 @@ import javax.swing.JMenuItem;
 import javax.swing.JTable;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+import main.tomedb.java.editbookframe.view.EditBook;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.SouthPanel;
 import main.tomedb.java.newbookframe.view.NewBook;
 
-public class JTableActionListenerEdit extends JTableActionListenerDelete implements ActionListener {
+public class JTableActionListenerEdit extends EditBook implements ActionListener {
 
     public JTable table;
     public DefaultTableModel model;
@@ -21,8 +22,8 @@ public class JTableActionListenerEdit extends JTableActionListenerDelete impleme
 
     @Override
     public void actionPerformed(ActionEvent e) {
-         //editCurrentRows();
-         throw new UnsupportedOperationException("Not supported yet.");
+         editCurrentRows();
+         //throw new UnsupportedOperationException("Not supported yet.");
          
     }
     
@@ -35,8 +36,8 @@ public class JTableActionListenerEdit extends JTableActionListenerDelete impleme
 
         // Indizes der Gewählten Zeilen werden in ein Array gelesen
         int[] bookIndex = table.getSelectedRows();
-        new main.tomedb.java.newbookframe.view.NewBook();
-        
+        //new main.tomedb.java.newbookframe.view.NewBook();
+        list.editBook(bookIndex[0], list.get(bookIndex[0]));
         
         NewBook.titel.setText("test");
         NewBook.AutorName.setText("Musterman");

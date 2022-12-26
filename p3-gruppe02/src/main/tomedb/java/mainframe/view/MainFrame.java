@@ -3,11 +3,9 @@ package main.tomedb.java.mainframe.view;
 import main.tomedb.java.mainframe.view.menubar.MenuBar;
 import main.tomedb.java.mainframe.controller.MainFramDragMove;
 import java.awt.BorderLayout;
-import java.awt.Toolkit;
 import javax.swing.JFrame;
 import main.tomedb.java.mainframe.controller.WindowEventHandler;
 
-import java.awt.Image;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import main.tomedb.java.mainframe.controller.icons.ModifyIcons;

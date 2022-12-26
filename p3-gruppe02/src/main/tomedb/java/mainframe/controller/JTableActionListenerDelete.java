@@ -8,8 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.SouthPanel;
 import main.tomedb.java.mainframe.view.Table;
-import static main.tomedb.java.mainframe.view.Table.menuItemEdit;
-import static main.tomedb.java.mainframe.view.Table.menuItemRemove;
 
 public class JTableActionListenerDelete implements ActionListener {
 
