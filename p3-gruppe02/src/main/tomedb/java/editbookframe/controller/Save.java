@@ -7,7 +7,7 @@ import javax.swing.JTable;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.newbookframe.view.InputTitel;
-import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 
 // Klasse zum speichern eines neuen Buches
@@ -20,7 +20,7 @@ public class Save implements ActionListener {
 
     public Save(EditBook view) {
         this.list = Table.list;
-        this.table = SouthPanel.JlistTabelle.table;
+        this.table = MainPanel.JlistTabelle.table;
         int[] bookIndex = table.getSelectedRows();
         this.model = list.get(bookIndex[0]);
         this.view = view;
@@ -46,7 +46,7 @@ public class Save implements ActionListener {
 
             } else {
                 setModel();
-                SouthPanel.JlistTabelle.addEditToTable(model);
+                MainPanel.JlistTabelle.addEditToTable(model);
                 view.dispose();
             }
 

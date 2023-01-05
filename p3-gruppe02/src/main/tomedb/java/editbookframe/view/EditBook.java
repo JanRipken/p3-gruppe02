@@ -13,7 +13,7 @@ import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.editbookframe.controller.DragMove;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 public class EditBook extends JFrame {
 
@@ -50,7 +50,7 @@ public class EditBook extends JFrame {
         this.setUndecorated(true);
 
         this.list = Table.list;
-        this.table = SouthPanel.JlistTabelle.table;
+        this.table = MainPanel.JlistTabelle.table;
         int[] bookIndex = table.getSelectedRows();
         this.model = list.get(bookIndex[0]);
         //this.setUndecorated(true);
@@ -61,7 +61,7 @@ public class EditBook extends JFrame {
         ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
         this.setIconImage(icon.getImage());
 
-        MainPanel mainPanel = new MainPanel();
+        MainPanel1 mainPanel = new MainPanel1();
 
         titel = mainPanel.LayoutTextfield(FrageBuchName);
         AutorName = mainPanel.LayoutTextfield(FrageBuchAutor);

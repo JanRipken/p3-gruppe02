@@ -14,13 +14,13 @@ import javax.swing.text.PlainDocument;
 import main.tomedb.java.editbookframe.controller.DoubleFilter;
 import main.tomedb.java.editbookframe.controller.IntFilter;
 
-public class MainPanel extends JPanel {
+public class MainPanel1 extends JPanel {
 
     JButton ButtonBestätigen = new JButton("Bestätigen");
     JButton ButtonAbrechen = new JButton("Abrechen");
 
     // TODO: Layouts hierrein schreiben
-    public MainPanel() {
+    public MainPanel1() {
 
         this.setLayout(new GridLayout(8, 0));
 
