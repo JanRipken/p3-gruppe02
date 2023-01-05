@@ -6,7 +6,8 @@ import javax.swing.JMenuItem;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
+
 import main.tomedb.java.mainframe.view.Table;
 
 public class JTableActionListenerDelete implements ActionListener {
@@ -26,8 +27,8 @@ public class JTableActionListenerDelete implements ActionListener {
 
     public void removeSelectedRows() {
 
-        this.model = SouthPanel.JlistTabelle.model;
-        this.table = SouthPanel.JlistTabelle.table;
+        this.model = MainPanel.JlistTabelle.model;
+        this.table = MainPanel.JlistTabelle.table;
         this.list = Table.list;
 
         // Indizes der Gewählten Zeilen werden in ein Array gelesen und anschließend gelöscht

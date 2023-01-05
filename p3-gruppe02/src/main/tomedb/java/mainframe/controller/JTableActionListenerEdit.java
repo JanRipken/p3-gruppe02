@@ -8,7 +8,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.editbookframe.view.EditBook;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
+
 import main.tomedb.java.newbookframe.view.NewBook;
 
 public class JTableActionListenerEdit extends EditBook implements ActionListener {
@@ -30,9 +31,9 @@ public class JTableActionListenerEdit extends EditBook implements ActionListener
     // TODO: View.NewBook und dazugehörige clonen und auf EditBook anpassen
     // methode so nicht verwenden
     private void editCurrentRows()  {
-        this.model = SouthPanel.JlistTabelle.model;
-        this.table = SouthPanel.JlistTabelle.table;
-        this.list = SouthPanel.JlistTabelle.list;
+        this.model = MainPanel.JlistTabelle.model;
+        this.table = MainPanel.JlistTabelle.table;
+        this.list = MainPanel.JlistTabelle.list;
 
         // Indizes der Gewählten Zeilen werden in ein Array gelesen
         int[] bookIndex = table.getSelectedRows();

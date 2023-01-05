@@ -25,7 +25,8 @@ public class DarkMode {
 
         try {
             //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
-            UIManager.setLookAndFeel(new NimbusLookAndFeel());
+            NimbusLookAndFeel nimbusLaf = new NimbusLookAndFeel();
+            UIManager.setLookAndFeel(nimbusLaf);
             UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("info", new Color(128, 128, 128));
             UIManager.put("nimbusBase", new Color(18, 30, 49));

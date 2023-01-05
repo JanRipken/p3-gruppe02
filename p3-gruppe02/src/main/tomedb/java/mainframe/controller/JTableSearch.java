@@ -6,7 +6,8 @@ import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
-import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
+
 import main.tomedb.java.mainframe.view.TableSearch;
 
 public class JTableSearch implements ActionListener {
@@ -37,8 +38,8 @@ public class JTableSearch implements ActionListener {
         TableSearch searching = new TableSearch();
         searchTerm = searching.text;
 
-        this.model = SouthPanel.JlistTabelle.model;
-        this.table = SouthPanel.JlistTabelle.table;
+        this.model = MainPanel.JlistTabelle.model;
+        this.table = MainPanel.JlistTabelle.table;
 
         createRowSorter(model);
 

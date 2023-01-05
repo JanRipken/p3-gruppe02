@@ -7,7 +7,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.view.SouthPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
+
 import main.tomedb.java.mainframe.view.Table;
 
 public class merge implements ActionListener {
@@ -39,7 +40,7 @@ public class merge implements ActionListener {
                 }
                 dao2.close();
                 Table.list = list;
-                SouthPanel.JlistTabelle.addRowtoTable();
+                MainPanel.JlistTabelle.addRowtoTable();
             }
 
         }
