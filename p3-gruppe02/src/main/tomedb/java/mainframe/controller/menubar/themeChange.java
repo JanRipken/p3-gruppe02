@@ -55,7 +55,7 @@ public class themeChange implements ActionListener {
         }
     }
 
-    private void light() throws IllegalAccessException {
+    public static void light() throws IllegalAccessException {
 
         try {
             new LightMode();
@@ -70,7 +70,7 @@ public class themeChange implements ActionListener {
         SwingUtilities.updateComponentTreeUI(TomeDB.main);
     }
 
-    private void dark() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+    public static void dark() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
                 new DarkMode();
                 SwingUtilities.updateComponentTreeUI(TomeDB.main);
     }

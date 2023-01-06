@@ -60,12 +60,12 @@ public class SettingsPanel extends JPanel {
         constraints.gridx = 1;
         add(abortButton, constraints);
         
-        LookAndFeel LookAndFeel = UIManager.getLookAndFeel();
+       
         
-        SettingsAbort abort = new SettingsAbort(LookAndFeel);
+        SettingsAbort abort = new SettingsAbort();
         abortButton.addActionListener(abort);
         
-        SettingsSave save = new SettingsSave();
+        SettingsSave save = new SettingsSave(themeComboBox);
         confirmButton.addActionListener(save);
         
         themeChange themchange = new themeChange();

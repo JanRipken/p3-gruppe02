@@ -24,7 +24,7 @@ public class LightMode {
             UnsupportedLookAndFeelException {
 
         try {
-            System.out.println("ligth");
+
 //            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
 
 

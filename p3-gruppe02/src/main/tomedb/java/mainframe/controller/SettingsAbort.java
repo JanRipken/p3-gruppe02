@@ -21,15 +21,15 @@ import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
  */
 public class SettingsAbort implements ActionListener {
 
-    private LookAndFeel lookandfeel;
 
-    public SettingsAbort(LookAndFeel lookAndFeel) {
-        this.lookandfeel = lookAndFeel;
+
+    public SettingsAbort( ) {
+       
     }
 
     public void resetLookAndFeel() throws UnsupportedLookAndFeelException {
   
-            UIManager.setLookAndFeel(lookandfeel);
+           
  
     }
 
