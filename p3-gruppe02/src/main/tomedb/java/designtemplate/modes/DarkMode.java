@@ -4,11 +4,8 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.Painter;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
-import main.tomedb.java.mainframe.TomeDB;
 
 public class DarkMode {
 
@@ -24,9 +21,7 @@ public class DarkMode {
             UnsupportedLookAndFeelException {
 
         try {
-            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
-            NimbusLookAndFeel nimbusLaf = new NimbusLookAndFeel();
-            UIManager.setLookAndFeel(nimbusLaf);
+            UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("info", new Color(128, 128, 128));
             UIManager.put("nimbusBase", new Color(18, 30, 49));
@@ -42,9 +37,8 @@ public class DarkMode {
             UIManager.put("nimbusSelectionBackground", new Color(104, 93, 156));
             UIManager.put("text", Color.BLACK);
             UIManager.put("MenuItem[MouseOver].backgroundPainter", new FillPainter(Color.GRAY.darker()));
-            
-  
 
+            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
         } catch (Exception e) {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }

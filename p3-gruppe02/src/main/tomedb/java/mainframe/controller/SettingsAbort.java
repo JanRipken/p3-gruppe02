@@ -12,7 +12,10 @@ import javax.swing.LookAndFeel;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import main.tomedb.java.designtemplate.modes.DarkMode;
+import main.tomedb.java.designtemplate.modes.LightMode;
 import main.tomedb.java.mainframe.TomeDB;
+import main.tomedb.java.mainframe.dao.SettingsDAO;
 import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
 /**
@@ -21,15 +24,24 @@ import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
  */
 public class SettingsAbort implements ActionListener {
 
-    private LookAndFeel lookandfeel;
 
-    public SettingsAbort(LookAndFeel lookAndFeel) {
-        this.lookandfeel = lookAndFeel;
+
+    public SettingsAbort( ) {
+       
     }
 
-    public void resetLookAndFeel() throws UnsupportedLookAndFeelException {
+    public void resetLookAndFeel() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
   
-            UIManager.setLookAndFeel(lookandfeel);
+           SettingsDAO set = new SettingsDAO();
+           String mode = set.read();
+           if (mode.equals("Hell")) {
+
+            new LightMode();
+        }
+        if (mode.equals("Dunkel")) {
+
+            new DarkMode();
+        } 
  
     }
 
@@ -38,6 +50,12 @@ public class SettingsAbort implements ActionListener {
         try {
             resetLookAndFeel();
         } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(SettingsAbort.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(SettingsAbort.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(SettingsAbort.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
             Logger.getLogger(SettingsAbort.class.getName()).log(Level.SEVERE, null, ex);
         }
         

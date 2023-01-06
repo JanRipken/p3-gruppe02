@@ -6,11 +6,13 @@ package main.tomedb.java.mainframe.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.prefs.Preferences;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JComboBox;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import main.tomedb.java.mainframe.TomeDB;
+import main.tomedb.java.mainframe.dao.SettingsDAO;
 import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
 /**
@@ -18,37 +20,21 @@ import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
  * @author janri
  */
 public class SettingsSave implements ActionListener {
-
-    private Preferences prefs;
-    String lookAndFeel;
-    public static String lookAndFeelClassName;
-
-    public SettingsSave() {
-        prefs = Preferences.userNodeForPackage(getClass());
-
-    }
-
-    public void saveLookandFeel() {
-        prefs.put("lookandfeel", lookAndFeel);
-    }
-
-    public void loadLookandfell() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-        // Lade den Look and Feel aus den Einstellungen
-        lookAndFeelClassName = prefs.get("lookandfeel", UIManager.getSystemLookAndFeelClassName());
-        try {
-            UIManager.setLookAndFeel(lookAndFeelClassName);
-        } catch (Exception ex) {
-            //ex.printStackTrace();
-        }
-
-        System.out.println(lookAndFeelClassName);
-
+    private JComboBox cbSaveMode;
+    public SettingsSave(JComboBox cbSaveMode) {
+        this.cbSaveMode = cbSaveMode;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        lookAndFeel = UIManager.getLookAndFeel().getName();
-        saveLookandFeel();
+        String mode = cbSaveMode.getSelectedItem().toString();
+        SettingsDAO set = new SettingsDAO();
+        try {
+            set.write(mode);
+        } catch (IOException ex) {
+            Logger.getLogger(SettingsSave.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         TomeDB.main.setContentPane(mainPanel);
         SwingUtilities.updateComponentTreeUI(TomeDB.main);
     }
