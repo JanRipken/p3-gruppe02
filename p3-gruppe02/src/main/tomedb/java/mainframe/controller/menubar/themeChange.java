@@ -13,6 +13,8 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import main.tomedb.java.designtemplate.modes.DarkMode;
+import main.tomedb.java.designtemplate.modes.LightMode;
 import main.tomedb.java.mainframe.TomeDB;
 
 /**
@@ -35,10 +37,20 @@ public class themeChange implements ActionListener {
             }
             
             
-            System.out.println("Hell");
+           
         }
         if (selectedItem == "Dunkel") {
-            dark();
+            try {
+                dark();
+            } catch (ClassNotFoundException ex) {
+                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (InstantiationException ex) {
+                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (IllegalAccessException ex) {
+                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+            }
             
         }
     }
@@ -46,7 +58,7 @@ public class themeChange implements ActionListener {
     private void light() throws IllegalAccessException {
 
         try {
-            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+            new LightMode();
         }  catch (ClassNotFoundException ex) {
                 Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
@@ -58,14 +70,9 @@ public class themeChange implements ActionListener {
         SwingUtilities.updateComponentTreeUI(TomeDB.main);
     }
 
-    private void dark() {
-        try {
-            
-            UIManager.setLookAndFeel(new NimbusLookAndFeel());
-        } catch (UnsupportedLookAndFeelException ex) {
-
-        }
-        SwingUtilities.updateComponentTreeUI(TomeDB.main);
+    private void dark() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
+                new DarkMode();
+                SwingUtilities.updateComponentTreeUI(TomeDB.main);
     }
 
 }

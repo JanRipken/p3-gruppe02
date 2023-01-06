@@ -23,10 +23,8 @@ public class DarkMode {
     public DarkMode() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
             UnsupportedLookAndFeelException {
 
-        try {
-            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
-            NimbusLookAndFeel nimbusLaf = new NimbusLookAndFeel();
-            UIManager.setLookAndFeel(nimbusLaf);
+        try { System.out.println("dark");
+            UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("info", new Color(128, 128, 128));
             UIManager.put("nimbusBase", new Color(18, 30, 49));
@@ -43,6 +41,8 @@ public class DarkMode {
             UIManager.put("text", Color.BLACK);
             UIManager.put("MenuItem[MouseOver].backgroundPainter", new FillPainter(Color.GRAY.darker()));
             
+            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
+       
   
 
         } catch (Exception e) {
