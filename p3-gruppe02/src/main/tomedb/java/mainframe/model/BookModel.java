@@ -13,26 +13,10 @@ public class BookModel {
     public BookModel() {
     }
 
-    /**
-     * Constructor for only having a titel
-     * 
-     * @param titel
-     */
     public BookModel(String titel) {
         this.Titel = titel;
     }
 
-    /**
-     * Constructor for having all parameters
-     * 
-     * @param titel
-     * @param autorname
-     * @param autorvorname
-     * @param seitenanzahl
-     * @param gelesen
-     * @param bewertung
-     * @param erscheinungsjahr
-     */
     public BookModel(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen,
             double bewertung, int erscheinungsjahr) {
         this.Titel = titel;

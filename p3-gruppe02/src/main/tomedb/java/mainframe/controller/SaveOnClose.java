@@ -6,11 +6,8 @@ import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import static main.tomedb.java.mainframe.view.Table.list;
 import main.tomedb.java.mainframe.controller.menubar.ImportNewFile;
 
-public class SaveOnClose{
+public class SaveOnClose {
 
-    /**
-     * @param filePath variable for the path of our main File
-     */
     private String filePath = "./data/main.txt";
 
     String updatedPath = ImportNewFile.updatedpath;
@@ -23,10 +20,10 @@ public class SaveOnClose{
                 JOptionPane.YES_NO_OPTION);
 
         if (selected == 0) {
-            // checking in which path the file has to be saved
+
             if (updatedPath != null) {
-                // save in file
-                BookModelListDAO daoWrite = new BookModelListDAO(updatedPath, true); // Schreiben
+
+                BookModelListDAO daoWrite = new BookModelListDAO(updatedPath, true);
                 try {
                     daoWrite.write(list);
                 } catch (IOException v) {
@@ -35,7 +32,7 @@ public class SaveOnClose{
                 daoWrite.close();
             } else {
 
-                BookModelListDAO daoWrite = new BookModelListDAO(filePath, true); // Schreiben
+                BookModelListDAO daoWrite = new BookModelListDAO(filePath, true);
                 try {
                     daoWrite.write(list);
                 } catch (IOException v) {

@@ -7,7 +7,6 @@ import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.newbookframe.view.InputTitel;
 
-
 // Klasse zum speichern eines neuen Buches
 public class Save implements ActionListener {
 

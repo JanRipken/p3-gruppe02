@@ -10,7 +10,6 @@ import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import main.tomedb.java.mainframe.view.MainFrame;
-import main.tomedb.java.editbookframe.controller.DragMove;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
@@ -22,8 +21,6 @@ public class EditBook extends JFrame {
     public BookModelList list;
     public JTable table;
 
-    // Final damit die variable nur einmal genutzt werden kann
-    // Eventulle überarbeiten bei erstellung der Änderungsseite
     private final String FrageBuchName = "Buchtitel";
     private final String FrageBuchAutor = "Name des Autors";
     private final String FrageBuchAutorVorname = "Vorname des Autors";
@@ -32,7 +29,6 @@ public class EditBook extends JFrame {
     private final String FrageBuchBewertung = "Bewertung";
     private final String FrageBuchNochmalLesen = "Erneut Lesen ?";
 
-    // Tooltips
     // TODO: überarbeiten
     private final String TooltipErscheinungsjahr = "Geben sie das Erscheinungjahr bitte eimal mit einer Zahl an ";
     private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahreimal mit einer Zahl an ";

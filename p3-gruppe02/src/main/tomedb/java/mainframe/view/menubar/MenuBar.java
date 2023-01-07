@@ -1,7 +1,5 @@
 package main.tomedb.java.mainframe.view.menubar;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Box;
@@ -15,7 +13,6 @@ public class MenuBar extends JMenuBar {
     private Menu mainMenu;
     private hideColumns hideCol;
     private Settings settings;
-    
 
     public MenuBar() {
 
@@ -24,11 +21,9 @@ public class MenuBar extends JMenuBar {
 
     public JMenuBar makeMenuBar() {
 
-        // menu Bar
         bar = new JMenuBar();
 
-        // Menu
-        mainMenu = new Menu() ;
+        mainMenu = new Menu();
 
         JMenu menuMain = mainMenu.makeJMenu();
 
@@ -39,23 +34,18 @@ public class MenuBar extends JMenuBar {
         }
         JMenu hideColums = hideCol.makeJSettings();
 
-        // close
         Close close = new Close();
         JButton close1 = close.makeClose();
-        
-        //settings
+
         Settings set = new Settings();
         JButton set1 = set.makeSettings();
 
-        // minimize
         Minimized mini = new Minimized();
         JButton minimize = mini.makeMinimize();
 
-        // Left side
         bar.add(menuMain);
         bar.add(hideColums);
 
-        // Right side
         bar.add(Box.createHorizontalGlue());
 
         bar.add(set1);

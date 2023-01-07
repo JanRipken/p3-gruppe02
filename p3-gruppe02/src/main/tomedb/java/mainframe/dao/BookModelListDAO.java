@@ -14,7 +14,7 @@ public class BookModelListDAO extends DAO {
      * Konstruktor um das Data Access Object mit einem Dateinamen zu
      * initialisieren.
      *
-     * @param dateiName    Dateiname
+     * @param dateiName Dateiname
      * @param openForWrite true wenn geschrieben werden soll
      */
     public BookModelListDAO(String dateiName, boolean openForWrite) {
@@ -24,11 +24,8 @@ public class BookModelListDAO extends DAO {
     public void write(Object obj) throws IOException {
         if (out != null) {
             BookModelList bookList = (BookModelList) obj;
-
-            // Anzahl BookModel speichern:
             out.writeInt(bookList.bookModelList.size());
 
-            // Nun die einzelnen BookModel speichern:
             BookModelDAO bookModelDAO = new BookModelDAO(null, out);
 
             for (BookModel b : bookList.bookModelList) {
@@ -41,10 +38,8 @@ public class BookModelListDAO extends DAO {
         if (in != null) {
             BookModelList bookList = (BookModelList) obj;
 
-            // Anzahl BookModel lesen:
             int nBookModel = in.readInt();
 
-            // Nun die einzelnen BookModel lesen:
             BookModelDAO bookModelDAO = new BookModelDAO(in, null);
             for (int i = 0; i < nBookModel; ++i) {
                 BookModel b = new BookModel();

@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.mainframe.controller.menubar;
+
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -18,7 +15,6 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-
 public class FileListAccessory extends JComponent implements PropertyChangeListener {
 
     private File file = null;
@@ -26,17 +22,15 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
     private final JList list;
     private final JButton removeItem;
 
-    
     // TODO: Gudenkauf fragen
     @SuppressWarnings("unchecked")
     public FileListAccessory(JFileChooser chooser) {
         chooser.addPropertyChangeListener(this);
 
         model = new DefaultListModel();
-        
-       
+
         list = new JList(model);
-        
+
         JScrollPane pane = new JScrollPane(list);
         pane.setPreferredSize(new Dimension(250, 250));
 
@@ -60,13 +54,13 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
 
     private void removeFileFromList() {
         if (list.getSelectedIndex() != -1) {
-             model.remove(list.getSelectedIndex());
+            model.remove(list.getSelectedIndex());
         }
     }
 
     private JButton createRemoveItemButton() {
         JButton button = new JButton("Remove");
-        button.addActionListener(new ActionListener(){
+        button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 removeFileFromList();
@@ -80,11 +74,9 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
         boolean update = false;
         String prop = e.getPropertyName();
 
-        //If the directory changed, don't do anything
         if (JFileChooser.DIRECTORY_CHANGED_PROPERTY.equals(prop)) {
             file = null;
             update = true;
-            //If a file became selected, find out which one.
         } else if (JFileChooser.SELECTED_FILE_CHANGED_PROPERTY.equals(prop)) {
             file = (File) e.getNewValue();
             update = true;

@@ -10,7 +10,6 @@ import main.tomedb.java.newbookframe.view.InputTitel;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 
-// Klasse zum speichern eines neuen Buches
 public class Save implements ActionListener {
 
     private EditBook view;

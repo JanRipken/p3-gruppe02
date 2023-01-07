@@ -2,7 +2,6 @@ package main.tomedb.java.mainframe.controller.menubar;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
 import java.io.IOException;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import static main.tomedb.java.mainframe.view.Table.list;
@@ -13,7 +12,6 @@ public class ExportNewFile implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
 
-        // export dialog
         JFileChooser fileExporter = new JFileChooser("./data");
         fileExporter.setDialogTitle("Speichern unter");
 
@@ -21,11 +19,8 @@ public class ExportNewFile implements ActionListener {
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
 
-
-
-            // Write our file to the destined Path
             String dateiName = fileExporter.getSelectedFile().getAbsolutePath();
-            BookModelListDAO dao = new BookModelListDAO(dateiName, true); // Schreiben
+            BookModelListDAO dao = new BookModelListDAO(dateiName, true);
             try {
                 dao.write(list);
             } catch (IOException v) {

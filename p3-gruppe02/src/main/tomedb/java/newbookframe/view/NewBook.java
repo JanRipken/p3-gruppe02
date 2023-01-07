@@ -3,12 +3,9 @@ package main.tomedb.java.newbookframe.view;
 import main.tomedb.java.newbookframe.controller.Abort;
 import main.tomedb.java.newbookframe.controller.Save;
 import java.awt.Dimension;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
-import javax.swing.JFormattedTextField;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import main.tomedb.java.mainframe.view.MainFrame;
@@ -16,8 +13,6 @@ import main.tomedb.java.newbookframe.controller.DragMove;
 
 public class NewBook extends JFrame {
 
-    // Final damit die variable nur einmal genutzt werden kann
-    // Eventulle überarbeiten bei erstellung der Änderungsseite
     private final String FrageBuchName = "Buchtitel";
     private final String FrageBuchAutor = "Name des Autors";
     private final String FrageBuchAutorVorname = "Vorname des Autors";
@@ -26,7 +21,6 @@ public class NewBook extends JFrame {
     private final String FrageBuchBewertung = "Bewertung";
     private final String FrageBuchNochmalLesen = "Erneut Lesen ?";
 
-    // Tooltips
     // TODO: überarbeiten
     private final String TooltipErscheinungsjahr = "Geben sie das Erscheinungjahr bitte eimal mit einer Zahl an ";
     private final String TooltipSeitenanzahl = "Geben sie das Erscheinungjahreimal mit einer Zahl an ";
@@ -48,8 +42,7 @@ public class NewBook extends JFrame {
         this.addMouseListener(drag);
         this.addMouseMotionListener(drag);
 
-        
-        ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png",30,30);
+        ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
         this.setIconImage(icon.getImage());
 
         MainPanel mainPanel = new MainPanel();
@@ -75,7 +68,6 @@ public class NewBook extends JFrame {
         mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
         // TODO Löschen
-        // Testweise bereits namen setzen
         titel.setText("Java 2019");
         AutorName.setText("Musterman");
         AutorVorName.setText("Max");
@@ -97,8 +89,6 @@ public class NewBook extends JFrame {
 
     }
 
-    // TODO: Überarbeiten / Checken
-    // TODO: Textfield = Formatted textfield ?
     public String getTitel() {
 
         return titel.getText();
@@ -116,17 +106,17 @@ public class NewBook extends JFrame {
     public int getErscheinungsjahr() {
         if (Erscheinungsjahr.getText().equals("")) {
             return 0;
-           
+
         } else {
-             return Integer.parseInt(Erscheinungsjahr.getText());
+            return Integer.parseInt(Erscheinungsjahr.getText());
         }
 
     }
 
     public int getSeitenzahl() {
-        if ( Seitenanzahl.getText().equals("")) {
+        if (Seitenanzahl.getText().equals("")) {
             return 0;
-            
+
         } else {
             return Integer.parseInt(Seitenanzahl.getText());
         }

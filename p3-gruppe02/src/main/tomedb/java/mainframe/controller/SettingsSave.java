@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.mainframe.controller;
 
 import java.awt.event.ActionEvent;
@@ -12,15 +8,13 @@ import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.TomeDB;
-import main.tomedb.java.mainframe.dao.SettingsDAO;
+import main.tomedb.java.mainframe.dao.SettingsReadWrite;
 import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
-/**
- *
- * @author janri
- */
 public class SettingsSave implements ActionListener {
+
     private JComboBox cbSaveMode;
+
     public SettingsSave(JComboBox cbSaveMode) {
         this.cbSaveMode = cbSaveMode;
     }
@@ -28,7 +22,7 @@ public class SettingsSave implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String mode = cbSaveMode.getSelectedItem().toString();
-        SettingsDAO set = new SettingsDAO();
+        SettingsReadWrite set = new SettingsReadWrite();
         try {
             set.write(mode);
         } catch (IOException ex) {

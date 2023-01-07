@@ -17,10 +17,6 @@ public class JTableSearch implements ActionListener {
     private DefaultTableModel model;
     private String searchTerm;
 
-    /**
-     * Using the Regex filter to search for Regular expressions in our JTable
-     * with whatever search the user Wants
-     */
     public void search() {
         if (searchTerm != null) {
             RowFilter<DefaultTableModel, Object> rowFilter = RowFilter.regexFilter("(?i)" + searchTerm);

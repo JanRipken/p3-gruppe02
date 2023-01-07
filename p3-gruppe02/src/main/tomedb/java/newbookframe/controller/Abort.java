@@ -5,6 +5,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class Abort implements ActionListener {
+
     private NewBook view;
 
     public Abort(NewBook view) {

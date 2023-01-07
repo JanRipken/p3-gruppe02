@@ -1,7 +1,5 @@
-
 package main.tomedb.java.mainframe.view.menubar;
 
-import javax.swing.ButtonGroup;
 import main.tomedb.java.mainframe.controller.menubar.settings.BuchTitelOnOff;
 import main.tomedb.java.mainframe.controller.menubar.settings.AutorOnOff;
 import main.tomedb.java.mainframe.controller.menubar.settings.ErscheinungsjahrOnOff;
@@ -9,12 +7,10 @@ import main.tomedb.java.mainframe.controller.menubar.settings.BewertungOnOff;
 import main.tomedb.java.mainframe.controller.menubar.settings.NochmallesenOnOff;
 import javax.swing.JCheckBox;
 import javax.swing.JMenu;
-import javax.swing.JRadioButton;
 
 import main.tomedb.java.mainframe.controller.menubar.settings.SeitenanzahlOnOff;
 
 import main.tomedb.java.mainframe.controller.menubar.settings.VornameOnOff;
-
 
 public class hideColumns extends JMenu {
 
@@ -26,7 +22,7 @@ public class hideColumns extends JMenu {
     private JCheckBox Bewertung;
     private JCheckBox NochmalLesen;
     private JCheckBox Seitenanzahl;
-    
+
     public hideColumns() throws ClassNotFoundException {
 
         settings = new JMenu("Ausblenden");
@@ -39,9 +35,6 @@ public class hideColumns extends JMenu {
         Bewertung = new JCheckBox("Bewertung");
         NochmalLesen = new JCheckBox("Nochmal lesen");
 
-        
-
-        
         settings.add(BuchTitel);
         settings.add(Autor);
         settings.add(Vorname);
@@ -49,20 +42,19 @@ public class hideColumns extends JMenu {
         settings.add(Seitenanzahl);
         settings.add(Bewertung);
         settings.add(NochmalLesen);
-        
 
         BuchTitelOnOff toggleBuchTitel = new BuchTitelOnOff(BuchTitel);
         BuchTitel.addActionListener(toggleBuchTitel);
 
         AutorOnOff toggleAutor = new AutorOnOff(Autor);
         Autor.addActionListener(toggleAutor);
-        
+
         VornameOnOff toggleVorname = new VornameOnOff(Vorname);
         Vorname.addActionListener(toggleVorname);
 
         ErscheinungsjahrOnOff toggleErscheinungsjahr = new ErscheinungsjahrOnOff(Erscheinungsjahr);
         Erscheinungsjahr.addActionListener(toggleErscheinungsjahr);
-        
+
         SeitenanzahlOnOff toggleSeitenanzahl = new SeitenanzahlOnOff(Seitenanzahl);
         Seitenanzahl.addActionListener(toggleSeitenanzahl);
 
@@ -71,8 +63,7 @@ public class hideColumns extends JMenu {
 
         NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff(NochmalLesen);
         NochmalLesen.addActionListener(toggleNochmalLesen);
-        
-        
+
     }
 
     public JMenu makeJSettings() {

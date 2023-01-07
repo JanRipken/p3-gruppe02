@@ -9,18 +9,11 @@ import javax.swing.UnsupportedLookAndFeelException;
 
 public class DarkMode {
 
-    /**
-     * Designing the TomeDB App by using the NimbusLookAndFeel
-     *
-     * @throws ClassNotFoundException
-     * @throws InstantiationException
-     * @throws IllegalAccessException
-     * @throws UnsupportedLookAndFeelException
-     */
     public DarkMode() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
             UnsupportedLookAndFeelException {
 
         try {
+            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
             UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("info", new Color(128, 128, 128));
@@ -38,7 +31,6 @@ public class DarkMode {
             UIManager.put("text", Color.BLACK);
             UIManager.put("MenuItem[MouseOver].backgroundPainter", new FillPainter(Color.GRAY.darker()));
 
-            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
         } catch (Exception e) {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }

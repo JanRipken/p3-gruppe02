@@ -5,10 +5,8 @@ import java.awt.GridLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
-import javax.swing.JFormattedTextField;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import java.lang.Double;
 import javax.swing.text.PlainDocument;
 import main.tomedb.java.newbookframe.controller.DoubleFilter;
 import main.tomedb.java.newbookframe.controller.IntFilter;
@@ -18,7 +16,6 @@ public class MainPanel extends JPanel {
     JButton ButtonBestätigen = new JButton("Bestätigen");
     JButton ButtonAbrechen = new JButton("Abrechen");
 
-    // TODO: Layouts hierrein schreiben
     public MainPanel() {
 
         this.setLayout(new GridLayout(8, 0));

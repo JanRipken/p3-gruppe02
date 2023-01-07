@@ -1,22 +1,15 @@
 package main.tomedb.java.mainframe.view;
 
 import java.awt.Color;
-import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JComponent;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import javax.swing.table.TableCellRenderer;
 import main.tomedb.java.editbookframe.controller.EditBook;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.controller.JTableActionListenerDelete;
-import main.tomedb.java.mainframe.controller.JTableActionListenerEdit;
 
 public class Table {
 
@@ -28,7 +21,6 @@ public class Table {
     public static JMenuItem menuItemRemove;
     public static JMenuItem menuItemEdit;
 
-    // Setting the Headers for our Table
     private static final String[] tableHeader = new String[]{
         "Titel",
         "Name",
@@ -87,16 +79,13 @@ public class Table {
 
         table.setSelectionBackground(Color.GRAY.darker());
 
-
         table.getTableHeader().setReorderingAllowed(false);
 
         table.setFocusable(false);
         table.setAutoCreateRowSorter(true);
 
-        // rendering der Boolean spalte ( geht nicht ohne da ein bug im java jdk)
         ((JComponent) table.getDefaultRenderer(Boolean.class)).setOpaque(true);
 
-        // creating popupMenu and adding to the table
         JPopupMenu popupMenu = new JPopupMenu();
 
         JMenuItem menuItemRemove = new JMenuItem("Remove Rows");
@@ -113,8 +102,6 @@ public class Table {
 
         table.setComponentPopupMenu(popupMenu);
 
-        
-
     }
 
     // TODO: in den Controller packen
@@ -122,7 +109,8 @@ public class Table {
         list.addBook(book);
         addRowtoTable();
     }
-    public void addEditToTable(BookModel book){
+
+    public void addEditToTable(BookModel book) {
         addRowtoTable();
     }
 

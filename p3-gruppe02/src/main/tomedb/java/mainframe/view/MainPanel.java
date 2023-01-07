@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.mainframe.view;
 
 import java.awt.BorderLayout;
@@ -14,10 +10,6 @@ import main.tomedb.java.mainframe.controller.JTableChanged;
 import main.tomedb.java.mainframe.controller.JTableSearch;
 import main.tomedb.java.newbookframe.controller.NewBook;
 
-/**
- *
- * @author janri
- */
 public class MainPanel extends JPanel {
 
     public MainPanel() {
@@ -56,19 +48,16 @@ public class MainPanel extends JPanel {
         northPanel.add(newBookButton);
         northPanel.add(searchBookButton);
 
-        this.add(northPanel,BorderLayout.NORTH);
+        this.add(northPanel, BorderLayout.NORTH);
 
     }
-
-    
-    
 
     public void SouthPanel() {
         JPanel southPanel = new JPanel();
         JlistTabelle = new Table();
 
         TableListener = new JTableChanged();
-        // zugriff vom controller
+
         southPanel.setLayout(new BorderLayout());
         JScrollPane sp = new JScrollPane(JlistTabelle.table);
         sp.setBorder(null);

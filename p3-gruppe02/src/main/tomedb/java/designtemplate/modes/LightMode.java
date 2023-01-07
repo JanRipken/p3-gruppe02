@@ -1,23 +1,12 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.designtemplate.modes;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.Painter;
-import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.plaf.nimbus.NimbusLookAndFeel;
-import main.tomedb.java.mainframe.TomeDB;
 
-/**
- *
- * @author janr
- */
 public class LightMode {
 
     public LightMode() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
@@ -25,7 +14,7 @@ public class LightMode {
 
         try {
 
-//            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
+            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
             UIManager.put("control", new Color(255, 255, 255));
             UIManager.put("info", new Color(255, 255, 255));
             UIManager.put("nimbusBase", new Color(51, 98, 140));

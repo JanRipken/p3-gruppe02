@@ -10,8 +10,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-
-public class SettingsDAO {
+public class SettingsReadWrite {
 
     private String path = "./data/Settings.txt";
     private String fileContent;
@@ -27,7 +26,6 @@ public class SettingsDAO {
             BufferedReader br = new BufferedReader(new FileReader(path));
 
             fileContent = br.readLine();
-
 
             br.close();
 
