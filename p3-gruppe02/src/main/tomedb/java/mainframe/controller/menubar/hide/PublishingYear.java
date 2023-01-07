@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller.menubar.settings;
+package main.tomedb.java.mainframe.controller.menubar.hide;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,12 +7,12 @@ import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import main.tomedb.java.mainframe.view.MainPanel;
 
-public class VornameOnOff implements ActionListener {
+public class PublishingYear implements ActionListener {
 
     private JCheckBox checkBox;
     private JTable table;
 
-    public VornameOnOff(JCheckBox checkBox) {
+    public PublishingYear(JCheckBox checkBox) {
         this.checkBox = checkBox;
 
     }
@@ -25,7 +25,7 @@ public class VornameOnOff implements ActionListener {
     private void hidenomalLesen() {
         this.table = MainPanel.JlistTabelle.table;
 
-        TableColumn column = table.getColumnModel().getColumn(2);
+        TableColumn column = table.getColumnModel().getColumn(3);
         if (checkBox.isSelected()) {
             column.setMinWidth(0);
             column.setMaxWidth(0);

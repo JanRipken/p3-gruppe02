@@ -8,8 +8,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.text.PlainDocument;
-import main.tomedb.java.newbookframe.controller.DoubleFilter;
-import main.tomedb.java.newbookframe.controller.IntFilter;
+import main.tomedb.java.newbookframe.controller.filter.DoubleFilter;
+import main.tomedb.java.newbookframe.controller.filter.IntFilter;
 
 public class MainPanel extends JPanel {
 

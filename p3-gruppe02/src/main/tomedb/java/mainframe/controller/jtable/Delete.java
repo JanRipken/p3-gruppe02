@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller;
+package main.tomedb.java.mainframe.controller.jtable;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +10,7 @@ import main.tomedb.java.mainframe.view.MainPanel;
 
 import main.tomedb.java.mainframe.view.Table;
 
-public class JTableActionListenerDelete implements ActionListener {
+public class Delete implements ActionListener {
 
     public JTable table;
     public DefaultTableModel model;

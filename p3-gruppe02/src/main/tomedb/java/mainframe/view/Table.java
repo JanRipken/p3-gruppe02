@@ -9,7 +9,7 @@ import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.editbookframe.controller.EditBook;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.controller.JTableActionListenerDelete;
+import main.tomedb.java.mainframe.controller.jtable.Delete;
 
 public class Table {
 
@@ -91,7 +91,7 @@ public class Table {
         JMenuItem menuItemRemove = new JMenuItem("Remove Rows");
         JMenuItem menuItemEdit = new JMenuItem("Edit Rows");
 
-        JTableActionListenerDelete tableListenerDelete = new JTableActionListenerDelete();
+        Delete tableListenerDelete = new Delete();
         EditBook tableListenerEdit = new EditBook();
 
         menuItemRemove.addActionListener(tableListenerDelete);

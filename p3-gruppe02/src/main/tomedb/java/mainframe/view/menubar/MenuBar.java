@@ -11,7 +11,7 @@ public class MenuBar extends JMenuBar {
 
     private JMenuBar bar;
     private Menu mainMenu;
-    private hideColumns hideCol;
+    private HideColumns hideCol;
     private Settings settings;
 
     public MenuBar() {
@@ -28,7 +28,7 @@ public class MenuBar extends JMenuBar {
         JMenu menuMain = mainMenu.makeJMenu();
 
         try {
-            hideCol = new hideColumns();
+            hideCol = new HideColumns();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
         }

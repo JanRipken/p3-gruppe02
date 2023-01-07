@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller.menubar;
+package main.tomedb.java.mainframe.controller.menubar.main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +11,7 @@ import main.tomedb.java.mainframe.view.MainPanel;
 
 import main.tomedb.java.mainframe.view.Table;
 
-public class merge implements ActionListener {
+public class Merge implements ActionListener {
 
     public static BookModelList list;
 

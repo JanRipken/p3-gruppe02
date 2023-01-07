@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller;
+package main.tomedb.java.mainframe.controller.jtable;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -10,7 +10,7 @@ import main.tomedb.java.mainframe.view.MainPanel;
 
 import main.tomedb.java.mainframe.view.TableSearch;
 
-public class JTableSearch implements ActionListener {
+public class Search implements ActionListener {
 
     private TableRowSorter<DefaultTableModel> sorter;
     private JTable table;

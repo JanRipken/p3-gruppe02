@@ -6,7 +6,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import main.tomedb.java.designtemplate.modes.LightMode;
-import main.tomedb.java.mainframe.dao.SettingsReadWrite;
+import main.tomedb.java.mainframe.controller.settings.ReadWrite;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 public class TomeDB {
@@ -37,7 +37,7 @@ public class TomeDB {
     }
 
     private static void setMode() throws IllegalAccessException, ClassNotFoundException, InstantiationException, UnsupportedLookAndFeelException {
-        SettingsReadWrite set = new SettingsReadWrite();
+        ReadWrite set = new ReadWrite();
 
         String mode = set.read();
         if (mode.equals("Hell")) {

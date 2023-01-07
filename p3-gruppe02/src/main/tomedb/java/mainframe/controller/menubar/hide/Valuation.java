@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller.menubar.settings;
+package main.tomedb.java.mainframe.controller.menubar.hide;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,12 +7,12 @@ import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import main.tomedb.java.mainframe.view.MainPanel;
 
-public class NochmallesenOnOff implements ActionListener {
+public class Valuation implements ActionListener {
 
     private JCheckBox checkBox;
     private JTable table;
 
-    public NochmallesenOnOff(JCheckBox checkBox) {
+    public Valuation(JCheckBox checkBox) {
         this.checkBox = checkBox;
 
     }
@@ -25,7 +25,7 @@ public class NochmallesenOnOff implements ActionListener {
     private void hidenomalLesen() {
         this.table = MainPanel.JlistTabelle.table;
 
-        TableColumn column = table.getColumnModel().getColumn(6);
+        TableColumn column = table.getColumnModel().getColumn(5);
         if (checkBox.isSelected()) {
             column.setMinWidth(0);
             column.setMaxWidth(0);

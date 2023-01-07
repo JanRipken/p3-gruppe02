@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller.menubar;
+package main.tomedb.java.mainframe.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -11,7 +11,7 @@ import main.tomedb.java.designtemplate.modes.DarkMode;
 import main.tomedb.java.designtemplate.modes.LightMode;
 import main.tomedb.java.mainframe.TomeDB;
 
-public class themeChange implements ActionListener {
+public class ThemeChange implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -22,7 +22,7 @@ public class themeChange implements ActionListener {
             try {
                 light();
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -30,13 +30,13 @@ public class themeChange implements ActionListener {
             try {
                 dark();
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
             } catch (InstantiationException ex) {
-                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
             } catch (IllegalAccessException ex) {
-                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
             } catch (UnsupportedLookAndFeelException ex) {
-                Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
             }
 
         }
@@ -47,11 +47,11 @@ public class themeChange implements ActionListener {
         try {
             new LightMode();
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(themeChange.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         SwingUtilities.updateComponentTreeUI(TomeDB.main);

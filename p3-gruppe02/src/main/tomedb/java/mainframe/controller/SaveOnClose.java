@@ -4,7 +4,7 @@ import java.io.IOException;
 import javax.swing.JOptionPane;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import static main.tomedb.java.mainframe.view.Table.list;
-import main.tomedb.java.mainframe.controller.menubar.ImportNewFile;
+import main.tomedb.java.mainframe.controller.menubar.main.ImportNewFile;
 
 public class SaveOnClose {
 

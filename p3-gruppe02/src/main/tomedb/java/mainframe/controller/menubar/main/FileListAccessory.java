@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller.menubar;
+package main.tomedb.java.mainframe.controller.menubar.main;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;

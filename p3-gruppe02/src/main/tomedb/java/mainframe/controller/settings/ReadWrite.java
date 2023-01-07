@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package main.tomedb.java.mainframe.dao;
+
+package main.tomedb.java.mainframe.controller.settings;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -10,9 +7,9 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-public class SettingsReadWrite {
+public class ReadWrite {
 
-    private String path = "./data/Settings.txt";
+    private String path = "./settings/Thema";
     private String fileContent;
 
     public void write(String thema) throws IOException {

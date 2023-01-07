@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller;
+package main.tomedb.java.mainframe.controller.settings;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,25 +8,24 @@ import java.util.logging.Logger;
 import javax.swing.JComboBox;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.TomeDB;
-import main.tomedb.java.mainframe.dao.SettingsReadWrite;
 import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
-public class SettingsSave implements ActionListener {
+public class Save implements ActionListener {
 
     private JComboBox cbSaveMode;
 
-    public SettingsSave(JComboBox cbSaveMode) {
+    public Save(JComboBox cbSaveMode) {
         this.cbSaveMode = cbSaveMode;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         String mode = cbSaveMode.getSelectedItem().toString();
-        SettingsReadWrite set = new SettingsReadWrite();
+        ReadWrite set = new ReadWrite();
         try {
             set.write(mode);
         } catch (IOException ex) {
-            Logger.getLogger(SettingsSave.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Save.class.getName()).log(Level.SEVERE, null, ex);
         }
 
         TomeDB.main.setContentPane(mainPanel);

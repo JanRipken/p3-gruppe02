@@ -1,18 +1,17 @@
 package main.tomedb.java.mainframe.view.menubar;
 
-import main.tomedb.java.mainframe.controller.menubar.settings.BuchTitelOnOff;
-import main.tomedb.java.mainframe.controller.menubar.settings.AutorOnOff;
-import main.tomedb.java.mainframe.controller.menubar.settings.ErscheinungsjahrOnOff;
-import main.tomedb.java.mainframe.controller.menubar.settings.BewertungOnOff;
-import main.tomedb.java.mainframe.controller.menubar.settings.NochmallesenOnOff;
+import main.tomedb.java.mainframe.controller.menubar.hide.BookTitle;
+import main.tomedb.java.mainframe.controller.menubar.hide.LastName;
+import main.tomedb.java.mainframe.controller.menubar.hide.PublishingYear;
+import main.tomedb.java.mainframe.controller.menubar.hide.Valuation;
+import main.tomedb.java.mainframe.controller.menubar.hide.ReadAgain;
 import javax.swing.JCheckBox;
 import javax.swing.JMenu;
 
-import main.tomedb.java.mainframe.controller.menubar.settings.SeitenanzahlOnOff;
+import main.tomedb.java.mainframe.controller.menubar.hide.PageCount;
+import main.tomedb.java.mainframe.controller.menubar.hide.FirstName;
 
-import main.tomedb.java.mainframe.controller.menubar.settings.VornameOnOff;
-
-public class hideColumns extends JMenu {
+public class HideColumns extends JMenu {
 
     private JMenu settings;
     private JCheckBox BuchTitel;
@@ -23,7 +22,7 @@ public class hideColumns extends JMenu {
     private JCheckBox NochmalLesen;
     private JCheckBox Seitenanzahl;
 
-    public hideColumns() throws ClassNotFoundException {
+    public HideColumns() throws ClassNotFoundException {
 
         settings = new JMenu("Ausblenden");
 
@@ -43,25 +42,25 @@ public class hideColumns extends JMenu {
         settings.add(Bewertung);
         settings.add(NochmalLesen);
 
-        BuchTitelOnOff toggleBuchTitel = new BuchTitelOnOff(BuchTitel);
+        BookTitle toggleBuchTitel = new BookTitle(BuchTitel);
         BuchTitel.addActionListener(toggleBuchTitel);
 
-        AutorOnOff toggleAutor = new AutorOnOff(Autor);
+        LastName toggleAutor = new LastName(Autor);
         Autor.addActionListener(toggleAutor);
 
-        VornameOnOff toggleVorname = new VornameOnOff(Vorname);
+        FirstName toggleVorname = new FirstName(Vorname);
         Vorname.addActionListener(toggleVorname);
 
-        ErscheinungsjahrOnOff toggleErscheinungsjahr = new ErscheinungsjahrOnOff(Erscheinungsjahr);
+        PublishingYear toggleErscheinungsjahr = new PublishingYear(Erscheinungsjahr);
         Erscheinungsjahr.addActionListener(toggleErscheinungsjahr);
 
-        SeitenanzahlOnOff toggleSeitenanzahl = new SeitenanzahlOnOff(Seitenanzahl);
+        PageCount toggleSeitenanzahl = new PageCount(Seitenanzahl);
         Seitenanzahl.addActionListener(toggleSeitenanzahl);
 
-        BewertungOnOff toggleBewertung = new BewertungOnOff(Bewertung);
+        Valuation toggleBewertung = new Valuation(Bewertung);
         Bewertung.addActionListener(toggleBewertung);
 
-        NochmallesenOnOff toggleNochmalLesen = new NochmallesenOnOff(NochmalLesen);
+        ReadAgain toggleNochmalLesen = new ReadAgain(NochmalLesen);
         NochmalLesen.addActionListener(toggleNochmalLesen);
 
     }

@@ -6,8 +6,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import main.tomedb.java.mainframe.controller.JTableChanged;
-import main.tomedb.java.mainframe.controller.JTableSearch;
+import main.tomedb.java.mainframe.controller.jtable.Changed;
+import main.tomedb.java.mainframe.controller.jtable.Search;
 import main.tomedb.java.newbookframe.controller.NewBook;
 
 public class MainPanel extends JPanel {
@@ -24,7 +24,7 @@ public class MainPanel extends JPanel {
     private ImageIcon iconNeu;
     private ImageIcon iconSuchen;
     public static Table JlistTabelle;
-    public static JTableChanged TableListener;
+    public static Changed TableListener;
 
     public void NorthPanel() {
         JPanel northPanel = new JPanel();
@@ -42,7 +42,7 @@ public class MainPanel extends JPanel {
         NewBook startNewWindow = new NewBook();
         newBookButton.addActionListener(startNewWindow);
 
-        JTableSearch DurchsucheListe = new JTableSearch();
+        Search DurchsucheListe = new Search();
         searchBookButton.addActionListener(DurchsucheListe);
 
         northPanel.add(newBookButton);
@@ -56,7 +56,7 @@ public class MainPanel extends JPanel {
         JPanel southPanel = new JPanel();
         JlistTabelle = new Table();
 
-        TableListener = new JTableChanged();
+        TableListener = new Changed();
 
         southPanel.setLayout(new BorderLayout());
         JScrollPane sp = new JScrollPane(JlistTabelle.table);

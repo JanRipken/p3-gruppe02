@@ -1,4 +1,4 @@
-package main.tomedb.java.newbookframe.controller;
+package main.tomedb.java.newbookframe.controller.filter;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;

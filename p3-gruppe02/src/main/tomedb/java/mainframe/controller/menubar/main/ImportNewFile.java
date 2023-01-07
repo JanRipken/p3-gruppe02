@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller.menubar;
+package main.tomedb.java.mainframe.controller.menubar.main;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,7 +7,7 @@ import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.view.Table;
-import main.tomedb.java.mainframe.controller.JTableChanged;
+import main.tomedb.java.mainframe.controller.jtable.Changed;
 import main.tomedb.java.mainframe.view.MainPanel;
 
 public class ImportNewFile extends Table implements ActionListener {
@@ -35,7 +35,7 @@ public class ImportNewFile extends Table implements ActionListener {
     }
 
     public void importFile(String path) {
-        JTableChanged TableListener = MainPanel.TableListener;
+        Changed TableListener = MainPanel.TableListener;
 
         MainPanel.JlistTabelle.model.removeTableModelListener(TableListener);
 

@@ -20,8 +20,7 @@ public class Setting implements ActionListener {
 
         TomeDB.main.add(panel);
         TomeDB.main.setContentPane(panel);
-        TomeDB.main.revalidate();
-        TomeDB.main.repaint();
+
 
     }
 

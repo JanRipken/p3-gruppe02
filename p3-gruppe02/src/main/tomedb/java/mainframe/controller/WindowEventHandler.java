@@ -1,6 +1,6 @@
 package main.tomedb.java.mainframe.controller;
 
-import main.tomedb.java.mainframe.controller.menubar.ImportNewFile;
+import main.tomedb.java.mainframe.controller.menubar.main.ImportNewFile;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 

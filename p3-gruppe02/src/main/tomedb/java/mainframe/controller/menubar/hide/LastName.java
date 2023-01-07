@@ -1,4 +1,4 @@
-package main.tomedb.java.mainframe.controller.menubar.settings;
+package main.tomedb.java.mainframe.controller.menubar.hide;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -7,12 +7,12 @@ import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import main.tomedb.java.mainframe.view.MainPanel;
 
-public class BewertungOnOff implements ActionListener {
+public class LastName implements ActionListener {
 
     private JCheckBox checkBox;
     private JTable table;
 
-    public BewertungOnOff(JCheckBox checkBox) {
+    public LastName(JCheckBox checkBox) {
         this.checkBox = checkBox;
 
     }
@@ -25,7 +25,7 @@ public class BewertungOnOff implements ActionListener {
     private void hidenomalLesen() {
         this.table = MainPanel.JlistTabelle.table;
 
-        TableColumn column = table.getColumnModel().getColumn(5);
+        TableColumn column = table.getColumnModel().getColumn(1);
         if (checkBox.isSelected()) {
             column.setMinWidth(0);
             column.setMaxWidth(0);
