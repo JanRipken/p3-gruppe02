@@ -36,5 +36,4 @@ public class PublishingYear implements ActionListener {
             column.setPreferredWidth(150);
         }
     }
-
 }

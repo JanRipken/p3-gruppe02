@@ -20,9 +20,9 @@ public class BookModelList {
 
     public void editBook(int index, BookModel book) {
         bookModelList.set(index, book);
-
     }
 
+    //TODO wird nicht genutzt, löschen?
     public int size() {
         return bookModelList.size();
     }
@@ -30,5 +30,4 @@ public class BookModelList {
     public BookModel get(int i) {
         return bookModelList.get(i);
     }
-
 }

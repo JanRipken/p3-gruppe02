@@ -36,5 +36,4 @@ public class BookTitle implements ActionListener {
             column.setPreferredWidth(150);
         }
     }
-
 }

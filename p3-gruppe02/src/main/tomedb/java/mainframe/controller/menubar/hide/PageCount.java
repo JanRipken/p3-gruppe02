@@ -36,5 +36,4 @@ public class PageCount implements ActionListener {
             column.setPreferredWidth(150);
         }
     }
-
 }

@@ -36,5 +36,4 @@ public class Valuation implements ActionListener {
             column.setPreferredWidth(150);
         }
     }
-
 }

@@ -102,7 +102,6 @@ public class Table {
         popupMenu.add(menuItemEdit);
 
         table.setComponentPopupMenu(popupMenu);
-
     }
 
     // TODO: in den Controller packen
@@ -111,7 +110,7 @@ public class Table {
         addRowtoTable();
     }
 
-    public void addEditToTable(BookModel book) {
+    public void editToTable(BookModel book) {
         addRowtoTable();
     }
 
@@ -120,16 +119,15 @@ public class Table {
 
         for (int i = 0; i < list.bookModelList.size(); i++) {
 
-            Object[] data = {list.bookModelList.get(i).getTitel(),
-                list.bookModelList.get(i).getAutorName(),
-                list.bookModelList.get(i).getAutorVorname(),
-                list.bookModelList.get(i).getErscheinungsjahr(),
-                list.bookModelList.get(i).getSeitenanzahl(),
-                list.bookModelList.get(i).getBewertung(),
-                list.bookModelList.get(i).getGelesen()};
+            Object[] data = {list.bookModelList.get(i).getTitle(),
+                list.bookModelList.get(i).getAuthorLastName(),
+                list.bookModelList.get(i).getAuthorFirstName(),
+                list.bookModelList.get(i).getYearOfRelease(),
+                list.bookModelList.get(i).getPageCount(),
+                list.bookModelList.get(i).getRating(),
+                list.bookModelList.get(i).getReadStatus()};
             model.addRow(data);
 
         }
     }
-
 }

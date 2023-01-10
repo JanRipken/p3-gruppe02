@@ -36,5 +36,4 @@ public class LastName implements ActionListener {
             column.setPreferredWidth(150);
         }
     }
-
 }

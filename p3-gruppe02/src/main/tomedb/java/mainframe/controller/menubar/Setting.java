@@ -2,11 +2,8 @@ package main.tomedb.java.mainframe.controller.menubar;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-;
 import main.tomedb.java.mainframe.TomeDB;
 import main.tomedb.java.mainframe.view.SettingsPanel;
-
-
 
 public class Setting implements ActionListener {
 
@@ -20,8 +17,5 @@ public class Setting implements ActionListener {
 
         TomeDB.main.add(panel);
         TomeDB.main.setContentPane(panel);
-
-
     }
-
 }

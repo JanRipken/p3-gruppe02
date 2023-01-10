@@ -13,8 +13,6 @@ public class CloseMainFrame implements ActionListener {
         if (changedTable == true) {
             new SaveOnClose();
         }
-
         System.exit(0);
     }
-
 }

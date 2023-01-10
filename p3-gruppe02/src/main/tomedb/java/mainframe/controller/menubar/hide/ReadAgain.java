@@ -36,5 +36,4 @@ public class ReadAgain implements ActionListener {
             column.setPreferredWidth(150);
         }
     }
-
 }

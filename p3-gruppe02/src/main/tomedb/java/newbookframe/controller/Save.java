@@ -36,13 +36,13 @@ public class Save implements ActionListener {
 
     public void setModel() {
 
-        model.setTitel(view.getTitel());
-        model.setAutorName(view.getAutorName());
-        model.setAutorVorname(view.getAutorVorname());
-        model.setErscheinungsjahr(view.getErscheinungsjahr());
-        model.setSeitenanzahl(view.getSeitenzahl());
-        model.setBewerung(view.getbewertung());
-        model.setGelesen(view.getNochmallesen());
+        model.setTitle(view.getTitel());
+        model.setAuthorLastName(view.getAutorName());
+        model.setAuthorFirstName(view.getAutorVorname());
+        model.setYearOfRelease(view.getErscheinungsjahr());
+        model.setPageCount(view.getSeitenzahl());
+        model.setRating(view.getbewertung());
+        model.setReadStatus(view.getNochmallesen());
 
     }
 
@@ -60,8 +60,9 @@ public class Save implements ActionListener {
                 setModel();
                 if (newOrEdit == 1) {
                     MainPanel.JlistTabelle.addToTable(model);
+                    
                 } else {
-                    MainPanel.JlistTabelle.addEditToTable(model);
+                    MainPanel.JlistTabelle.editToTable(model);
                 }
                 view.dispose();
             }

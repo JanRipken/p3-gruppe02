@@ -32,12 +32,12 @@ public class NewOrEditContent {
             this.table = MainPanel.JlistTabelle.table;
             int[] bookIndex = table.getSelectedRows();
             this.model = list.get(bookIndex[0]);
-            titel.setText(model.getTitel());
-            AutorName.setText(model.getAutorName());
-            AutorVorName.setText(model.getAutorVorname());
-            Erscheinungsjahr.setText(Integer.toString(model.getErscheinungsjahr()));
-            Seitenanzahl.setText(Integer.toString(model.getSeitenanzahl()));
-            bewertung.setText(Double.toString(model.getBewertung()));
+            titel.setText(model.getTitle());
+            AutorName.setText(model.getAuthorLastName());
+            AutorVorName.setText(model.getAuthorFirstName());
+            Erscheinungsjahr.setText(Integer.toString(model.getYearOfRelease()));
+            Seitenanzahl.setText(Integer.toString(model.getPageCount()));
+            bewertung.setText(Double.toString(model.getRating()));
         }
     }
 }
