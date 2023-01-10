@@ -1,7 +1,7 @@
 package main.tomedb.java.newbookframe.view;
 
 import main.tomedb.java.newbookframe.controller.Abort;
-import main.tomedb.java.newbookframe.controller.NewBookSave;
+import main.tomedb.java.newbookframe.controller.Save;
 import java.awt.Dimension;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
@@ -69,7 +69,7 @@ public class NewBook extends JFrame {
 
         mainPanel.Buttons();
 
-        NewBookSave modelBook = new NewBookSave(this);
+        Save modelBook = new Save(this);
         mainPanel.ButtonBestätigen.addActionListener(modelBook);
 
         Abort abbrechen = new Abort(this);
