@@ -1,22 +1,28 @@
 package main.tomedb.java.newbookframe.controller;
 
-import main.tomedb.java.newbookframe.view.NewBook;
+import main.tomedb.java.editbookframe.view.EditBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JTable;
 import main.tomedb.java.mainframe.model.BookModel;
-import main.tomedb.java.mainframe.view.MainPanel;
+import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.newbookframe.view.InputTitel;
+import main.tomedb.java.mainframe.view.MainPanel;
+import main.tomedb.java.mainframe.view.Table;
 
-// Klasse zum speichern eines neuen Buches
-public class Save implements ActionListener {
+public class EditBookSave implements ActionListener {
 
-    private NewBook view;
+    private EditBook view;
     private BookModel model;
+    public BookModelList list;
+    public JTable table;
 
-    public Save(NewBook view) {
-        this.model = new BookModel();
+    public EditBookSave(EditBook view) {
+        this.list = Table.list;
+        this.table = MainPanel.JlistTabelle.table;
+        int[] bookIndex = table.getSelectedRows();
+        this.model = list.get(bookIndex[0]);
         this.view = view;
-
     }
 
     public void setModel() {
@@ -39,7 +45,7 @@ public class Save implements ActionListener {
 
             } else {
                 setModel();
-                MainPanel.JlistTabelle.addToTable(model);
+                MainPanel.JlistTabelle.addEditToTable(model);
                 view.dispose();
             }
 

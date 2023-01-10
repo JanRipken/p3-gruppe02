@@ -1,7 +1,7 @@
 package main.tomedb.java.editbookframe.view;
 
 import main.tomedb.java.editbookframe.controller.Abort;
-import main.tomedb.java.editbookframe.controller.Save;
+import main.tomedb.java.newbookframe.controller.EditBookSave;
 import java.awt.Dimension;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
@@ -73,7 +73,7 @@ public class EditBook extends JFrame {
 
         mainPanel.Buttons();
 
-        Save modelBook = new Save(this);
+        EditBookSave modelBook = new EditBookSave(this);
         mainPanel.ButtonBestätigen.addActionListener(modelBook);
 
         Abort abbrechen = new Abort(this);

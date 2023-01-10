@@ -6,10 +6,11 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import main.tomedb.java.editbookframe.controller.EditBook;
+import main.tomedb.java.newbookframe.controller.EditBook;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.controller.jtable.Delete;
+import main.tomedb.java.newbookframe.controller.NewBook;
 
 public class Table {
 

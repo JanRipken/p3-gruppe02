@@ -1,17 +1,29 @@
 package main.tomedb.java.newbookframe.view;
 
 import main.tomedb.java.newbookframe.controller.Abort;
-import main.tomedb.java.newbookframe.controller.Save;
+import main.tomedb.java.newbookframe.controller.NewBookSave;
 import java.awt.Dimension;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.newbookframe.controller.DragMove;
+import main.tomedb.java.mainframe.model.BookModel;
+import main.tomedb.java.mainframe.model.BookModelList;
+import main.tomedb.java.newbookframe.view.NewBookFrameMainPanel;
+import main.tomedb.java.mainframe.view.MainPanel;
+import main.tomedb.java.mainframe.view.Table;
+import main.tomedb.java.newbookframe.controller.NewOrEdit;
+import main.tomedb.java.newbookframe.controller.NewOrEditContent;
 
 public class NewBook extends JFrame {
+
+    private BookModel model;
+    public BookModelList list;
+    public JTable table;
 
     private final String FrageBuchName = "Buchtitel";
     private final String FrageBuchAutor = "Name des Autors";
@@ -38,14 +50,10 @@ public class NewBook extends JFrame {
 
         this.setUndecorated(true);
 
-        DragMove drag = new DragMove(this);
-        this.addMouseListener(drag);
-        this.addMouseMotionListener(drag);
-
         ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
         this.setIconImage(icon.getImage());
 
-        MainPanel mainPanel = new MainPanel();
+        NewBookFrameMainPanel mainPanel = new NewBookFrameMainPanel();
 
         titel = mainPanel.LayoutTextfield(FrageBuchName);
         AutorName = mainPanel.LayoutTextfield(FrageBuchAutor);
@@ -61,19 +69,15 @@ public class NewBook extends JFrame {
 
         mainPanel.Buttons();
 
-        Save modelBook = new Save(this);
+        NewBookSave modelBook = new NewBookSave(this);
         mainPanel.ButtonBestätigen.addActionListener(modelBook);
 
         Abort abbrechen = new Abort(this);
         mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
         // TODO Löschen
-        titel.setText("Java 2019");
-        AutorName.setText("Musterman");
-        AutorVorName.setText("Max");
-        Erscheinungsjahr.setText("2021");
-        Seitenanzahl.setText("3019");
-        bewertung.setText("7.2");
+        NewOrEditContent newOrEditContent = new NewOrEditContent();
+        newOrEditContent.NewOrEditContent();
 
         this.setContentPane(mainPanel);
 

@@ -11,12 +11,12 @@ import javax.swing.text.PlainDocument;
 import main.tomedb.java.newbookframe.controller.filter.DoubleFilter;
 import main.tomedb.java.newbookframe.controller.filter.IntFilter;
 
-public class MainPanel extends JPanel {
+public class NewBookFrameMainPanel extends JPanel {
 
     JButton ButtonBestätigen = new JButton("Bestätigen");
     JButton ButtonAbrechen = new JButton("Abrechen");
 
-    public MainPanel() {
+    public NewBookFrameMainPanel() {
 
         this.setLayout(new GridLayout(8, 0));
 

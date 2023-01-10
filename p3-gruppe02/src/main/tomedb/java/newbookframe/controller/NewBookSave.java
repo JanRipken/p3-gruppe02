@@ -1,28 +1,37 @@
-package main.tomedb.java.editbookframe.controller;
+package main.tomedb.java.newbookframe.controller;
 
-import main.tomedb.java.editbookframe.view.EditBook;
+import main.tomedb.java.newbookframe.view.NewBook;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.newbookframe.view.InputTitel;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
+import main.tomedb.java.newbookframe.view.InputTitel;
+import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
+// Klasse zum speichern eines neuen Buches
 
-public class Save implements ActionListener {
+public class NewBookSave implements ActionListener {
 
-    private EditBook view;
+    private NewBook view;
     private BookModel model;
     public BookModelList list;
     public JTable table;
 
-    public Save(EditBook view) {
-        this.list = Table.list;
-        this.table = MainPanel.JlistTabelle.table;
-        int[] bookIndex = table.getSelectedRows();
-        this.model = list.get(bookIndex[0]);
-        this.view = view;
+    public NewBookSave(NewBook view) {
+        if (newOrEdit == 1) {
+            this.model = new BookModel();
+            this.view = view;
+        } else {
+            this.list = Table.list;
+            this.table = MainPanel.JlistTabelle.table;
+            int[] bookIndex = table.getSelectedRows();
+            this.model = list.get(bookIndex[0]);
+            this.view = view;
+
+        }
+
     }
 
     public void setModel() {
@@ -37,6 +46,10 @@ public class Save implements ActionListener {
 
     }
 
+    public void setModelEdit() {
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
@@ -45,7 +58,11 @@ public class Save implements ActionListener {
 
             } else {
                 setModel();
-                MainPanel.JlistTabelle.addEditToTable(model);
+                if (newOrEdit == 1) {
+                    MainPanel.JlistTabelle.addToTable(model);
+                } else {
+                    MainPanel.JlistTabelle.addEditToTable(model);
+                }
                 view.dispose();
             }
 

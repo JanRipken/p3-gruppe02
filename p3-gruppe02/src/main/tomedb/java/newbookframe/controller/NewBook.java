@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.model.BookModelList;
+import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
 
 public class NewBook implements ActionListener {
 
@@ -21,6 +22,7 @@ public class NewBook implements ActionListener {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
+                    newOrEdit = 1;
                     new main.tomedb.java.newbookframe.view.NewBook();
                 } catch (Exception e) {
                     e.printStackTrace();

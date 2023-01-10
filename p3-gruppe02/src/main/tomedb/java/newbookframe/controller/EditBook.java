@@ -1,9 +1,10 @@
-package main.tomedb.java.editbookframe.controller;
+package main.tomedb.java.newbookframe.controller;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.model.BookModelList;
+import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
 
 public class EditBook implements ActionListener {
 
@@ -21,7 +22,8 @@ public class EditBook implements ActionListener {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    new main.tomedb.java.editbookframe.view.EditBook();
+                    newOrEdit = 0;
+                    new main.tomedb.java.newbookframe.view.NewBook();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
