@@ -22,11 +22,6 @@ public class BookModelList {
         bookModelList.set(index, book);
     }
 
-    //TODO wird nicht genutzt, löschen?
-    public int size() {
-        return bookModelList.size();
-    }
-
     public BookModel get(int i) {
         return bookModelList.get(i);
     }
