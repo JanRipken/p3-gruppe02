@@ -4,15 +4,15 @@ import java.awt.GridLayout;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
-public class TableSearch {
+public class TableSearchPanel {
 
-    public String text;
+    public String searchTerm;
 
-    public TableSearch() {
+    public TableSearchPanel() {
 
         JPanel panel = new JPanel(new GridLayout());
 
-        text = JOptionPane.showInputDialog(panel,
+        searchTerm = JOptionPane.showInputDialog(panel,
                 "Selektive Suche", "Eingabe",
                 JOptionPane.PLAIN_MESSAGE);
 

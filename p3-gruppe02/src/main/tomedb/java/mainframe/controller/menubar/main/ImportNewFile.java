@@ -12,8 +12,8 @@ import main.tomedb.java.mainframe.view.MainPanel;
 
 public class ImportNewFile extends Table implements ActionListener {
 
-    public static String updatedpath;
-    String dateiName;
+    public static String updatedPath;
+    String fileName;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -24,34 +24,33 @@ public class ImportNewFile extends Table implements ActionListener {
 
         if (returnVal == JFileChooser.APPROVE_OPTION) {
 
-            updatedpath = "./data/" + fileChooser.getSelectedFile().getName();
+            updatedPath = "./data/" + fileChooser.getSelectedFile().getName();
 
-            dateiName = fileChooser.getSelectedFile().getAbsolutePath();
+            fileName = fileChooser.getSelectedFile().getAbsolutePath();
 
-            importFile(dateiName);
+            importFile(fileName);
 
         }
-
     }
 
     public void importFile(String path) {
         Changed TableListener = MainPanel.TableListener;
 
-        MainPanel.JlistTabelle.model.removeTableModelListener(TableListener);
+        MainPanel.jListTable.model.removeTableModelListener(TableListener);
 
         BookModelList list = new BookModelList();
         BookModelListDAO dao2 = new BookModelListDAO(path, false);
         try {
             dao2.read(list);
         } catch (IOException v) {
-            System.out.println(v.getMessage());
+            System.err.println(v.getMessage());
         }
         dao2.close();
 
         Table.list = list;
-        MainPanel.JlistTabelle.addRowtoTable();
+        MainPanel.jListTable.addRowtoTable();
 
-        MainPanel.JlistTabelle.model.addTableModelListener(TableListener);
+        MainPanel.jListTable.model.addTableModelListener(TableListener);
 
     }
 }

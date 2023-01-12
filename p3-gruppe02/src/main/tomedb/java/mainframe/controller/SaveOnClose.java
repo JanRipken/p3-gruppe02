@@ -10,7 +10,7 @@ public class SaveOnClose {
 
     private String filePath = "./data/main";
 
-    String updatedPath = ImportNewFile.updatedpath;
+    String updatedPath = ImportNewFile.updatedPath;
 
     public SaveOnClose() {
 

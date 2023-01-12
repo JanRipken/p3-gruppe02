@@ -40,7 +40,7 @@ public class Merge implements ActionListener {
                 }
                 dao2.close();
                 Table.list = list;
-                MainPanel.JlistTabelle.addRowtoTable();
+                MainPanel.jListTable.addRowtoTable();
             }
 
         }

@@ -10,5 +10,4 @@ public class Changed implements TableModelListener {
     public void tableChanged(TableModelEvent e) {
         CloseMainFrame.changedTable = true;
     }
-
 }

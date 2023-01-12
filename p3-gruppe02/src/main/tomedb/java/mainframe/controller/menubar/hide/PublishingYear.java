@@ -23,7 +23,7 @@ public class PublishingYear implements ActionListener {
     }
 
     private void hidenomalLesen() {
-        this.table = MainPanel.JlistTabelle.table;
+        this.table = MainPanel.jListTable.table;
 
         TableColumn column = table.getColumnModel().getColumn(3);
         if (checkBox.isSelected()) {

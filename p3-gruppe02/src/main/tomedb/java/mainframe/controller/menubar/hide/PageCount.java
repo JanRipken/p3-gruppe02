@@ -23,7 +23,7 @@ public class PageCount implements ActionListener {
     }
 
     private void hidenomalLesen() {
-        this.table = MainPanel.JlistTabelle.table;
+        this.table = MainPanel.jListTable.table;
 
         TableColumn column = table.getColumnModel().getColumn(4);
         if (checkBox.isSelected()) {

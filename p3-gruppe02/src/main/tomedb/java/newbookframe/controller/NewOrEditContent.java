@@ -29,7 +29,7 @@ public class NewOrEditContent {
             bewertung.setText("9.9");
         } else {
             this.list = Table.list;
-            this.table = MainPanel.JlistTabelle.table;
+            this.table = MainPanel.jListTable.table;
             int[] bookIndex = table.getSelectedRows();
             this.model = list.get(bookIndex[0]);
             titel.setText(model.getTitle());

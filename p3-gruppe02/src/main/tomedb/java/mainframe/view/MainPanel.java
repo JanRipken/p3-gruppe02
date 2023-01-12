@@ -23,7 +23,7 @@ public class MainPanel extends JPanel {
 
     private ImageIcon iconNeu;
     private ImageIcon iconSuchen;
-    public static Table JlistTabelle;
+    public static Table jListTable;
     public static Changed TableListener;
 
     public void NorthPanel() {
@@ -54,12 +54,12 @@ public class MainPanel extends JPanel {
 
     public void SouthPanel() {
         JPanel southPanel = new JPanel();
-        JlistTabelle = new Table();
+        jListTable = new Table();
 
         TableListener = new Changed();
 
         southPanel.setLayout(new BorderLayout());
-        JScrollPane sp = new JScrollPane(JlistTabelle.table);
+        JScrollPane sp = new JScrollPane(jListTable.table);
         sp.setBorder(null);
         southPanel.add(sp);
         this.add(southPanel, BorderLayout.CENTER);

@@ -23,7 +23,7 @@ public class LastName implements ActionListener {
     }
 
     private void hidenomalLesen() {
-        this.table = MainPanel.JlistTabelle.table;
+        this.table = MainPanel.jListTable.table;
 
         TableColumn column = table.getColumnModel().getColumn(1);
         if (checkBox.isSelected()) {

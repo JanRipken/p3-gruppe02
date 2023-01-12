@@ -23,8 +23,8 @@ public class Delete implements ActionListener {
     }
 
     public void removeSelectedRows() {
-        this.model = MainPanel.JlistTabelle.model;
-        this.table = MainPanel.JlistTabelle.table;
+        this.model = MainPanel.jListTable.model;
+        this.table = MainPanel.jListTable.table;
         this.list = Table.list;
 
         int[] bookIndex = table.getSelectedRows();

@@ -23,7 +23,7 @@ public class Valuation implements ActionListener {
     }
 
     private void hidenomalLesen() {
-        this.table = MainPanel.JlistTabelle.table;
+        this.table = MainPanel.jListTable.table;
 
         TableColumn column = table.getColumnModel().getColumn(5);
         if (checkBox.isSelected()) {

@@ -25,7 +25,7 @@ public class Save implements ActionListener {
             this.view = view;
         } else {
             this.list = Table.list;
-            this.table = MainPanel.JlistTabelle.table;
+            this.table = MainPanel.jListTable.table;
             int[] bookIndex = table.getSelectedRows();
             this.model = list.get(bookIndex[0]);
             this.view = view;
@@ -59,10 +59,10 @@ public class Save implements ActionListener {
             } else {
                 setModel();
                 if (newOrEdit == 1) {
-                    MainPanel.JlistTabelle.addToTable(model);
+                    MainPanel.jListTable.addToTable(model);
                     
                 } else {
-                    MainPanel.JlistTabelle.editToTable(model);
+                    MainPanel.jListTable.editToTable(model);
                 }
                 view.dispose();
             }
