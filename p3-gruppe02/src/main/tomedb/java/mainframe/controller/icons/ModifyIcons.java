@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 
 public class ModifyIcons{
 
-    public ImageIcon Scaling(String path, int Height, int Width){
+    public ImageIcon scaling(String path, int Height, int Width){
         ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
         Image image = icon.getImage();
         Image newimg = image.getScaledInstance(Width, Height, java.awt.Image.SCALE_SMOOTH);

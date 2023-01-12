@@ -20,11 +20,11 @@ public class Menu extends JMenu {
 
         menu = new JMenu("Main Menu");
 
-        importIcon = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/import.png", 15, 15);
+        importIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/import.png", 15, 15);
 
-        exportIcon = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/export.png", 15, 15);
+        exportIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/export.png", 15, 15);
 
-        mergeIcon = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/merge.png", 15, 15);
+        mergeIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/merge.png", 15, 15);
 
         JMenuItem ImportFile = new JMenuItem("Import");
         JMenuItem ExportFile = new JMenuItem("Export");

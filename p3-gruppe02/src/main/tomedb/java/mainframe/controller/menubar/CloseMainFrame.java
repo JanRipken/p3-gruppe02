@@ -6,11 +6,11 @@ import main.tomedb.java.mainframe.controller.SaveOnClose;
 
 public class CloseMainFrame implements ActionListener {
 
-    public static boolean changedTable = false;
+    public static boolean changedTableState = false;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (changedTable == true) {
+        if (changedTableState == true) {
             new SaveOnClose();
         }
         System.exit(0);

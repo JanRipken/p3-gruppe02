@@ -12,7 +12,7 @@ public class MenuBar extends JMenuBar {
     private JMenuBar bar;
     private Menu mainMenu;
     private HideColumns hideCol;
-    private Settings settings;
+    private SettingsButton settings;
 
     public MenuBar() {
 
@@ -37,8 +37,8 @@ public class MenuBar extends JMenuBar {
         Close close = new Close();
         JButton close1 = close.makeClose();
 
-        Settings set = new Settings();
-        JButton set1 = set.makeSettings();
+        SettingsButton set = new SettingsButton();
+        JButton settingsButton = set.returnSettingsButton();
 
         Minimized mini = new Minimized();
         JButton minimize = mini.makeMinimize();
@@ -48,7 +48,7 @@ public class MenuBar extends JMenuBar {
 
         bar.add(Box.createHorizontalGlue());
 
-        bar.add(set1);
+        bar.add(settingsButton);
         //TODO: Freischalten sobald funktion gegeben ist
         //bar.add(minimize);
         bar.add(close1);

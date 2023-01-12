@@ -12,7 +12,7 @@ public class Minimized {
 
     public Minimized() {
 
-        minimizeIcon = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/minimize-sign.png", 10, 10);
+        minimizeIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/minimize-sign.png", 10, 10);
 
         minimizeButton = new JButton();
 

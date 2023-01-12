@@ -40,7 +40,7 @@ public class MainFrame extends JFrame {
         this.setResizable(false);
         this.setVisible(true);
 
-        ImageIcon icon = modIcons.Scaling("/main/tomedb/ressources/icons/bucher.png", 30, 30);
+        ImageIcon icon = modIcons.scaling("/main/tomedb/ressources/icons/bucher.png", 30, 30);
         this.setIconImage(icon.getImage());
 
         this.setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 15, 15));

@@ -5,14 +5,10 @@ import java.awt.event.ActionListener;
 import main.tomedb.java.mainframe.TomeDB;
 import main.tomedb.java.mainframe.view.SettingsPanel;
 
-public class Setting implements ActionListener {
+public class SettingsPanelOpen implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        showSettingsPanel();
-    }
-
-    public void showSettingsPanel() {
         SettingsPanel panel = new SettingsPanel();
 
         TomeDB.mainFrame.add(panel);

@@ -14,7 +14,7 @@ public class Close extends JMenu {
 
     public Close() {
 
-        CloseIcon = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/close.png", 10, 10);
+        CloseIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/close.png", 10, 10);
 
         closeButton = new JButton();
 

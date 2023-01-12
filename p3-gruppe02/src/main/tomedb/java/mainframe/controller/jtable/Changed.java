@@ -8,6 +8,6 @@ public class Changed implements TableModelListener {
 
     @Override
     public void tableChanged(TableModelEvent e) {
-        CloseMainFrame.changedTable = true;
+        CloseMainFrame.changedTableState = true;
     }
 }

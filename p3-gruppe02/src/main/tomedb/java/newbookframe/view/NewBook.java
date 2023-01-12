@@ -47,7 +47,7 @@ public class NewBook extends JFrame {
 
         this.setUndecorated(true);
 
-        ImageIcon icon = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
+        ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
         this.setIconImage(icon.getImage());
 
         NewBookFrameMainPanel mainPanel = new NewBookFrameMainPanel();
