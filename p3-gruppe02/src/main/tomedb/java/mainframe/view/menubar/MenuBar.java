@@ -32,7 +32,7 @@ public class MenuBar extends JMenuBar {
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JMenu hideColums = hideCol.makeJSettings();
+        JMenu hideColums = hideCol.returnHideColumnsJMenu();
 
         Close close = new Close();
         JButton close1 = close.makeClose();
