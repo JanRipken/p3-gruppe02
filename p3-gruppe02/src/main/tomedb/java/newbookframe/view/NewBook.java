@@ -9,6 +9,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JTextField;
+import main.tomedb.java.mainframe.controller.MainFramDragMove;
 import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.newbookframe.controller.DragMove;
 import main.tomedb.java.mainframe.model.BookModel;
@@ -54,6 +55,10 @@ public class NewBook extends JFrame {
         this.setIconImage(icon.getImage());
 
         NewBookFrameMainPanel mainPanel = new NewBookFrameMainPanel();
+        
+        DragMove drag = new DragMove(this);
+        this.addMouseListener(drag);
+        this.addMouseMotionListener(drag);
 
         titel = mainPanel.LayoutTextfield(FrageBuchName);
         AutorName = mainPanel.LayoutTextfield(FrageBuchAutor);

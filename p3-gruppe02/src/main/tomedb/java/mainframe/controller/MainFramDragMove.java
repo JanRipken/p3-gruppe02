@@ -4,6 +4,7 @@ import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import main.tomedb.java.mainframe.view.MainFrame;
+import main.tomedb.java.newbookframe.view.NewBook;
 
 //TODO Refactoring
 public class MainFramDragMove extends MouseAdapter {
@@ -16,18 +17,15 @@ public class MainFramDragMove extends MouseAdapter {
         this.view = view;
     }
 
-    
     @Override
     public void mouseReleased(MouseEvent e) {
         mouseDownCompCoords = null;
     }
 
-
     @Override
     public void mousePressed(MouseEvent e) {
         mouseDownCompCoords = e.getPoint();
     }
-
 
     @Override
     public void mouseDragged(MouseEvent e) {
