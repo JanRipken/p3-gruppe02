@@ -19,15 +19,15 @@ public abstract class DAO {
      * Konstruktor um das Data Access Object mit einem Dateinamen zu
      * initialisieren.
      *
-     * @param dateiName Dateiname
+     * @param fileName Dateiname
      * @param openForWrite true wenn geschrieben werden soll
      */
-    public DAO(String dateiName, boolean openForWrite) {
+    public DAO(String fileName, boolean openForWrite) {
         try {
             if (openForWrite) {
-                out = new DataOutputStream(new FileOutputStream(dateiName));
+                out = new DataOutputStream(new FileOutputStream(fileName));
             } else {
-                in = new DataInputStream(new FileInputStream(dateiName));
+                in = new DataInputStream(new FileInputStream(fileName));
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.mainframe.dao;
 
 import main.tomedb.java.mainframe.model.BookModelList;
@@ -14,11 +10,11 @@ public class BookModelListDAO extends DAO {
      * Konstruktor um das Data Access Object mit einem Dateinamen zu
      * initialisieren.
      *
-     * @param dateiName Dateiname
+     * @param fileName Dateiname
      * @param openForWrite true wenn geschrieben werden soll
      */
-    public BookModelListDAO(String dateiName, boolean openForWrite) {
-        super(dateiName, openForWrite);
+    public BookModelListDAO(String fileName, boolean openForWrite) {
+        super(fileName, openForWrite);
     }
 
     public void write(Object obj) throws IOException {

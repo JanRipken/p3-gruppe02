@@ -11,11 +11,11 @@ public class BookModelDAO extends DAO {
      * Konstruktor um das Data Access Object mit einem Dateinamen zu
      * initialisieren.
      *
-     * @param dateiName Dateiname
+     * @param fileName Dateiname
      * @param openForWrite true wenn geschrieben werden soll
      */
-    public BookModelDAO(String dateiName, boolean openForWrite) {
-        super(dateiName, openForWrite);
+    public BookModelDAO(String fileName, boolean openForWrite) {
+        super(fileName, openForWrite);
     }
 
     /**
@@ -33,7 +33,7 @@ public class BookModelDAO extends DAO {
      * Daten des übergebenen Student-Objekts schreiben. Das Data Access Object
      * muss dazu zum Schreiben bereit sein.
      *
-     * @param b Referenz auf BookModel-Objekt
+     * @param obj Referenz auf BookModel-Objekt
      * @throws IOException
      */
     @Override
@@ -54,7 +54,7 @@ public class BookModelDAO extends DAO {
      * Daten des übergebenen Student-Objekts lesen. Das Data Access Objekt muss
      * dazu zum Lesen bereit sein.
      *
-     * @param b Referenz auf BookModel-Objekt
+     * @param obj Referenz auf BookModel-Objekt
      * @throws IOException
      */
     @Override
