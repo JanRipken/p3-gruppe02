@@ -27,7 +27,7 @@ public class Save implements ActionListener {
             this.list = Table.list;
             this.table = MainPanel.jListTable.table;
             int[] bookIndex = table.getSelectedRows();
-            this.model = list.get(bookIndex[0]);
+            this.model = list.getBook(bookIndex[0]);
             this.view = view;
 
         }

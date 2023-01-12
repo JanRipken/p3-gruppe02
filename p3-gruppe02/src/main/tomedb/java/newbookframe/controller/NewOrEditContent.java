@@ -20,18 +20,11 @@ public class NewOrEditContent {
     public JTable table;
 
     public void NewOrEditContent() {
-        if (newOrEdit == 1) {
-            titel.setText("Musterbuch");
-            AutorName.setText("Mustername");
-            AutorVorName.setText("Mustervorname");
-            Erscheinungsjahr.setText("2023");
-            Seitenanzahl.setText("123");
-            bewertung.setText("9.9");
-        } else {
+        if (newOrEdit == 0) {
             this.list = Table.list;
             this.table = MainPanel.jListTable.table;
             int[] bookIndex = table.getSelectedRows();
-            this.model = list.get(bookIndex[0]);
+            this.model = list.getBook(bookIndex[0]);
             titel.setText(model.getTitle());
             AutorName.setText(model.getAuthorLastName());
             AutorVorName.setText(model.getAuthorFirstName());

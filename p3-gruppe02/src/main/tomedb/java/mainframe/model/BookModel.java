@@ -10,24 +10,6 @@ public class BookModel {
     private double rating;
     private int yearOfRelease;
 
-    public BookModel() {
-    }
-
-    public BookModel(String titel) {
-        this.title = titel;
-    }
-
-    public BookModel(String title, String authorLastName, String authorFirstName, int pageCount, boolean readStatus,
-            double rating, int yearOfRelease) {
-        this.title = title;
-        this.authorLastName = authorLastName;
-        this.authorFirstName = authorFirstName;
-        this.pageCount = pageCount;
-        this.readStatus = readStatus;
-        this.rating = rating;
-        this.yearOfRelease = yearOfRelease;
-    }
-
     public String getTitle() {
         return this.title;
     }

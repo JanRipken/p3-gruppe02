@@ -76,7 +76,6 @@ public class NewBook extends JFrame {
         Abort abbrechen = new Abort(this);
         mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
-        // TODO Löschen
         NewOrEditContent newOrEditContent = new NewOrEditContent();
         newOrEditContent.NewOrEditContent();
 
