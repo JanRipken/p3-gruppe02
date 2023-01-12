@@ -46,8 +46,8 @@ public class Abort implements ActionListener {
             Logger.getLogger(Abort.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        TomeDB.main.setContentPane(mainPanel);
-        SwingUtilities.updateComponentTreeUI(TomeDB.main);
+        TomeDB.mainFrame.setContentPane(mainPanel);
+        SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
 
 }

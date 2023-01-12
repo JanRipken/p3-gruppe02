@@ -6,12 +6,13 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import main.tomedb.java.designtemplate.modes.LightMode;
+import main.tomedb.java.designtemplate.modes.SetMode;
 import main.tomedb.java.mainframe.controller.settings.ReadWrite;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 public class TomeDB {
 
-    public static MainFrame main;
+    public static MainFrame mainFrame;
 
     public static void main(String[] args) throws ClassNotFoundException {
 
@@ -22,7 +23,7 @@ public class TomeDB {
                 try {
 
                     UIManager.setLookAndFeel(new NimbusLookAndFeel());
-                    setMode();
+                    new SetMode();
                     showMainFrame();
 
                 } catch (Exception e) {
@@ -33,25 +34,6 @@ public class TomeDB {
     }
 
     private static void showMainFrame() {
-        main = new MainFrame();
+        mainFrame = new MainFrame();
     }
-
-    private static void setMode() throws IllegalAccessException, ClassNotFoundException, InstantiationException, UnsupportedLookAndFeelException {
-        ReadWrite set = new ReadWrite();
-
-        String mode = set.read();
-        if (mode.equals("Hell")) {
-
-            new LightMode();
-        }
-        if (mode.equals("Dunkel")) {
-
-            new DarkMode();
-        } else {
-
-            System.out.println("Failed to load a Mode");
-
-        }
-    }
-
 }

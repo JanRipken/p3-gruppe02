@@ -28,8 +28,8 @@ public class Save implements ActionListener {
             Logger.getLogger(Save.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        TomeDB.main.setContentPane(mainPanel);
-        SwingUtilities.updateComponentTreeUI(TomeDB.main);
+        TomeDB.mainFrame.setContentPane(mainPanel);
+        SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
 
 }

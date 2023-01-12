@@ -54,12 +54,12 @@ public class ThemeChange implements ActionListener {
             Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        SwingUtilities.updateComponentTreeUI(TomeDB.main);
+        SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
 
     public static void dark() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         new DarkMode();
-        SwingUtilities.updateComponentTreeUI(TomeDB.main);
+        SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
 
 }

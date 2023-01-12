@@ -15,7 +15,7 @@ public class Setting implements ActionListener {
     public void showSettingsPanel() {
         SettingsPanel panel = new SettingsPanel();
 
-        TomeDB.main.add(panel);
-        TomeDB.main.setContentPane(panel);
+        TomeDB.mainFrame.add(panel);
+        TomeDB.mainFrame.setContentPane(panel);
     }
 }
