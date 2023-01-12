@@ -15,16 +15,15 @@ import javax.swing.JList;
 import javax.swing.JScrollPane;
 import javax.swing.border.EmptyBorder;
 
-public class FileListAccessory extends JComponent implements PropertyChangeListener {
+public class FileChooserExtension extends JComponent implements PropertyChangeListener {
 
     private File file = null;
     private final DefaultListModel model;
     private final JList list;
     private final JButton removeItem;
 
-    // TODO: Gudenkauf fragen
     @SuppressWarnings("unchecked")
-    public FileListAccessory(JFileChooser chooser) {
+    public FileChooserExtension(JFileChooser chooser) {
         chooser.addPropertyChangeListener(this);
 
         model = new DefaultListModel();
@@ -59,7 +58,7 @@ public class FileListAccessory extends JComponent implements PropertyChangeListe
     }
 
     private JButton createRemoveItemButton() {
-        JButton button = new JButton("Remove");
+        JButton button = new JButton("Löschen");
         button.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

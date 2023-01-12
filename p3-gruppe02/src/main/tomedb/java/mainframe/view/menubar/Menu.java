@@ -5,7 +5,7 @@ import main.tomedb.java.mainframe.controller.menubar.main.ImportNewFile;
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
-import main.tomedb.java.mainframe.controller.menubar.main.Merge;
+import main.tomedb.java.mainframe.controller.menubar.main.MergeFiles;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 public class Menu extends JMenu {
@@ -44,7 +44,7 @@ public class Menu extends JMenu {
         ExportNewFile startExport = new ExportNewFile();
         ExportFile.addActionListener(startExport);
 
-        Merge merging = new Merge();
+        MergeFiles merging = new MergeFiles();
         MergeLists.addActionListener(merging);
 
     }

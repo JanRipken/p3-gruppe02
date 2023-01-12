@@ -8,14 +8,12 @@ import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
-
 import main.tomedb.java.mainframe.view.Table;
 
-public class Merge implements ActionListener {
+public class MergeFiles implements ActionListener {
 
     public static BookModelList list;
 
- 
     @Override
     public void actionPerformed(ActionEvent e) {
 
@@ -23,12 +21,12 @@ public class Merge implements ActionListener {
 
         JFileChooser fileChooser = new JFileChooser("./data");
         fileChooser.setDialogTitle("Wählen sie die zu Mergenden Datein");
-        FileListAccessory accessory = new FileListAccessory(fileChooser);
-        fileChooser.setAccessory(accessory);
+        FileChooserExtension selectedListsExtension = new FileChooserExtension(fileChooser);
+        fileChooser.setAccessory(selectedListsExtension);
         int open = fileChooser.showOpenDialog(fileChooser);
 
         if (open == JFileChooser.APPROVE_OPTION) {
-            DefaultListModel model = accessory.getModel();
+            DefaultListModel model = selectedListsExtension.getModel();
             for (int i = 0; i < model.getSize(); i++) {
                 String path = model.getElementAt(i).toString();
 
@@ -36,16 +34,12 @@ public class Merge implements ActionListener {
                 try {
                     dao2.read(list);
                 } catch (IOException v) {
-                    System.out.println(v.getMessage());
+                    System.err.println(v.getMessage());
                 }
                 dao2.close();
                 Table.list = list;
                 MainPanel.jListTable.addRowtoTable();
             }
-
         }
-
-
     }
-
 }
