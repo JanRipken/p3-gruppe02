@@ -6,13 +6,13 @@ import java.awt.event.MouseEvent;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 //TODO Refactoring
-public class MainFramDragMove extends MouseAdapter {
+public class MainFrameDragMove extends MouseAdapter {
 
     MainFrame view;
 
     private Point mouseDownCompCoords = null;
 
-    public MainFramDragMove(MainFrame view) {
+    public MainFrameDragMove(MainFrame view) {
         this.view = view;
     }
 

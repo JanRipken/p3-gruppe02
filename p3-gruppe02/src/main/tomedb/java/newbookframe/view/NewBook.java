@@ -18,6 +18,7 @@ import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.newbookframe.controller.NewOrEdit;
 import main.tomedb.java.newbookframe.controller.NewOrEditContent;
+import main.tomedb.java.mainframe.controller.MainFrameDragMove;
 
 public class NewBook extends JFrame {
 
@@ -49,6 +50,7 @@ public class NewBook extends JFrame {
     public NewBook() {
 
         this.setUndecorated(true);
+        
 
         ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
         this.setIconImage(icon.getImage());
