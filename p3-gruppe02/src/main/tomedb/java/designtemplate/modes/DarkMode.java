@@ -15,7 +15,6 @@ public class DarkMode {
         try {
             //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
             UIManager.put("control", new Color(128, 128, 128));
-            UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("info", new Color(128, 128, 128));
             UIManager.put("nimbusBase", new Color(18, 30, 49));
             UIManager.put("nimbusAlertYellow", new Color(248, 187, 0));
@@ -34,21 +33,5 @@ public class DarkMode {
         } catch (Exception e) {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
         }
-    }
-
-    class FillPainter implements Painter<JComponent> {
-
-        private final Color color;
-
-        FillPainter(Color c) {
-            color = c;
-        }
-
-        @Override
-        public void paint(Graphics2D g, JComponent object, int width, int height) {
-            g.setColor(color);
-            g.fillRect(0, 0, width - 1, height - 1);
-        }
-
     }
 }
