@@ -1,7 +1,7 @@
 package main.tomedb.java.mainframe.view;
 
 import main.tomedb.java.mainframe.view.menubar.MenuBar;
-import main.tomedb.java.mainframe.controller.MainFrameDragMove;
+import main.tomedb.java.mainframe.controller.MouseDragMove;
 import javax.swing.JFrame;
 import main.tomedb.java.mainframe.controller.WindowEventHandler;
 
@@ -20,7 +20,7 @@ public class MainFrame extends JFrame {
 
         this.setUndecorated(true);
 
-        MainFrameDragMove drag = new MainFrameDragMove(this);
+        MouseDragMove drag = new MouseDragMove(this);
         this.addMouseListener(drag);
         this.addMouseMotionListener(drag);
 

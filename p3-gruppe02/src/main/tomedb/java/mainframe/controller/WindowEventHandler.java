@@ -6,11 +6,10 @@ import java.awt.event.WindowEvent;
 
 public class WindowEventHandler extends WindowAdapter {
 
-    private String filePath = "./data/main.txt";
+    private String filePath = "./data/main";
 
     public void windowOpened(WindowEvent we) {
         ImportNewFile newImp = new ImportNewFile();
         newImp.importFile(filePath);
     }
-
 }

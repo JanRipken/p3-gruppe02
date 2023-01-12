@@ -24,7 +24,6 @@ public class ThemeChange implements ActionListener {
             } catch (IllegalAccessException ex) {
                 Logger.getLogger(ThemeChange.class.getName()).log(Level.SEVERE, null, ex);
             }
-
         }
         if (selectedItem == "Dunkel") {
             try {
@@ -61,5 +60,4 @@ public class ThemeChange implements ActionListener {
         new DarkMode();
         SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
-
 }

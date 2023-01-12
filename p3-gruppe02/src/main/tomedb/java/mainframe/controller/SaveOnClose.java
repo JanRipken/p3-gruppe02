@@ -8,7 +8,7 @@ import main.tomedb.java.mainframe.controller.menubar.main.ImportNewFile;
 
 public class SaveOnClose {
 
-    private String filePath = "./data/main.txt";
+    private String filePath = "./data/main";
 
     String updatedPath = ImportNewFile.updatedpath;
 
@@ -27,7 +27,7 @@ public class SaveOnClose {
                 try {
                     daoWrite.write(list);
                 } catch (IOException v) {
-                    System.out.println(v.getMessage());
+                    System.err.println(v.getMessage());
                 }
                 daoWrite.close();
             } else {
@@ -36,13 +36,10 @@ public class SaveOnClose {
                 try {
                     daoWrite.write(list);
                 } catch (IOException v) {
-                    System.out.println(v.getMessage());
+                    System.err.println(v.getMessage());
                 }
                 daoWrite.close();
             }
-
         }
-
     }
-
 }
