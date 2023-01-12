@@ -12,18 +12,18 @@ import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
 public class Save implements ActionListener {
 
-    private JComboBox cbSaveMode;
+    private JComboBox saveThemeComboBox;
 
-    public Save(JComboBox cbSaveMode) {
-        this.cbSaveMode = cbSaveMode;
+    public Save(JComboBox saveThemeComboBox) {
+        this.saveThemeComboBox = saveThemeComboBox;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        String mode = cbSaveMode.getSelectedItem().toString();
-        ReadWrite set = new ReadWrite();
+        String theme = saveThemeComboBox.getSelectedItem().toString();
+        ReadWrite readWrite = new ReadWrite();
         try {
-            set.write(mode);
+            readWrite.write(theme);
         } catch (IOException ex) {
             Logger.getLogger(Save.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -31,5 +31,4 @@ public class Save implements ActionListener {
         TomeDB.mainFrame.setContentPane(mainPanel);
         SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
-
 }

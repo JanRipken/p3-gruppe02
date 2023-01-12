@@ -12,19 +12,19 @@ public class ReadWrite {
     private String path = "./settings/Thema";
     private String fileContent;
 
-    public void write(String thema) throws IOException {
-        BufferedWriter bw = new BufferedWriter(new FileWriter(path));
-        bw.write(thema);
-        bw.close();
+    public void write(String theme) throws IOException {
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(path));
+        bufferedWriter.write(theme);
+        bufferedWriter.close();
     }
 
     public String read() {
         try {
-            BufferedReader br = new BufferedReader(new FileReader(path));
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(path));
 
-            fileContent = br.readLine();
+            fileContent = bufferedReader.readLine();
 
-            br.close();
+            bufferedReader.close();
 
         } catch (IOException e) {
             e.printStackTrace();

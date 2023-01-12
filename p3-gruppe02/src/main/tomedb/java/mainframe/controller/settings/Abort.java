@@ -13,14 +13,10 @@ import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
 public class Abort implements ActionListener {
 
-    public Abort() {
-
-    }
-
     public void resetLookAndFeel() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
-        ReadWrite set = new ReadWrite();
-        String mode = set.read();
+        ReadWrite readWrite = new ReadWrite();
+        String mode = readWrite.read();
         if (mode.equals("Hell")) {
 
             new LightMode();
@@ -29,7 +25,6 @@ public class Abort implements ActionListener {
 
             new DarkMode();
         }
-
     }
 
     @Override
@@ -45,9 +40,7 @@ public class Abort implements ActionListener {
         } catch (IllegalAccessException ex) {
             Logger.getLogger(Abort.class.getName()).log(Level.SEVERE, null, ex);
         }
-
         TomeDB.mainFrame.setContentPane(mainPanel);
         SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
-
 }
