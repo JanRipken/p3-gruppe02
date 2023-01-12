@@ -9,17 +9,12 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JTable;
 import javax.swing.JTextField;
-import main.tomedb.java.mainframe.controller.MainFramDragMove;
 import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.newbookframe.controller.DragMove;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.newbookframe.view.NewBookFrameMainPanel;
-import main.tomedb.java.mainframe.view.MainPanel;
-import main.tomedb.java.mainframe.view.Table;
-import main.tomedb.java.newbookframe.controller.NewOrEdit;
 import main.tomedb.java.newbookframe.controller.NewOrEditContent;
-import main.tomedb.java.mainframe.controller.MainFrameDragMove;
 
 public class NewBook extends JFrame {
 
@@ -51,13 +46,12 @@ public class NewBook extends JFrame {
     public NewBook() {
 
         this.setUndecorated(true);
-        
 
         ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
         this.setIconImage(icon.getImage());
 
         NewBookFrameMainPanel mainPanel = new NewBookFrameMainPanel();
-        
+
         DragMove drag = new DragMove(this);
         this.addMouseListener(drag);
         this.addMouseMotionListener(drag);
