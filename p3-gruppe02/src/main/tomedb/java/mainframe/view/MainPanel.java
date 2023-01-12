@@ -32,11 +32,11 @@ public class MainPanel extends JPanel {
         northPanel.setSize(WIDTH, 10);
 
         newBookButton = new JButton();
-        iconNeu = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/new.gif", 25, 25);
+        iconNeu = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/new.gif", 25, 25);
         newBookButton.setIcon(iconNeu);
 
         searchBookButton = new JButton();
-        iconSuchen = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/suchen.gif", 25, 25);
+        iconSuchen = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/suchen.gif", 25, 25);
         searchBookButton.setIcon(iconSuchen);
 
         NewBook startNewWindow = new NewBook();

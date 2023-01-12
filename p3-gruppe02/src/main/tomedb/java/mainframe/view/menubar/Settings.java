@@ -13,7 +13,7 @@ public class Settings {
 
     public Settings() {
 
-        settingsIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/settingsIcon.png", 10, 10);
+        settingsIcon = MainFrame.modIcons.Scaling("/main/tomedb/ressources/icons/settingsIcon.png", 10, 10);
 
         settingsButton = new JButton();
 
