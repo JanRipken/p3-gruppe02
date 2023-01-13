@@ -5,13 +5,13 @@ import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
-import static main.tomedb.java.newbookframe.view.NewOrEditFrame.AutorName;
-import static main.tomedb.java.newbookframe.view.NewOrEditFrame.AutorVorName;
-import static main.tomedb.java.newbookframe.view.NewOrEditFrame.Erscheinungsjahr;
-import static main.tomedb.java.newbookframe.view.NewOrEditFrame.Seitenanzahl;
-import static main.tomedb.java.newbookframe.view.NewOrEditFrame.bewertung;
-import static main.tomedb.java.newbookframe.view.NewOrEditFrame.titel;
 import static main.tomedb.java.newbookframe.controller.NewBookOrEditBookState.editState;
+import static main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame.title;
+import static main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame.lastName;
+import static main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame.firstName;
+import static main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame.yearOfRelease;
+import static main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame.pageCount;
+import static main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame.rating;
 
 public class EditBookTextfieldContent {
 
@@ -25,12 +25,12 @@ public class EditBookTextfieldContent {
             this.jTable = MainPanel.table.jTable;
             int[] bookIndex = jTable.getSelectedRows();
             this.bookModel = bookModelList.getBook(bookIndex[0]);
-            titel.setText(bookModel.getTitle());
-            AutorName.setText(bookModel.getAuthorLastName());
-            AutorVorName.setText(bookModel.getAuthorFirstName());
-            Erscheinungsjahr.setText(Integer.toString(bookModel.getYearOfRelease()));
-            Seitenanzahl.setText(Integer.toString(bookModel.getPageCount()));
-            bewertung.setText(Double.toString(bookModel.getRating()));
+            title.setText(bookModel.getTitle());
+            lastName.setText(bookModel.getAuthorLastName());
+            firstName.setText(bookModel.getAuthorFirstName());
+            yearOfRelease.setText(Integer.toString(bookModel.getYearOfRelease()));
+            pageCount.setText(Integer.toString(bookModel.getPageCount()));
+            rating.setText(Double.toString(bookModel.getRating()));
         }
     }
 }

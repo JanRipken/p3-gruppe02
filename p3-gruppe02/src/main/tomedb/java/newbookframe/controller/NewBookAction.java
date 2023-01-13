@@ -20,7 +20,7 @@ public class NewBookAction implements ActionListener {
             public void run() {
                 try {
                     editState = false;
-                    new main.tomedb.java.newbookframe.view.NewOrEditFrame();
+                    new main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame();
                     
                 } catch (Exception e) {
                     e.printStackTrace();

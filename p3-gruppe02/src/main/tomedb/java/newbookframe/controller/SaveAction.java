@@ -1,6 +1,6 @@
 package main.tomedb.java.newbookframe.controller;
 
-import main.tomedb.java.newbookframe.view.NewOrEditFrame;
+import main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
@@ -8,17 +8,17 @@ import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
-import main.tomedb.java.newbookframe.view.InputTitel;
+import main.tomedb.java.newbookframe.view.InputTitelDialog;
 import static main.tomedb.java.newbookframe.controller.NewBookOrEditBookState.editState;
 
-public class Save implements ActionListener {
+public class SaveAction implements ActionListener {
 
-    private NewOrEditFrame view;
+    private NewBookOrEditBookFrame view;
     private BookModel bookModel;
     public BookModelList bookModelList;
     public JTable jTable;
 
-    public Save(NewOrEditFrame view) {
+    public SaveAction(NewBookOrEditBookFrame view) {
         if (editState == true) {
             this.bookModelList = Table.bookModelList;
             this.jTable = MainPanel.table.jTable;
@@ -49,7 +49,7 @@ public class Save implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             if (view.getTitel().equals("")) {
-                new InputTitel();
+                new InputTitelDialog();
 
             } else {
                 setBookModel();

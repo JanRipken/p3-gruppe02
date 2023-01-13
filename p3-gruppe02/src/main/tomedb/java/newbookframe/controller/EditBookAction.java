@@ -22,7 +22,7 @@ public class EditBookAction implements ActionListener {
             public void run() {
                 try {
                     editState = true;
-                    new main.tomedb.java.newbookframe.view.NewOrEditFrame();
+                    new main.tomedb.java.newbookframe.view.NewBookOrEditBookFrame();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

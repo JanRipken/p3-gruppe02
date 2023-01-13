@@ -7,23 +7,24 @@ import javax.swing.text.DocumentFilter;
 
 public class DoubleFilter extends DocumentFilter {
 
+    // TODO: Warum Override?
     @Override
-    public void insertString(FilterBypass fb, int offset, String string,
+    public void insertString(FilterBypass filterBypass, int offset, String string,
             AttributeSet attr) throws BadLocationException {
 
-        Document doc = fb.getDocument();
-        StringBuilder sb = new StringBuilder();
-        sb.append(doc.getText(0, doc.getLength()));
-        sb.insert(offset, string);
+        Document doc = filterBypass.getDocument();
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(doc.getText(0, doc.getLength()));
+        stringBuilder.insert(offset, string);
 
-        if (test(sb.toString())) {
-            super.insertString(fb, offset, string, attr);
+        if (inputTextTesting(stringBuilder.toString())) {
+            super.insertString(filterBypass, offset, string, attr);
         } else {
-            // warn the user and don't allow the insert
+            
         }
     }
 
-    private boolean test(String text) {
+    private boolean inputTextTesting(String text) {
         try {
             Double.parseDouble(text);
 
@@ -42,11 +43,11 @@ public class DoubleFilter extends DocumentFilter {
         sb.append(doc.getText(0, doc.getLength()));
         sb.replace(offset, offset + length, text);
 
-        if (test(sb.toString())) {
+        if (inputTextTesting(sb.toString())) {
             super.replace(fb, offset, length, text, attrs);
         } else {
 
-            // warn the user and don't allow the insert
+            
         }
 
     }
@@ -61,10 +62,10 @@ public class DoubleFilter extends DocumentFilter {
         if (sb.toString().length() == 0) {
             super.replace(fb, offset, length, "", null);
         } else {
-            if (test(sb.toString())) {
+            if (inputTextTesting(sb.toString())) {
                 super.remove(fb, offset, length);
             } else {
-                // warn the user and don't allow the insert
+               
             }
         }
 
