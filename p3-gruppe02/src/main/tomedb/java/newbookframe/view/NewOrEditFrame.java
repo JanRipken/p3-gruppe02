@@ -1,6 +1,6 @@
 package main.tomedb.java.newbookframe.view;
 
-import main.tomedb.java.newbookframe.controller.Abort;
+import main.tomedb.java.newbookframe.controller.Cancel;
 import main.tomedb.java.newbookframe.controller.Save;
 import java.awt.Dimension;
 import java.awt.geom.RoundRectangle2D;
@@ -14,7 +14,7 @@ import main.tomedb.java.newbookframe.controller.DragMove;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.newbookframe.view.NewBookFrameMainPanel;
-import main.tomedb.java.newbookframe.controller.NewOrEditContent;
+import main.tomedb.java.newbookframe.controller.EditBookTextfieldContent;
 
 public class NewOrEditFrame extends JFrame {
 
@@ -73,11 +73,11 @@ public class NewOrEditFrame extends JFrame {
         Save modelBook = new Save(this);
         mainPanel.ButtonBestätigen.addActionListener(modelBook);
 
-        Abort abbrechen = new Abort(this);
+        Cancel abbrechen = new Cancel(this);
         mainPanel.ButtonAbrechen.addActionListener(abbrechen);
 
-        NewOrEditContent newOrEditContent = new NewOrEditContent();
-        newOrEditContent.NewOrEditContent();
+        new EditBookTextfieldContent();
+        
 
         this.setContentPane(mainPanel);
 

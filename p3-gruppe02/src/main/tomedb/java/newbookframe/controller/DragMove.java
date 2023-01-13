@@ -4,7 +4,7 @@ import java.awt.Point;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-// TODO wir haben das selbe schon beim MainFrame gemacht reicht das nicht das dort zuverwenden mit einem neuen Konstruktor
+
 public class DragMove extends MouseAdapter {
 
     private Point mouseDownCompCoords = null;

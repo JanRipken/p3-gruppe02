@@ -4,16 +4,13 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.model.BookModelList;
-import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
+import static main.tomedb.java.newbookframe.controller.NewBookOrEditBookState.editState;
 
 public class NewBookAction implements ActionListener {
 
-    BookModelList modelBook;
-
     public NewBookAction() {
 
-        modelBook = new BookModelList();
-
+        new BookModelList();
     }
 
     @Override
@@ -22,8 +19,9 @@ public class NewBookAction implements ActionListener {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    newOrEdit = 1;
+                    editState = false;
                     new main.tomedb.java.newbookframe.view.NewOrEditFrame();
+                    
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

@@ -6,7 +6,7 @@ import javax.swing.JMenuItem;
 import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
-import main.tomedb.java.newbookframe.controller.EditBook;
+import main.tomedb.java.newbookframe.controller.EditBookAction;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.controller.jtable.DeleteBook;
@@ -93,7 +93,7 @@ public class Table {
         JMenuItem menuItemEdit = new JMenuItem("Buch Bearbeiten");
 
         DeleteBook deleteBookAction = new DeleteBook();
-        EditBook editBookAction = new EditBook();
+        EditBookAction editBookAction = new EditBookAction();
 
         menuItemRemove.addActionListener(deleteBookAction);
         menuItemEdit.addActionListener(editBookAction);

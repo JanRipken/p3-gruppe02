@@ -9,44 +9,39 @@ import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.newbookframe.view.InputTitel;
-import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
-// Klasse zum speichern eines neuen Buches
+import static main.tomedb.java.newbookframe.controller.NewBookOrEditBookState.editState;
 
 public class Save implements ActionListener {
 
     private NewOrEditFrame view;
-    private BookModel model;
-    public BookModelList list;
-    public JTable table;
+    private BookModel bookModel;
+    public BookModelList bookModelList;
+    public JTable jTable;
 
     public Save(NewOrEditFrame view) {
-        if (newOrEdit == 1) {
-            this.model = new BookModel();
+        if (editState == true) {
+            this.bookModelList = Table.bookModelList;
+            this.jTable = MainPanel.table.jTable;
+            int[] bookIndex = jTable.getSelectedRows();
+            this.bookModel = bookModelList.getBook(bookIndex[0]);
             this.view = view;
         } else {
-            this.list = Table.bookModelList;
-            this.table = MainPanel.table.jTable;
-            int[] bookIndex = table.getSelectedRows();
-            this.model = list.getBook(bookIndex[0]);
+            this.bookModel = new BookModel();
             this.view = view;
 
         }
 
     }
 
-    public void setModel() {
+    public void setBookModel() {
 
-        model.setTitle(view.getTitel());
-        model.setAuthorLastName(view.getAutorName());
-        model.setAuthorFirstName(view.getAutorVorname());
-        model.setYearOfRelease(view.getErscheinungsjahr());
-        model.setPageCount(view.getSeitenzahl());
-        model.setRating(view.getbewertung());
-        model.setReadStatus(view.getNochmallesen());
-
-    }
-
-    public void setModelEdit() {
+        bookModel.setTitle(view.getTitel());
+        bookModel.setAuthorLastName(view.getAutorName());
+        bookModel.setAuthorFirstName(view.getAutorVorname());
+        bookModel.setYearOfRelease(view.getErscheinungsjahr());
+        bookModel.setPageCount(view.getSeitenzahl());
+        bookModel.setRating(view.getbewertung());
+        bookModel.setReadStatus(view.getNochmallesen());
 
     }
 
@@ -57,19 +52,18 @@ public class Save implements ActionListener {
                 new InputTitel();
 
             } else {
-                setModel();
-                if (newOrEdit == 1) {
-                    MainPanel.table.addToTable(model);
-                    
+                setBookModel();
+                if (editState == true) {
+                    MainPanel.table.editToTable(bookModel);
                 } else {
-                    MainPanel.table.editToTable(model);
+                    MainPanel.table.addToTable(bookModel);
                 }
                 view.dispose();
             }
 
         } catch (Exception ex) {
 
-            System.out.println(ex);
+            System.err.println(ex);
         }
 
     }
