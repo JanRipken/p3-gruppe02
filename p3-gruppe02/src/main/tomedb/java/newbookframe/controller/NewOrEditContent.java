@@ -6,12 +6,12 @@ import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
-import static main.tomedb.java.newbookframe.view.NewBook.AutorName;
-import static main.tomedb.java.newbookframe.view.NewBook.AutorVorName;
-import static main.tomedb.java.newbookframe.view.NewBook.Erscheinungsjahr;
-import static main.tomedb.java.newbookframe.view.NewBook.Seitenanzahl;
-import static main.tomedb.java.newbookframe.view.NewBook.bewertung;
-import static main.tomedb.java.newbookframe.view.NewBook.titel;
+import static main.tomedb.java.newbookframe.view.NewOrEditFrame.AutorName;
+import static main.tomedb.java.newbookframe.view.NewOrEditFrame.AutorVorName;
+import static main.tomedb.java.newbookframe.view.NewOrEditFrame.Erscheinungsjahr;
+import static main.tomedb.java.newbookframe.view.NewOrEditFrame.Seitenanzahl;
+import static main.tomedb.java.newbookframe.view.NewOrEditFrame.bewertung;
+import static main.tomedb.java.newbookframe.view.NewOrEditFrame.titel;
 
 public class NewOrEditContent {
 
@@ -21,8 +21,8 @@ public class NewOrEditContent {
 
     public void NewOrEditContent() {
         if (newOrEdit == 0) {
-            this.list = Table.list;
-            this.table = MainPanel.jListTable.table;
+            this.list = Table.bookModelList;
+            this.table = MainPanel.table.jTable;
             int[] bookIndex = table.getSelectedRows();
             this.model = list.getBook(bookIndex[0]);
             titel.setText(model.getTitle());

@@ -1,6 +1,6 @@
 package main.tomedb.java.newbookframe.controller;
 
-import main.tomedb.java.newbookframe.view.NewBook;
+import main.tomedb.java.newbookframe.view.NewOrEditFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
@@ -14,18 +14,18 @@ import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
 
 public class Save implements ActionListener {
 
-    private NewBook view;
+    private NewOrEditFrame view;
     private BookModel model;
     public BookModelList list;
     public JTable table;
 
-    public Save(NewBook view) {
+    public Save(NewOrEditFrame view) {
         if (newOrEdit == 1) {
             this.model = new BookModel();
             this.view = view;
         } else {
-            this.list = Table.list;
-            this.table = MainPanel.jListTable.table;
+            this.list = Table.bookModelList;
+            this.table = MainPanel.table.jTable;
             int[] bookIndex = table.getSelectedRows();
             this.model = list.getBook(bookIndex[0]);
             this.view = view;
@@ -59,10 +59,10 @@ public class Save implements ActionListener {
             } else {
                 setModel();
                 if (newOrEdit == 1) {
-                    MainPanel.jListTable.addToTable(model);
+                    MainPanel.table.addToTable(model);
                     
                 } else {
-                    MainPanel.jListTable.editToTable(model);
+                    MainPanel.table.editToTable(model);
                 }
                 view.dispose();
             }

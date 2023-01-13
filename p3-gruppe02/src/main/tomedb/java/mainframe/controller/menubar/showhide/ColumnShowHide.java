@@ -19,7 +19,7 @@ public class ColumnShowHide implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        this.table = MainPanel.jListTable.table;
+        this.table = MainPanel.table.jTable;
         showHide(getColumn(e));
     }
 

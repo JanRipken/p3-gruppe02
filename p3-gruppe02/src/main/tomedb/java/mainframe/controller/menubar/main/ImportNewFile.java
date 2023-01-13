@@ -7,7 +7,7 @@ import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.view.Table;
-import main.tomedb.java.mainframe.controller.jtable.Changed;
+import main.tomedb.java.mainframe.controller.jtable.TableModified;
 import main.tomedb.java.mainframe.view.MainPanel;
 
 public class ImportNewFile extends Table implements ActionListener {
@@ -34,9 +34,9 @@ public class ImportNewFile extends Table implements ActionListener {
     }
 
     public void importFile(String path) {
-        Changed TableListener = MainPanel.TableListener;
+        TableModified TableListener = MainPanel.tableListener;
 
-        MainPanel.jListTable.model.removeTableModelListener(TableListener);
+        MainPanel.table.defaultTableMode.removeTableModelListener(TableListener);
 
         BookModelList list = new BookModelList();
         BookModelListDAO dao2 = new BookModelListDAO(path, false);
@@ -47,10 +47,10 @@ public class ImportNewFile extends Table implements ActionListener {
         }
         dao2.close();
 
-        Table.list = list;
-        MainPanel.jListTable.addRowtoTable();
+        Table.bookModelList = list;
+        MainPanel.table.addRowtoTable();
 
-        MainPanel.jListTable.model.addTableModelListener(TableListener);
+        MainPanel.table.defaultTableMode.addTableModelListener(TableListener);
 
     }
 }

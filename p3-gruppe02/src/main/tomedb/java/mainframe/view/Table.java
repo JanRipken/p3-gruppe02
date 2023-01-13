@@ -9,18 +9,18 @@ import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.newbookframe.controller.EditBook;
 import main.tomedb.java.mainframe.model.BookModel;
 import main.tomedb.java.mainframe.model.BookModelList;
-import main.tomedb.java.mainframe.controller.jtable.Delete;
-import main.tomedb.java.newbookframe.controller.NewBook;
+import main.tomedb.java.mainframe.controller.jtable.DeleteBook;
 
 public class Table {
 
-    public static BookModelList list;
-    public JTable table;
-    public DefaultTableModel model;
+    public static BookModelList bookModelList;
+    public JTable jTable;
+    public DefaultTableModel defaultTableMode;
     public JPopupMenu popupMenu;
-    public static JMenuItem menuItemAdd;
     public static JMenuItem menuItemRemove;
     public static JMenuItem menuItemEdit;
+    
+    private Color selectedRowColor = Color.GRAY.darker();
 
     private static final String[] tableHeader = new String[]{
         "Titel",
@@ -34,9 +34,9 @@ public class Table {
 
     public Table() {
 
-        list = new BookModelList();
+        bookModelList = new BookModelList();
 
-        model = new DefaultTableModel(0, tableHeader.length) {
+        defaultTableMode = new DefaultTableModel(0, tableHeader.length) {
 
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -45,68 +45,68 @@ public class Table {
 
             @Override
             public Class<?> getColumnClass(int columnIndex) {
-                Class clazz = String.class;
+                Class contentDefinitionClass = String.class;
                 switch (columnIndex) {
                     case 0:
-                        clazz = String.class;
+                        contentDefinitionClass = String.class;
                         break;
                     case 1:
-                        clazz = String.class;
+                        contentDefinitionClass = String.class;
                         break;
                     case 2:
-                        clazz = String.class;
+                        contentDefinitionClass = String.class;
                         break;
                     case 3:
-                        clazz = Integer.class;
+                        contentDefinitionClass = Integer.class;
                         break;
                     case 4:
-                        clazz = Integer.class;
+                        contentDefinitionClass = Integer.class;
                         break;
                     case 5:
-                        clazz = Double.class;
+                        contentDefinitionClass = Double.class;
                         break;
                     case 6:
-                        clazz = Boolean.class;
+                        contentDefinitionClass = Boolean.class;
                         break;
                 }
-                return clazz;
+                return contentDefinitionClass;
             }
 
         };
 
-        model.setColumnIdentifiers(tableHeader);
+        defaultTableMode.setColumnIdentifiers(tableHeader);
 
-        table = new JTable(model);
+        jTable = new JTable(defaultTableMode);
 
-        table.setSelectionBackground(Color.GRAY.darker());
+        jTable.setSelectionBackground(selectedRowColor);
 
-        table.getTableHeader().setReorderingAllowed(false);
+        jTable.getTableHeader().setReorderingAllowed(false);
 
-        table.setFocusable(false);
-        table.setAutoCreateRowSorter(true);
+        jTable.setFocusable(false);
+        jTable.setAutoCreateRowSorter(true);
 
-        ((JComponent) table.getDefaultRenderer(Boolean.class)).setOpaque(true);
+        ((JComponent) jTable.getDefaultRenderer(Boolean.class)).setOpaque(true);
 
-        JPopupMenu popupMenu = new JPopupMenu();
+        JPopupMenu tablePopupMenu = new JPopupMenu();
 
-        JMenuItem menuItemRemove = new JMenuItem("Remove Rows");
-        JMenuItem menuItemEdit = new JMenuItem("Edit Rows");
+        JMenuItem menuItemRemove = new JMenuItem("Auswahl Löschen");
+        JMenuItem menuItemEdit = new JMenuItem("Buch Bearbeiten");
 
-        Delete tableListenerDelete = new Delete();
-        EditBook tableListenerEdit = new EditBook();
+        DeleteBook deleteBookAction = new DeleteBook();
+        EditBook editBookAction = new EditBook();
 
-        menuItemRemove.addActionListener(tableListenerDelete);
-        menuItemEdit.addActionListener(tableListenerEdit);
+        menuItemRemove.addActionListener(deleteBookAction);
+        menuItemEdit.addActionListener(editBookAction);
 
-        popupMenu.add(menuItemRemove);
-        popupMenu.add(menuItemEdit);
+        tablePopupMenu.add(menuItemRemove);
+        tablePopupMenu.add(menuItemEdit);
 
-        table.setComponentPopupMenu(popupMenu);
+        jTable.setComponentPopupMenu(tablePopupMenu);
     }
 
     // TODO: in den Controller packen
     public void addToTable(BookModel book) {
-        list.addBook(book);
+        bookModelList.addBook(book);
         addRowtoTable();
     }
 
@@ -115,18 +115,18 @@ public class Table {
     }
 
     public void addRowtoTable() {
-        model.setRowCount(0);
+        defaultTableMode.setRowCount(0);
 
-        for (int i = 0; i < list.bookModelList.size(); i++) {
+        for (int i = 0; i < bookModelList.bookModelArrayList.size(); i++) {
 
-            Object[] data = {list.bookModelList.get(i).getTitle(),
-                list.bookModelList.get(i).getAuthorLastName(),
-                list.bookModelList.get(i).getAuthorFirstName(),
-                list.bookModelList.get(i).getYearOfRelease(),
-                list.bookModelList.get(i).getPageCount(),
-                list.bookModelList.get(i).getRating(),
-                list.bookModelList.get(i).getReadStatus()};
-            model.addRow(data);
+            Object[] data = {bookModelList.bookModelArrayList.get(i).getTitle(),
+                bookModelList.bookModelArrayList.get(i).getAuthorLastName(),
+                bookModelList.bookModelArrayList.get(i).getAuthorFirstName(),
+                bookModelList.bookModelArrayList.get(i).getYearOfRelease(),
+                bookModelList.bookModelArrayList.get(i).getPageCount(),
+                bookModelList.bookModelArrayList.get(i).getRating(),
+                bookModelList.bookModelArrayList.get(i).getReadStatus()};
+            defaultTableMode.addRow(data);
 
         }
     }

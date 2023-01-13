@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
-import static main.tomedb.java.mainframe.view.Table.list;
 import javax.swing.JFileChooser;
+import static main.tomedb.java.mainframe.view.Table.bookModelList;
 
 public class ExportNewFile implements ActionListener {
 
@@ -22,7 +22,7 @@ public class ExportNewFile implements ActionListener {
             String fileName = fileExporter.getSelectedFile().getAbsolutePath();
             BookModelListDAO dao = new BookModelListDAO(fileName, true);
             try {
-                dao.write(list);
+                dao.write(bookModelList);
             } catch (IOException v) {
                 System.err.println(v.getMessage());
             }

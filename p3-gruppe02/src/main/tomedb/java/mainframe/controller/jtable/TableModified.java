@@ -4,7 +4,7 @@ import main.tomedb.java.mainframe.controller.menubar.CloseMainFrame;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
-public class Changed implements TableModelListener {
+public class TableModified implements TableModelListener {
 
     @Override
     public void tableChanged(TableModelEvent e) {

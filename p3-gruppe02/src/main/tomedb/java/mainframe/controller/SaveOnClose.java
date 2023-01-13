@@ -3,8 +3,8 @@ package main.tomedb.java.mainframe.controller;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
-import static main.tomedb.java.mainframe.view.Table.list;
 import main.tomedb.java.mainframe.controller.menubar.main.ImportNewFile;
+import static main.tomedb.java.mainframe.view.Table.bookModelList;
 
 public class SaveOnClose {
 
@@ -25,7 +25,7 @@ public class SaveOnClose {
 
                 BookModelListDAO daoWrite = new BookModelListDAO(updatedPath, true);
                 try {
-                    daoWrite.write(list);
+                    daoWrite.write(bookModelList);
                 } catch (IOException v) {
                     System.err.println(v.getMessage());
                 }
@@ -34,7 +34,7 @@ public class SaveOnClose {
 
                 BookModelListDAO daoWrite = new BookModelListDAO(filePath, true);
                 try {
-                    daoWrite.write(list);
+                    daoWrite.write(bookModelList);
                 } catch (IOException v) {
                     System.err.println(v.getMessage());
                 }

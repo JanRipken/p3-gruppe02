@@ -16,7 +16,7 @@ import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.newbookframe.view.NewBookFrameMainPanel;
 import main.tomedb.java.newbookframe.controller.NewOrEditContent;
 
-public class NewBook extends JFrame {
+public class NewOrEditFrame extends JFrame {
 
     private BookModel model;
     public BookModelList list;
@@ -43,7 +43,7 @@ public class NewBook extends JFrame {
     public static JTextField bewertung;
     public static JCheckBox nochmallesen;
 
-    public NewBook() {
+    public NewOrEditFrame() {
 
         this.setUndecorated(true);
 

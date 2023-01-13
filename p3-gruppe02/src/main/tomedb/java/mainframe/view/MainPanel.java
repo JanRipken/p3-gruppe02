@@ -6,9 +6,9 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import main.tomedb.java.mainframe.controller.jtable.Changed;
-import main.tomedb.java.mainframe.controller.jtable.Search;
-import main.tomedb.java.newbookframe.controller.NewBook;
+import main.tomedb.java.mainframe.controller.jtable.TableModified;
+import main.tomedb.java.mainframe.controller.jtable.SelectiveSearchAction;
+import main.tomedb.java.newbookframe.controller.NewBookAction;
 
 public class MainPanel extends JPanel {
 
@@ -21,10 +21,10 @@ public class MainPanel extends JPanel {
     private JButton newBookButton;
     private JButton searchBookButton;
 
-    private ImageIcon iconNeu;
-    private ImageIcon iconSuchen;
-    public static Table jListTable;
-    public static Changed TableListener;
+    private ImageIcon newBookIcon;
+    private ImageIcon searchBookIcon;
+    public static Table table;
+    public static TableModified tableListener;
 
     public void NorthPanel() {
         JPanel northPanel = new JPanel();
@@ -32,37 +32,35 @@ public class MainPanel extends JPanel {
         northPanel.setSize(WIDTH, 10);
 
         newBookButton = new JButton();
-        iconNeu = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/new.gif", 25, 25);
-        newBookButton.setIcon(iconNeu);
+        newBookIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/new.gif", 25, 25);
+        newBookButton.setIcon(newBookIcon);
 
         searchBookButton = new JButton();
-        iconSuchen = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/suchen.gif", 25, 25);
-        searchBookButton.setIcon(iconSuchen);
+        searchBookIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/suchen.gif", 25, 25);
+        searchBookButton.setIcon(searchBookIcon);
 
-        NewBook startNewWindow = new NewBook();
-        newBookButton.addActionListener(startNewWindow);
+        NewBookAction newBookAction = new NewBookAction();
+        newBookButton.addActionListener(newBookAction);
 
-        Search DurchsucheListe = new Search();
-        searchBookButton.addActionListener(DurchsucheListe);
+        SelectiveSearchAction searchAction = new SelectiveSearchAction();
+        searchBookButton.addActionListener(searchAction);
 
         northPanel.add(newBookButton);
         northPanel.add(searchBookButton);
 
         this.add(northPanel, BorderLayout.NORTH);
-
     }
 
     public void SouthPanel() {
         JPanel southPanel = new JPanel();
-        jListTable = new Table();
-
-        TableListener = new Changed();
-
+        table = new Table();
+        tableListener = new TableModified();
+        
         southPanel.setLayout(new BorderLayout());
-        JScrollPane sp = new JScrollPane(jListTable.table);
-        sp.setBorder(null);
-        southPanel.add(sp);
+        JScrollPane scrollPane = new JScrollPane(table.jTable);
+        scrollPane.setBorder(null);
+        southPanel.add(scrollPane);
+        
         this.add(southPanel, BorderLayout.CENTER);
-
     }
 }

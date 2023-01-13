@@ -9,7 +9,7 @@ import main.tomedb.java.mainframe.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 
-public class Delete implements ActionListener {
+public class DeleteBook implements ActionListener {
 
     public JTable table;
     public DefaultTableModel model;
@@ -23,9 +23,9 @@ public class Delete implements ActionListener {
     }
 
     public void removeSelectedRows() {
-        this.model = MainPanel.jListTable.model;
-        this.table = MainPanel.jListTable.table;
-        this.list = Table.list;
+        this.model = MainPanel.table.defaultTableMode;
+        this.table = MainPanel.table.jTable;
+        this.list = Table.bookModelList;
 
         int[] bookIndex = table.getSelectedRows();
 

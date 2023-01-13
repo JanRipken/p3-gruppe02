@@ -20,11 +20,11 @@ public class BookModelListDAO extends DAO {
     public void write(Object obj) throws IOException {
         if (out != null) {
             BookModelList bookList = (BookModelList) obj;
-            out.writeInt(bookList.bookModelList.size());
+            out.writeInt(bookList.bookModelArrayList.size());
 
             BookModelDAO bookModelDAO = new BookModelDAO(null, out);
 
-            for (BookModel b : bookList.bookModelList) {
+            for (BookModel b : bookList.bookModelArrayList) {
                 bookModelDAO.write(b);
             }
         }

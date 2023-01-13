@@ -4,21 +4,21 @@ import java.util.ArrayList;
 
 public class BookModelList {
 
-    public static ArrayList<BookModel> bookModelList;
+    public static ArrayList<BookModel> bookModelArrayList;
 
     public BookModelList() {
-        bookModelList = new ArrayList<>();
+        bookModelArrayList = new ArrayList<>();
     }
 
     public void addBook(BookModel bookModel) {
-        bookModelList.add(bookModel);
+        bookModelArrayList.add(bookModel);
     }
 
     public void deleteBook(int index) {
-        bookModelList.remove(index);
+        bookModelArrayList.remove(index);
     }
 
     public BookModel getBook(int index) {
-        return bookModelList.get(index);
+        return bookModelArrayList.get(index);
     }
 }

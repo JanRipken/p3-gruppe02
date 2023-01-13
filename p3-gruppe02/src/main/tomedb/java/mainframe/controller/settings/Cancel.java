@@ -11,7 +11,7 @@ import main.tomedb.java.designtemplate.modes.LightMode;
 import main.tomedb.java.mainframe.TomeDB;
 import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
-public class Abort implements ActionListener {
+public class Cancel implements ActionListener {
 
     public void resetLookAndFeel() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
@@ -32,13 +32,13 @@ public class Abort implements ActionListener {
         try {
             resetLookAndFeel();
         } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(Abort.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cancel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Abort.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cancel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            Logger.getLogger(Abort.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cancel.class.getName()).log(Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            Logger.getLogger(Abort.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Cancel.class.getName()).log(Level.SEVERE, null, ex);
         }
         TomeDB.mainFrame.setContentPane(mainPanel);
         SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);

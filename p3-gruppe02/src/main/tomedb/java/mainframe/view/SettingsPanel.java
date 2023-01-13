@@ -8,40 +8,39 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import main.tomedb.java.mainframe.controller.settings.Abort;
+import main.tomedb.java.mainframe.controller.settings.Cancel;
 import main.tomedb.java.mainframe.controller.settings.Save;
 import main.tomedb.java.mainframe.controller.ThemeChange;
 
 public class SettingsPanel extends JPanel {
 
-    private JLabel themeLabel;
-    private JComboBox<String> themeComboBox;
+    private JLabel themeSelectionLabel;
+    private JComboBox<String> themeSelectionComboBox;
 
-    private JButton confirmButton;
-    private JButton abortButton;
+    private JButton confirmSelectionButton;
+    private JButton cancelSelectionButton;
 
     public SettingsPanel() {
         setLayout(new BorderLayout());
 
         topPanel();
         bottomPanel();
-
     }
 
     public void topPanel() {
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.X_AXIS));
         topPanel.add(Box.createHorizontalStrut(10));
-        themeLabel = new JLabel("Thema:");
-        themeComboBox = new JComboBox<>();
-        themeComboBox.addItem("Dunkel");
-        themeComboBox.addItem("Hell");
+        themeSelectionLabel = new JLabel("Thema: ");
+        themeSelectionComboBox = new JComboBox<>();
+        themeSelectionComboBox.addItem("Dunkel");
+        themeSelectionComboBox.addItem("Hell");
 
-        topPanel.add(themeLabel);
-        topPanel.add(themeComboBox);
+        topPanel.add(themeSelectionLabel);
+        topPanel.add(themeSelectionComboBox);
 
-        ThemeChange themchange = new ThemeChange();
-        themeComboBox.addActionListener(themchange);
+        ThemeChange themeChange = new ThemeChange();
+        themeSelectionComboBox.addActionListener(themeChange);
 
         this.add(topPanel, BorderLayout.NORTH);
     }
@@ -49,17 +48,17 @@ public class SettingsPanel extends JPanel {
     public void bottomPanel() {
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new GridLayout(1, 2));
-        confirmButton = new JButton("Speichern");
-        abortButton = new JButton("Abbrechen");
+        confirmSelectionButton = new JButton("Speichern");
+        cancelSelectionButton = new JButton("Abbrechen");
 
-        bottomPanel.add(confirmButton);
-        bottomPanel.add(abortButton);
+        bottomPanel.add(confirmSelectionButton);
+        bottomPanel.add(cancelSelectionButton);
 
-        Abort abort = new Abort();
-        abortButton.addActionListener(abort);
+        Cancel cancel = new Cancel();
+        cancelSelectionButton.addActionListener(cancel);
 
-        Save save = new Save(themeComboBox);
-        confirmButton.addActionListener(save);
+        Save save = new Save(themeSelectionComboBox);
+        confirmSelectionButton.addActionListener(save);
 
         this.add(bottomPanel, BorderLayout.SOUTH);
     }

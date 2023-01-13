@@ -6,11 +6,11 @@ import javax.swing.SwingUtilities;
 import main.tomedb.java.mainframe.model.BookModelList;
 import static main.tomedb.java.newbookframe.controller.NewOrEdit.newOrEdit;
 
-public class NewBook implements ActionListener {
+public class NewBookAction implements ActionListener {
 
     BookModelList modelBook;
 
-    public NewBook() {
+    public NewBookAction() {
 
         modelBook = new BookModelList();
 
@@ -23,7 +23,7 @@ public class NewBook implements ActionListener {
             public void run() {
                 try {
                     newOrEdit = 1;
-                    new main.tomedb.java.newbookframe.view.NewBook();
+                    new main.tomedb.java.newbookframe.view.NewOrEditFrame();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

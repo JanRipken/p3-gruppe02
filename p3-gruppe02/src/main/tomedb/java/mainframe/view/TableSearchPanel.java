@@ -9,12 +9,11 @@ public class TableSearchPanel {
     public String searchTerm;
 
     public TableSearchPanel() {
-
+        
         JPanel panel = new JPanel(new GridLayout());
 
         searchTerm = JOptionPane.showInputDialog(panel,
-                "Selektive Suche", "Eingabe",
+                "Suche", "Eingabe",
                 JOptionPane.PLAIN_MESSAGE);
-
     }
 }
