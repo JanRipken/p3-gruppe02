@@ -6,7 +6,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JTable;
 import javax.swing.table.TableColumn;
 import main.tomedb.java.mainframe.view.MainPanel;
-import main.tomedb.java.mainframe.view.menubar.HideColumns;
+import main.tomedb.java.mainframe.view.menubar.BuildHideColumnsDropDownMenu;
 
 public class ColumnShowHide implements ActionListener {
 
@@ -36,25 +36,25 @@ public class ColumnShowHide implements ActionListener {
     }
 
     private TableColumn getColumn(ActionEvent e) {
-        if (e.getSource() == HideColumns.titleCheckBox) {
+        if (e.getSource() == BuildHideColumnsDropDownMenu.titleCheckBox) {
             TableColumn column = table.getColumnModel().getColumn(0);
             return column;
-        } else if (e.getSource() == HideColumns.authorLastNameCheckBox) {
+        } else if (e.getSource() == BuildHideColumnsDropDownMenu.authorLastNameCheckBox) {
             TableColumn column = table.getColumnModel().getColumn(1);
             return column;
-        } else if (e.getSource() == HideColumns.authorFirstNameCheckBox) {
+        } else if (e.getSource() == BuildHideColumnsDropDownMenu.authorFirstNameCheckBox) {
             TableColumn column = table.getColumnModel().getColumn(2);
             return column;
-        } else if (e.getSource() == HideColumns.yearOfReleaseCheckBox) {
+        } else if (e.getSource() == BuildHideColumnsDropDownMenu.yearOfReleaseCheckBox) {
             TableColumn column = table.getColumnModel().getColumn(3);
             return column;
-        } else if (e.getSource() == HideColumns.pageCountCheckBox) {
+        } else if (e.getSource() == BuildHideColumnsDropDownMenu.pageCountCheckBox) {
             TableColumn column = table.getColumnModel().getColumn(4);
             return column;
-        } else if (e.getSource() == HideColumns.ratingCheckBox) {
+        } else if (e.getSource() == BuildHideColumnsDropDownMenu.ratingCheckBox) {
             TableColumn column = table.getColumnModel().getColumn(5);
             return column;
-        } else if (e.getSource() == HideColumns.readStatusCheckBox) {
+        } else if (e.getSource() == BuildHideColumnsDropDownMenu.readStatusCheckBox) {
             TableColumn column = table.getColumnModel().getColumn(6);
             return column;
         } else {

@@ -6,12 +6,12 @@ import javax.swing.JButton;
 import main.tomedb.java.mainframe.controller.menubar.MinimizeMainFrame;
 import main.tomedb.java.mainframe.view.MainFrame;
 
-public class Minimized {
+public class BuildMinimizeButton {
 
     private ImageIcon minimizeIcon;
     private JButton minimizeButton;
 
-    public Minimized() {
+    public BuildMinimizeButton() {
 
         minimizeIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/minimize-sign.png", 10, 10);
         minimizeButton = new JButton();
@@ -21,7 +21,7 @@ public class Minimized {
         minimizeButton.setPreferredSize(new Dimension(20, 20));
     }
 
-    public JButton makeMinimize() {
+    public JButton returnMinimizeButton() {
 
         return minimizeButton;
     }

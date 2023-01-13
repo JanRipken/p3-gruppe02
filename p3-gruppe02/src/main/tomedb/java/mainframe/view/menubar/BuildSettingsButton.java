@@ -6,12 +6,12 @@ import javax.swing.JButton;
 import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.mainframe.controller.menubar.SettingsPanelOpen;
 
-public class SettingsButton {
+public class BuildSettingsButton {
 
     private ImageIcon icon;
     private JButton button;
 
-    public SettingsButton() {
+    public BuildSettingsButton() {
 
         icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/settingsIcon.png", 10, 10);
 

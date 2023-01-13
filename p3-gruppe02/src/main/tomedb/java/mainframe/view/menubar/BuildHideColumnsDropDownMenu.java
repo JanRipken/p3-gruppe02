@@ -6,7 +6,7 @@ import javax.swing.JMenu;
 import javax.swing.JTable;
 import main.tomedb.java.mainframe.controller.menubar.showhide.ColumnShowHide;
 
-public class HideColumns extends JMenu {
+public class BuildHideColumnsDropDownMenu {
 
     private JMenu hideColumnsMenu;
     public static JCheckBox titleCheckBox;
@@ -18,16 +18,16 @@ public class HideColumns extends JMenu {
     public static JCheckBox pageCountCheckBox;
     private JTable table;
 
-    public HideColumns() throws ClassNotFoundException {
+    public BuildHideColumnsDropDownMenu() throws ClassNotFoundException {
 
         hideColumnsMenu = new JMenu("Ausblenden");
-        titleCheckBox = new JCheckBox("Buch Titel");
-        authorLastNameCheckBox = new JCheckBox("Autor");
+        titleCheckBox = new JCheckBox("Titel");
+        authorLastNameCheckBox = new JCheckBox("Name");
         authorFirstNameCheckBox = new JCheckBox("Vorname");
         yearOfReleaseCheckBox = new JCheckBox("Erscheinungsjahr");
         pageCountCheckBox = new JCheckBox("Seitenanzahl");
         ratingCheckBox = new JCheckBox("Bewertung");
-        readStatusCheckBox = new JCheckBox("Nochmal lesen");
+        readStatusCheckBox = new JCheckBox("Gelesen");
 
         hideColumnsMenu.add(titleCheckBox);
         hideColumnsMenu.add(authorLastNameCheckBox);
@@ -60,7 +60,6 @@ public class HideColumns extends JMenu {
     }
 
     public JMenu returnHideColumnsJMenu() {
-
         return hideColumnsMenu;
     }
 }
