@@ -1,69 +1,65 @@
 package main.tomedb.java.mainframe.view.menubar;
 
-import java.awt.Color;
-import java.awt.Graphics;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.Box;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import main.tomedb.java.mainframe.view.MainFrame;
 
 public class MenuBar extends JMenuBar {
 
-    private JMenuBar bar;
-    private Menu mainMenu;
-    private hideColumns hideCol;
-    private Settings settings;
-    
+    private JMenuBar menuBar;
+    private BuildFileDropDownMenu buildFileDropDownMenu;
+    private BuildHideColumnsDropDownMenu buildHideColumnsDropDownMenu;
 
     public MenuBar() {
 
-        makeMenuBar();
+        returnMenuBar();
     }
 
-    public JMenuBar makeMenuBar() {
+    public JMenuBar returnMenuBar() {
+        menuBar = new JMenuBar();
 
-        // menu Bar
-        bar = new JMenuBar();
+        buildFileDropDownMenu = new BuildFileDropDownMenu();
+        JMenu fileDropDownMenu = buildFileDropDownMenu.returnFileDropDownMenu();
 
-        // Menu
-        mainMenu = new Menu() ;
-
-        JMenu menuMain = mainMenu.makeJMenu();
+        JLabel mainFrameTitle = new JLabel(MainFrame.title);
 
         try {
-            hideCol = new hideColumns();
+            buildHideColumnsDropDownMenu = new BuildHideColumnsDropDownMenu();
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
         }
-        JMenu hideColums = hideCol.makeJSettings();
+        JMenu hideColumnsDropDownMenu = buildHideColumnsDropDownMenu.returnHideColumnsJMenu();
 
-        // close
-        Close close = new Close();
-        JButton close1 = close.makeClose();
-        
-        //settings
-        Settings set = new Settings();
-        JButton set1 = set.makeSettings();
+        BuildCloseMainFrame buildCloseMainFrame = new BuildCloseMainFrame();
+        JButton closeMainFrameButton = buildCloseMainFrame.returnCloseMainFrameButton();
 
-        // minimize
-        Minimized mini = new Minimized();
-        JButton minimize = mini.makeMinimize();
+        BuildSettingsButton buildSettingsButton = new BuildSettingsButton();
+        JButton settingsButton = buildSettingsButton.returnSettingsButton();
 
-        // Left side
-        bar.add(menuMain);
-        bar.add(hideColums);
+        BuildMinimizeButton buildMinimizeButton = new BuildMinimizeButton();
+        JButton minimizeButton = buildMinimizeButton.returnMinimizeButton();
 
-        // Right side
-        bar.add(Box.createHorizontalGlue());
+        menuBar.add(fileDropDownMenu);
+        menuBar.add(hideColumnsDropDownMenu);
 
-        bar.add(set1);
-        //TODO: Freischalten sobald funktion gegeben ist
-        //bar.add(minimize);
-        bar.add(close1);
+        // SRY :(
+        menuBar.add(Box.createHorizontalGlue());
+        menuBar.add(Box.createHorizontalGlue());
 
-        return bar;
+        menuBar.add(mainFrameTitle);
+
+        menuBar.add(Box.createHorizontalGlue());
+        menuBar.add(Box.createHorizontalGlue());
+        menuBar.add(Box.createHorizontalGlue());
+
+        menuBar.add(settingsButton);
+        menuBar.add(minimizeButton);
+        menuBar.add(closeMainFrameButton);
+        return menuBar;
     }
-
 }

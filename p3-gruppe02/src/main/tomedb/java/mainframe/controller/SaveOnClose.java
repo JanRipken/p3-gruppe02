@@ -3,17 +3,14 @@ package main.tomedb.java.mainframe.controller;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import main.tomedb.java.mainframe.dao.BookModelListDAO;
-import static main.tomedb.java.mainframe.view.Table.list;
-import main.tomedb.java.mainframe.controller.menubar.ImportNewFile;
+import main.tomedb.java.mainframe.controller.menubar.main.ImportNewFile;
+import static main.tomedb.java.mainframe.view.Table.bookModelList;
 
-public class SaveOnClose{
+public class SaveOnClose {
 
-    /**
-     * @param filePath variable for the path of our main File
-     */
-    private String filePath = "./data/main.txt";
+    private String filePath = "./data/main";
 
-    String updatedPath = ImportNewFile.updatedpath;
+    String updatedPath = ImportNewFile.updatedPath;
 
     public SaveOnClose() {
 
@@ -23,29 +20,26 @@ public class SaveOnClose{
                 JOptionPane.YES_NO_OPTION);
 
         if (selected == 0) {
-            // checking in which path the file has to be saved
+
             if (updatedPath != null) {
-                // save in file
-                BookModelListDAO daoWrite = new BookModelListDAO(updatedPath, true); // Schreiben
+
+                BookModelListDAO daoWrite = new BookModelListDAO(updatedPath, true);
                 try {
-                    daoWrite.write(list);
+                    daoWrite.write(bookModelList);
                 } catch (IOException v) {
-                    System.out.println(v.getMessage());
+                    System.err.println(v.getMessage());
                 }
                 daoWrite.close();
             } else {
 
-                BookModelListDAO daoWrite = new BookModelListDAO(filePath, true); // Schreiben
+                BookModelListDAO daoWrite = new BookModelListDAO(filePath, true);
                 try {
-                    daoWrite.write(list);
+                    daoWrite.write(bookModelList);
                 } catch (IOException v) {
-                    System.out.println(v.getMessage());
+                    System.err.println(v.getMessage());
                 }
                 daoWrite.close();
             }
-
         }
-
     }
-
 }

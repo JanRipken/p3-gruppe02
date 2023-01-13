@@ -1,76 +1,66 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.mainframe.view;
 
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
-import java.awt.Insets;
+import java.awt.BorderLayout;
+import java.awt.GridLayout;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
-
-import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
-import javax.swing.LookAndFeel;
-import javax.swing.UIManager;
-import main.tomedb.java.mainframe.TomeDB;
-import main.tomedb.java.mainframe.controller.SettingsAbort;
-import main.tomedb.java.mainframe.controller.SettingsSave;
-import main.tomedb.java.mainframe.controller.menubar.themeChange;
+import main.tomedb.java.mainframe.controller.settings.Cancel;
+import main.tomedb.java.mainframe.controller.settings.Save;
+import main.tomedb.java.mainframe.controller.ThemeChange;
 
 public class SettingsPanel extends JPanel {
-    
-    private JLabel themeLabel;
-    private JComboBox<String> themeComboBox;
-    
-    private JButton confirmButton;
-    private JButton abortButton;
-    
+
+    private JLabel themeSelectionLabel;
+    private JComboBox<String> themeSelectionComboBox;
+
+    private JButton confirmSelectionButton;
+    private JButton cancelSelectionButton;
+
     public SettingsPanel() {
+        setLayout(new BorderLayout());
 
-        // Verwenden Sie GridBagLayout für das Layout
-        setLayout(new GridBagLayout());
-        GridBagConstraints constraints = new GridBagConstraints();
-
-        // Erstellen Sie die Steuerelemente
-        themeLabel = new JLabel("Thema:");
-        themeComboBox = new JComboBox<>();
-        themeComboBox.addItem("Dunkel");
-        themeComboBox.addItem("Hell");
-        confirmButton = new JButton("Speichern");
-        abortButton = new JButton("Abbrechen");
-
-        // Fügen Sie die Steuerelemente dem Panel hinzu
-        constraints.insets = new Insets(5, 5, 5, 5);
-        constraints.gridx = 0;
-        constraints.gridy = 0;
-        add(themeLabel, constraints);
-        constraints.gridx = 1;
-        add(themeComboBox, constraints);
-        constraints.gridx = 0;
-        constraints.gridy = 1;
-        
-        constraints.gridx = 0;
-        constraints.gridy = GridBagConstraints.RELATIVE; // Nächste freie Zeile
-        constraints.anchor = GridBagConstraints.LINE_END; // Linksbündig
-        add(confirmButton, constraints);
-        constraints.gridx = 1;
-        add(abortButton, constraints);
-        
-        LookAndFeel LookAndFeel = UIManager.getLookAndFeel();
-        
-        SettingsAbort abort = new SettingsAbort(LookAndFeel);
-        abortButton.addActionListener(abort);
-        
-        SettingsSave save = new SettingsSave();
-        confirmButton.addActionListener(save);
-        
-        themeChange themchange = new themeChange();
-        themeComboBox.addActionListener(themchange);
-        
+        topPanel();
+        bottomPanel();
     }
-    
+
+    public void topPanel() {
+        JPanel topPanel = new JPanel();
+        topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.X_AXIS));
+        topPanel.add(Box.createHorizontalStrut(10));
+        themeSelectionLabel = new JLabel("Thema: ");
+        themeSelectionComboBox = new JComboBox<>();
+        themeSelectionComboBox.addItem("Dunkel");
+        themeSelectionComboBox.addItem("Hell");
+
+        topPanel.add(themeSelectionLabel);
+        topPanel.add(themeSelectionComboBox);
+
+        ThemeChange themeChange = new ThemeChange();
+        themeSelectionComboBox.addActionListener(themeChange);
+
+        this.add(topPanel, BorderLayout.NORTH);
+    }
+
+    public void bottomPanel() {
+        JPanel bottomPanel = new JPanel();
+        bottomPanel.setLayout(new GridLayout(1, 2));
+        confirmSelectionButton = new JButton("Speichern");
+        cancelSelectionButton = new JButton("Abbrechen");
+
+        bottomPanel.add(confirmSelectionButton);
+        bottomPanel.add(cancelSelectionButton);
+
+        Cancel cancel = new Cancel();
+        cancelSelectionButton.addActionListener(cancel);
+
+        Save save = new Save(themeSelectionComboBox);
+        confirmSelectionButton.addActionListener(save);
+
+        this.add(bottomPanel, BorderLayout.SOUTH);
+    }
+
 }

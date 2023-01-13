@@ -11,11 +11,11 @@ public class BookModelDAO extends DAO {
      * Konstruktor um das Data Access Object mit einem Dateinamen zu
      * initialisieren.
      *
-     * @param dateiName Dateiname
+     * @param fileName Dateiname
      * @param openForWrite true wenn geschrieben werden soll
      */
-    public BookModelDAO(String dateiName, boolean openForWrite) {
-        super(dateiName, openForWrite);
+    public BookModelDAO(String fileName, boolean openForWrite) {
+        super(fileName, openForWrite);
     }
 
     /**
@@ -33,20 +33,20 @@ public class BookModelDAO extends DAO {
      * Daten des übergebenen Student-Objekts schreiben. Das Data Access Object
      * muss dazu zum Schreiben bereit sein.
      *
-     * @param b Referenz auf BookModel-Objekt
+     * @param obj Referenz auf BookModel-Objekt
      * @throws IOException
      */
     @Override
     public void write(Object obj) throws IOException {
         if (out != null) {
             BookModel b = (BookModel) obj;
-            out.writeUTF(b.getTitel());
-            out.writeUTF(b.getAutorName());
-            out.writeUTF(b.getAutorVorname());
-            out.writeInt(b.getSeitenanzahl());
-            out.writeBoolean(b.getGelesen());
-            out.writeDouble(b.getBewertung());
-            out.writeInt(b.getErscheinungsjahr());
+            out.writeUTF(b.getTitle());
+            out.writeUTF(b.getAuthorLastName());
+            out.writeUTF(b.getAuthorFirstName());
+            out.writeInt(b.getPageCount());
+            out.writeBoolean(b.getReadStatus());
+            out.writeDouble(b.getRating());
+            out.writeInt(b.getYearOfRelease());
         }
     }
 
@@ -54,20 +54,20 @@ public class BookModelDAO extends DAO {
      * Daten des übergebenen Student-Objekts lesen. Das Data Access Objekt muss
      * dazu zum Lesen bereit sein.
      *
-     * @param b Referenz auf BookModel-Objekt
+     * @param obj Referenz auf BookModel-Objekt
      * @throws IOException
      */
     @Override
     public void read(Object obj) throws IOException {
         if (in != null) {
             BookModel b = (BookModel) obj;
-            b.setTitel(in.readUTF());
-            b.setAutorName(in.readUTF());
-            b.setAutorVorname(in.readUTF());
-            b.setSeitenanzahl(in.readInt());
-            b.setGelesen(in.readBoolean());
-            b.setBewerung(in.readDouble());
-            b.setErscheinungsjahr(in.readInt());
+            b.setTitle(in.readUTF());
+            b.setAuthorLastName(in.readUTF());
+            b.setAuthorFirstName(in.readUTF());
+            b.setPageCount(in.readInt());
+            b.setReadStatus(in.readBoolean());
+            b.setRating(in.readDouble());
+            b.setYearOfRelease(in.readInt());
         }
     }
 }

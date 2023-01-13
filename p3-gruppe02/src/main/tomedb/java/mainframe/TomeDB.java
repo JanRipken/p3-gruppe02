@@ -2,15 +2,18 @@ package main.tomedb.java.mainframe;
 
 import main.tomedb.java.designtemplate.modes.DarkMode;
 import javax.swing.SwingUtilities;
-import main.tomedb.java.mainframe.controller.SettingsSave;
-
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.nimbus.NimbusLookAndFeel;
+import main.tomedb.java.designtemplate.modes.LightMode;
+import main.tomedb.java.designtemplate.modes.SetMode;
+import main.tomedb.java.mainframe.controller.settings.ReadWrite;
 import main.tomedb.java.mainframe.view.MainFrame;
-import main.tomedb.java.mainframe.view.SettingsPanel;
 
 public class TomeDB {
 
-    public static MainFrame main;
-    
+    public static MainFrame mainFrame;
+
     public static void main(String[] args) throws ClassNotFoundException {
 
         SwingUtilities.invokeLater(new Runnable() {
@@ -18,11 +21,9 @@ public class TomeDB {
             @Override
             public void run() {
                 try {
-                    SettingsSave save = new SettingsSave();
-                    new DarkMode();
-                    save.loadLookandfell();
-                    
-                    
+
+                    UIManager.setLookAndFeel(new NimbusLookAndFeel());
+                    new SetMode();
                     showMainFrame();
 
                 } catch (Exception e) {
@@ -33,7 +34,6 @@ public class TomeDB {
     }
 
     private static void showMainFrame() {
-        main = new MainFrame();
+        mainFrame = new MainFrame();
     }
-
 }

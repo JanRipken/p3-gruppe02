@@ -2,101 +2,67 @@ package main.tomedb.java.mainframe.model;
 
 public class BookModel {
 
-    private String Titel;
-    private String AutorName;
-    private String AutorVorname;
-    private int Seitenanzahl;
-    private boolean Gelesen;
-    private double Bewertung;
-    private int Erscheinungsjahr;
+    private String title;
+    private String authorLastName;
+    private String authorFirstName;
+    private int pageCount;
+    private boolean readStatus;
+    private double rating;
+    private int yearOfRelease;
 
-    public BookModel() {
+    public String getTitle() {
+        return this.title;
     }
 
-    /**
-     * Constructor for only having a titel
-     * 
-     * @param titel
-     */
-    public BookModel(String titel) {
-        this.Titel = titel;
+    public String getAuthorLastName() {
+        return this.authorLastName;
     }
 
-    /**
-     * Constructor for having all parameters
-     * 
-     * @param titel
-     * @param autorname
-     * @param autorvorname
-     * @param seitenanzahl
-     * @param gelesen
-     * @param bewertung
-     * @param erscheinungsjahr
-     */
-    public BookModel(String titel, String autorname, String autorvorname, int seitenanzahl, boolean gelesen,
-            double bewertung, int erscheinungsjahr) {
-        this.Titel = titel;
-        this.AutorName = autorname;
-        this.AutorVorname = autorvorname;
-        this.Seitenanzahl = seitenanzahl;
-        this.Gelesen = gelesen;
-        this.Bewertung = bewertung;
-        this.Erscheinungsjahr = erscheinungsjahr;
+    public String getAuthorFirstName() {
+        return this.authorFirstName;
     }
 
-    public String getTitel() {
-        return this.Titel;
+    public int getPageCount() {
+        return this.pageCount;
     }
 
-    public String getAutorName() {
-        return this.AutorName;
+    public boolean getReadStatus() {
+        return this.readStatus;
     }
 
-    public String getAutorVorname() {
-        return this.AutorVorname;
+    public double getRating() {
+        return this.rating;
     }
 
-    public int getSeitenanzahl() {
-        return this.Seitenanzahl;
+    public int getYearOfRelease() {
+        return this.yearOfRelease;
     }
 
-    public boolean getGelesen() {
-        return this.Gelesen;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public double getBewertung() {
-        return this.Bewertung;
+    public void setAuthorLastName(String authorLastName) {
+        this.authorLastName = authorLastName;
     }
 
-    public int getErscheinungsjahr() {
-        return this.Erscheinungsjahr;
+    public void setAuthorFirstName(String authorFirstName) {
+        this.authorFirstName = authorFirstName;
     }
 
-    public void setTitel(String titel) {
-        this.Titel = titel;
+    public void setPageCount(int pageCount) {
+        this.pageCount = pageCount;
     }
 
-    public void setAutorName(String autorname) {
-        this.AutorName = autorname;
+    public void setReadStatus(boolean readStatus) {
+        this.readStatus = readStatus;
     }
 
-    public void setAutorVorname(String autorvorname) {
-        this.AutorVorname = autorvorname;
+    public void setRating(double rating) {
+        this.rating = rating;
     }
 
-    public void setSeitenanzahl(int seitenanzahl) {
-        this.Seitenanzahl = seitenanzahl;
-    }
-
-    public void setGelesen(boolean gelesen) {
-        this.Gelesen = gelesen;
-    }
-
-    public void setBewerung(double bewertung) {
-        this.Bewertung = bewertung;
-    }
-
-    public void setErscheinungsjahr(int erscheinungsjahr) {
-        this.Erscheinungsjahr = erscheinungsjahr;
+    public void setYearOfRelease(int yearOfRelease) {
+        this.yearOfRelease = yearOfRelease;
     }
 }
