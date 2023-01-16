@@ -1,20 +1,27 @@
 package main.tomedb.java.designtemplate.themes;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
-import javax.swing.JComponent;
-import javax.swing.Painter;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class LightTheme {
 
+    /**
+     * Setzen des light themes mit ausgewählten RGB codes infos zu den "Keys" bei folgendem link 
+     * 
+     * https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
+     * 
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws UnsupportedLookAndFeelException 
+     */
+    
     public LightTheme() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
             UnsupportedLookAndFeelException {
 
         try {
 
-            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
             UIManager.put("control", new Color(255, 255, 255));
             UIManager.put("info", new Color(255, 255, 255));
             UIManager.put("nimbusBase", new Color(51, 98, 140));

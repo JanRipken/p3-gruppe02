@@ -22,6 +22,12 @@ public class BuildMainPanel extends JPanel {
 
     }
 
+    /**
+     * Initialisiern eines Textfieldes ohne filter
+     * 
+     * @param textfieldTitle
+     * @return JTextField
+     */
     public JTextField returnLayoutTextfieldString(String textfieldTitle) {
         JTextField textField = new JTextField();
         JPanel jPanel = new JPanel();
@@ -36,6 +42,12 @@ public class BuildMainPanel extends JPanel {
 
     }
 
+    /**
+     * Initialisiern eines Textfieldes mit Int Filter
+     * 
+     * @param textfieldTitle
+     * @return JTextField
+     */
     public JTextField returnLayoutTextfieldInt(String textfieldTitle) {
         JTextField textField = new JTextField();
         JPanel jPanel = new JPanel();
@@ -54,6 +66,12 @@ public class BuildMainPanel extends JPanel {
 
     }
 
+    /**
+     * Initialisiern eines Textfieldes mit Double Filter
+     * 
+     * @param textfieldTitle
+     * @return JTextField
+     */
     public JTextField returnLayoutTextfieldDouble(String textfieldTitle) {
         JTextField textField = new JTextField();
         JPanel jPanel = new JPanel();
@@ -71,6 +89,12 @@ public class BuildMainPanel extends JPanel {
         return textField;
     }
 
+    /**
+     * Initialisieren eine Checkbox
+     * 
+     * @param checkBoxTitle
+     * @return JCheckBox
+     */
     public JCheckBox returnLayoutCheckBox(String checkBoxTitle) {
         JPanel jPanel = new JPanel();
         JCheckBox checkBox = new JCheckBox();

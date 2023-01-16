@@ -12,7 +12,14 @@ public class FillPainter implements Painter<JComponent> {
     FillPainter(Color c) {
         color = c;
     }
-
+    
+    /**
+     * 
+     * @param g Graphics2D instanz 
+     * @param object JComponent instanz
+     * @param width
+     * @param height 
+     */
     @Override
     public void paint(Graphics2D g, JComponent object, int width, int height) {
         g.setColor(color);

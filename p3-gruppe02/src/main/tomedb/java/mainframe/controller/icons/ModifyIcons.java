@@ -5,6 +5,14 @@ import javax.swing.ImageIcon;
 
 public class ModifyIcons{
 
+    /**
+     * Methode um Icons auf eine bestimmte Größe und Breite zu formatieren
+     * 
+     * @param path input datei Pfad
+     * @param Height ziel Höhe
+     * @param Width ziel Breite
+     * @return ImageIcon
+     */
     public ImageIcon scaling(String path, int Height, int Width){
         ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
         Image image = icon.getImage();

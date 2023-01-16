@@ -1,19 +1,26 @@
 package main.tomedb.java.designtemplate.themes;
 
 import java.awt.Color;
-import java.awt.Graphics2D;
-import javax.swing.JComponent;
-import javax.swing.Painter;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 public class DarkTheme {
 
+    /**
+     * Setzen des Dark themes mit ausgewählten RGB codes infos zu den "Keys" bei folgendem link 
+     * 
+     * https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
+     * 
+     * @throws ClassNotFoundException
+     * @throws InstantiationException
+     * @throws IllegalAccessException
+     * @throws UnsupportedLookAndFeelException 
+     */
     public DarkTheme() throws ClassNotFoundException, InstantiationException, IllegalAccessException,
             UnsupportedLookAndFeelException {
 
         try {
-            //https://docs.oracle.com/javase/tutorial/uiswing/lookandfeel/_nimbusDefaults.html#primary
+            
             UIManager.put("control", new Color(128, 128, 128));
             UIManager.put("info", new Color(128, 128, 128));
             UIManager.put("nimbusBase", new Color(18, 30, 49));

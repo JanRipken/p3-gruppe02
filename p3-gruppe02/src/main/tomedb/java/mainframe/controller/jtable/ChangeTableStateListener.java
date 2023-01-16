@@ -4,10 +4,12 @@ import main.tomedb.java.mainframe.controller.menubar.CloseMainFrameAction;
 import javax.swing.event.TableModelEvent;
 import javax.swing.event.TableModelListener;
 
-public class TableState implements TableModelListener {
+public class ChangeTableStateListener implements TableModelListener {
 
     @Override
     public void tableChanged(TableModelEvent e) {
         CloseMainFrameAction.changedTableState = true;
     }
+
+    
 }

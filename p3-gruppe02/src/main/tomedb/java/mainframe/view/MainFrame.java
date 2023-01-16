@@ -16,6 +16,10 @@ public class MainFrame extends JFrame {
     private final int windowWidth = 900;
     private final int windowHeight = 600;
 
+    /**
+     * Konstruktor zum erstellen und designen des Hauptfensters
+     * Initalisieren des Inhalts fürs Hauptfenster
+     */
     public MainFrame() {
 
         this.setUndecorated(true);

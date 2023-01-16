@@ -8,9 +8,9 @@ import java.awt.event.MouseEvent;
 public class DragMove extends MouseAdapter {
 
     private Point mouseDownCompCoords = null;
-    main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame view;
+    main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame view;
 
-    public DragMove(main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame view) {
+    public DragMove(main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame view) {
         this.view = view;
     }
 

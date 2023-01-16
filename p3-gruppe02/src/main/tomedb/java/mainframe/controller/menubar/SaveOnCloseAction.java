@@ -12,6 +12,10 @@ public class SaveOnCloseAction {
 
     String updatedPath = ImportNewFileAction.updatedPath;
 
+    /**
+     * Initalisiert speichern dialog.
+     * Speicherort abhängig vom zuletzt verwendeten pfad
+     */
     public SaveOnCloseAction() {
 
         int selected = JOptionPane.showConfirmDialog(null,

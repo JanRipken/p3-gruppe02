@@ -1,14 +1,14 @@
 package main.tomedb.java.neworeditbookframe.controller;
 
-import main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame;
+import main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class CancelAction implements ActionListener {
 
-    private NewBookOrEditBookFrame view;
+    private NewOrEditBookFrame view;
 
-    public CancelAction(NewBookOrEditBookFrame view) {
+    public CancelAction(NewOrEditBookFrame view) {
         this.view = view;
     }
 

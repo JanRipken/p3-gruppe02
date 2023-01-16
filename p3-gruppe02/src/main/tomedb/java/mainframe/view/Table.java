@@ -32,6 +32,9 @@ public class Table {
         "Gelesen"
     };
 
+    /**
+     * Konstruktor der die Tabelle initalisiert
+     */
     public Table() {
 
         bookModelList = new BookModelList();
@@ -110,7 +113,7 @@ public class Table {
         addRowtoTable();
     }
 
-    public void editToTable(BookModel book) {
+    public void editToTable() {
         addRowtoTable();
     }
 

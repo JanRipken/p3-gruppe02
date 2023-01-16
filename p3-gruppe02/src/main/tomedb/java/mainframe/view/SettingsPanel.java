@@ -27,6 +27,9 @@ public class SettingsPanel extends JPanel {
         bottomPanel();
     }
 
+    /**
+     * Anzeigen der themenauswahl Combobox
+     */
     public void topPanel() {
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.X_AXIS));
@@ -45,6 +48,9 @@ public class SettingsPanel extends JPanel {
         this.add(topPanel, BorderLayout.NORTH);
     }
 
+    /**
+     * Anzeigen der Buttons zum Bestätigen oder Abbrechen
+     */
     public void bottomPanel() {
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new GridLayout(1, 2));

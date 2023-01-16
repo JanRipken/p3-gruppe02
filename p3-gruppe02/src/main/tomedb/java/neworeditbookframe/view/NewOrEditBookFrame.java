@@ -7,17 +7,12 @@ import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JFrame;
-import javax.swing.JTable;
 import javax.swing.JTextField;
 import main.tomedb.java.mainframe.view.MainFrame;
 import main.tomedb.java.neworeditbookframe.controller.mouseadapter.DragMove;
-import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.neworeditbookframe.controller.EditBookTextfieldContent;
 
-public class NewBookOrEditBookFrame extends JFrame {
-
-    public BookModelList bookModelList;
-    public JTable jTable;
+public class NewOrEditBookFrame extends JFrame {
 
     private final String questionsBookTitle = "Buchtitel";
     private final String questionLastName = "Name des Autors";
@@ -39,10 +34,13 @@ public class NewBookOrEditBookFrame extends JFrame {
     public static JTextField rating;
     public static JCheckBox readStatus;
 
-    private int width = 350;
-    private int height = 600;
+    private final int width = 350;
+    private final int height = 600;
 
-    public NewBookOrEditBookFrame() {
+    /**
+     * Erstellen und Designen eines Frames zum hinzufügen oder Editieren eines neuen Objektes
+     */
+    public NewOrEditBookFrame() {
 
         this.setUndecorated(true);
 

@@ -9,7 +9,6 @@ public class MinimizeMainFrameAction implements ActionListener{
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        
         TomeDB.mainFrame.setState(Frame.ICONIFIED);
     }
     

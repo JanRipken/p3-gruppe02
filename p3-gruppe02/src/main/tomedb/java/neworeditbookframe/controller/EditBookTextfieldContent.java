@@ -6,12 +6,12 @@ import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 import static main.tomedb.java.neworeditbookframe.controller.NewOrEditBookState.editState;
-import static main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame.title;
-import static main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame.lastName;
-import static main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame.firstName;
-import static main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame.yearOfRelease;
-import static main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame.pageCount;
-import static main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame.rating;
+import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.title;
+import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.lastName;
+import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.firstName;
+import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.yearOfRelease;
+import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.pageCount;
+import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.rating;
 
 public class EditBookTextfieldContent {
 
@@ -19,6 +19,9 @@ public class EditBookTextfieldContent {
     public BookModelList bookModelList;
     public JTable jTable;
 
+    /**
+     * Einsetzen von vorhanden werten beim edititeren eines Objektes 
+     */
     public EditBookTextfieldContent() {
         if (editState == true) {
             this.bookModelList = Table.bookModelList;

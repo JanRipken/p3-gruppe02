@@ -20,12 +20,23 @@ public class ThemeChangeAction implements ActionListener {
         String selectedItem = (String) comboBox.getSelectedItem();
 
         if (selectedItem == "Hell") {
-            light();
+            try {
+                new LightTheme();
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(ThemeChangeAction.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
 
         if (selectedItem == "Dunkel") {
-            dark();
+            try {
+                new DarkTheme();
+            } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | UnsupportedLookAndFeelException ex) {
+                Logger.getLogger(ThemeChangeAction.class.getName()).log(Level.SEVERE, null, ex);
+            }
+
         }
+        SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
 
     public static void light() {

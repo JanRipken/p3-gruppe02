@@ -17,10 +17,6 @@ public class BuildMenuBar extends JMenuBar {
 
     public BuildMenuBar() {
 
-        returnMenuBar();
-    }
-
-    public JMenuBar returnMenuBar() {
         menuBar = new JMenuBar();
 
         buildFileDropDownMenu = new BuildFileDropDownMenu();
@@ -60,6 +56,10 @@ public class BuildMenuBar extends JMenuBar {
         menuBar.add(settingsButton);
         menuBar.add(minimizeButton);
         menuBar.add(closeMainFrameButton);
+    }
+
+    public JMenuBar returnMenuBar() {
+        
         return menuBar;
     }
 }

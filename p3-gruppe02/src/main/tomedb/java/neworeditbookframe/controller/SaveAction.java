@@ -1,6 +1,6 @@
 package main.tomedb.java.neworeditbookframe.controller;
 
-import main.tomedb.java.neworeditbookframe.view.NewBookOrEditBookFrame;
+import main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
@@ -13,27 +13,25 @@ import static main.tomedb.java.neworeditbookframe.controller.NewOrEditBookState.
 
 public class SaveAction implements ActionListener {
 
-    private NewBookOrEditBookFrame view;
+    private NewOrEditBookFrame view;
     private BookModel bookModel;
     public BookModelList bookModelList;
     public JTable jTable;
 
-    public SaveAction(NewBookOrEditBookFrame view) {
+    public SaveAction(NewOrEditBookFrame view) {
+        this.view = view;
+    }
+
+
+    public void setBookModel() {
         if (editState == true) {
             this.bookModelList = Table.bookModelList;
             this.jTable = MainPanel.table.jTable;
             int[] bookIndex = jTable.getSelectedRows();
             this.bookModel = bookModelList.getBook(bookIndex[0]);
-            this.view = view;
         } else {
             this.bookModel = new BookModel();
-            this.view = view;
-
         }
-
-    }
-
-    public void setBookModel() {
 
         bookModel.setTitle(view.getTitel());
         bookModel.setAuthorLastName(view.getAutorName());
@@ -50,11 +48,10 @@ public class SaveAction implements ActionListener {
         try {
             if (view.getTitel().equals("")) {
                 new InputTitelDialog();
-
             } else {
                 setBookModel();
                 if (editState == true) {
-                    MainPanel.table.editToTable(bookModel);
+                    MainPanel.table.editToTable();
                 } else {
                     MainPanel.table.addToTable(bookModel);
                 }

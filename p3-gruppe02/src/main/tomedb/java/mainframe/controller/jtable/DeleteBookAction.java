@@ -17,6 +17,7 @@ public class DeleteBookAction implements ActionListener {
     public JMenuItem menuItemRemove;
     public JMenuItem menuItemEdit;
 
+    
     @Override
     public void actionPerformed(ActionEvent e) {      
         removeSelectedRows();   
@@ -30,7 +31,6 @@ public class DeleteBookAction implements ActionListener {
         int[] bookIndex = table.getSelectedRows();
 
         for (int i = 0; bookIndex.length - 1 >= i; i++) {
-            System.out.println(bookIndex[0]);
             list.deleteBook(bookIndex[0]);
             model.removeRow(bookIndex[0]);
         }

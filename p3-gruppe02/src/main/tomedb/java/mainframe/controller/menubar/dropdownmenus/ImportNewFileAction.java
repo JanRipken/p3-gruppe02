@@ -7,7 +7,7 @@ import javax.swing.JFileChooser;
 import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.view.Table;
-import main.tomedb.java.mainframe.controller.jtable.TableState;
+import main.tomedb.java.mainframe.controller.jtable.ChangeTableStateListener;
 import main.tomedb.java.mainframe.view.MainPanel;
 
 public class ImportNewFileAction extends Table implements ActionListener {
@@ -34,7 +34,7 @@ public class ImportNewFileAction extends Table implements ActionListener {
     }
 
     public void importFile(String path) {
-        TableState TableListener = MainPanel.tableListener;
+        ChangeTableStateListener TableListener = MainPanel.tableListener;
 
         MainPanel.table.defaultTableMode.removeTableModelListener(TableListener);
 
