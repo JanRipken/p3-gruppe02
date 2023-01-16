@@ -4,7 +4,7 @@ import java.awt.Dimension;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import main.tomedb.java.mainframe.view.MainFrame;
-import main.tomedb.java.mainframe.controller.menubar.SettingsPanelOpen;
+import main.tomedb.java.mainframe.controller.menubar.OpenSettingsPanelAction;
 
 public class BuildSettingsButton {
 
@@ -20,7 +20,7 @@ public class BuildSettingsButton {
         button.setIcon(icon);
 
         button.setPreferredSize(new Dimension(20, 20));
-        SettingsPanelOpen settingsPanelOpen = new SettingsPanelOpen();
+        OpenSettingsPanelAction settingsPanelOpen = new OpenSettingsPanelAction();
         button.addActionListener(settingsPanelOpen);
         
     }

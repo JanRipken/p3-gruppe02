@@ -1,9 +1,8 @@
 package main.tomedb.java.mainframe.view;
 
-import main.tomedb.java.mainframe.view.menubar.MenuBar;
-import main.tomedb.java.mainframe.controller.MouseDragMove;
+import main.tomedb.java.mainframe.view.menubar.BuildMenuBar;
+import main.tomedb.java.mainframe.controller.mouseadapter.DragMove;
 import javax.swing.JFrame;
-import main.tomedb.java.mainframe.controller.WindowEventHandler;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
 import main.tomedb.java.mainframe.controller.icons.ModifyIcons;
@@ -17,17 +16,21 @@ public class MainFrame extends JFrame {
     private final int windowWidth = 900;
     private final int windowHeight = 600;
 
+    /**
+     * Konstruktor zum erstellen und designen des Hauptfensters
+     * Initalisieren des Inhalts fürs Hauptfenster
+     */
     public MainFrame() {
 
         this.setUndecorated(true);
 
-        MouseDragMove mouseDragMove = new MouseDragMove(this);
+        DragMove mouseDragMove = new DragMove(this);
         this.addMouseListener(mouseDragMove);
         this.addMouseMotionListener(mouseDragMove);
 
-        addWindowListener(new WindowEventHandler());
+
         modIcons = new ModifyIcons();
-        MenuBar menuBar = new MenuBar();
+        BuildMenuBar menuBar = new BuildMenuBar();
 
         this.setJMenuBar(menuBar.returnMenuBar());
 

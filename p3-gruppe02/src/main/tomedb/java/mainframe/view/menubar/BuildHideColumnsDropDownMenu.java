@@ -4,7 +4,7 @@ package main.tomedb.java.mainframe.view.menubar;
 import javax.swing.JCheckBox;
 import javax.swing.JMenu;
 import javax.swing.JTable;
-import main.tomedb.java.mainframe.controller.menubar.showhide.ColumnShowHide;
+import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ColumnShowHideAction;
 
 public class BuildHideColumnsDropDownMenu {
 
@@ -37,25 +37,25 @@ public class BuildHideColumnsDropDownMenu {
         hideColumnsMenu.add(ratingCheckBox);
         hideColumnsMenu.add(readStatusCheckBox);
 
-        ColumnShowHide toggleTitle = new ColumnShowHide(titleCheckBox);
+        ColumnShowHideAction toggleTitle = new ColumnShowHideAction(titleCheckBox);
         titleCheckBox.addActionListener(toggleTitle);
         
-        ColumnShowHide toggleLastName = new ColumnShowHide(authorLastNameCheckBox);
+        ColumnShowHideAction toggleLastName = new ColumnShowHideAction(authorLastNameCheckBox);
         authorLastNameCheckBox.addActionListener(toggleLastName);
         
-        ColumnShowHide toggleFirstName = new ColumnShowHide(authorFirstNameCheckBox);
+        ColumnShowHideAction toggleFirstName = new ColumnShowHideAction(authorFirstNameCheckBox);
         authorFirstNameCheckBox.addActionListener(toggleFirstName);
 
-        ColumnShowHide toggleYearOfRelease = new ColumnShowHide(yearOfReleaseCheckBox);
+        ColumnShowHideAction toggleYearOfRelease = new ColumnShowHideAction(yearOfReleaseCheckBox);
         yearOfReleaseCheckBox.addActionListener(toggleYearOfRelease);
 
-        ColumnShowHide togglePageCount = new ColumnShowHide(pageCountCheckBox);
+        ColumnShowHideAction togglePageCount = new ColumnShowHideAction(pageCountCheckBox);
         pageCountCheckBox.addActionListener(togglePageCount);
 
-        ColumnShowHide toggleRating = new ColumnShowHide(ratingCheckBox);
+        ColumnShowHideAction toggleRating = new ColumnShowHideAction(ratingCheckBox);
         ratingCheckBox.addActionListener(toggleRating);
 
-        ColumnShowHide toggleReadAgain = new ColumnShowHide(readStatusCheckBox);
+        ColumnShowHideAction toggleReadAgain = new ColumnShowHideAction(readStatusCheckBox);
         readStatusCheckBox.addActionListener(toggleReadAgain);
     }
 

@@ -6,16 +6,16 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
-import main.tomedb.java.mainframe.controller.jtable.TableModified;
-import main.tomedb.java.mainframe.controller.jtable.SelectiveSearchAction;
-import main.tomedb.java.newbookframe.controller.NewBookAction;
+import main.tomedb.java.mainframe.controller.jtable.ChangeTableStateListener;
+import main.tomedb.java.mainframe.controller.jtable.SearchAction;
+import main.tomedb.java.mainframe.controller.jtable.NewBookAction;
 
 public class MainPanel extends JPanel {
 
     public MainPanel() {
         this.setLayout(new BorderLayout());
-        NorthPanel();
-        SouthPanel();
+        northPanel();
+        southPanel();
     }
 
     private JButton newBookButton;
@@ -24,9 +24,12 @@ public class MainPanel extends JPanel {
     private ImageIcon newBookIcon;
     private ImageIcon searchBookIcon;
     public static Table table;
-    public static TableModified tableListener;
+    public static ChangeTableStateListener tableListener;
 
-    public void NorthPanel() {
+    /**
+     * Erstellen der Button für Suche und zum erstellen eines neuen Buch Objektes
+     */
+    public void northPanel() {
         JPanel northPanel = new JPanel();
         northPanel.setLayout(new GridLayout());
         northPanel.setSize(WIDTH, 10);
@@ -42,7 +45,7 @@ public class MainPanel extends JPanel {
         NewBookAction newBookAction = new NewBookAction();
         newBookButton.addActionListener(newBookAction);
 
-        SelectiveSearchAction searchAction = new SelectiveSearchAction();
+        SearchAction searchAction = new SearchAction();
         searchBookButton.addActionListener(searchAction);
 
         northPanel.add(newBookButton);
@@ -51,10 +54,13 @@ public class MainPanel extends JPanel {
         this.add(northPanel, BorderLayout.NORTH);
     }
 
-    public void SouthPanel() {
+     /**
+     * Erstellen einer Tabelle
+     */
+    public void southPanel() {
         JPanel southPanel = new JPanel();
         table = new Table();
-        tableListener = new TableModified();
+        tableListener = new ChangeTableStateListener();
         
         southPanel.setLayout(new BorderLayout());
         JScrollPane scrollPane = new JScrollPane(table.jTable);
