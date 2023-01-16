@@ -8,9 +8,9 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import main.tomedb.java.mainframe.controller.settings.Cancel;
-import main.tomedb.java.mainframe.controller.settings.Save;
-import main.tomedb.java.mainframe.controller.ThemeChange;
+import main.tomedb.java.mainframe.controller.settings.CancelAction;
+import main.tomedb.java.mainframe.controller.settings.SaveThemeAction;
+import main.tomedb.java.mainframe.controller.menubar.ThemeChangeAction;
 
 public class SettingsPanel extends JPanel {
 
@@ -39,7 +39,7 @@ public class SettingsPanel extends JPanel {
         topPanel.add(themeSelectionLabel);
         topPanel.add(themeSelectionComboBox);
 
-        ThemeChange themeChange = new ThemeChange();
+        ThemeChangeAction themeChange = new ThemeChangeAction();
         themeSelectionComboBox.addActionListener(themeChange);
 
         this.add(topPanel, BorderLayout.NORTH);
@@ -54,10 +54,10 @@ public class SettingsPanel extends JPanel {
         bottomPanel.add(confirmSelectionButton);
         bottomPanel.add(cancelSelectionButton);
 
-        Cancel cancel = new Cancel();
+        CancelAction cancel = new CancelAction();
         cancelSelectionButton.addActionListener(cancel);
 
-        Save save = new Save(themeSelectionComboBox);
+        SaveThemeAction save = new SaveThemeAction(themeSelectionComboBox);
         confirmSelectionButton.addActionListener(save);
 
         this.add(bottomPanel, BorderLayout.SOUTH);
