@@ -6,18 +6,7 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 
 public class BookModelDAO extends DAO {
-
-    /**
-     * Konstruktor um das Data Access Object mit einem Dateinamen zu
-     * initialisieren.
-     *
-     * @param fileName Dateiname
-     * @param openForWrite true wenn geschrieben werden soll
-     */
-    public BookModelDAO(String fileName, boolean openForWrite) {
-        super(fileName, openForWrite);
-    }
-
+ 
     /**
      * Konstruktor um das Data Access Object mit bereits vorhandenen Streams zu
      * initialisieren.

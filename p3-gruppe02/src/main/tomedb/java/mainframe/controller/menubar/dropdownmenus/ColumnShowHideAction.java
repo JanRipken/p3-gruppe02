@@ -10,7 +10,7 @@ import main.tomedb.java.mainframe.view.menubar.BuildHideColumnsDropDownMenu;
 
 public class ColumnShowHideAction implements ActionListener {
 
-    private JCheckBox checkBox;
+    private final JCheckBox checkBox;
     private JTable table;
 
     public ColumnShowHideAction(JCheckBox checkBox) {

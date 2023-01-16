@@ -16,9 +16,6 @@ public class Table {
     public static BookModelList bookModelList;
     public JTable jTable;
     public DefaultTableModel defaultTableMode;
-    public JPopupMenu popupMenu;
-    public static JMenuItem menuItemRemove;
-    public static JMenuItem menuItemEdit;
     
     private Color selectedRowColor = Color.GRAY.darker();
 

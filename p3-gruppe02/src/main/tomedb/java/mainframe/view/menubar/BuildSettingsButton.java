@@ -25,7 +25,7 @@ public class BuildSettingsButton {
         
     }
 
-    public JButton returnSettingsButton() {
+    protected JButton returnSettingsButton() {
 
         return button;
     }

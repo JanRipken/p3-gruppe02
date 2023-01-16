@@ -29,7 +29,7 @@ public class MainPanel extends JPanel {
     /**
      * Erstellen der Button für Suche und zum erstellen eines neuen Buch Objektes
      */
-    public void northPanel() {
+    private void northPanel() {
         JPanel northPanel = new JPanel();
         northPanel.setLayout(new GridLayout());
         northPanel.setSize(WIDTH, 10);
@@ -57,7 +57,7 @@ public class MainPanel extends JPanel {
      /**
      * Erstellen einer Tabelle
      */
-    public void southPanel() {
+    private void southPanel() {
         JPanel southPanel = new JPanel();
         table = new Table();
         tableListener = new ChangeTableStateListener();

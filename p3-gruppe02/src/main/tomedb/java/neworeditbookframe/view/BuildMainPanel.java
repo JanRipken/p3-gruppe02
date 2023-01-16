@@ -11,12 +11,12 @@ import javax.swing.text.PlainDocument;
 import main.tomedb.java.neworeditbookframe.controller.filter.DoubleFilter;
 import main.tomedb.java.neworeditbookframe.controller.filter.IntFilter;
 
-public class BuildMainPanel extends JPanel {
+class BuildMainPanel extends JPanel {
 
     JButton buttonConfirmation = new JButton("Bestätigen");
     JButton buttonCancel = new JButton("Abrechen");
 
-    public BuildMainPanel() {
+    BuildMainPanel() {
 
         this.setLayout(new GridLayout(8, 0));
 
@@ -28,7 +28,7 @@ public class BuildMainPanel extends JPanel {
      * @param textfieldTitle
      * @return JTextField
      */
-    public JTextField returnLayoutTextfieldString(String textfieldTitle) {
+    protected JTextField returnLayoutTextfieldString(String textfieldTitle) {
         JTextField textField = new JTextField();
         JPanel jPanel = new JPanel();
 
@@ -48,7 +48,7 @@ public class BuildMainPanel extends JPanel {
      * @param textfieldTitle
      * @return JTextField
      */
-    public JTextField returnLayoutTextfieldInt(String textfieldTitle) {
+    protected JTextField returnLayoutTextfieldInt(String textfieldTitle) {
         JTextField textField = new JTextField();
         JPanel jPanel = new JPanel();
 
@@ -72,7 +72,7 @@ public class BuildMainPanel extends JPanel {
      * @param textfieldTitle
      * @return JTextField
      */
-    public JTextField returnLayoutTextfieldDouble(String textfieldTitle) {
+    protected JTextField returnLayoutTextfieldDouble(String textfieldTitle) {
         JTextField textField = new JTextField();
         JPanel jPanel = new JPanel();
 
@@ -95,7 +95,7 @@ public class BuildMainPanel extends JPanel {
      * @param checkBoxTitle
      * @return JCheckBox
      */
-    public JCheckBox returnLayoutCheckBox(String checkBoxTitle) {
+    protected JCheckBox returnLayoutCheckBox(String checkBoxTitle) {
         JPanel jPanel = new JPanel();
         JCheckBox checkBox = new JCheckBox();
 
@@ -110,7 +110,7 @@ public class BuildMainPanel extends JPanel {
         return checkBox;
     }
 
-    public void buildButtons() {
+    protected void buildButtons() {
         JPanel jpanelButtons = new JPanel();
         jpanelButtons.setLayout(new GridLayout(1, 0));
         jpanelButtons.add(buttonConfirmation);

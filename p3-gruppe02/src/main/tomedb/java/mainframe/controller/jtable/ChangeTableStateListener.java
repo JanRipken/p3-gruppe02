@@ -10,6 +10,4 @@ public class ChangeTableStateListener implements TableModelListener {
     public void tableChanged(TableModelEvent e) {
         CloseMainFrameAction.changedTableState = true;
     }
-
-    
 }

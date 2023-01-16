@@ -12,7 +12,7 @@ import main.tomedb.java.mainframe.view.Table;
 
 public class MergeFilesAction implements ActionListener {
 
-    public static BookModelList list;
+    private static BookModelList list;
 
     @Override
     public void actionPerformed(ActionEvent e) {

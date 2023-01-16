@@ -30,7 +30,7 @@ public class SettingsPanel extends JPanel {
     /**
      * Anzeigen der themenauswahl Combobox
      */
-    public void topPanel() {
+    private void topPanel() {
         JPanel topPanel = new JPanel();
         topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.X_AXIS));
         topPanel.add(Box.createHorizontalStrut(10));
@@ -51,7 +51,7 @@ public class SettingsPanel extends JPanel {
     /**
      * Anzeigen der Buttons zum Bestätigen oder Abbrechen
      */
-    public void bottomPanel() {
+    private void bottomPanel() {
         JPanel bottomPanel = new JPanel();
         bottomPanel.setLayout(new GridLayout(1, 2));
         confirmSelectionButton = new JButton("Speichern");

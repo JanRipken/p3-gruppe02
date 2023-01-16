@@ -13,7 +13,7 @@ import main.tomedb.java.mainframe.view.MainPanel;
 public class ImportNewFileAction extends Table implements ActionListener {
 
     public static String updatedPath;
-    String fileName;
+    private String fileName;
 
     @Override
     public void actionPerformed(ActionEvent e) {

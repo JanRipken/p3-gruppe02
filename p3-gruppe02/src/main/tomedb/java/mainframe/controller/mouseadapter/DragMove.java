@@ -7,7 +7,7 @@ import main.tomedb.java.mainframe.view.MainFrame;
 
 public class DragMove extends MouseAdapter {
 
-    MainFrame view;
+    private MainFrame view;
 
     private Point mouseDownCompCoords = null;
 

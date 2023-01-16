@@ -38,24 +38,4 @@ public class ThemeChangeAction implements ActionListener {
         }
         SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
     }
-
-    public static void light() {
-
-        try {
-            new LightTheme();
-        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(ThemeChangeAction.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
-    }
-
-    public static void dark() {
-        try {
-            new DarkTheme();
-        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException | UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(ThemeChangeAction.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-        SwingUtilities.updateComponentTreeUI(TomeDB.mainFrame);
-    }
 }
