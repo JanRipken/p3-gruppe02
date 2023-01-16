@@ -5,7 +5,7 @@ import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import javax.swing.Painter;
 
-public class FillPainter implements Painter<JComponent> {
+class FillPainter implements Painter<JComponent> {
 
     private final Color color;
 

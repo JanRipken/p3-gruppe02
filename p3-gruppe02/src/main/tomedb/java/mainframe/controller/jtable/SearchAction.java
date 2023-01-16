@@ -19,7 +19,7 @@ public class SearchAction implements ActionListener {
     /**
      * Methode zum setzen eines filters welcher case insensitive ist mithilfe des ?! Regex Patterns
      */
-    public void search() {
+    private void search() {
         if (searchTerm != null) {
             RowFilter<DefaultTableModel, Object> rowFilter = RowFilter.regexFilter("(?i)" + searchTerm);
             sorter.setRowFilter(rowFilter);

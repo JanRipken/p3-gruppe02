@@ -13,7 +13,7 @@ import static main.tomedb.java.mainframe.view.MainFrame.mainPanel;
 
 public class CancelAction implements ActionListener {
 
-    public void resetLookAndFeel() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
+    private void resetLookAndFeel() throws UnsupportedLookAndFeelException, ClassNotFoundException, InstantiationException, IllegalAccessException {
 
         ReadWriteAction readWrite = new ReadWriteAction();
         String mode = readWrite.read();
@@ -31,13 +31,7 @@ public class CancelAction implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         try {
             resetLookAndFeel();
-        } catch (UnsupportedLookAndFeelException ex) {
-            Logger.getLogger(CancelAction.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(CancelAction.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            Logger.getLogger(CancelAction.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(CancelAction.class.getName()).log(Level.SEVERE, null, ex);
         }
         TomeDB.mainFrame.setContentPane(mainPanel);

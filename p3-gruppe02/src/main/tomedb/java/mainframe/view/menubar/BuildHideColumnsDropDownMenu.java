@@ -59,7 +59,7 @@ public class BuildHideColumnsDropDownMenu {
         readStatusCheckBox.addActionListener(toggleReadAgain);
     }
 
-    public JMenu returnHideColumnsJMenu() {
+    protected JMenu returnHideColumnsJMenu() {
         return hideColumnsMenu;
     }
 }

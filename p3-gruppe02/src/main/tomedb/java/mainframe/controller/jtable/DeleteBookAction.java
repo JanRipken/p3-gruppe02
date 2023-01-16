@@ -11,19 +11,16 @@ import main.tomedb.java.mainframe.view.Table;
 
 public class DeleteBookAction implements ActionListener {
 
-    public JTable table;
-    public DefaultTableModel model;
-    public BookModelList list;
-    public JMenuItem menuItemRemove;
-    public JMenuItem menuItemEdit;
-
+    private JTable table;
+    private DefaultTableModel model;
+    private BookModelList list;
     
     @Override
     public void actionPerformed(ActionEvent e) {      
         removeSelectedRows();   
     }
 
-    public void removeSelectedRows() {
+    private void removeSelectedRows() {
         this.model = MainPanel.table.defaultTableMode;
         this.table = MainPanel.table.jTable;
         this.list = Table.bookModelList;

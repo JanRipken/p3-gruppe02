@@ -7,12 +7,12 @@ import javax.swing.JButton;
 import javax.swing.JMenu;
 import main.tomedb.java.mainframe.view.MainFrame;
 
-public class BuildCloseButton extends JMenu {
+class BuildCloseButton extends JMenu {
 
     private ImageIcon closeMainFrameIcon;
     private JButton closeMainFrameButton;
 
-    public BuildCloseButton() {
+    BuildCloseButton() {
 
         closeMainFrameIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/close.png", 10, 10);
 
@@ -26,7 +26,7 @@ public class BuildCloseButton extends JMenu {
         closeMainFrameButton.addActionListener(closeMainFrameAction);
     }
 
-    public JButton returnCloseMainFrameButton() {
+    protected JButton returnCloseMainFrameButton() {
         return closeMainFrameButton;
     }
 }

@@ -6,17 +6,17 @@ import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ImportNewFileAction;
 import static main.tomedb.java.mainframe.view.Table.bookModelList;
 
-public class SaveOnCloseAction {
+class SaveOnCloseAction {
 
     private String filePath = "./data/main";
 
-    String updatedPath = ImportNewFileAction.updatedPath;
+    private String updatedPath = ImportNewFileAction.updatedPath;
 
     /**
      * Initalisiert speichern dialog.
      * Speicherort abhängig vom zuletzt verwendeten pfad
      */
-    public SaveOnCloseAction() {
+    SaveOnCloseAction() {
 
         int selected = JOptionPane.showConfirmDialog(null,
                 "Möchten sie ihr Liste Speichern ?",

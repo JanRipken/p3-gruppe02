@@ -15,15 +15,15 @@ public class SaveAction implements ActionListener {
 
     private NewOrEditBookFrame view;
     private BookModel bookModel;
-    public BookModelList bookModelList;
-    public JTable jTable;
+    private BookModelList bookModelList;
+    private JTable jTable;
 
     public SaveAction(NewOrEditBookFrame view) {
         this.view = view;
     }
 
 
-    public void setBookModel() {
+    private void setBookModel() {
         if (editState == true) {
             this.bookModelList = Table.bookModelList;
             this.jTable = MainPanel.table.jTable;

@@ -8,7 +8,7 @@ import javax.swing.JMenuItem;
 import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.MergeFilesAction;
 import main.tomedb.java.mainframe.view.MainFrame;
 
-public class BuildFileDropDownMenu{
+class BuildFileDropDownMenu{
 
     private ImageIcon importIcon;
     private ImageIcon exportIcon;
@@ -16,7 +16,7 @@ public class BuildFileDropDownMenu{
 
     private JMenu fileDropDownMenu;
 
-    protected BuildFileDropDownMenu() {
+    BuildFileDropDownMenu() {
 
         fileDropDownMenu = new JMenu("Datein");
 
@@ -49,7 +49,7 @@ public class BuildFileDropDownMenu{
 
     }
 
-    public JMenu returnFileDropDownMenu() {
+    protected JMenu returnFileDropDownMenu() {
 
         return fileDropDownMenu;
     }
