@@ -20,7 +20,7 @@ public class NewOrEditBookFrame extends JFrame {
     private final String questionYearOfRelease = "Erscheinungsjahr";
     private final String questionPageCount = "Seitenanzahl";
     private final String questionRating = "Bewertung";
-    private final String questionReadStatus = "Erneut Lesen ?";
+    private final String questionReadStatus = "Bereits Gelesen?";
 
     private final String toolTipYearOfRelease = "Geben sie das Erscheinungjahr als Zahl ein ";
     private final String toolTipPageCount = "Geben sie die Seitenzahl als Zahl ein ";
