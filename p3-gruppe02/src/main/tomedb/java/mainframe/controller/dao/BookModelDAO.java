@@ -19,7 +19,7 @@ public class BookModelDAO extends DAO {
     }
 
     /**
-     * Daten des übergebenen Student-Objekts schreiben. Das Data Access Object
+     * Daten des übergebenen BookModel-Objekts schreiben. Das Data Access Object
      * muss dazu zum Schreiben bereit sein.
      *
      * @param obj Referenz auf BookModel-Objekt
@@ -40,7 +40,7 @@ public class BookModelDAO extends DAO {
     }
 
     /**
-     * Daten des übergebenen Student-Objekts lesen. Das Data Access Objekt muss
+     * Daten des übergebenen BookModel-Objekts lesen. Das Data Access Objekt muss
      * dazu zum Lesen bereit sein.
      *
      * @param obj Referenz auf BookModel-Objekt
