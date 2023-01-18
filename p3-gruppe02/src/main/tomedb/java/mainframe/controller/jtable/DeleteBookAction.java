@@ -14,10 +14,10 @@ public class DeleteBookAction implements ActionListener {
     private JTable table;
     private DefaultTableModel model;
     private BookModelList list;
-    
+
     @Override
-    public void actionPerformed(ActionEvent e) {      
-        removeSelectedRows();   
+    public void actionPerformed(ActionEvent e) {
+        removeSelectedRows();
     }
 
     private void removeSelectedRows() {
@@ -25,11 +25,12 @@ public class DeleteBookAction implements ActionListener {
         this.table = MainPanel.table.jTable;
         this.list = Table.bookModelList;
 
-        int[] bookIndex = table.getSelectedRows();
+        int[] selectedRows = table.getSelectedRows();
 
-        for (int i = 0; bookIndex.length - 1 >= i; i++) {
-            list.deleteBook(bookIndex[0]);
-            model.removeRow(bookIndex[0]);
+        for (int i = 0; i < selectedRows.length; i++) {
+            int modelIndex = table.convertRowIndexToModel(selectedRows[i]);
+            list.deleteBook(modelIndex);
+            model.removeRow(modelIndex);
         }
     }
 }
