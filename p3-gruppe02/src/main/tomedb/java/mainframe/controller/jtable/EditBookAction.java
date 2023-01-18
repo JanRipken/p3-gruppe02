@@ -20,7 +20,6 @@ import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.readSt
 public class EditBookAction implements ActionListener {
 
     private JTable table;
-    private DefaultTableModel model;
     private BookModelList list;
     private BookModel book;
 
@@ -32,7 +31,6 @@ public class EditBookAction implements ActionListener {
     }
 
     private void editSelectedBook() {
-        this.model = MainPanel.table.defaultTableMode;
         this.table = MainPanel.table.jTable;
         this.list = Table.bookModelList;
 
