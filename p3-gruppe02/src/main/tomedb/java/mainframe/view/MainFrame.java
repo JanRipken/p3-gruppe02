@@ -1,7 +1,7 @@
 package main.tomedb.java.mainframe.view;
 
 import main.tomedb.java.mainframe.view.menubar.BuildMenuBar;
-import main.tomedb.java.mainframe.controller.mouseadapter.DragMove;
+import main.tomedb.java.controller.mouseadapter.DragMove;
 import javax.swing.JFrame;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;

@@ -9,7 +9,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import main.tomedb.java.mainframe.view.MainFrame;
-import main.tomedb.java.neworeditbookframe.controller.mouseadapter.DragMove;
+//import main.tomedb.java.neworeditbookframe.controller.mouseadapter.DragMove;
+import main.tomedb.java.controller.mouseadapter.DragMove;
 import main.tomedb.java.neworeditbookframe.controller.EditBookTextfieldContent;
 
 public class NewOrEditBookFrame extends JFrame {
