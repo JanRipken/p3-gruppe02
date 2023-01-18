@@ -38,7 +38,9 @@ public class MergeFilesAction implements ActionListener {
                 }
                 dao2.close();
                 Table.bookModelList = list;
-                MainPanel.table.addRowtoTable();
+              
+                
+                MainPanel.table.tableController.addRowtoTable();
             }
         }
     }

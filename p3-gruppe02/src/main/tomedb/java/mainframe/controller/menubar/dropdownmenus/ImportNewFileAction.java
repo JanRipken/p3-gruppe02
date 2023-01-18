@@ -8,6 +8,7 @@ import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.mainframe.controller.jtable.ChangeTableStateListener;
+import main.tomedb.java.mainframe.controller.jtable.TableController;
 import main.tomedb.java.mainframe.view.MainPanel;
 
 public class ImportNewFileAction extends Table implements ActionListener {
@@ -48,7 +49,8 @@ public class ImportNewFileAction extends Table implements ActionListener {
         dao2.close();
 
         Table.bookModelList = list;
-        MainPanel.table.addRowtoTable();
+        
+        MainPanel.table.tableController.addRowtoTable();
 
         MainPanel.table.defaultTableMode.addTableModelListener(TableListener);
 

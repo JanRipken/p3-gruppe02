@@ -34,6 +34,8 @@ public class MainPanel extends JPanel {
         northPanel.setLayout(new GridLayout());
         northPanel.setSize(WIDTH, 10);
 
+        
+        
         newBookButton = new JButton();
         newBookIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/new.gif", 25, 25);
         newBookButton.setIcon(newBookIcon);

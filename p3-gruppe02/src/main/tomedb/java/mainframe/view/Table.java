@@ -7,16 +7,17 @@ import javax.swing.JPopupMenu;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.mainframe.controller.jtable.EditBookAction;
-import main.tomedb.java.main.model.BookModel;
 import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.controller.jtable.DeleteBookAction;
+import main.tomedb.java.mainframe.controller.jtable.TableController;
 
 public class Table {
 
+    public  TableController tableController;
     public static BookModelList bookModelList;
     public JTable jTable;
     public DefaultTableModel defaultTableMode;
-    
+
     private Color selectedRowColor = Color.GRAY.darker();
 
     private static final String[] tableHeader = new String[]{
@@ -102,32 +103,7 @@ public class Table {
         tablePopupMenu.add(menuItemEdit);
 
         jTable.setComponentPopupMenu(tablePopupMenu);
-    }
 
-    // TODO: in den Controller packen
-    public void addToTable(BookModel book) {
-        bookModelList.addBook(book);
-        addRowtoTable();
-    }
-
-    public void editToTable() {
-        addRowtoTable();
-    }
-
-    public void addRowtoTable() {
-        defaultTableMode.setRowCount(0);
-
-        for (int i = 0; i < bookModelList.bookModelArrayList.size(); i++) {
-
-            Object[] data = {bookModelList.bookModelArrayList.get(i).getTitle(),
-                bookModelList.bookModelArrayList.get(i).getAuthorLastName(),
-                bookModelList.bookModelArrayList.get(i).getAuthorFirstName(),
-                bookModelList.bookModelArrayList.get(i).getYearOfRelease(),
-                bookModelList.bookModelArrayList.get(i).getPageCount(),
-                bookModelList.bookModelArrayList.get(i).getRating(),
-                bookModelList.bookModelArrayList.get(i).getReadStatus()};
-            defaultTableMode.addRow(data);
-
-        }
+         tableController = new TableController(jTable, defaultTableMode, bookModelList);
     }
 }

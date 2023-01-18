@@ -51,9 +51,13 @@ public class SaveAction implements ActionListener {
             } else {
                 setBookModel();
                 if (editState == true) {
-                    MainPanel.table.editToTable();
+                    
+                    
+                    MainPanel.table.tableController.editToTable();
                 } else {
-                    MainPanel.table.addToTable(bookModel);
+                    
+                    
+                    MainPanel.table.tableController.addToTable(bookModel);
                 }
                 view.dispose();
             }
