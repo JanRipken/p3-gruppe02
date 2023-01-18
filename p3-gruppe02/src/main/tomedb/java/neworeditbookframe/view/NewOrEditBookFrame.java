@@ -136,19 +136,19 @@ public class NewOrEditBookFrame extends JFrame {
 
     }
 
-    public String getTitel() {
+    public String getTitle() {
         return title.getText();
     }
 
-    public String getAutorName() {
+    public String getAuthorLastName() {
         return lastName.getText();
     }
 
-    public String getAutorVorname() {
+    public String getAuthorFirstName() {
         return firstName.getText();
     }
 
-    public int getErscheinungsjahr() {
+    public int getYearOfRelease() {
         if (yearOfRelease.getText().equals("")) {
             return 0;
 
@@ -158,7 +158,7 @@ public class NewOrEditBookFrame extends JFrame {
 
     }
 
-    public int getSeitenzahl() {
+    public int getPageCount() {
         if (pageCount.getText().equals("")) {
             return 0;
 
@@ -167,7 +167,7 @@ public class NewOrEditBookFrame extends JFrame {
         }
     }
 
-    public double getbewertung() {
+    public double getRating() {
         if (rating.getText().equals("")) {
             return 0;
         } else {
@@ -175,7 +175,7 @@ public class NewOrEditBookFrame extends JFrame {
         }
     }
 
-    public Boolean getNochmallesen() {
+    public Boolean getReadStatus() {
         return readStatus.isSelected();
     }
 

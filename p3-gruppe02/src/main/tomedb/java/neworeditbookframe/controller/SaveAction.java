@@ -25,26 +25,25 @@ public class SaveAction implements ActionListener {
 
     private void setBookModel() {
 
-
-        bookModel.setTitle(view.getTitel());
-        bookModel.setAuthorLastName(view.getAutorName());
-        bookModel.setAuthorFirstName(view.getAutorVorname());
-        bookModel.setYearOfRelease(view.getErscheinungsjahr());
-        bookModel.setPageCount(view.getSeitenzahl());
-        bookModel.setRating(view.getbewertung());
-        bookModel.setReadStatus(view.getNochmallesen());
-
+        bookModel.setTitle(view.getTitle());
+        bookModel.setAuthorLastName(view.getAuthorLastName());
+        bookModel.setAuthorFirstName(view.getAuthorFirstName());
+        bookModel.setYearOfRelease(view.getYearOfRelease());
+        bookModel.setPageCount(view.getPageCount());
+        bookModel.setRating(view.getRating());
+        bookModel.setReadStatus(view.getReadStatus());
+       
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
-            if (view.getTitel().equals("")) {
+            if (view.getTitle().equals("")) {
                 new InputTitelDialog();
             } else {
 
                 if (bookModel != null) {
-                    setBookModel();
+                    
                     MainPanel.table.tableController.editToTable();
                 } else {
                     bookModel = new BookModel();

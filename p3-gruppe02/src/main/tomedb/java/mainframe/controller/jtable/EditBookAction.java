@@ -3,7 +3,6 @@ package main.tomedb.java.mainframe.controller.jtable;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTable;
-import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.main.model.BookModel;
 import main.tomedb.java.main.model.BookModelList;
@@ -16,6 +15,7 @@ import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.firstN
 import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.yearOfRelease;
 import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.pageCount;
 import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.rating;
+import static main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame.readStatus;
 
 public class EditBookAction implements ActionListener {
 
@@ -46,10 +46,6 @@ public class EditBookAction implements ActionListener {
        
         showEdit();
         
-        // aktualisiere die Liste
-        //list.updateBook(book, modelIndex);
-        // benachrichtige das Modell
-        //model.fireTableRowsUpdated(modelIndex, modelIndex);
     }
 
     private void showEdit() {
@@ -61,6 +57,8 @@ public class EditBookAction implements ActionListener {
         yearOfRelease.setText(Integer.toString(book.getYearOfRelease()));
         pageCount.setText(Integer.toString(book.getPageCount()));
         rating.setText(Double.toString(book.getRating()));
+        readStatus.setSelected(book.getReadStatus());
+        
 
     }
 
