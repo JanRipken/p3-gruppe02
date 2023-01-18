@@ -18,9 +18,13 @@ public class BookModelList {
         for (int i = 0; i < bookModelArrayList.size(); i++) {
             if (bookModelArrayList.get(i).equals(book)) {
                 bookModelArrayList.remove(i);
-                return;
+
             }
         }
+    }
+
+     public void updateBook(BookModel book, int index) {
+        bookModelArrayList.set(index, book);
     }
 
     public BookModel getBook(int index) {

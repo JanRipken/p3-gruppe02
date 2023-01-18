@@ -3,35 +3,28 @@ package main.tomedb.java.neworeditbookframe.controller;
 import main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JTable;
 import main.tomedb.java.main.model.BookModel;
-import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
-import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.neworeditbookframe.view.InputTitelDialog;
-import static main.tomedb.java.neworeditbookframe.controller.NewOrEditBookState.editState;
 
 public class SaveAction implements ActionListener {
 
     private NewOrEditBookFrame view;
     private BookModel bookModel;
-    private BookModelList bookModelList;
-    private JTable jTable;
+
+
+    public SaveAction(NewOrEditBookFrame view, BookModel book) {
+        this.view = view;
+        this.bookModel = book;
+    }
 
     public SaveAction(NewOrEditBookFrame view) {
         this.view = view;
+
     }
 
-
     private void setBookModel() {
-        if (editState == true) {
-            this.bookModelList = Table.bookModelList;
-            this.jTable = MainPanel.table.jTable;
-            int[] bookIndex = jTable.getSelectedRows();
-            this.bookModel = bookModelList.getBook(bookIndex[0]);
-        } else {
-            this.bookModel = new BookModel();
-        }
+
 
         bookModel.setTitle(view.getTitel());
         bookModel.setAuthorLastName(view.getAutorName());
@@ -49,14 +42,13 @@ public class SaveAction implements ActionListener {
             if (view.getTitel().equals("")) {
                 new InputTitelDialog();
             } else {
-                setBookModel();
-                if (editState == true) {
-                    
-                    
+
+                if (bookModel != null) {
+                    setBookModel();
                     MainPanel.table.tableController.editToTable();
                 } else {
-                    
-                    
+                    bookModel = new BookModel();
+                    setBookModel();
                     MainPanel.table.tableController.addToTable(bookModel);
                 }
                 view.dispose();

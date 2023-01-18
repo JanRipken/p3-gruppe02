@@ -2,7 +2,7 @@ package main.tomedb.java.mainframe.controller.jtable;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JMenuItem;
+
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.main.model.BookModelList;
