@@ -5,6 +5,7 @@ import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ImportNewFile
 import javax.swing.ImageIcon;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
+import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.CreateFileAction;
 import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.MergeFilesAction;
 import main.tomedb.java.mainframe.view.MainFrame;
 
@@ -29,11 +30,13 @@ class BuildFileDropDownMenu{
         JMenuItem importFile = new JMenuItem("Importieren");
         JMenuItem exportFile = new JMenuItem("Exportieren");
         JMenuItem mergeFiles = new JMenuItem("Zusammenführen");
-
+        JMenuItem createFile = new JMenuItem("Erstellen");
+        
         fileDropDownMenu.add(importFile);
         fileDropDownMenu.add(exportFile);
         fileDropDownMenu.add(mergeFiles);
-
+        fileDropDownMenu.add(createFile);
+        
         importFile.setIcon(importIcon);
         exportFile.setIcon(exportIcon);
         mergeFiles.setIcon(mergeIcon);
@@ -46,6 +49,9 @@ class BuildFileDropDownMenu{
 
         MergeFilesAction mergeFilesAction = new MergeFilesAction();
         mergeFiles.addActionListener(mergeFilesAction);
+        
+        CreateFileAction createFileAction = new CreateFileAction();
+        createFile.addActionListener(createFileAction);      
 
     }
 
