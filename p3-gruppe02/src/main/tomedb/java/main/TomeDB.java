@@ -17,16 +17,16 @@ public class TomeDB {
         SwingUtilities.invokeLater(new Runnable() {
 
             /**
-             * Setzten des Look and Feels auf nimbus und abfragen ob bereits ein design gesetzt wurde
-             * Starten des Main Frames
+             * Setzten des Look and Feels auf nimbus und abfragen ob bereits ein
+             * design gesetzt wurde Starten des Main Frames
              */
             @Override
             public void run() {
                 try {
 
                     UIManager.setLookAndFeel(new NimbusLookAndFeel());
-                    new SetTheme();
                     showMainFrame();
+                    new SetTheme();
 
                 } catch (Exception e) {
                     e.printStackTrace();
@@ -34,7 +34,6 @@ public class TomeDB {
             }
         });
     }
-
 
     private static void showMainFrame() {
         mainFrame = new MainFrame();
