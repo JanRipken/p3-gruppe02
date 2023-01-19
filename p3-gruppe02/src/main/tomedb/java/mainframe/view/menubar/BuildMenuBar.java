@@ -43,7 +43,7 @@ public class BuildMenuBar extends JMenuBar {
         menuBar.add(fileDropDownMenu);
         menuBar.add(hideColumnsDropDownMenu);
 
-        // SRY :(
+        
         menuBar.add(Box.createHorizontalGlue());
         menuBar.add(Box.createHorizontalGlue());
 

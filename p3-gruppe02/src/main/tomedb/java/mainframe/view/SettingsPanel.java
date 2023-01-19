@@ -42,8 +42,8 @@ public class SettingsPanel extends JPanel {
         topPanel.add(themeSelectionLabel);
         topPanel.add(themeSelectionComboBox);
 
-        ThemeChangeAction themeChange = new ThemeChangeAction();
-        themeSelectionComboBox.addActionListener(themeChange);
+        ThemeChangeAction themeChangeAction = new ThemeChangeAction();
+        themeSelectionComboBox.addActionListener(themeChangeAction);
 
         this.add(topPanel, BorderLayout.NORTH);
     }
@@ -63,8 +63,8 @@ public class SettingsPanel extends JPanel {
         CancelAction cancel = new CancelAction();
         cancelSelectionButton.addActionListener(cancel);
 
-        SaveThemeAction save = new SaveThemeAction(themeSelectionComboBox);
-        confirmSelectionButton.addActionListener(save);
+        SaveThemeAction saveThemeAction = new SaveThemeAction(themeSelectionComboBox);
+        confirmSelectionButton.addActionListener(saveThemeAction);
 
         this.add(bottomPanel, BorderLayout.SOUTH);
     }

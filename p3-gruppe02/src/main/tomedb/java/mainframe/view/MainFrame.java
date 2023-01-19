@@ -30,9 +30,9 @@ public class MainFrame extends JFrame {
 
 
         modIcons = new ModifyIcons();
-        BuildMenuBar menuBar = new BuildMenuBar();
+        BuildMenuBar buildMenuBar = new BuildMenuBar();
 
-        this.setJMenuBar(menuBar.returnMenuBar());
+        this.setJMenuBar(buildMenuBar.returnMenuBar());
 
         mainPanel = new MainPanel();
 
@@ -40,8 +40,8 @@ public class MainFrame extends JFrame {
         this.setSize(windowWidth, windowHeight);
         this.setVisible(true);
 
-        ImageIcon icon = modIcons.scaling("/main/tomedb/ressources/icons/bucher.png", 30, 30);
-        this.setIconImage(icon.getImage());
+        ImageIcon imageIcon = modIcons.scaling("/main/tomedb/ressources/icons/bucher.png", 30, 30);
+        this.setIconImage(imageIcon.getImage());
 
         this.setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 15, 15));
 

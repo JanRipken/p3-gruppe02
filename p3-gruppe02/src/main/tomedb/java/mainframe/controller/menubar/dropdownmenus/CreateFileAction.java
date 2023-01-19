@@ -8,6 +8,7 @@ import javax.swing.JFileChooser;
 import static main.tomedb.java.mainframe.controller.menubar.CloseMainFrameAction.changedTableState;
 import main.tomedb.java.mainframe.controller.menubar.SaveIfModified;
 
+
 public class CreateFileAction implements ActionListener {
 
     @Override
@@ -16,22 +17,28 @@ public class CreateFileAction implements ActionListener {
         if (changedTableState == true) {
             new SaveIfModified();
         }
-        JFileChooser fileCreator = new JFileChooser("./data");
-        fileCreator.setDialogTitle("Neue Datei erstellen");
+        createFile();
 
-        int userSelection = fileCreator.showSaveDialog(null);
+    }
+
+    private void createFile() {
+        JFileChooser fileChooser = new JFileChooser("./data");
+        fileChooser.setDialogTitle("Neue Datei erstellen");
+
+        int userSelection = fileChooser.showSaveDialog(null);
 
         if (userSelection == JFileChooser.APPROVE_OPTION) {
-            File newFile = fileCreator.getSelectedFile();
+            File file = fileChooser.getSelectedFile();
             try {
-                newFile.createNewFile();
-                ImportNewFileAction.updatedPath = newFile.getAbsolutePath();
-                ImportNewFileAction importNewFileAction = new ImportNewFileAction();
-                importNewFileAction.importFile(ImportNewFileAction.updatedPath);
+                file.createNewFile();
+                ImportFileAction.updatedPath = file.getAbsolutePath();
+                ImportFileAction importNewFileAction = new ImportFileAction();
+                importNewFileAction.importFile(ImportFileAction.updatedPath);
             } catch (IOException ex) {
                 System.err.println(ex.getMessage());
             }
         }
+
     }
 
 }

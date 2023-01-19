@@ -18,42 +18,42 @@ import javax.swing.border.EmptyBorder;
 public class FileChooserExtension extends JComponent implements PropertyChangeListener {
 
     private File file = null;
-    private final DefaultListModel model;
-    private final JList list;
-    private final JButton removeItem;
+    private final DefaultListModel defaultListModel;
+    private final JList jList;
+    private final JButton jButton;
 
     @SuppressWarnings("unchecked")
-    public FileChooserExtension(JFileChooser chooser) {
-        chooser.addPropertyChangeListener(this);
+    public FileChooserExtension(JFileChooser fileChooser) {
+        fileChooser.addPropertyChangeListener(this);
 
-        model = new DefaultListModel();
+        defaultListModel = new DefaultListModel();
 
-        list = new JList(model);
+        jList = new JList(defaultListModel);
 
-        JScrollPane pane = new JScrollPane(list);
-        pane.setPreferredSize(new Dimension(250, 250));
+        JScrollPane jScrollPane = new JScrollPane(jList);
+        jScrollPane.setPreferredSize(new Dimension(250, 250));
 
-        removeItem = createRemoveItemButton();
+        jButton = createRemoveItemButton();
 
         setBorder(new EmptyBorder(10, 10, 10, 10));
         setLayout(new BorderLayout());
-        add(pane);
-        add(removeItem, BorderLayout.SOUTH);
+        add(jScrollPane);
+        add(jButton, BorderLayout.SOUTH);
 
     }
 
     public DefaultListModel getModel() {
-        return model;
+        return defaultListModel;
     }
 
     @SuppressWarnings("unchecked")
     private void addFileToList() {
-        model.addElement(file);
+        defaultListModel.addElement(file);
     }
 
     private void removeFileFromList() {
-        if (list.getSelectedIndex() != -1) {
-            model.remove(list.getSelectedIndex());
+        if (jList.getSelectedIndex() != -1) {
+            defaultListModel.remove(jList.getSelectedIndex());
         }
     }
 

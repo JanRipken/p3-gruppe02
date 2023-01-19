@@ -104,6 +104,6 @@ public class Table {
 
         jTable.setComponentPopupMenu(tablePopupMenu);
 
-         tableAdditor = new TableAdditor(jTable, defaultTableMode, bookModelList);
+        tableAdditor = new TableAdditor(jTable, defaultTableMode, bookModelList);
     }
 }

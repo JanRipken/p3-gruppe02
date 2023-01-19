@@ -4,7 +4,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import javax.swing.plaf.nimbus.NimbusLookAndFeel;
 import main.tomedb.java.designtemplate.themes.SetTheme;
-import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ImportNewFileAction;
+import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ImportFileAction;
 import main.tomedb.java.mainframe.view.MainFrame;
 
 public class TomeDB {
@@ -42,7 +42,7 @@ public class TomeDB {
     }
 
     private static void importOnStart() {
-        ImportNewFileAction newImp = new ImportNewFileAction();
+        ImportFileAction newImp = new ImportFileAction();
         newImp.importFile(filePath);
     }
 }
