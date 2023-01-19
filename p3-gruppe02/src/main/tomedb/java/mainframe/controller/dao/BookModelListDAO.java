@@ -1,6 +1,5 @@
 package main.tomedb.java.mainframe.controller.dao;
 
-import main.tomedb.java.mainframe.controller.dao.BookModelDAO;
 import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.main.model.BookModel;
 import java.io.IOException;
@@ -18,30 +17,32 @@ public class BookModelListDAO extends DAO {
         super(fileName, openForWrite);
     }
 
+    
     public void write(Object obj) throws IOException {
         if (out != null) {
-            BookModelList bookList = (BookModelList) obj;
-            out.writeInt(bookList.bookModelArrayList.size());
+            BookModelList bookModelList = (BookModelList) obj;
+            out.writeInt(bookModelList.bookModelArrayList.size());
 
             BookModelDAO bookModelDAO = new BookModelDAO(null, out);
 
-            for (BookModel b : bookList.bookModelArrayList) {
-                bookModelDAO.write(b);
+            for (BookModel bookModel : bookModelList.bookModelArrayList) {
+                bookModelDAO.write(bookModel);
             }
         }
     }
 
+    
     public void read(Object obj) throws IOException {
         if (in != null) {
-            BookModelList bookList = (BookModelList) obj;
+            BookModelList bookModelList = (BookModelList) obj;
 
             int nBookModel = in.readInt();
 
             BookModelDAO bookModelDAO = new BookModelDAO(in, null);
             for (int i = 0; i < nBookModel; ++i) {
-                BookModel b = new BookModel();
-                bookModelDAO.read(b);
-                bookList.addBook(b);
+                BookModel bookModel = new BookModel();
+                bookModelDAO.read(bookModel);
+                bookModelList.addBook(bookModel);
             }
         }
     }

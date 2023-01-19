@@ -24,7 +24,7 @@ public class MainFrame extends JFrame {
 
         this.setUndecorated(true);
 
-        DragMove mouseDragMove = new DragMove(this);
+        DragMove mouseDragMove = new DragMove(this,null);
         this.addMouseListener(mouseDragMove);
         this.addMouseMotionListener(mouseDragMove);
 

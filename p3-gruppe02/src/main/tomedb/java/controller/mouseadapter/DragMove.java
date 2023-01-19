@@ -8,17 +8,14 @@ import main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame;
 
 public class DragMove extends MouseAdapter {
 
-    private MainFrame view;
-    private NewOrEditBookFrame view2;
+    private MainFrame mainFrame;
+    private NewOrEditBookFrame newOrEditBookFrame;
 
     private Point mouseDownCompCoords = null;
-
-    public DragMove(MainFrame view) {
-        this.view = view;
-    }
-
-    public DragMove(NewOrEditBookFrame view) {
-        this.view2 = view;
+    
+    public DragMove(MainFrame mainFrame, NewOrEditBookFrame newOrEditBookFrame) {
+        this.mainFrame = mainFrame;
+        this.newOrEditBookFrame = newOrEditBookFrame;
     }
 
     @Override
@@ -34,11 +31,11 @@ public class DragMove extends MouseAdapter {
     @Override
     public void mouseDragged(MouseEvent e) {
         Point currCoords = e.getLocationOnScreen();
-        if (view != null) {
-            view.setLocation(currCoords.x - mouseDownCompCoords.x, currCoords.y - mouseDownCompCoords.y);
+        if (mainFrame != null) {
+            mainFrame.setLocation(currCoords.x - mouseDownCompCoords.x, currCoords.y - mouseDownCompCoords.y);
         }
-        if (view2 != null) {
-            view2.setLocation(currCoords.x - mouseDownCompCoords.x, currCoords.y - mouseDownCompCoords.y);
+        if (newOrEditBookFrame != null) {
+            newOrEditBookFrame.setLocation(currCoords.x - mouseDownCompCoords.x, currCoords.y - mouseDownCompCoords.y);
         }
 
     }

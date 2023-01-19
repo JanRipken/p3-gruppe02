@@ -36,7 +36,7 @@ public class LightTheme {
             UIManager.put("nimbusSelectedText", new Color(255, 255, 255));
             UIManager.put("nimbusSelectionBackground", new Color(57, 105, 138));
             UIManager.put("text", new Color(0, 0, 0));
-            UIManager.put("Menu[MouseOver].backgroundPainter", new FillPainter(Color.LIGHT_GRAY));
+            
 
         } catch (Exception e) {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

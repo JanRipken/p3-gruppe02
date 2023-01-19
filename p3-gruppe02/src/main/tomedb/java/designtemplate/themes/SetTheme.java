@@ -14,9 +14,9 @@ public class SetTheme {
          * @throws UnsupportedLookAndFeelException 
          */
         public SetTheme() throws IllegalAccessException, ClassNotFoundException, InstantiationException, UnsupportedLookAndFeelException {
-        ReadWriteAction set = new ReadWriteAction();
+        ReadWriteAction readWriteAction = new ReadWriteAction();
 
-        String mode = set.read();
+        String mode = readWriteAction.read();
             switch (mode) {
                 case "Hell":
                     new LightTheme();

@@ -5,13 +5,13 @@ import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.main.model.BookModel;
 import main.tomedb.java.main.model.BookModelList;
 
-public class TableController {
+public class TableAdditor {
 
     public static BookModelList bookModelList;
     public JTable jTable;
     public DefaultTableModel defaultTableMode;
 
-    public TableController(JTable jTable, DefaultTableModel defaultTableModel, BookModelList bookModelList) {
+    public TableAdditor(JTable jTable, DefaultTableModel defaultTableModel, BookModelList bookModelList) {
         this.jTable = jTable;
         this.defaultTableMode = defaultTableModel;
         this.bookModelList = bookModelList;
@@ -19,14 +19,14 @@ public class TableController {
 
     public void addToTable(BookModel book) {
         bookModelList.addBook(book);
-        addRowtoTable();
+        rebuildTableRows();
     }
 
     public void editToTable() {
-        addRowtoTable();
+        rebuildTableRows();
     }
 
-    public void addRowtoTable() {
+    public void rebuildTableRows() {
         defaultTableMode.setRowCount(0);
 
         for (int i = 0; i < bookModelList.bookModelArrayList.size(); i++) {

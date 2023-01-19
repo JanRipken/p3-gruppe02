@@ -9,11 +9,11 @@ import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.mainframe.controller.jtable.EditBookAction;
 import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.controller.jtable.DeleteBookAction;
-import main.tomedb.java.mainframe.controller.jtable.TableController;
+import main.tomedb.java.mainframe.controller.jtable.TableAdditor;
 
 public class Table {
 
-    public TableController tableController;
+    public TableAdditor tableController;
     public BookModelList bookModelList;
     public JTable jTable;
     public DefaultTableModel defaultTableMode;
@@ -104,6 +104,6 @@ public class Table {
 
         jTable.setComponentPopupMenu(tablePopupMenu);
 
-         tableController = new TableController(jTable, defaultTableMode, bookModelList);
+         tableController = new TableAdditor(jTable, defaultTableMode, bookModelList);
     }
 }

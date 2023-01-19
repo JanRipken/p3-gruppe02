@@ -9,9 +9,9 @@ public class OpenSettingsPanelAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        SettingsPanel panel = new SettingsPanel();
+        SettingsPanel settingsPanel = new SettingsPanel();
 
-        TomeDB.mainFrame.add(panel);
-        TomeDB.mainFrame.setContentPane(panel);
+        TomeDB.mainFrame.add(settingsPanel);
+        TomeDB.mainFrame.setContentPane(settingsPanel);
     }
 }
