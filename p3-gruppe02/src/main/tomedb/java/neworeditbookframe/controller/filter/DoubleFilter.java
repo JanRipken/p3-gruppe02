@@ -7,7 +7,6 @@ import javax.swing.text.DocumentFilter;
 
 public class DoubleFilter extends DocumentFilter {
 
-    // TODO: Warum Override?
     @Override
     public void insertString(FilterBypass filterBypass, int offset, String string,
             AttributeSet attr) throws BadLocationException {
