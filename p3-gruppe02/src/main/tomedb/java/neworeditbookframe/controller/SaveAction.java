@@ -39,11 +39,11 @@ public class SaveAction implements ActionListener {
 
                 if (bookModel.getTitle() == null) {
                     setBookModel();
-                    MainPanel.table.tableController.addToTable(bookModel);
+                    MainPanel.table.tableAdditor.addToTable(bookModel);
 
                 } else {
                     setBookModel();
-                    MainPanel.table.tableController.editToTable();
+                    MainPanel.table.tableAdditor.editToTable();
 
                 }
                 view.dispose();

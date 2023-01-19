@@ -13,7 +13,7 @@ import main.tomedb.java.mainframe.controller.jtable.TableAdditor;
 
 public class Table {
 
-    public TableAdditor tableController;
+    public TableAdditor tableAdditor;
     public BookModelList bookModelList;
     public JTable jTable;
     public DefaultTableModel defaultTableMode;
@@ -104,6 +104,6 @@ public class Table {
 
         jTable.setComponentPopupMenu(tablePopupMenu);
 
-         tableController = new TableAdditor(jTable, defaultTableMode, bookModelList);
+         tableAdditor = new TableAdditor(jTable, defaultTableMode, bookModelList);
     }
 }

@@ -9,7 +9,7 @@ import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ImportNewFile
 import main.tomedb.java.mainframe.view.MainPanel;
 
 
-class SaveIfModified {
+public class SaveIfModified {
 
     private BookModelList bookModelList = MainPanel.table.bookModelList;
     
@@ -19,7 +19,7 @@ class SaveIfModified {
      * Initalisiert speichern dialog.
      * Speicherort abhängig vom zuletzt verwendeten pfad
      */
-    SaveIfModified() {
+    public SaveIfModified() {
 
         int selected = JOptionPane.showConfirmDialog(null,
                 "Möchten sie ihr Liste Speichern ?",

@@ -7,6 +7,8 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
 import main.tomedb.java.main.model.BookModelList;
+import static main.tomedb.java.mainframe.controller.menubar.CloseMainFrameAction.changedTableState;
+import main.tomedb.java.mainframe.controller.menubar.SaveIfModified;
 import main.tomedb.java.mainframe.view.MainPanel;
 import main.tomedb.java.mainframe.view.Table;
 
@@ -16,7 +18,9 @@ public class MergeFilesAction implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        if (changedTableState == true) {
+            new SaveIfModified();
+        }
         list = new BookModelList();
 
         JFileChooser fileChooser = new JFileChooser("./data");
@@ -37,11 +41,10 @@ public class MergeFilesAction implements ActionListener {
                     System.err.println(v.getMessage());
                 }
                 dao2.close();
-                
+
                 MainPanel.table.bookModelList = list;
-              
-                
-                MainPanel.table.tableController.rebuildTableRows();
+
+                MainPanel.table.tableAdditor.rebuildTableRows();
             }
         }
     }

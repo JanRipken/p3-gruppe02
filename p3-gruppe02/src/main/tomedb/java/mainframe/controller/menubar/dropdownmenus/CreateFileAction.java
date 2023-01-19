@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package main.tomedb.java.mainframe.controller.menubar.dropdownmenus;
 
 import java.awt.event.ActionEvent;
@@ -9,19 +5,17 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import javax.swing.JFileChooser;
-import main.tomedb.java.main.model.BookModelList;
-import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
-import main.tomedb.java.mainframe.controller.jtable.ChangeTableStateListener;
-import main.tomedb.java.mainframe.view.MainPanel;
+import static main.tomedb.java.mainframe.controller.menubar.CloseMainFrameAction.changedTableState;
+import main.tomedb.java.mainframe.controller.menubar.SaveIfModified;
 
-/**
- *
- * @author alex-
- */
+public class CreateFileAction implements ActionListener {
 
-public class CreateFileAction implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent e) {
+
+        if (changedTableState == true) {
+            new SaveIfModified();
+        }
         JFileChooser fileCreator = new JFileChooser("./data");
         fileCreator.setDialogTitle("Neue Datei erstellen");
 
@@ -32,31 +26,12 @@ public class CreateFileAction implements ActionListener{
             try {
                 newFile.createNewFile();
                 ImportNewFileAction.updatedPath = newFile.getAbsolutePath();
-                importFile(ImportNewFileAction.updatedPath);
+                ImportNewFileAction importNewFileAction = new ImportNewFileAction();
+                importNewFileAction.importFile(ImportNewFileAction.updatedPath);
             } catch (IOException ex) {
                 System.err.println(ex.getMessage());
             }
         }
     }
-    public void importFile(String path) {
-        ChangeTableStateListener TableListener = MainPanel.tableListener;
 
-        MainPanel.table.defaultTableMode.removeTableModelListener(TableListener);
-
-        BookModelList list = new BookModelList();
-        BookModelListDAO dao2 = new BookModelListDAO(path, false);
-        try {
-            dao2.read(list);
-        } catch (IOException v) {
-            System.err.println(v.getMessage());
-        }
-        dao2.close();
-
-        MainPanel.table.bookModelList = list;
-
-        MainPanel.table.tableController.addRowtoTable();
-
-        MainPanel.table.defaultTableMode.addTableModelListener(TableListener);
-
-    }
 }
