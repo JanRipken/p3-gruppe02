@@ -9,8 +9,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JFrame;
 import javax.swing.JTextField;
 import main.tomedb.java.mainframe.view.MainFrame;
-import main.tomedb.java.neworeditbookframe.controller.mouseadapter.DragMove;
-import main.tomedb.java.neworeditbookframe.controller.EditBookTextfieldContent;
+import main.tomedb.java.controller.mouseadapter.DragMove;
+import main.tomedb.java.main.model.BookModel;
 
 public class NewOrEditBookFrame extends JFrame {
 
@@ -38,9 +38,10 @@ public class NewOrEditBookFrame extends JFrame {
     private final int height = 600;
 
     /**
-     * Erstellen und Designen eines Frames zum hinzufügen oder Editieren eines neuen Objektes
+     * Erstellen und Designen eines Frames zum hinzufügen oder Editieren eines
+     * neuen Objektes
      */
-    public NewOrEditBookFrame() {
+    public NewOrEditBookFrame(BookModel book) {
 
         this.setUndecorated(true);
 
@@ -49,7 +50,7 @@ public class NewOrEditBookFrame extends JFrame {
 
         BuildMainPanel buildMainPanel = new BuildMainPanel();
 
-        DragMove dragMove = new DragMove(this);
+        DragMove dragMove = new DragMove(null,this);
         this.addMouseListener(dragMove);
         this.addMouseMotionListener(dragMove);
 
@@ -67,13 +68,11 @@ public class NewOrEditBookFrame extends JFrame {
 
         buildMainPanel.buildButtons();
 
-        SaveAction saveAction = new SaveAction(this);
+        SaveAction saveAction = new SaveAction(this, book);
         buildMainPanel.buttonConfirmation.addActionListener(saveAction);
 
         CancelAction cancelAction = new CancelAction(this);
         buildMainPanel.buttonCancel.addActionListener(cancelAction);
-
-        new EditBookTextfieldContent();
 
         this.setContentPane(buildMainPanel);
 
@@ -88,19 +87,19 @@ public class NewOrEditBookFrame extends JFrame {
 
     }
 
-    public String getTitel() {
+    public String getTitle() {
         return title.getText();
     }
 
-    public String getAutorName() {
+    public String getAuthorLastName() {
         return lastName.getText();
     }
 
-    public String getAutorVorname() {
+    public String getAuthorFirstName() {
         return firstName.getText();
     }
 
-    public int getErscheinungsjahr() {
+    public int getYearOfRelease() {
         if (yearOfRelease.getText().equals("")) {
             return 0;
 
@@ -110,7 +109,7 @@ public class NewOrEditBookFrame extends JFrame {
 
     }
 
-    public int getSeitenzahl() {
+    public int getPageCount() {
         if (pageCount.getText().equals("")) {
             return 0;
 
@@ -119,7 +118,7 @@ public class NewOrEditBookFrame extends JFrame {
         }
     }
 
-    public double getbewertung() {
+    public double getRating() {
         if (rating.getText().equals("")) {
             return 0;
         } else {
@@ -127,7 +126,7 @@ public class NewOrEditBookFrame extends JFrame {
         }
     }
 
-    public Boolean getNochmallesen() {
+    public Boolean getReadStatus() {
         return readStatus.isSelected();
     }
 

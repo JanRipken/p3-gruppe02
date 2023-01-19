@@ -1,9 +1,7 @@
 package main.tomedb.java.mainframe.view.menubar;
 
-
 import javax.swing.JCheckBox;
 import javax.swing.JMenu;
-import javax.swing.JTable;
 import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ColumnShowHideAction;
 
 public class BuildHideColumnsDropDownMenu {
@@ -16,7 +14,6 @@ public class BuildHideColumnsDropDownMenu {
     public static JCheckBox ratingCheckBox;
     public static JCheckBox readStatusCheckBox;
     public static JCheckBox pageCountCheckBox;
-    private JTable table;
 
     public BuildHideColumnsDropDownMenu() throws ClassNotFoundException {
 

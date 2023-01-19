@@ -21,9 +21,9 @@ public class SaveThemeAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         String theme = saveThemeComboBox.getSelectedItem().toString();
-        ReadWriteAction readWrite = new ReadWriteAction();
+        ReadWriteAction readWriteAction = new ReadWriteAction();
         try {
-            readWrite.write(theme);
+            readWriteAction.write(theme);
         } catch (IOException ex) {
             Logger.getLogger(SaveThemeAction.class.getName()).log(Level.SEVERE, null, ex);
         }

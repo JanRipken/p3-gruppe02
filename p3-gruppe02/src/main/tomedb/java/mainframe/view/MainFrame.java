@@ -1,7 +1,7 @@
 package main.tomedb.java.mainframe.view;
 
 import main.tomedb.java.mainframe.view.menubar.BuildMenuBar;
-import main.tomedb.java.mainframe.controller.mouseadapter.DragMove;
+import main.tomedb.java.controller.mouseadapter.DragMove;
 import javax.swing.JFrame;
 import java.awt.geom.RoundRectangle2D;
 import javax.swing.ImageIcon;
@@ -24,15 +24,15 @@ public class MainFrame extends JFrame {
 
         this.setUndecorated(true);
 
-        DragMove mouseDragMove = new DragMove(this);
+        DragMove mouseDragMove = new DragMove(this,null);
         this.addMouseListener(mouseDragMove);
         this.addMouseMotionListener(mouseDragMove);
 
 
         modIcons = new ModifyIcons();
-        BuildMenuBar menuBar = new BuildMenuBar();
+        BuildMenuBar buildMenuBar = new BuildMenuBar();
 
-        this.setJMenuBar(menuBar.returnMenuBar());
+        this.setJMenuBar(buildMenuBar.returnMenuBar());
 
         mainPanel = new MainPanel();
 
@@ -40,8 +40,8 @@ public class MainFrame extends JFrame {
         this.setSize(windowWidth, windowHeight);
         this.setVisible(true);
 
-        ImageIcon icon = modIcons.scaling("/main/tomedb/ressources/icons/bucher.png", 30, 30);
-        this.setIconImage(icon.getImage());
+        ImageIcon imageIcon = modIcons.scaling("/main/tomedb/ressources/icons/bucher.png", 30, 30);
+        this.setIconImage(imageIcon.getImage());
 
         this.setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 15, 15));
 

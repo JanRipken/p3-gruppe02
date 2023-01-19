@@ -10,7 +10,7 @@ public class CloseMainFrameAction implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (changedTableState == true) {
-            new SaveOnCloseAction();
+            new SaveIfModified();
         }
         System.exit(0);
     }

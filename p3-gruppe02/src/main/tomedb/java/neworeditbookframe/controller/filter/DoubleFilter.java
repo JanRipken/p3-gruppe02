@@ -7,24 +7,23 @@ import javax.swing.text.DocumentFilter;
 
 public class DoubleFilter extends DocumentFilter {
 
-    // TODO: Warum Override?
     @Override
     public void insertString(FilterBypass filterBypass, int offset, String string,
             AttributeSet attr) throws BadLocationException {
 
-        Document doc = filterBypass.getDocument();
+        Document document = filterBypass.getDocument();
         StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append(doc.getText(0, doc.getLength()));
+        stringBuilder.append(document.getText(0, document.getLength()));
         stringBuilder.insert(offset, string);
 
-        if (inputTextTesting(stringBuilder.toString())) {
+        if (TestInputText(stringBuilder.toString())) {
             super.insertString(filterBypass, offset, string, attr);
         } else {
             
         }
     }
 
-    private boolean inputTextTesting(String text) {
+    private boolean TestInputText(String text) {
         try {
             Double.parseDouble(text);
 
@@ -35,16 +34,16 @@ public class DoubleFilter extends DocumentFilter {
     }
 
     @Override
-    public void replace(FilterBypass fb, int offset, int length, String text,
+    public void replace(FilterBypass filterBypass, int offset, int length, String text,
             AttributeSet attrs) throws BadLocationException {
 
-        Document doc = fb.getDocument();
-        StringBuilder sb = new StringBuilder();
-        sb.append(doc.getText(0, doc.getLength()));
-        sb.replace(offset, offset + length, text);
+        Document document = filterBypass.getDocument();
+        StringBuilder stringBuild = new StringBuilder();
+        stringBuild.append(document.getText(0, document.getLength()));
+        stringBuild.replace(offset, offset + length, text);
 
-        if (inputTextTesting(sb.toString())) {
-            super.replace(fb, offset, length, text, attrs);
+        if (TestInputText(stringBuild.toString())) {
+            super.replace(filterBypass, offset, length, text, attrs);
         } else {
 
             
@@ -53,17 +52,17 @@ public class DoubleFilter extends DocumentFilter {
     }
 
     @Override
-    public void remove(FilterBypass fb, int offset, int length)
+    public void remove(FilterBypass filterBypass, int offset, int length)
             throws BadLocationException {
-        Document doc = fb.getDocument();
-        StringBuilder sb = new StringBuilder();
-        sb.append(doc.getText(0, doc.getLength()));
-        sb.delete(offset, offset + length);
-        if (sb.toString().length() == 0) {
-            super.replace(fb, offset, length, "", null);
+        Document document = filterBypass.getDocument();
+        StringBuilder stringBuild = new StringBuilder();
+        stringBuild.append(document.getText(0, document.getLength()));
+        stringBuild.delete(offset, offset + length);
+        if (stringBuild.toString().length() == 0) {
+            super.replace(filterBypass, offset, length, "", null);
         } else {
-            if (inputTextTesting(sb.toString())) {
-                super.remove(fb, offset, length);
+            if (TestInputText(stringBuild.toString())) {
+                super.remove(filterBypass, offset, length);
             } else {
                
             }

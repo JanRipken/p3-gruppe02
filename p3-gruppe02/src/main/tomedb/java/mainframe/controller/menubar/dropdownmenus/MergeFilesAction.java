@@ -7,17 +7,21 @@ import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
 import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
 import main.tomedb.java.main.model.BookModelList;
+import static main.tomedb.java.mainframe.controller.menubar.CloseMainFrameAction.changedTableState;
+import main.tomedb.java.mainframe.controller.menubar.SaveIfModified;
 import main.tomedb.java.mainframe.view.MainPanel;
-import main.tomedb.java.mainframe.view.Table;
 
 public class MergeFilesAction implements ActionListener {
 
-    private static BookModelList list;
+    private BookModelList bookModelList;
+    private DefaultListModel defaultListModel;
 
     @Override
     public void actionPerformed(ActionEvent e) {
-
-        list = new BookModelList();
+        if (changedTableState == true) {
+            new SaveIfModified();
+        }
+        bookModelList = new BookModelList();
 
         JFileChooser fileChooser = new JFileChooser("./data");
         fileChooser.setDialogTitle("Wählen sie die zu Mergenden Datein");
@@ -26,20 +30,26 @@ public class MergeFilesAction implements ActionListener {
         int open = fileChooser.showOpenDialog(fileChooser);
 
         if (open == JFileChooser.APPROVE_OPTION) {
-            DefaultListModel model = selectedListsExtension.getModel();
-            for (int i = 0; i < model.getSize(); i++) {
-                String path = model.getElementAt(i).toString();
+            defaultListModel = selectedListsExtension.getModel();
+            merge();
+        }
+    }
 
-                BookModelListDAO dao2 = new BookModelListDAO(path, false);
-                try {
-                    dao2.read(list);
-                } catch (IOException v) {
-                    System.err.println(v.getMessage());
-                }
-                dao2.close();
-                Table.bookModelList = list;
-                MainPanel.table.addRowtoTable();
+    private void merge() {
+        for (int i = 0; i < defaultListModel.getSize(); i++) {
+            String path = defaultListModel.getElementAt(i).toString();
+
+            BookModelListDAO bookModelListDAO = new BookModelListDAO(path, false);
+            try {
+                bookModelListDAO.read(bookModelList);
+            } catch (IOException v) {
+                System.err.println(v.getMessage());
             }
+            bookModelListDAO.close();
+
+            MainPanel.table.bookModelList = bookModelList;
+
+            MainPanel.table.tableAdditor.rebuildTableRows();
         }
     }
 }

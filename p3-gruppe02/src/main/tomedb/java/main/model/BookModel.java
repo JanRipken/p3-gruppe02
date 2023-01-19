@@ -65,4 +65,5 @@ public class BookModel {
     public void setYearOfRelease(int yearOfRelease) {
         this.yearOfRelease = yearOfRelease;
     }
+    
 }

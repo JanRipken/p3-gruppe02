@@ -35,7 +35,7 @@ public class DarkTheme {
             UIManager.put("nimbusSelectedText", new Color(255, 255, 255));
             UIManager.put("nimbusSelectionBackground", new Color(104, 93, 156));
             UIManager.put("text", Color.BLACK);
-            UIManager.put("MenuItem[MouseOver].backgroundPainter", new FillPainter(Color.GRAY.darker()));
+            
 
         } catch (Exception e) {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

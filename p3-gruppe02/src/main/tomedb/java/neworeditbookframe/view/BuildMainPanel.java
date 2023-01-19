@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import javax.swing.border.TitledBorder;
 import javax.swing.text.PlainDocument;
 import main.tomedb.java.neworeditbookframe.controller.filter.DoubleFilter;
 import main.tomedb.java.neworeditbookframe.controller.filter.IntFilter;
@@ -14,7 +15,7 @@ import main.tomedb.java.neworeditbookframe.controller.filter.IntFilter;
 class BuildMainPanel extends JPanel {
 
     JButton buttonConfirmation = new JButton("Bestätigen");
-    JButton buttonCancel = new JButton("Abrechen");
+    JButton buttonCancel = new JButton("Abbrechen");
 
     BuildMainPanel() {
 
@@ -35,7 +36,7 @@ class BuildMainPanel extends JPanel {
         jPanel.setLayout(new BoxLayout(jPanel, BoxLayout.Y_AXIS));
         JPanel borderPanel = new JPanel(new BorderLayout());
         borderPanel.add(textField);
-        borderPanel.setBorder(new javax.swing.border.TitledBorder(textfieldTitle));
+        borderPanel.setBorder(new TitledBorder(textfieldTitle));
 
         this.add(borderPanel);
         return textField;

@@ -3,57 +3,48 @@ package main.tomedb.java.neworeditbookframe.controller;
 import main.tomedb.java.neworeditbookframe.view.NewOrEditBookFrame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import javax.swing.JTable;
 import main.tomedb.java.main.model.BookModel;
-import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
-import main.tomedb.java.mainframe.view.Table;
 import main.tomedb.java.neworeditbookframe.view.InputTitelDialog;
-import static main.tomedb.java.neworeditbookframe.controller.NewOrEditBookState.editState;
 
 public class SaveAction implements ActionListener {
 
     private NewOrEditBookFrame view;
     private BookModel bookModel;
-    private BookModelList bookModelList;
-    private JTable jTable;
 
-    public SaveAction(NewOrEditBookFrame view) {
+    public SaveAction(NewOrEditBookFrame view, BookModel book) {
         this.view = view;
+        this.bookModel = book;
     }
 
-
     private void setBookModel() {
-        if (editState == true) {
-            this.bookModelList = Table.bookModelList;
-            this.jTable = MainPanel.table.jTable;
-            int[] bookIndex = jTable.getSelectedRows();
-            this.bookModel = bookModelList.getBook(bookIndex[0]);
-        } else {
-            this.bookModel = new BookModel();
-        }
 
-        bookModel.setTitle(view.getTitel());
-        bookModel.setAuthorLastName(view.getAutorName());
-        bookModel.setAuthorFirstName(view.getAutorVorname());
-        bookModel.setYearOfRelease(view.getErscheinungsjahr());
-        bookModel.setPageCount(view.getSeitenzahl());
-        bookModel.setRating(view.getbewertung());
-        bookModel.setReadStatus(view.getNochmallesen());
+        bookModel.setTitle(view.getTitle());
+        bookModel.setAuthorLastName(view.getAuthorLastName());
+        bookModel.setAuthorFirstName(view.getAuthorFirstName());
+        bookModel.setYearOfRelease(view.getYearOfRelease());
+        bookModel.setPageCount(view.getPageCount());
+        bookModel.setRating(view.getRating());
+        bookModel.setReadStatus(view.getReadStatus());
 
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
-            if (view.getTitel().equals("")) {
+
+            if (view.getTitle().equals("")) {
                 new InputTitelDialog();
             } else {
-                setBookModel();
-                if (editState == true) {
-                    MainPanel.table.editToTable();
+
+                if (bookModel.getTitle() == null) {
+                    setBookModel();
+                    MainPanel.table.tableAdditor.addToTable(bookModel);
+
                 } else {
-                    MainPanel.table.addToTable(bookModel);
+                    setBookModel();
+                    MainPanel.table.tableAdditor.editToTable();
+
                 }
                 view.dispose();
             }

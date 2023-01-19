@@ -11,9 +11,9 @@ import main.tomedb.java.mainframe.view.TableSearchPanel;
 
 public class SearchAction implements ActionListener {
 
-    private TableRowSorter<DefaultTableModel> sorter;
-    private JTable table;
-    private DefaultTableModel model;
+    private TableRowSorter<DefaultTableModel> tableRowSorter;
+    private JTable jTable;
+    private DefaultTableModel defaultTableModel;
     private String searchTerm;
 
     /**
@@ -22,13 +22,13 @@ public class SearchAction implements ActionListener {
     private void search() {
         if (searchTerm != null) {
             RowFilter<DefaultTableModel, Object> rowFilter = RowFilter.regexFilter("(?i)" + searchTerm);
-            sorter.setRowFilter(rowFilter);
+            tableRowSorter.setRowFilter(rowFilter);
         }
     }
 
-    private void createRowSorter(DefaultTableModel model) {
-        sorter = new TableRowSorter<DefaultTableModel>(model);
-        table.setRowSorter(sorter);
+    private void createRowSorter(DefaultTableModel defaultTableModel) {
+        tableRowSorter = new TableRowSorter<DefaultTableModel>(defaultTableModel);
+        jTable.setRowSorter(tableRowSorter);
     }
 
     @Override
@@ -36,10 +36,10 @@ public class SearchAction implements ActionListener {
         TableSearchPanel tableSearchPanel = new TableSearchPanel();
         searchTerm = tableSearchPanel.searchTerm;
 
-        this.model = MainPanel.table.defaultTableMode;
-        this.table = MainPanel.table.jTable;
+        this.defaultTableModel = MainPanel.table.defaultTableMode;
+        this.jTable = MainPanel.table.jTable;
 
-        createRowSorter(model);
+        createRowSorter(defaultTableModel);
 
         search();
     }
