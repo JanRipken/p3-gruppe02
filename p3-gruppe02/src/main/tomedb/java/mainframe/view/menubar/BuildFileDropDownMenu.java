@@ -11,6 +11,7 @@ import main.tomedb.java.mainframe.view.MainFrame;
 
 class BuildFileDropDownMenu{
 
+    private ImageIcon createIcon;
     private ImageIcon importIcon;
     private ImageIcon exportIcon;
     private ImageIcon mergeIcon;
@@ -19,24 +20,28 @@ class BuildFileDropDownMenu{
 
     BuildFileDropDownMenu() {
 
-        fileDropDownMenu = new JMenu("Datein");
+        fileDropDownMenu = new JMenu("Datei");
 
+        createIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/create.png", 15, 15);
+        
         importIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/import.png", 15, 15);
 
         exportIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/export.png", 15, 15);
 
         mergeIcon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/merge.png", 15, 15);
 
+        
+        JMenuItem createFile = new JMenuItem("Erstellen");
         JMenuItem importFile = new JMenuItem("Importieren");
         JMenuItem exportFile = new JMenuItem("Exportieren");
         JMenuItem mergeFiles = new JMenuItem("Zusammenführen");
-        JMenuItem createFile = new JMenuItem("Erstellen");
         
+        fileDropDownMenu.add(createFile);
         fileDropDownMenu.add(importFile);
         fileDropDownMenu.add(exportFile);
         fileDropDownMenu.add(mergeFiles);
-        fileDropDownMenu.add(createFile);
         
+        createFile.setIcon(createIcon);
         importFile.setIcon(importIcon);
         exportFile.setIcon(exportIcon);
         mergeFiles.setIcon(mergeIcon);
