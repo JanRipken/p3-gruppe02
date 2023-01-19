@@ -29,6 +29,7 @@ public class DeleteBookAction implements ActionListener {
 
         for (int i = 0; i < selectedRows.length; i++) {
             int modelIndex = table.convertRowIndexToModel(selectedRows[i]);
+
             list.deleteBook(modelIndex);
             model.removeRow(modelIndex);
         }
