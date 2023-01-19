@@ -8,7 +8,6 @@ import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
 
-
 public class DeleteBookAction implements ActionListener {
 
     private JTable table;
@@ -27,8 +26,8 @@ public class DeleteBookAction implements ActionListener {
 
         int[] selectedRows = table.getSelectedRows();
 
-        for (int i = 0; i < selectedRows.length; i++) {
-            int modelIndex = table.convertRowIndexToModel(selectedRows[i]);
+        for (int i = 0; selectedRows.length - 1 >= i; i++) {
+            int modelIndex = table.convertRowIndexToModel(selectedRows[0]);
 
             list.deleteBook(modelIndex);
             model.removeRow(modelIndex);
