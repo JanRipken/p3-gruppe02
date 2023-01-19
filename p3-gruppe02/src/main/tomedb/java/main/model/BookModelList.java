@@ -15,13 +15,7 @@ public class BookModelList {
     }
 
     public void deleteBook(int book) {
-
         bookModelArrayList.remove(book);
-
-    }
-
-    public void updateBook(BookModel book, int index) {
-        bookModelArrayList.set(index, book);
     }
 
     public BookModel getBook(int index) {

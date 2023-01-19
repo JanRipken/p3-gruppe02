@@ -10,7 +10,7 @@ import main.tomedb.java.mainframe.view.MainFrame;
 public class TomeDB {
 
     public static MainFrame mainFrame;
-    private static String filePath = "./data/main";
+    public static String filePath = "./data/main";
 
     public static void main(String[] args) throws ClassNotFoundException {
 

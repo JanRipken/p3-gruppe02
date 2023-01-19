@@ -28,14 +28,14 @@ public class BookModelDAO extends DAO {
     @Override
     public void write(Object obj) throws IOException {
         if (out != null) {
-            BookModel b = (BookModel) obj;
-            out.writeUTF(b.getTitle());
-            out.writeUTF(b.getAuthorLastName());
-            out.writeUTF(b.getAuthorFirstName());
-            out.writeInt(b.getPageCount());
-            out.writeBoolean(b.getReadStatus());
-            out.writeDouble(b.getRating());
-            out.writeInt(b.getYearOfRelease());
+            BookModel bookModel = (BookModel) obj;
+            out.writeUTF(bookModel.getTitle());
+            out.writeUTF(bookModel.getAuthorLastName());
+            out.writeUTF(bookModel.getAuthorFirstName());
+            out.writeInt(bookModel.getPageCount());
+            out.writeBoolean(bookModel.getReadStatus());
+            out.writeDouble(bookModel.getRating());
+            out.writeInt(bookModel.getYearOfRelease());
         }
     }
 
@@ -49,14 +49,14 @@ public class BookModelDAO extends DAO {
     @Override
     public void read(Object obj) throws IOException {
         if (in != null) {
-            BookModel b = (BookModel) obj;
-            b.setTitle(in.readUTF());
-            b.setAuthorLastName(in.readUTF());
-            b.setAuthorFirstName(in.readUTF());
-            b.setPageCount(in.readInt());
-            b.setReadStatus(in.readBoolean());
-            b.setRating(in.readDouble());
-            b.setYearOfRelease(in.readInt());
+            BookModel bookModel = (BookModel) obj;
+            bookModel.setTitle(in.readUTF());
+            bookModel.setAuthorLastName(in.readUTF());
+            bookModel.setAuthorFirstName(in.readUTF());
+            bookModel.setPageCount(in.readInt());
+            bookModel.setReadStatus(in.readBoolean());
+            bookModel.setRating(in.readDouble());
+            bookModel.setYearOfRelease(in.readInt());
         }
     }
 }

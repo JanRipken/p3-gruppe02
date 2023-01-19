@@ -10,9 +10,9 @@ import main.tomedb.java.mainframe.view.MainPanel;
 
 public class DeleteBookAction implements ActionListener {
 
-    private JTable table;
-    private DefaultTableModel model;
-    private BookModelList list;
+    private JTable jTable;
+    private DefaultTableModel defaultTableModel;
+    private BookModelList bookModelList;
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -20,17 +20,17 @@ public class DeleteBookAction implements ActionListener {
     }
 
     private void removeSelectedRows() {
-        this.model = MainPanel.table.defaultTableMode;
-        this.table = MainPanel.table.jTable;
-        this.list = MainPanel.table.bookModelList;
+        this.defaultTableModel = MainPanel.table.defaultTableMode;
+        this.jTable = MainPanel.table.jTable;
+        this.bookModelList = MainPanel.table.bookModelList;
 
-        int[] selectedRows = table.getSelectedRows();
+        int[] selectedRows = jTable.getSelectedRows();
 
         for (int i = 0; selectedRows.length - 1 >= i; i++) {
-            int modelIndex = table.convertRowIndexToModel(selectedRows[0]);
+            int modelIndex = jTable.convertRowIndexToModel(selectedRows[0]);
 
-            list.deleteBook(modelIndex);
-            model.removeRow(modelIndex);
+            bookModelList.deleteBook(modelIndex);
+            defaultTableModel.removeRow(modelIndex);
         }
     }
 }

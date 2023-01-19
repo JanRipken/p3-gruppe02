@@ -41,7 +41,7 @@ public class MergeFilesAction implements ActionListener {
                 MainPanel.table.bookModelList = list;
               
                 
-                MainPanel.table.tableController.addRowtoTable();
+                MainPanel.table.tableController.rebuildTableRows();
             }
         }
     }

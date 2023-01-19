@@ -14,11 +14,11 @@ public class ModifyIcons{
      * @return ImageIcon
      */
     public ImageIcon scaling(String path, int Height, int Width){
-        ImageIcon icon = new ImageIcon(this.getClass().getResource(path));
-        Image image = icon.getImage();
-        Image newimg = image.getScaledInstance(Width, Height, java.awt.Image.SCALE_SMOOTH);
-        icon = new ImageIcon(newimg);
-        icon.getImage();
-        return icon;       
+        ImageIcon imageIcon = new ImageIcon(this.getClass().getResource(path));
+        Image image = imageIcon.getImage();
+        Image newImage = image.getScaledInstance(Width, Height, java.awt.Image.SCALE_SMOOTH);
+        imageIcon = new ImageIcon(newImage);
+        imageIcon.getImage();
+        return imageIcon;       
     }  
 }

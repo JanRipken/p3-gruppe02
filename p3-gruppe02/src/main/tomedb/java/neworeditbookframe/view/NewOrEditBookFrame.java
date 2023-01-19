@@ -50,7 +50,7 @@ public class NewOrEditBookFrame extends JFrame {
 
         BuildMainPanel buildMainPanel = new BuildMainPanel();
 
-        DragMove dragMove = new DragMove(this);
+        DragMove dragMove = new DragMove(null,this);
         this.addMouseListener(dragMove);
         this.addMouseMotionListener(dragMove);
 
