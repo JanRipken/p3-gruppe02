@@ -7,7 +7,7 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.view.MainPanel;
-import main.tomedb.java.mainframe.view.Table;
+
 
 public class DeleteBookAction implements ActionListener {
 
@@ -23,7 +23,7 @@ public class DeleteBookAction implements ActionListener {
     private void removeSelectedRows() {
         this.model = MainPanel.table.defaultTableMode;
         this.table = MainPanel.table.jTable;
-        this.list = Table.bookModelList;
+        this.list = MainPanel.table.bookModelList;
 
         int[] selectedRows = table.getSelectedRows();
 

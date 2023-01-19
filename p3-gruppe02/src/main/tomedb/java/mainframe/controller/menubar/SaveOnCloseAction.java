@@ -2,14 +2,17 @@ package main.tomedb.java.mainframe.controller.menubar;
 
 import java.io.IOException;
 import javax.swing.JOptionPane;
+import main.tomedb.java.main.model.BookModelList;
 import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
 import main.tomedb.java.mainframe.controller.menubar.dropdownmenus.ImportNewFileAction;
-import static main.tomedb.java.mainframe.view.Table.bookModelList;
+import main.tomedb.java.mainframe.view.MainPanel;
+
 
 class SaveOnCloseAction {
 
     private String filePath = "./data/main";
-
+    private BookModelList bookModelList = MainPanel.table.bookModelList;
+    
     private String updatedPath = ImportNewFileAction.updatedPath;
 
     /**

@@ -37,7 +37,8 @@ public class MergeFilesAction implements ActionListener {
                     System.err.println(v.getMessage());
                 }
                 dao2.close();
-                Table.bookModelList = list;
+                
+                MainPanel.table.bookModelList = list;
               
                 
                 MainPanel.table.tableController.addRowtoTable();

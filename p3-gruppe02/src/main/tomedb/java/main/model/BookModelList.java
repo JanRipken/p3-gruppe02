@@ -15,15 +15,12 @@ public class BookModelList {
     }
 
     public void deleteBook(int book) {
-        for (int i = 0; i < bookModelArrayList.size(); i++) {
-            if (bookModelArrayList.get(i).equals(book)) {
-                bookModelArrayList.remove(i);
 
-            }
-        }
+        bookModelArrayList.remove(book);
+
     }
 
-     public void updateBook(BookModel book, int index) {
+    public void updateBook(BookModel book, int index) {
         bookModelArrayList.set(index, book);
     }
 

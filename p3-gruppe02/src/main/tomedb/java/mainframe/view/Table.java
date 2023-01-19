@@ -13,8 +13,8 @@ import main.tomedb.java.mainframe.controller.jtable.TableController;
 
 public class Table {
 
-    public  TableController tableController;
-    public static BookModelList bookModelList;
+    public TableController tableController;
+    public BookModelList bookModelList;
     public JTable jTable;
     public DefaultTableModel defaultTableMode;
 

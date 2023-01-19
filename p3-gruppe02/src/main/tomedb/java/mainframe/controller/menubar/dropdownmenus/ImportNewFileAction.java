@@ -48,7 +48,7 @@ public class ImportNewFileAction extends Table implements ActionListener {
         }
         dao2.close();
 
-        Table.bookModelList = list;
+        MainPanel.table.bookModelList = list;
         
         MainPanel.table.tableController.addRowtoTable();
 

@@ -5,13 +5,16 @@ import java.awt.event.ActionListener;
 import java.io.IOException;
 import main.tomedb.java.mainframe.controller.dao.BookModelListDAO;
 import javax.swing.JFileChooser;
-import static main.tomedb.java.mainframe.view.Table.bookModelList;
+import main.tomedb.java.main.model.BookModelList;
+import main.tomedb.java.mainframe.view.MainPanel;
 
 public class ExportNewFileAction implements ActionListener {
 
+    private BookModelList bookModelList;
+
     @Override
     public void actionPerformed(ActionEvent e) {
-
+        bookModelList = MainPanel.table.bookModelList;
         JFileChooser fileExporter = new JFileChooser("./data");
         fileExporter.setDialogTitle("Speichern unter");
 

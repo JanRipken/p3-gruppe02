@@ -32,7 +32,7 @@ public class EditBookAction implements ActionListener {
 
     private void editSelectedBook() {
         this.table = MainPanel.table.jTable;
-        this.list = Table.bookModelList;
+        this.list = MainPanel.table.bookModelList;
 
         int selectedRow = table.getSelectedRow();
         if (selectedRow == -1) {
@@ -43,7 +43,7 @@ public class EditBookAction implements ActionListener {
 
        
         showEdit();
-        
+             
     }
 
     private void showEdit() {

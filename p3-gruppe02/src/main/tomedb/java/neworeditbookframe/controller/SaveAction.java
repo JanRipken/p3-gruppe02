@@ -43,7 +43,7 @@ public class SaveAction implements ActionListener {
             } else {
 
                 if (bookModel != null) {
-                    
+                    setBookModel();
                     MainPanel.table.tableController.editToTable();
                 } else {
                     bookModel = new BookModel();
