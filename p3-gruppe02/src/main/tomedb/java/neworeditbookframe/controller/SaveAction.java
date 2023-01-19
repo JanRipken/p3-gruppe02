@@ -12,15 +12,9 @@ public class SaveAction implements ActionListener {
     private NewOrEditBookFrame view;
     private BookModel bookModel;
 
-
     public SaveAction(NewOrEditBookFrame view, BookModel book) {
         this.view = view;
         this.bookModel = book;
-    }
-
-    public SaveAction(NewOrEditBookFrame view) {
-        this.view = view;
-
     }
 
     private void setBookModel() {
@@ -32,23 +26,25 @@ public class SaveAction implements ActionListener {
         bookModel.setPageCount(view.getPageCount());
         bookModel.setRating(view.getRating());
         bookModel.setReadStatus(view.getReadStatus());
-       
+
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         try {
+
             if (view.getTitle().equals("")) {
                 new InputTitelDialog();
             } else {
 
-                if (bookModel != null) {
-                    setBookModel();
-                    MainPanel.table.tableController.editToTable();
-                } else {
-                    bookModel = new BookModel();
+                if (bookModel.getTitle() == null) {
                     setBookModel();
                     MainPanel.table.tableController.addToTable(bookModel);
+
+                } else {
+                    setBookModel();
+                    MainPanel.table.tableController.editToTable();
+
                 }
                 view.dispose();
             }

@@ -37,6 +37,10 @@ public class NewOrEditBookFrame extends JFrame {
     private final int width = 350;
     private final int height = 600;
 
+    /**
+     * Erstellen und Designen eines Frames zum hinzufügen oder Editieren eines
+     * neuen Objektes
+     */
     public NewOrEditBookFrame(BookModel book) {
 
         this.setUndecorated(true);
@@ -64,60 +68,7 @@ public class NewOrEditBookFrame extends JFrame {
 
         buildMainPanel.buildButtons();
 
-        
         SaveAction saveAction = new SaveAction(this, book);
-        buildMainPanel.buttonConfirmation.addActionListener(saveAction);
-
-        CancelAction cancelAction = new CancelAction(this);
-        buildMainPanel.buttonCancel.addActionListener(cancelAction);
-
-        this.setContentPane(buildMainPanel);
-
-        this.setPreferredSize(new Dimension(width, height));
-        this.pack();
-
-        this.setVisible(true);
-
-        this.setShape(new RoundRectangle2D.Double(0, 0, getWidth(), getHeight(), 15, 15));
-
-        this.setLocationRelativeTo(null);
-
-    }
-
-    /**
-     * Erstellen und Designen eines Frames zum hinzufügen oder Editieren eines
-     * neuen Objektes
-     */
-
-    public NewOrEditBookFrame() {
-
-        this.setUndecorated(true);
-
-        ImageIcon icon = MainFrame.modIcons.scaling("/main/tomedb/ressources/icons/bookAdd.png", 30, 30);
-        this.setIconImage(icon.getImage());
-
-        BuildMainPanel buildMainPanel = new BuildMainPanel();
-
-        DragMove dragMove = new DragMove(this);
-        this.addMouseListener(dragMove);
-        this.addMouseMotionListener(dragMove);
-
-        title = buildMainPanel.returnLayoutTextfieldString(questionsBookTitle);
-        lastName = buildMainPanel.returnLayoutTextfieldString(questionLastName);
-        firstName = buildMainPanel.returnLayoutTextfieldString(questionFirstName);
-        yearOfRelease = buildMainPanel.returnLayoutTextfieldInt(questionYearOfRelease);
-        pageCount = buildMainPanel.returnLayoutTextfieldInt(questionPageCount);
-        rating = buildMainPanel.returnLayoutTextfieldDouble(questionRating);
-        readStatus = buildMainPanel.returnLayoutCheckBox(questionReadStatus);
-
-        yearOfRelease.setToolTipText(toolTipYearOfRelease);
-        pageCount.setToolTipText(toolTipPageCount);
-        rating.setToolTipText(toolTipRating);
-
-        buildMainPanel.buildButtons();
-
-      
-        SaveAction saveAction = new SaveAction(this);
         buildMainPanel.buttonConfirmation.addActionListener(saveAction);
 
         CancelAction cancelAction = new CancelAction(this);
