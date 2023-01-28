@@ -1,88 +1,40 @@
-p3-gruppe02
-├── build.xml
+ws22-p3-gruppe02
+├── build
+│   └── classes
+│       └── main
+│           └── tomedb
+│               └── ressources
+│                   └── icons
 ├── data
-│   └── main.txt
-├── manifest.mf
+├── dist
 ├── nbproject
-│   ├── build-impl.xml
-│   ├── genfiles.properties
-│   ├── project.properties
-│   └── project.xml
+│   └── private
+├── settings
 └── src
     └── main
         └── tomedb
             ├── java
+            │   ├── controller
+            │   │   └── mouseadapter
             │   ├── designtemplate
-            │   │   └── TomeDBDesignTemplate.java
+            │   │   └── themes
+            │   ├── main
+            │   │   └── model
             │   ├── mainframe
-            │   │   ├── TomeDB.java
             │   │   ├── controller
-            │   │   │   ├── JTableActionListenerDelete.java
-            │   │   │   ├── JTableActionListenerEdit.java
-            │   │   │   ├── JTableChanged.java
-            │   │   │   ├── JTableMouseListener.java
-            │   │   │   ├── JTableSearch.java
-            │   │   │   ├── MainFramDragMove.java
-            │   │   │   ├── SaveOnClose.java
-            │   │   │   ├── WindowEventHandler.java
-            │   │   │   └── menubar
-            │   │   │       ├── CloseMainFrame.java
-            │   │   │       ├── ExportNewFile.java
-            │   │   │       ├── ImportNewFile.java
-            │   │   │       └── settings
-            │   │   │           ├── AutorOnOff.java
-            │   │   │           ├── BewertungOnOff.java
-            │   │   │           ├── BuchTitelOnOff.java
-            │   │   │           ├── ErscheinungsjahrOnOff.java
-            │   │   │           └── NochmallesenOnOff.java
-            │   │   ├── dao
-            │   │   │   ├── BookModelDAO.java
-            │   │   │   ├── BookModelListDAO.java
-            │   │   │   └── DAO.java
-            │   │   ├── model
-            │   │   │   ├── BookModel.java
-            │   │   │   └── BookModelList.java
+            │   │   │   ├── dao
+            │   │   │   ├── icons
+            │   │   │   ├── jtable
+            │   │   │   ├── menubar
+            │   │   │   │   └── dropdownmenus
+            │   │   │   └── settings
             │   │   └── view
-            │   │       ├── MainFrame.java
-            │   │       ├── NorthPanel.java
-            │   │       ├── SouthPanel.java
-            │   │       ├── Table.java
-            │   │       ├── TableSearch.java
             │   │       └── menubar
-            │   │           ├── Close.java
-            │   │           ├── Menu.java
-            │   │           ├── MenuBar.java
-            │   │           ├── Minimized.java
-            │   │           └── Settings.java
-            │   └── newbookframe
+            │   └── neworeditbookframe
             │       ├── controller
-            │       │   ├── Abort.java
-            │       │   ├── DragMove.java
-            │       │   ├── NewBook.java
-            │       │   └── Save.java
+            │       │   └── filter
             │       └── view
-            │           ├── Buttons.java
-            │           ├── LayoutCheckBox.java
-            │           ├── LayoutTextfield.java
-            │           ├── MainPanel.java
-            │           ├── NewBook.java
-            │           └── WrongEntryOptionPane.java
             └── ressources
                 └── icons
-                    ├── 33.gif
-                    ├── 42a.gif
-                    ├── 52.gif
-                    ├── 53.gif
-                    ├── 61.gif
-                    ├── 90.gif
-                    ├── 93.gif
-                    ├── bookAdd.png
-                    ├── bucher.png
-                    ├── close.png
-                    ├── export.png
-                    ├── import.png
-                    ├── minimize-sign.png
-                    ├── new.gif
-                    └── suchen.gif
 
-20 directories, 65 files
+37 directories
